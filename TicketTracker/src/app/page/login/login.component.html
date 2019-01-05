@@ -1,0 +1,69 @@
+<div class="background"></div>
+<div class="container">
+  <div class="container">
+    <div class="row">
+      <app-header></app-header>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+        <div class="card">
+          <div class="card-header">
+            <h4>Login</h4>
+            <div class="social-btns">
+              <!-- <button mat-icon-button><i class="fa fa-facebook-square"></i></button>
+             <button mat-icon-button><i class="fa fa-twitter"></i></button>
+             <button mat-icon-button><i class="fa fa-google-plus"></i></button> -->
+            </div>
+          </div>
+          <!-- <p class="tip">Or Be Classical</p> -->
+          <form fxFlex fxLayout="column" fxLayoutAlign="center center" [formGroup]="loginForm" (ngSubmit)="onLogin()"
+            fxLayoutGap="20px">
+            <div class="card-form">
+              <div class="form-row">
+                <i class="material-icons">face</i>
+                <mat-form-field color="accent">
+                  <input type="text" [(ngModel)]="authenticationInData.UserID" required name="username" matInput
+                    maxlength=30 autocomplete="off" myStringOnly placeholder="User ID" formControlName="username" />
+
+
+                  <button mat-button *ngIf="authenticationInData.UserID" matSuffix mat-icon-button aria-label="Clear"
+                    (click)="authenticationInData.UserID=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                  <mat-hint align="end">Your UserID</mat-hint>
+                  <mat-error *ngIf="username.invalid">
+                    UserID is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <!-- <div class="form-row">
+             <i class="material-icons">email</i>
+             <mat-form-field color="accent">
+               <input type="text" matInput placeholder="Email address"/>
+             </mat-form-field>
+           </div> -->
+              <div class="form-row">
+                <i class="material-icons">lock_outline</i>
+                <mat-form-field color="accent">
+                  <input type="password" [(ngModel)]="authenticationInData.Password" required name="Password" matInput
+                  (keydown.enter)="OnChangePasswordTextBox()"   maxlength=30 autocomplete="off" placeholder="Password" formControlName="password" [type]="hide ? 'password' : 'text'" />
+
+                  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  <mat-hint align="end">Your Password</mat-hint>
+
+                  <mat-error *ngIf="password.invalid">
+                    Password is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button mat-raised-button class="btn btn-rose" matTooltip="Info about the action" type="submit"
+                [disabled]="password.invalid || username.invalid">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

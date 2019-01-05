@@ -1,0 +1,99 @@
+<div class="container">
+  <app-navbar title="Add New Task"></app-navbar>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="material-icons">assignment</i>
+        </div>
+        <div class="card-content">
+          <h4 (click)="refresh()" class="card-title">Add New Ticket</h4>
+
+          <div class="table-responsive">
+            <div class="container mat-elevation-z8">
+              <div class="form">
+                <mat-form-field floatPlaceholder="never" color="accent">
+                  <input matInput #filter placeholder="Filter Ticket" autocomplete="off">
+                </mat-form-field>
+                <div style="float: right;">
+                  Refresh
+                  <button mat-icon-button (click)="refresh()">
+                    <mat-icon>refresh</mat-icon>
+                  </button>
+                </div>
+              </div>
+
+              <mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
+                <ng-container matColumnDef="ticketno">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Ticket No</mat-header-cell>
+                  <mat-cell *matCellDef="let row">{{row.ticketno}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="ticketdesc">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Ticket Description</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.ticketdesc}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="cdstatus">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{getStatus(row.cdstatus)}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="dtcreate">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Created At</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.dtcreate}}</mat-cell>
+                </ng-container>
+
+
+                <ng-container matColumnDef="dtdue">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Due At</mat-header-cell>
+
+                  <mat-cell *matCellDef="let row"> {{row.dtdue}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="esthrs">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Est Hours</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.esthrs}}</mat-cell>
+                </ng-container>
+
+                <!-- actions -->
+                <ng-container matColumnDef="actions">
+                  <mat-header-cell *matHeaderCellDef>
+                    <button mat-icon-button color="primary" (click)="addNew()">
+                      <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+                    </button>
+                  </mat-header-cell>
+
+                  <mat-cell *matCellDef="let row; let i=index;">
+                    <button mat-icon-button color="accent" (click)="startEdit(i, row.ticketno, row.ticketdesc,row.cdstatus, row.dtcreate, row.dtdue, row.esthrs)">
+                      <mat-icon aria-label="Edit">edit</mat-icon>
+                    </button>
+
+                    <button mat-icon-button color="accent" (click)="deleteItem(i, row.ticketno, row.ticketdesc, row.dtcreate, row.dtdue, row.esthrs)">
+                      <mat-icon aria-label="Delete">delete</mat-icon>
+                    </button>
+                  </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+              </mat-table>
+
+
+              <div class="no-results" [style.display]="dataSource.renderedData.length == 0 ? '' : 'none'">
+                No results
+              </div>
+
+              <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

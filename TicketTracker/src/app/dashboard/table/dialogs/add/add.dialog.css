@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+
+}
+.mat-dialog-content {
+  overflow-y: hidden !important;
+}
+.container > * {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  padding-top: 1px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.mat-dialog-actions {
+
+  margin-bottom: -2px !important;
+}
