@@ -20,7 +20,7 @@ Material-design Dashboard
 
 ### Dashboard
 
-![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/dashboard.png)
+![](https://github.com/farookshaik/angular/blob/master/TicketTracker/screenshot/dashboard.png)
 
 ### Login
 
