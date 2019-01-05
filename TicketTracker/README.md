@@ -6,7 +6,7 @@ Material-design Dashboard
 
 **- please ensure you have installed angular cli, otherwise `npm install -g @angular/cli`**
 
-1. git clone https://github.com/wangdicoder/angular-material-dashboard
+1. git clone https://github.com/farookshaik/angular/tree/master/TicketTracker
 2. cd angular-material-dashboard
 3. npm install
 4. ng serve -o (it will automatically open localhost:4200)
@@ -20,38 +20,38 @@ Material-design Dashboard
 
 ### Dashboard
 
-![](https://github.com/wangdicoder/angular2-material-dashboard-pro/raw/master/screenshot/dashboard.png)
+![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/dashboard.png)
 
 ### Login
 
-![](https://github.com/wangdicoder/angular2-material-dashboard-pro/raw/master/screenshot/login.png)
+![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/login.png)
 
 ### Register
-![](https://github.com/wangdicoder/angular2-material-dashboard-pro/raw/master/screenshot/register.png)
+![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/register.png)
 
 ### Lock
-![](https://github.com/wangdicoder/angular2-material-dashboard-pro/raw/master/screenshot/lock.png)
+![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/lock.png)
 
 ### User Profile
-![](https://github.com/wangdicoder/angular2-material-dashboard-pro/raw/master/screenshot/profile.png)
+![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/profile.png)
 
 ### Sweet Alert
-![](https://github.com/wangdicoder/angular2-material-dashboard-pro/raw/master/screenshot/sweetalert.gif)
+![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/sweetalert.gif)
 
 ### Notification
-![](https://github.com/wangdicoder/angular2-material-dashboard-pro/raw/master/screenshot/notification.gif)
+![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/notification.gif)
 
 ### Settings
-![](https://github.com/wangdicoder/angular2-material-dashboard-pro/raw/master/screenshot/settings.gif)
+![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/settings.gif)
 
 ### Table
-![](https://github.com/wangdicoder/angular2-material-dashboard-pro/raw/master/screenshot/table.png)
+![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/table.png)
 
 ### Price
-![](https://github.com/wangdicoder/angular2-material-dashboard-pro/raw/master/screenshot/price.png)
+![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/price.png)
 
 ### Panels
-![](https://github.com/wangdicoder/angular2-material-dashboard-pro/raw/master/screenshot/panel.png)
+![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/panel.png)
 
 ## Acknowledge 
 
