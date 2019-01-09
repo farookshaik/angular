@@ -18,40 +18,30 @@ Material-design Dashboard
 
 ## Screenshot
 
-### Dashboard
-
-![](https://github.com/farookshaik/angular/blob/master/TicketTracker/screenshot/dashboard.png)
 
 ### Login
 
-![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/login.png)
+![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/Login.PNG)
 
-### Register
-![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/register.png)
+### Dashboard
 
-### Lock
-![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/lock.png)
+![](https://github.com/farookshaik/angular/blob/master/TicketTracker/screenshot/Dashboard.PNG)
 
-### User Profile
-![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/profile.png)
+### View Tickets
 
-### Sweet Alert
-![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/sweetalert.gif)
+![](https://github.com/farookshaik/angular/blob/master/TicketTracker/screenshot/View Tickets.PNG)
 
-### Notification
-![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/notification.gif)
+### Add New Ticket
 
-### Settings
-![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/settings.gif)
+![](https://github.com/farookshaik/angular/blob/master/TicketTracker/screenshot/AddNewTicket.PNG)
 
-### Table
-![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/table.png)
+### Edit Ticket
 
-### Price
-![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/price.png)
+![](https://github.com/farookshaik/angular/blob/master/TicketTracker/screenshot/EditTickets.PNG)
 
-### Panels
-![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/panel.png)
+### Delete Ticket
+
+![](https://github.com/farookshaik/angular/blob/master/TicketTracker/screenshot/Delete Ticket.PNG)
 
 ## Acknowledge 
 
