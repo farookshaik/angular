@@ -1,4 +1,4 @@
-# Angular2 Material Dashboard Pro
+# Angular Material Dashboard 
 
 Material-design Dashboard
 
@@ -7,9 +7,8 @@ Material-design Dashboard
 **- please ensure you have installed angular cli, otherwise `npm install -g @angular/cli`**
 
 1. git clone https://github.com/farookshaik/angular/tree/master/TicketTracker
-2. cd angular-material-dashboard
-3. npm install
-4. ng serve -o (it will automatically open localhost:4200)
+2. npm install
+3. ng serve -o (it will automatically open localhost:4200)
 
 ## Further Plan
 - [x] Add Wizard Component
@@ -21,7 +20,7 @@ Material-design Dashboard
 
 ### Login
 
-![](https://github.com/farookshaik/angular/tree/master/TicketTracker/screenshot/Login.PNG)
+![](https://github.com/farookshaik/angular/blob/master/TicketTracker/screenshot/Login.PNG)
 
 ### Dashboard
 
@@ -45,7 +44,7 @@ Material-design Dashboard
 
 ## Acknowledge 
 
-- [Creative Tim](https://github.com/creativetimofficial)
+
 - [Sweet Alert 2](https://github.com/limonte/sweetalert2)
 - [Bootstrap Notify](http://bootstrap-notify.remabledesigns.com)
 
