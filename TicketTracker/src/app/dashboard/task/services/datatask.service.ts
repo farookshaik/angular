@@ -1,10 +1,9 @@
-import { Injectable, ChangeDetectorRef } from '@angular/core';
-import { BehaviorSubject, config } from 'rxjs';
-import { Issue } from '../models/issue';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { AppConfig } from 'config';
-import { AlertDialogComponent } from '../dialogs/alert/alert.dialog.component';
-import { DashBoardCountRecordData } from 'app/shared/models/dashboardcount_recorddata.model';
+import { AlertDialogComponent } from 'app/dashboard/table/dialogs/alert/alert.dialog.component';
+import { TaskIssue } from '../models/taskissue';
 
 var headers = new Headers({
   "Content-Type": "application/json",
@@ -12,10 +11,10 @@ var headers = new Headers({
 });
 
 @Injectable()
-export class DataService {
-  private readonly API_URL = 'https://api.github.com/repos/angular/angular/issues';
+export class DataTaskService {
 
-  dataChange: BehaviorSubject<Issue[]> = new BehaviorSubject<Issue[]>([]);
+
+  dataChange: BehaviorSubject<TaskIssue[]> = new BehaviorSubject<TaskIssue[]>([]);
   // Temporarily stores data from dialogs
   dialogData: any;
   id_user: any;
@@ -27,7 +26,7 @@ export class DataService {
 
   }
 
-  get data(): Issue[] {
+  get data(): TaskIssue[] {
     return this.dataChange.value;
   }
 
@@ -37,9 +36,9 @@ export class DataService {
 
   /** CRUD METHODS */
   getAllIssues(): void {
-    const body = { cd_status: '', dtFrom: '', dtto: '', id_user: this.id_user, 'row_from': 0, 'row_to': 0 };
+    const body = { assignee: '', cd_status: '', dtFrom: '', dtto: '', id_user: this.id_user, row_from: 0, row_to: 0 };
 
-    this.httpClient.post<Issue[]>(AppConfig.apiUrl + 'timetracker/getTaskListNew', body, {
+    this.httpClient.post<TaskIssue[]>(AppConfig.apiUrl + 'timetracker/getUITaskList', body, {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
     }).subscribe(data => {
       console.log(data['result']);
@@ -55,21 +54,21 @@ export class DataService {
   }
 
   // DEMO ONLY, you can find working methods below
-  addIssue(issue: Issue): void {
+  addIssue(issue: TaskIssue): void {
     this.dialogData = issue;
   }
 
-  updateIssue(issue: Issue): void {
+  updateIssue(issue: TaskIssue): void {
     this.dialogData = issue;
   }
 
-  deleteIssue(issue: Issue): void {
+  deleteIssue(issue: TaskIssue): void {
     this.dialogData = issue;
   }
 
-  addItem(issue: Issue): void {
+  addItem(issue: TaskIssue): void {
     issue.id_user = this.id_user;
-    this.httpClient.post(AppConfig.apiUrl + 'timetracker/AddNewTask', issue, {
+    this.httpClient.post(AppConfig.apiUrl + 'timetracker/AddNewUITask', issue, {
       headers: new HttpHeaders().set('Content-Type', 'application/json')
     }).subscribe(data => {
       if (data['status'][0].message_code === 'F') {
@@ -88,9 +87,9 @@ export class DataService {
     return this.statusMessage;
   }
 
-  UpdateItem(issue: Issue): void {
+  UpdateItem(issue: TaskIssue): void {
     issue.id_user = this.id_user;
-    this.httpClient.post(AppConfig.apiUrl + 'timetracker/UpdateTask', issue, {
+    this.httpClient.post(AppConfig.apiUrl + 'timetracker/UpdateUITask', issue, {
       headers: new HttpHeaders().set('Content-Type', 'application/json')
     }).subscribe(data => {
       this.dialogData = issue;
@@ -101,9 +100,9 @@ export class DataService {
       });
   }
 
-  DeleteTicket(issue: Issue): void {
+  DeleteTicket(issue: TaskIssue): void {
     issue.id_user = this.id_user;
-    this.httpClient.post(AppConfig.apiUrl + 'timetracker/RemoveTask', issue, {
+    this.httpClient.post(AppConfig.apiUrl + 'timetracker/RemoveUITask', issue, {
       headers: new HttpHeaders().set('Content-Type', 'application/json')
     }).subscribe(data => {
       this.dialogData = issue;
@@ -119,46 +118,6 @@ export class DataService {
 
 
 }
-
-
-
-/* REAL LIFE CRUD Methods I've used in my projects. ToasterService uses Material Toasts for displaying messages:
-
-    // ADD, POST METHOD
-    addItem(kanbanItem: KanbanItem): void {
-    this.httpClient.post(this.API_URL, kanbanItem).subscribe(data => {
-      this.dialogData = kanbanItem;
-      this.toasterService.showToaster('Successfully added', 3000);
-      },
-      (err: HttpErrorResponse) => {
-      this.toasterService.showToaster('Error occurred. Details: ' + err.name + ' ' + err.message, 8000);
-    });
-   }
-
-    // UPDATE, PUT METHOD
-     updateItem(kanbanItem: KanbanItem): void {
-    this.httpClient.put(this.API_URL + kanbanItem.id, kanbanItem).subscribe(data => {
-        this.dialogData = kanbanItem;
-        this.toasterService.showToaster('Successfully edited', 3000);
-      },
-      (err: HttpErrorResponse) => {
-        this.toasterService.showToaster('Error occurred. Details: ' + err.name + ' ' + err.message, 8000);
-      }
-    );
-  }
-
-  // DELETE METHOD
-  deleteItem(id: number): void {
-    this.httpClient.delete(this.API_URL + id).subscribe(data => {
-      console.log(data['']);
-        this.toasterService.showToaster('Successfully deleted', 3000);
-      },
-      (err: HttpErrorResponse) => {
-        this.toasterService.showToaster('Error occurred. Details: ' + err.name + ' ' + err.message, 8000);
-      }
-    );
-  }
-*/
 
 
 

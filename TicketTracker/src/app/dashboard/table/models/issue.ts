@@ -7,14 +7,16 @@ export class Issue {
   // updated_at: string;
   ticketno: string;
   ticketdesc: string;
-  dtcreate: string;
-  dtdue: string;
+  dtcreate: Date;
+  dtdue: Date;
   esthrs: string;
   id_user: string;
   rowcount: string;
   cdstatus: string;
   row_from: 0;
   row_to: 0;
+
+
 
 
 }

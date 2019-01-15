@@ -1,25 +1,27 @@
 import { Component, OnInit, ElementRef, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { DataService } from './services/data.service';
+import { DataTaskService } from './services/datatask.service';
 import { MatPaginator, MatSort, MatDialog } from '@angular/material';
-import { Issue } from './models/issue';
+
 import { DataSource } from '@angular/cdk/collections';
-import { AddDialogComponent } from './dialogs/add/add.dialog.component';
-import { EditDialogComponent } from './dialogs/edit/edit.dialog.component';
-import { DeleteDialogComponent } from './dialogs/delete/delete.dialog.component';
 import { fromEvent, BehaviorSubject, Observable, merge } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { AlertDialogComponent } from './dialogs/alert/alert.dialog.component';
+import { AlertDialogComponent } from '../table/dialogs/alert/alert.dialog.component';
+import { TaskIssue } from './models/taskissue';
+import { AddTaskDialogComponent } from './dialogs/add/addtask.dialog.component';
+import { EditTaskDialogComponent } from './dialogs/edit/edittask.dialog.component';
+import { DeleteTaskDialogComponent } from './dialogs/delete/deletetask.dialog.component';
 
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css'],
+  selector: 'app-task',
+  templateUrl: './task.component.html',
+  styleUrls: ['./task.component.css'],
   providers: [AlertDialogComponent]
 })
-export class TableComponent implements OnInit {
-  displayedColumns = ['ticketno', 'ticketdesc', 'cdstatus', 'dtcreate', 'dtdue', 'esthrs', 'actions'];
-  exampleDatabase: DataService | null;
+export class TaskComponent implements OnInit {
+  // tslint:disable-next-line:max-line-length
+  displayedColumns = ['ticketno', 'ticketdesc', 'tickettype', 'assignee', 'cdstatus', 'dtassigned', 'dtrecived', 'spenthrs', 'userid', 'actions'];
+  exampleDatabase: DataTaskService | null;
   dataSource: ExampleDataSource | null;
   index: number;
   ticketno: string;
@@ -30,7 +32,7 @@ export class TableComponent implements OnInit {
 
   constructor(public httpClient: HttpClient,
     public dialog: MatDialog,
-    public dataService: DataService, private _alertDialog: AlertDialogComponent, private changeDetectorRefs: ChangeDetectorRef) { }
+    public dataService: DataTaskService, private _alertDialog: AlertDialogComponent, private changeDetectorRefs: ChangeDetectorRef) { }
 
   // tslint:disable-next-line:member-ordering
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -49,7 +51,7 @@ export class TableComponent implements OnInit {
       return 'Open';
     } else if (status === 'C') {
       return 'Completed';
-    } else {
+    } else if (status === 'W') {
       return 'Work in Progress';
     }
   }
@@ -58,16 +60,14 @@ export class TableComponent implements OnInit {
     this.loadData();
   }
 
-  addNew(issue: Issue) {
-    const dialogRef = this.dialog.open(AddDialogComponent, {
+  addNew(issue: TaskIssue) {
+    const dialogRef = this.dialog.open(AddTaskDialogComponent, {
       data: { issue: issue }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result === 1) {
-
         const statusMessage = this.exampleDatabase.addItem(this.dataService.getDialogData());
-        // this.exampleDatabase.dataChange.value.push(this.dataService.getDialogData());
         console.log(statusMessage);
         setTimeout(() => {
           this.loadData();
@@ -79,20 +79,18 @@ export class TableComponent implements OnInit {
     });
   }
 
-  startEdit(i: number, ticketno: string, ticketdesc: string, cdstatus: string, dtcreate: Date, dtdue: Date, esthrs: number) {
+  // tslint:disable-next-line:max-line-length
+  startEdit(i: number, ticketno: string, ticketdesc: string, tickettype: string, assignee: string, cdstatus: string, dtassigned: Date, dtrecived: Date, spenthrs: number) {
     this.ticketno = ticketno;
     this.index = i;
-    console.log(this.index);
-    const dialogRef = this.dialog.open(EditDialogComponent, {
+    console.log(cdstatus);
+    const dialogRef = this.dialog.open(EditTaskDialogComponent, {
       // tslint:disable-next-line:max-line-length
-      data: { ticketno: ticketno, ticketdesc: ticketdesc, cdstatus: cdstatus, dtcreate: dtcreate, dtdue: dtdue, esthrs: esthrs }
+      data: { ticketno: ticketno, ticketdesc: ticketdesc, tickettype: tickettype, assignee: assignee, cdstatus: cdstatus, dtassigned: dtassigned, dtrecived: dtrecived, spenthrs: spenthrs }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result === 1) {
-        //   const foundIndex = this.exampleDatabase.dataChange.value.findIndex(x => x.ticketno === this.ticketno);
-        //  this.exampleDatabase.dataChange.value[foundIndex] = this.dataService.getDialogData();
-        // this.refreshTable();
         this.exampleDatabase.UpdateItem(this.dataService.getDialogData());
         setTimeout(() => {
           this.loadData();
@@ -103,12 +101,13 @@ export class TableComponent implements OnInit {
       }
     });
   }
-
-  deleteItem(i: number, ticketno: string, ticketdesc: string, dtcreate: string, dtdue: string, esthrs: number) {
+  // tslint:disable-next-line:max-line-length
+  deleteItem(i: number, ticketno: string, ticketdesc: string, tickettype: string) {
     this.ticketno = ticketno;
     this.index = i;
-    const dialogRef = this.dialog.open(DeleteDialogComponent, {
-      data: { ticketno: ticketno, ticketdesc: ticketdesc, dtcreate: dtcreate, dtdue: dtdue, esthrs: esthrs }
+    const dialogRef = this.dialog.open(DeleteTaskDialogComponent, {
+      // tslint:disable-next-line:max-line-length
+      data: { ticketno: ticketno, ticketdesc: ticketdesc }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -138,7 +137,7 @@ export class TableComponent implements OnInit {
 
 
   public loadData() {
-    this.exampleDatabase = new DataService(this.httpClient, this._alertDialog);
+    this.exampleDatabase = new DataTaskService(this.httpClient, this._alertDialog);
     this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator, this.sort);
     fromEvent(this.filter.nativeElement, 'keyup')
       // .debounceTime(150)
@@ -152,7 +151,7 @@ export class TableComponent implements OnInit {
   }
 }
 
-export class ExampleDataSource extends DataSource<Issue> {
+export class ExampleDataSource extends DataSource<TaskIssue> {
   _filterChange = new BehaviorSubject('');
 
   get filter(): string {
@@ -163,10 +162,10 @@ export class ExampleDataSource extends DataSource<Issue> {
     this._filterChange.next(filter);
   }
 
-  filteredData: Issue[] = [];
-  renderedData: Issue[] = [];
+  filteredData: TaskIssue[] = [];
+  renderedData: TaskIssue[] = [];
 
-  constructor(public _exampleDatabase: DataService,
+  constructor(public _exampleDatabase: DataTaskService,
     public _paginator: MatPaginator,
     public _sort: MatSort) {
     super();
@@ -174,7 +173,7 @@ export class ExampleDataSource extends DataSource<Issue> {
     this._filterChange.subscribe(() => this._paginator.pageIndex = 0);
   }
 
-  connect(): Observable<Issue[]> {
+  connect(): Observable<TaskIssue[]> {
     const displayDataChanges = [
       this._exampleDatabase.dataChange,
       this._sort.sortChange,
@@ -185,7 +184,7 @@ export class ExampleDataSource extends DataSource<Issue> {
     this._exampleDatabase.getAllIssues();
 
     return merge(...displayDataChanges).pipe(map(() => {
-      this.filteredData = this._exampleDatabase.data.slice().filter((issue: Issue) => {
+      this.filteredData = this._exampleDatabase.data.slice().filter((issue: TaskIssue) => {
         const searchStr = (issue.ticketno).toLowerCase();
         return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
       });
@@ -202,7 +201,7 @@ export class ExampleDataSource extends DataSource<Issue> {
   disconnect() { }
 
 
-  sortData(data: Issue[]): Issue[] {
+  sortData(data: TaskIssue[]): TaskIssue[] {
     if (!this._sort.active || this._sort.direction === '') {
       return data;
     }
@@ -214,10 +213,10 @@ export class ExampleDataSource extends DataSource<Issue> {
       switch (this._sort.active) {
         case 'ticketno': [propertyA, propertyB] = [a.ticketno, b.ticketno]; break;
         case 'ticketdesc': [propertyA, propertyB] = [a.ticketdesc, b.ticketdesc]; break;
-        case 'cdstatus': [propertyA, propertyB] = [a.cdstatus, b.cdstatus]; break;
-        case 'dtcreate': [propertyA, propertyB] = [a.dtcreate, b.dtcreate]; break;
-        case 'dtdue': [propertyA, propertyB] = [a.dtdue, b.dtdue]; break;
-        case 'esthrs': [propertyA, propertyB] = [a.esthrs, b.esthrs]; break;
+        case 'tickettype': [propertyA, propertyB] = [a.tickettype, b.tickettype]; break;
+        case 'dtassigned': [propertyA, propertyB] = [a.dtassigned, b.dtassigned]; break;
+        case 'dtrecived': [propertyA, propertyB] = [a.dtrecived, b.dtrecived]; break;
+        case 'spenthrs': [propertyA, propertyB] = [a.spenthrs, b.spenthrs]; break;
       }
 
       const valueA = isNaN(+propertyA) ? propertyA : +propertyA;

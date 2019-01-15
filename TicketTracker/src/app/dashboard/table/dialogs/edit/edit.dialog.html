@@ -34,7 +34,7 @@
 
     <div class="form">
       <mat-form-field color="accent">
-        <input matInput #dtcreate [(ngModel)]="createConvert" [matDatepicker]="dtcreate" placeholder="Choose a date"
+        <input matInput #dtcreate [(ngModel)]="createConvert" [matDatepicker]="dtcreate" placeholder="Created On"
           name="dtcreate" [min]="minCreatedDate" [max]="maxCreatedDate" (dateInput)="OnSelectCreateAt(createConvert)"
           required autocomplete="off">
         <mat-datepicker-toggle matSuffix [for]="dtcreate"></mat-datepicker-toggle>
@@ -45,7 +45,7 @@
 
     <div class="form">
       <mat-form-field color="accent">
-        <input matInput #dtdue [(ngModel)]="dueConvert" [matDatepicker]="dtdue" placeholder="Choose a date" name="dtdue"
+        <input matInput #dtdue [(ngModel)]="dueConvert" [matDatepicker]="dtdue" placeholder="Due On" name="dtdue"
           [min]="minDueDate" [max]="maxDueDate" (dateInput)="OnSelectDueAt(dueConvert)" required autocomplete="off">
         <mat-datepicker-toggle matSuffix [for]="dtdue"></mat-datepicker-toggle>
         <mat-datepicker #dtdue></mat-datepicker>

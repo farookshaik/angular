@@ -6,7 +6,7 @@
     <div class="form">
       <mat-form-field color="accent">
         <input matInput #input placeholder="Ticket No" [(ngModel)]="data.ticketno" name="ticketno" autocomplete="off"
-        maxlength="6"  myNumberOnly name="min" required>
+          maxlength="6" myNumberOnly required>
         <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
     </div>
@@ -24,9 +24,8 @@
 
     <div class="form">
       <mat-form-field color="accent">
-        <input matInput #dtcreate [(ngModel)]="data.dtcreate" [matDatepicker]="dtcreate" placeholder="Choose a date"
-          [min]="minCreatedDate" [max]="maxCreatedDate" name="dtcreate" (dateInput)="OnSelectCreateAt(data.dtcreate)"
-          required autocomplete="off">
+        <input matInput #dtcreate [(ngModel)]="data.dtcreate" [matDatepicker]="dtcreate" placeholder="Created On" [min]="minCreatedDate"
+          [max]="maxCreatedDate" name="dtcreate" (dateInput)="OnSelectCreateAt(data.dtcreate)" required autocomplete="off">
         <mat-datepicker-toggle matSuffix [for]="dtcreate"></mat-datepicker-toggle>
         <mat-datepicker #dtcreate></mat-datepicker>
         <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
@@ -35,7 +34,7 @@
 
     <div class="form">
       <mat-form-field color="accent">
-        <input matInput [(ngModel)]="data.dtdue" [matDatepicker]="dtdue" placeholder="Choose a date" name="dtdue" [min]="minDueDate"
+        <input matInput [(ngModel)]="data.dtdue" [matDatepicker]="dtdue" placeholder="Due On" name="dtdue" [min]="minDueDate"
           [max]="maxDueDate" (dateInput)="OnSelectDueAt(data.dtdue)" required autocomplete="off">
         <mat-datepicker-toggle matSuffix [for]="dtdue"></mat-datepicker-toggle>
         <mat-datepicker #dtdue></mat-datepicker>
@@ -46,20 +45,20 @@
     <div class="form">
       <mat-form-field color="accent">
         <input matInput #input type="number" placeholder="Est Hrs" [(ngModel)]="data.esthrs" name="esthrs" [customMin]="minNum"
-          [customMax]="maxNum" required  [formControl]="num" autocomplete="off">
-          <mat-error *ngIf="num.invalid">
-            <div *ngFor="let error of getErrors(num)">
-               {{ getMaxErrorMessage(error) }}
-            </div>
-          </mat-error>
+          [customMax]="maxNum" required [formControl]="num" autocomplete="off">
+        <mat-error *ngIf="num.invalid">
+          <div *ngFor="let error of getErrors(num)">
+            {{ getMaxErrorMessage(error) }}
+          </div>
+        </mat-error>
         <!-- <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error> -->
       </mat-form-field>
     </div>
 
     <div mat-dialog-actions>
 
-      <button mat-button  class="btn btn-warning btn-round tab-link" [disabled]="!formControl.valid"
-        [mat-dialog-close]="1" (click)="confirmAdd()">Save</button>
+      <button mat-button class="btn btn-warning btn-round tab-link" [disabled]="!formControl.valid" [mat-dialog-close]="1"
+        (click)="confirmAdd()">Save</button>
       <button mat-button class="btn btn-warning btn-round tab-link" (click)="onNoClick()" tabindex="-1">Cancel</button>
     </div>
   </form>

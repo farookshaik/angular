@@ -16,6 +16,7 @@ import { LockComponent } from './page/lock/lock.component';
 import { RegisterComponent } from './page/register/register.component';
 import { AuthGuard } from './shared/guard';
 import { NgModule } from '@angular/core';
+import { TaskComponent } from './dashboard/task/task.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -24,8 +25,9 @@ const routes: Routes = [
   {
     path: 'dashboard', component: RootComponent, children: [
       { path: '', component: HomeComponent },
-      { path: 'profile', component: ProfileComponent },
+      // { path: 'profile', component: ProfileComponent },
       { path: 'table', component: TableComponent },
+      { path: 'task', component: TaskComponent },
       // { path: 'notification', component: NotificationComponent },
       // { path: 'alert', component: SweetAlertComponent },
       // { path: 'settings', component: SettingsComponent },

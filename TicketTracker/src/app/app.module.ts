@@ -42,6 +42,11 @@ import { NumberOnlyDirective } from './shared/util/number.directive';
 import { StringOnlyDirective } from './shared/util/string.directive';
 import { CustomMinDirective } from './shared/util/custom-min-validator.directive';
 import { CustomMaxDirective } from './shared/util/custom-max-validator.directive';
+import { AddTaskDialogComponent } from './dashboard/task/dialogs/add/addtask.dialog.component';
+import { EditTaskDialogComponent } from './dashboard/task/dialogs/edit/edittask.dialog.component';
+import { DeleteTaskDialogComponent } from './dashboard/task/dialogs/delete/deletetask.dialog.component';
+import { TaskComponent } from './dashboard/task/task.component';
+import { DataTaskService } from './dashboard/task/services/datatask.service';
 
 
 
@@ -56,6 +61,7 @@ import { CustomMaxDirective } from './shared/util/custom-max-validator.directive
     FigurecardComponent,
     ImagecardComponent,
     TableComponent,
+    TaskComponent,
     NotificationComponent,
     MsgIconBtnComponent,
     SweetAlertComponent,
@@ -73,6 +79,9 @@ import { CustomMaxDirective } from './shared/util/custom-max-validator.directive
     EditDialogComponent,
     DeleteDialogComponent,
     AlertDialogComponent,
+    AddTaskDialogComponent,
+    EditTaskDialogComponent,
+    DeleteTaskDialogComponent,
     NumberOnlyDirective,
     StringOnlyDirective,
     CustomMinDirective,
@@ -104,9 +113,12 @@ import { CustomMaxDirective } from './shared/util/custom-max-validator.directive
     AddDialogComponent,
     EditDialogComponent,
     DeleteDialogComponent,
+    AddTaskDialogComponent,
+    EditTaskDialogComponent,
+    DeleteTaskDialogComponent,
     AlertDialogComponent
   ],
-  providers: [AlertDialogComponent, DataService, AuthGuard, {
+  providers: [AlertDialogComponent, DataService, DataTaskService, AuthGuard, {
     provide: HTTP_INTERCEPTORS,
     useClass: HttpRequestInterceptor,
     multi: true

@@ -1,0 +1,90 @@
+<div class="container">
+  <h3 mat-dialog-title>Add New UI Ticket</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="onFormSubmit(formControl)" #formControl="ngForm">
+
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #input placeholder="Ticket No" [(ngModel)]="data.ticketno" name="ticketno" autocomplete="off"
+          maxlength="6" myNumberOnly required>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <textarea matInput #input placeholder="Ticket Description" [(ngModel)]="data.ticketdesc" name="ticketdesc"
+          maxlength="100" autocomplete="off" required></textarea>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <mat-select placeholder="Select Ticket Type" [(value)]="selectedTicketTypeValue" (selectionChange)="onChangeStatus($event.value)"
+          ngModel name="tickettype" required>
+          <mat-option *ngFor="let element of TicketTypeData" [value]="element.value">
+            {{element.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="selectControl.hasError('required')">Required Field</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <mat-select placeholder="Select Assignee" [(value)]="selectedAssigneeValue" (selectionChange)="onAssigneeChangeStatus($event.value)"
+          ngModel name="assigneetype" required>
+          <mat-option *ngFor="let element of AssigneeData" [value]="element.value">
+            {{element.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="selectControl.hasError('required')">Required Field</mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #dtassigned [(ngModel)]="data.dtassigned" [matDatepicker]="dtassigned" placeholder="Date Assigned"
+          [min]="minCreatedDate" [max]="maxCreatedDate" name="dtassigned" (dateInput)="OnSelectCreateAt(data.dtassigned)"
+          required autocomplete="off">
+        <mat-datepicker-toggle matSuffix [for]="dtassigned"></mat-datepicker-toggle>
+        <mat-datepicker #dtassigned></mat-datepicker>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput [(ngModel)]="data.dtrecived" [matDatepicker]="dtrecived" placeholder="Date Received" name="dtrecived"
+          [min]="minDueDate" [max]="maxDueDate" (dateInput)="OnSelectDueAt(data.dtrecived)" required autocomplete="off">
+        <mat-datepicker-toggle matSuffix [for]="dtrecived"></mat-datepicker-toggle>
+        <mat-datepicker #dtrecived></mat-datepicker>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #input type="number" placeholder="Hrs Spent" [formControl]="num" [(ngModel)]="data.spenthrs"
+          name="spenthrs" id="spenthrs" [customMin]="minNum" [customMax]="maxNum"
+          required autocomplete="off">
+        <mat-error *ngIf="num.invalid">
+          <div *ngFor="let error of getErrors(num)">
+            {{ getMaxErrorMessage(error) }}
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+
+      <button mat-button class="btn btn-warning btn-round tab-link" [disabled]="!formControl.valid" [mat-dialog-close]="1"
+        (click)="confirmAdd()">Save</button>
+      <button mat-button class="btn btn-warning btn-round tab-link" (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>

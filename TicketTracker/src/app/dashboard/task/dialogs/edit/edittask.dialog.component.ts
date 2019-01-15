@@ -1,23 +1,36 @@
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Component, Inject } from '@angular/core';
-import { DataService } from '../../services/data.service';
+import { DataTaskService } from '../../services/datatask.service';
 import { FormControl, Validators } from '@angular/forms';
-import { Issue } from '../../models/issue';
+import { TaskIssue } from '../../models/taskissue';
 
 
 @Component({
-  selector: 'app-edit.dialog',
-  templateUrl: '../../dialogs/edit/edit.dialog.html',
-  styleUrls: ['../../dialogs/edit/edit.dialog.css']
+  selector: 'app-edittask.dialog',
+  templateUrl: '../../dialogs/edit/edittask.dialog.html',
+  styleUrls: ['../../dialogs/edit/edittask.dialog.css']
 })
-export class EditDialogComponent {
+export class EditTaskDialogComponent {
   selectControl = new FormControl('', [Validators.required]);
-  public statussData = [
+  public statusData = [
     { "name": 'Open', "value": 'O' },
     { "name": 'Completed', "value": 'C' },
     { "name": 'Work in Progress', "value": 'W' }
 
   ];
+  public TicketTypeData = [
+    { "name": 'CR', "value": 'CR' },
+    { "name": 'Bug', "value": 'Bug' },
+    { "name": 'ReWork', "value": 'ReWork' }
+
+  ];
+  public AssigneeData = [
+    { "name": 'Saki', "value": 'Saki' },
+    { "name": 'Jozef', "value": 'Jozef' },
+    { "name": 'Gaurav', "value": 'Gaurav' }
+
+  ];
+
   minCreatedDate: Date; maxCreatedDate: Date;
 
   minDueDate: Date; maxDueDate: Date;
@@ -30,24 +43,27 @@ export class EditDialogComponent {
   ]);
   selectedValue: string;
   num: FormControl;
+  selectedTicketTypeValue: string;
+  selectedAssigneeValue: string;
 
 
-  constructor(public dialogRef: MatDialogRef<EditDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Issue, public dataService: DataService) {
+  constructor(public dialogRef: MatDialogRef<EditTaskDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: TaskIssue, public dataService: DataTaskService) {
     this.num = new FormControl();
     this.minCreatedDate = new Date(2017, 0, 1);
     this.maxCreatedDate = new Date(2027, 0, 1);
 
     this.minDueDate = new Date(2017, 0, 1);
     this.maxDueDate = new Date(2027, 0, 1);
-    this.createConvert = new Date(data.dtcreate);
+    this.createConvert = new Date(data.dtassigned);
     this.createConvert.setDate(this.createConvert.getDate() + 1);
 
-    this.dueConvert = new Date(data.dtdue);
+    this.dueConvert = new Date(data.dtrecived);
     this.dueConvert.setDate(this.dueConvert.getDate() + 1);
 
     this.selectedValue = data.cdstatus;
-
+    this.selectedTicketTypeValue = data.tickettype;
+    this.selectedAssigneeValue = data.assignee;
   }
 
   getErrorMessage() {
@@ -57,11 +73,18 @@ export class EditDialogComponent {
   getErrors(ctrl) {
     return Object.keys(ctrl.errors);
   }
-  onChangeStatus(value) {
+  onChangeTicketStatus(value: string) {
     this.data.cdstatus = value;
-    console.log(value);
-
   }
+
+  onAssigneeChangeStatus(value: string) {
+    this.data.assignee = value;
+  }
+
+  onChangeTicketType(value: string) {
+    this.data.tickettype = value;
+  }
+
   submit() {
     // emppty stuff
   }
@@ -87,8 +110,11 @@ export class EditDialogComponent {
     this.maxCreatedDate = new Date($event.getFullYear(), $event.getMonth(), $event.getDate());
   }
   public confirmUpdate(): void {
-    this.data['dtcreate'] = this.createConvert;
-    this.data['dtdue'] = this.dueConvert;
+    this.data['dtassigned'] = this.createConvert;
+    this.data['dtrecived'] = this.dueConvert;
+    // this.data['tickettype'] = this.selectedTicketTypeValue;
+    // this.data['assignee'] = this.selectedAssigneeValue;
+    // this.data['cdstatus'] = this.selectedValue;
     this.dataService.updateIssue(this.data);
   }
 

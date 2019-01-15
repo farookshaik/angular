@@ -1,0 +1,101 @@
+<div class="container">
+  <h3 mat-dialog-title>Edit a Ticket</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #input placeholder="Ticket No" [(ngModel)]="data.ticketno" name="ticketno" autocomplete="off"
+          maxlength="6" readonly required>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <textarea matInput #input placeholder="Ticket Description" [(ngModel)]="data.ticketdesc" name="ticketdesc"
+          maxlength="100" autocomplete="off" required></textarea>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <mat-select id="ticketType" name="ticketType" placeholder="Select Ticket Type" [(value)]="selectedTicketTypeValue"
+          (selectionChange)="onChangeTicketType($event.value)" required>
+          <mat-option *ngFor="let element of TicketTypeData" [value]="element.value">
+            {{element.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="selectControl.hasError('required')">Required Field</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <mat-select id="assigneeType" name="assigneeType" placeholder="Select Assignee" [(value)]="selectedAssigneeValue"
+          (selectionChange)="onAssigneeChangeStatus($event.value)" required>
+          <mat-option *ngFor="let element of AssigneeData" [value]="element.value">
+            {{element.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="selectControl.hasError('required')">Required Field</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field>
+        <mat-select id="statusType" name="statusType" placeholder="Select Status" [(value)]="selectedValue"
+          (selectionChange)="onChangeTicketStatus($event.value)" required>
+          <mat-option *ngFor="let element of statusData" [value]="element.value">
+            {{element.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="selectControl.hasError('required')">Required Field</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #dtassigned [(ngModel)]="createConvert" [matDatepicker]="dtassigned" placeholder="Date Assigned"
+          name="dtassigned" [min]="minCreatedDate" [max]="maxCreatedDate" (dateInput)="OnSelectCreateAt(createConvert)"
+          required autocomplete="off">
+        <mat-datepicker-toggle matSuffix [for]="dtassigned"></mat-datepicker-toggle>
+        <mat-datepicker #dtassigned></mat-datepicker>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #dtrecived [(ngModel)]="dueConvert" [matDatepicker]="dtrecived" placeholder="Date Received"
+          name="dtrecived" [min]="minDueDate" [max]="maxDueDate" (dateInput)="OnSelectDueAt(dueConvert)" required
+          autocomplete="off">
+        <mat-datepicker-toggle matSuffix [for]="dtrecived"></mat-datepicker-toggle>
+        <mat-datepicker #dtrecived></mat-datepicker>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #input type="number" placeholder="Est Hrs" [(ngModel)]="data.spenthrs" name="spenthrs"
+          [customMin]="minNum" [customMax]="maxNum" [formControl]="num" required autocomplete="off">
+
+        <mat-error *ngIf="num.invalid">
+          <div *ngFor="let error of getErrors(num)">
+            {{ getMaxErrorMessage(error) }}
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+
+
+    <div mat-dialog-actions>
+      <button mat-button [type]="submit" class="btn btn-warning btn-round tab-link" [disabled]="!formControl.valid"
+        [mat-dialog-close]="1" (click)="confirmUpdate()">Save</button>
+      <button mat-button class="btn btn-warning btn-round tab-link" (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>
