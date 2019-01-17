@@ -1,0 +1,33 @@
+<div class="card card-block login-card">
+  <h3 class="form-label">Welcome to E-Portal</h3>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="input-group">
+
+      <span class="input-group-addon addon-left" id="username">
+        <i class="fa fa-user fa-fw"></i>
+      </span>
+      <input formControlName="othpID" class="form-control with-primary-addon" OnlyNumber="true" placeholder="OTHP ID"
+        type="text" [ngClass]="{ 'is-invalid': submitted && f.othpID.errors }">
+      <div *ngIf="submitted && f.othpID.errors" class="invalid-feedback">
+        <div *ngIf="f.othpID.errors.required">OTHP ID is required</div>
+      </div>
+
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon addon-left" id="password">
+        <i class="fa fa-lock fa-fw"></i>
+      </span>
+      <input formControlName="password" class="form-control with-primary-addon" placeholder="PASSWORD" type="password"
+        [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+      </div>
+    </div>
+
+    <div class="input-group" style="margin-left:36%">
+      <button class="btn btn-lg btn-primary">Login</button>
+      <!-- <a href="/pages/index" class="btn btn-link">Register Now. →</a> -->
+    </div>
+
+  </form>
+</div>

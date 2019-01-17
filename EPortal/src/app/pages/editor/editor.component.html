@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-2 col-md-offset-2 pull-right">
+   <!-- <h4>Select a Notice</h4> -->
+    <!-- <ng-select [allowClear]="true" [items]="items" (data)="refreshValue($event)" (selected)="selected($event)"
+      placeholder="No Notice Selected">
+    </ng-select> -->
+  </div>
+
+</div>
+
+<div *ngIf="isLoaded" style="text-align: center;">
+  <button (click)="prevPage()" class="btn btn-primary btn-xs" [disabled]="page === 1">Prev</button>
+  <span>{{ page }} / {{ totalPages }}</span>
+  <button (click)="nextPage()" class="btn btn-primary btn-xs" [disabled]="page === totalPages">Next</button>
+  <!-- <input (change)="onFileSelected()" type="file" id="file"> -->
+  <!-- <input [(ngModel)]="page" type="text" id="page"> -->
+</div>
+
+
+
+
+<pdf-viewer [src]="pdfsrc" show-toolbar="true" [render-text]="true" [page]="page" (after-load-complete)="afterLoadComplete($event)"
+  [show-all]="false" style="display:block;">
+</pdf-viewer>

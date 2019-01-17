@@ -1,0 +1,21 @@
+body {
+
+  background-color: #5A4281;
+}
+.table tr.active td {
+  background-color: #5A4281 !important;
+  color: white;
+
+}
+
+
+.form-group.required .control-label:after {
+  content: "*";
+  color: red;
+}
+
+
+.bg-primary, .my-pagination /deep/ .ngx-pagination a:hover, .my-pagination /deep/ .ngx-pagination .current {
+  background: linear-gradient(to top right, #5A4281, #5A4281) !important;
+  background: -webkit-linear-gradient(to top right, #5A4281, #5A4281 !important);
+}

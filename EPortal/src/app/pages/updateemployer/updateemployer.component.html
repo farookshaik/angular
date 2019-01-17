@@ -1,0 +1,163 @@
+<div *ngIf="!buttonWasClicked">
+  <div class="container">
+    <div class="panel panel-default" style="margin-left: -17%;">
+      <div class="panel-body">
+        <form class="form-inline" role="form">
+          <div class="form-group required">
+            <label class="filter-col control-label" for="pref-perpage">Employer OTHP ID : </label>
+            <input type="text" class="form-control" id="pref-search" disabled [(ngModel)]="employersearchInData.othp_id"
+              [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group">
+            <label class="filter-col" style="margin-right:0;" for="pref-search">Employee Last Name: </label>
+            &nbsp;
+            <input type="text" class="form-control" id="pref-search" autocomplete="off" [(ngModel)]="employersearchInData.last_name"
+              [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group">
+            <label class="filter-col" style="margin-right:0;" for="pref-orderby">Employee SSN : </label>
+            &nbsp;
+            <input type="text" class="form-control" id="pref-search" autocomplete="off" [(ngModel)]="employersearchInData.mem_ssn"
+              maxlength="10" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group">
+            <label class="filter-col" style="margin-right:0;" for="pref-orderby">IW Begin Date : </label>
+            &nbsp;
+            <input type="text" id="fromdate" placeholder="Choose IW Date" class="form-control" bsDatepicker [(ngModel)]="employersearchInData.iw_begin"
+              [maxDate]="minDate" [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY' }" autocomplete="off" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group">
+
+            <button type="submit" (click)="OnEmployerSearch()" class="btn btn-primary filter-col">
+              <span class="fa fa-search fa-fw"></span> Search
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row" style="margin-top:2%">
+    <div class="col-md-12">
+      <card cardTitle="">
+        <tabset id="tabs3" theme="justified">
+          <tab-content for="tabs3" tabTitle="Response Pending" [active]="true">
+
+            <tabset id="tabsInner">
+              <tab-content for="tabsInner" tabTitle="IW Awaiting Response" [active]="true">
+                <table class="table table-striped table-bordered">
+                  <thead>
+                    <tr>
+                      <th *ngFor="let col of IWResponsecolumnDefs">{{col.headerName}}</th>
+                  </thead>
+                  <tbody>
+                    <tr style="cursor: pointer;" (click)="setClickedRow(i)" (dblclick)="setDoubleClickedRow(i)"
+                      [class.active]="i == selectedRow" *ngFor="let col of employersearchRecordData  | paginate: { itemsPerPage: 10, currentPage: pageNumber }; let i = index">
+                      <td> {{col.id_member}} </td>
+                      <td style="text-align:left;"> {{col.member_name}} </td>
+                      <td> {{col.mem_ssn}} </td>
+                      <td> {{col.id_docket}} </td>
+                      <td> {{col.ivd_id_case}} </td>
+                      <td> {{col.imiw_begin_date | date: 'MM/dd/yyyy'}} </td>
+                      <td> {{col.imiw_sent | date: 'MM/dd/yyyy'}} </td>
+                      <td>
+                        <button type="submit" class="btn btn-primary btn-xl" (click)="OnViewNotice(i,true);">View
+                          Notice</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pull-right mt-0">
+                  <pagination-controls class="my-pagination" (pageChange)="pageNumber = $event"></pagination-controls>
+                </div>
+              </tab-content>
+              <tab-content for="tabsInner" tabTitle="Employment Verifications">
+                <table class="table table-striped table-bordered">
+                  <thead>
+                    <tr>
+                      <th *ngFor="let Empcol of EmpVerificationcolumnDefs">{{Empcol.headerName}}</th>
+                  </thead>
+                  <tbody>
+                    <tr style="cursor: pointer;" (click)="setClickedRow(i)" (dblclick)="setDoubleClickedRow(i)"
+                      [class.active]="i == selectedRow" *ngFor="let col of employersearchRecordData  | paginate: { itemsPerPage: 10, currentPage: pageNumber }; let i = index">
+                      <td> {{col.id_member}} </td>
+                      <td style="text-align:left;"> {{col.member_name}} </td>
+                      <td> {{col.mem_ssn}} </td>
+                      <td> {{col.id_docket}} </td>
+                      <td> {{col.ivd_id_case}} </td>
+
+                      <td>
+                        <button type="submit" class="btn btn-primary btn-xl" (click)="OnViewNotice(i,true);">View
+                          Notice</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pull-right mt-0">
+                  <pagination-controls class="my-pagination" (pageChange)="pageNumber = $event"></pagination-controls>
+                </div>
+
+              </tab-content>
+            </tabset>
+
+
+
+          </tab-content>
+          <tab-content for="tabs3" tabTitle="Current Employees">
+
+          </tab-content>
+          <tab-content for="tabs3" tabTitle="Employee List History">
+
+          </tab-content>
+        </tabset>
+      </card>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div *ngIf="buttonWasClicked">
+  <button type="submit" class="btn btn-primary btn-xl" (click)="OnBackToForm();">
+    Back</button>
+  <button type="submit" class="btn btn-primary btn-xl pull-right" (click)="OnClickPrint();">
+    Print</button>
+  <div class="container" style="border: 1px solid #5A4281;padding: 7px;">
+    <div class="row">
+      <div class="col-md-6 center-block">
+        <h3 style="text-align:center; margin-left:50%">Employment Status</h3>
+        <div class="form-group">
+          <div class="col-md-12">
+            <input class="radio" type="radio" id="default-radio1" name="radio" checked>
+            <label class="radio-label" for="default-radio1"><b>I accept</b> this electronic notice of income
+              withholding</label>
+          </div>
+          <div class="col-md-12">
+            <input class="radio" type="radio" id="default-radio2" name="radio">
+            <label class="radio-label" for="default-radio2">This individual is <b> no longer </b> employer by this
+              firm.
+              The requested information is provided from our pay records.</label>
+          </div>
+          <div class="col-md-12">
+            <input class="radio" type="radio" id="default-radio3" name="radio">
+            <label class="radio-label" for="default-radio3">This individual has <b>never </b> been employed this
+              firm.
+              Therefore, the information requested is not available.</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-left:40%;">
+
+      <button type="submit" class="btn btn-primary btn-xl" (click)="OnBackToForm();">
+        Save</button>
+      <button type="submit" class="btn btn-primary btn-xl" (click)="OnClickPrint();">
+        Cancel</button>
+
+    </div>
+  </div>
+
+</div>

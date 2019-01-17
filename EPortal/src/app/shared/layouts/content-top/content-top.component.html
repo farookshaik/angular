@@ -1,0 +1,9 @@
+<div class="content-wrap">
+  <!-- <a routerLink="/pages/index" *ngIf="routeTitle !== 'Dashboard'" (click)="returnHome()">Dashboard</a>
+  <i *ngIf="routeTitle !== 'Dashboard'">/</i>
+  <span>{{routeTitle}}</span> -->
+
+  <a routerLink="/pages/profile" *ngIf="routeTitle !== 'User Profile'" (click)="returnHome()">User Profile</a>
+  <i *ngIf="routeTitle !== 'User Profile'">/</i>
+  <span>{{routeTitle}}</span>
+</div>

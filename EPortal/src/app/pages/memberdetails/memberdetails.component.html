@@ -1,0 +1,197 @@
+<div *ngIf="!verifybuttonWasClicked">
+  <div class="container">
+    <div class="row">
+      <div class="card" style="margin-left: -230px;">
+        <div class="card-header " style="border-color: #5A4281;">
+          <div class="card-body">
+            <form role="form">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group form-inline">
+                    <label class="filter-col control-label" style="margin-right:0;" for="pref-perpage">OTHP ID :
+                    </label>
+
+                    <input type="text" class="form-control no-border" id="pref-search" (input)="onMemberSearch()"
+                      [(ngModel)]="membersearchInData.id_othp_employer" [ngModelOptions]="{standalone: true}">
+                  </div> <!-- form group [rows] -->
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group form-inline">
+                    <label class="filter-col" style="margin-right:0;" for="pref-search">Employer Name : </label>
+
+                    <input type="text" class="form-control no-border" id="pref-search">
+                  </div><!-- form group [search] -->
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group form-inline">
+                    <label class="filter-col" style="margin-right:0;" for="pref-orderby">Employee DCN : </label>
+
+                    <input type="text" class="form-control no-border" id="pref-search">
+                  </div> <!-- form group [order by] -->
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group form-inline">
+                    <label class="filter-col" style="margin-right:0;" for="pref-orderby">Employee Name : </label>
+
+                    <input type="text" class="form-control no-border" id="pref-search">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group form-inline">
+                    <label class="filter-col" style="margin-right:0;" for="pref-orderby">Employee SSN : </label>
+
+                    <input type="text" class="form-control no-border" id="pref-search">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group form-inline">
+                    <label class="filter-col" style="margin-right:0;" for="pref-orderby">Employee Hire Date : </label>
+
+                    <input type="text" class="form-control no-border" id="pref-search">
+                  </div>
+                </div>
+
+
+                <!-- <div class="col-md-3">
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary filter-col">
+                    <span class="fa fa-search fa-fw"></span> Search
+                  </button>
+                </div>
+              </div> -->
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="row" style="margin-top:3%">
+    <div class="col-md-12">
+      <card cardTitle="">
+        <tabset id="CurrentIWtabs" theme="justified">
+          <tab-content for="CurrentIWtabs" tabTitle="Current IW" [active]="true">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th *ngFor="let col of columnDefs">{{col.headerName}}</th>
+              </thead>
+              <tbody>
+                <tr style="cursor: pointer;" (click)="setClickedMemberRow(i)" [class.active]="i == selectedRow" *ngFor="let row of membersearchRecordData | paginate: { itemsPerPage: 10, currentPage: pageNumber }; let i = index">
+                  <td> {{row.CaseId}} </td>
+                  <td> {{row.EnteredDate | date: 'dd/MM/yyyy'}} </td>
+                  <!-- <td> {{row.OthpEmployerId}} </td>
+                        <td style="text-align:left;"> {{row.OtherPartyName}} </td>
+                        <td> {{row.MemberId}} </td>
+                        <td style="text-align:left;"> {{row.NameDcn}} </td>
+                        <td style="text-align:left;"> {{row.TypeSource}} </td>
+                        <td style="text-align:left;"> {{row.CdIwnPer}} </td>
+
+                        -->
+                  <td> {{row.EndDate | date: 'dd/MM/yyyy'}} </td>
+                  <td style="text-align:right;"> {{row.AmtCurIwnTot | number:'2.2-5'}} </td>
+                  <!-- <td style="text-align:left;"> {{row.CdIwnStatus}} </td> -->
+                  <td>
+                    <button type="submit" class="btn btn-primary btn-xl" (click)="OnViewNotice(thirdModal,i);">View
+                      Notice</button>
+                  </td>
+                  <td>
+                    <button type="submit" class="btn btn-success btn-xl" (click)="OnViewCS070Notice(i,true);">Verify</button>
+                  </td>
+                  <td>
+                    <button type="submit" class="btn btn-danger btn-xl" (click)="OnViewCS006Notice(i,true);">Terminate</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="pull-right mt-0">
+              <pagination-controls class="my-pagination" (pageChange)="pageNumber = $event"></pagination-controls>
+            </div>
+          </tab-content>
+          <tab-content for="CurrentIWtabs" tabTitle="IW History">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th *ngFor="let col of columnDefs">{{col.headerName}}</th>
+              </thead>
+              <tbody>
+                <tr style="cursor: pointer;" (click)="setClickedMemberRow(i)" [class.active]="i == selectedRow" *ngFor="let row of membersearchRecordData | paginate: { itemsPerPage: 10, currentPage: pageNumber }; let i = index">
+                  <td> {{row.CaseId}} </td>
+                  <td> {{row.EnteredDate | date: 'dd/MM/yyyy'}} </td>
+                  <!-- <td> {{row.OthpEmployerId}} </td>
+                            <td style="text-align:left;"> {{row.OtherPartyName}} </td>
+                            <td> {{row.MemberId}} </td>
+                            <td style="text-align:left;"> {{row.NameDcn}} </td>
+                            <td style="text-align:left;"> {{row.TypeSource}} </td>
+                            <td style="text-align:left;"> {{row.CdIwnPer}} </td>
+
+                            -->
+                  <td> {{row.EndDate | date: 'dd/MM/yyyy'}} </td>
+                  <td style="text-align:right;"> {{row.AmtCurIwnTot | number:'2.2-5'}} </td>
+                  <!-- <td style="text-align:left;"> {{row.CdIwnStatus}} </td> -->
+                  <td>
+                    <button type="submit" class="btn btn-primary btn-xl" (click)="OnViewNotice(thirdModal,i);">View
+                      Notice</button>
+                  </td>
+                  <td>
+                    <button type="submit" class="btn btn-success btn-xl" (click)="OnViewCS070Notice(i,true);">Verify</button>
+                  </td>
+                  <td>
+                    <button type="submit" class="btn btn-danger btn-xl" (click)="OnViewCS006Notice(i,true);">Terminate</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="pull-right mt-0">
+              <pagination-controls class="my-pagination" (pageChange)="pageNumber = $event"></pagination-controls>
+            </div>
+          </tab-content>
+        </tabset>
+      </card>
+
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="verifybuttonWasClicked">
+  <button type="submit" class="btn btn-primary btn-xl" (click)="OnBackToForm();">
+    Back</button>
+  <button type="submit" class="btn btn-primary btn-xl pull-right" (click)="OnClickPrint();">
+    Print</button>
+  <div style="text-align: center;">
+    <button (click)="prevPage()" class="btn btn-primary btn-xs" [disabled]="page === 1">Prev</button>
+    <span>{{ page }} / {{ totalPages }}</span>
+    <button (click)="nextPage()" class="btn btn-primary btn-xs" [disabled]="page === totalPages">Next</button>
+  </div>
+  <!-- pdfSrc="/assets/demo.pdf" -->
+  <!--
+  <div style="width: 800px; height: 400px">
+    <ng2-pdfjs-viewer #pdfViewer pdfSrc="pdfSrc" [pdfJsFolder]="'pdfjs'" [externalWindow]="false" [downloadFileName]="'mytestfile.pdf'"
+      [openFile]="false" [viewBookmark]="false" [download]="true"></ng2-pdfjs-viewer>
+  </div> -->
+  <pdf-viewer [src]="pdfsrc" show-toolbar="true" [original-size]="originalSize" [fit-to-page]="fitToPage" [render-text]="renderText"
+    [external-link-target]="'blank'" [autoresize]="autoresize" [page]="page" (after-load-complete)="afterLoadComplete($event)"
+    [zoom]="zoom" [show-all]="showAll" [stick-to-page]="stickToPage" style="display:block;"></pdf-viewer>
+
+  <div *ngIf="showCS006Template">
+    <app-cs006template></app-cs006template>
+
+  </div>
+  <div *ngIf="showCS070Template">
+
+    <app-cs070template></app-cs070template>
+  </div>
+</div>

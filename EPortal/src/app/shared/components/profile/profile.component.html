@@ -1,0 +1,286 @@
+<div class="card">
+  <div class="profile-wrap animated fadeIn">
+    <div class="info-wrap">
+      <div class="avatar-wrap">
+        <img src="{{avatarImgSrc}}" alt="avatar">
+      </div>
+      <span class="user-name">{{employerProfileRecordData.otherparty_name}}</span>
+      <span class="user-post">{{employerProfileRecordData.otherparty_id}}</span>
+      <span class="map-location">
+        <i class="fa fa-map-marker"></i>
+        <span>{{employerProfileRecordData.fein_id}}</span>
+      </span>
+    </div>
+    <div class="profile-head">
+      <img src="{{avatarImgSrc}}" alt="profile-head-bg" class="profile-head-bg">
+    </div>
+
+
+    <div class="row show-grid" style="margin-top: 2%; margin-left: 2%;">
+      <div class="col-4 col-md-4">
+        <card cardTitle="Corporate">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 control-label">Address Line 1 : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.addressLine1}}</label>
+              </div>
+              <!-- <div class="col-sm-7">
+                <span>{{employerProfileAddressRecordData.addressLine1}}</span>
+                <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.addressLine1"
+                  [ngModelOptions]="{standalone: true}" placeholder="Address Line 1" disabled>
+              </div> -->
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Address Line 2 : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.addressLine2}}</label>
+              </div>
+              <!-- <div class="col-sm-7">
+                <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.addressLine2"
+                  [ngModelOptions]="{standalone: true}" placeholder="Address Line 2">
+              </div> -->
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Address Line 3 : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.addressLine3}}</label>
+              </div>
+              <!-- <div class="col-sm-7">
+                <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.addressLine3"
+                  [ngModelOptions]="{standalone: true}" placeholder="Address Line 3">
+              </div> -->
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">City : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.city}}</label>
+
+              </div>
+              <!-- <div class="col-sm-7">
+                <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.city"
+                  [ngModelOptions]="{standalone: true}" placeholder="City">
+              </div> -->
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">State : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.state}}</label>
+                <!-- <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.state"
+                  [ngModelOptions]="{standalone: true}" placeholder="State"> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Zip : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.zip}}</label>
+                <!-- <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.zip"
+                  [ngModelOptions]="{standalone: true}" placeholder="Zip"> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">County : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.county}}</label>
+                <!-- <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.county"
+                  [ngModelOptions]="{standalone: true}" placeholder="County"> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Country : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.country}}</label>
+                <!-- <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.country"
+                  [ngModelOptions]="{standalone: true}" placeholder="Country"> -->
+              </div>
+            </div>
+            <!-- <div class="form-group" style="margin-top: 2%;margin-left: 35%">
+              <button type="submit" class="btn btn-primary">Update</button>
+              &nbsp;
+              <button class="btn btn-primary">Cancel</button>
+
+            </div> -->
+
+          </form>
+        </card>
+      </div>
+      <div class="col-4 col-md-4">
+        <card cardTitle="Health Plan Administrator">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 control-label">Address Line 1 : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.addressLine1}}</label>
+              </div>
+              <!-- <div class="col-sm-7">
+                    <span>{{employerProfileAddressRecordData.addressLine1}}</span>
+                    <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.addressLine1"
+                      [ngModelOptions]="{standalone: true}" placeholder="Address Line 1" disabled>
+                  </div> -->
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Address Line 2 : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.addressLine2}}</label>
+              </div>
+              <!-- <div class="col-sm-7">
+                    <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.addressLine2"
+                      [ngModelOptions]="{standalone: true}" placeholder="Address Line 2">
+                  </div> -->
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Address Line 3 : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.addressLine3}}</label>
+              </div>
+              <!-- <div class="col-sm-7">
+                    <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.addressLine3"
+                      [ngModelOptions]="{standalone: true}" placeholder="Address Line 3">
+                  </div> -->
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">City : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.city}}</label>
+
+              </div>
+              <!-- <div class="col-sm-7">
+                    <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.city"
+                      [ngModelOptions]="{standalone: true}" placeholder="City">
+                  </div> -->
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">State : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.state}}</label>
+                <!-- <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.state"
+                      [ngModelOptions]="{standalone: true}" placeholder="State"> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Zip : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.zip}}</label>
+                <!-- <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.zip"
+                      [ngModelOptions]="{standalone: true}" placeholder="Zip"> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">County : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.county}}</label>
+                <!-- <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.county"
+                      [ngModelOptions]="{standalone: true}" placeholder="County"> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Country : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.country}}</label>
+                <!-- <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.country"
+                      [ngModelOptions]="{standalone: true}" placeholder="Country"> -->
+              </div>
+            </div>
+            <!-- <div class="form-group" style="margin-top: 2%;margin-left: 35%">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                  &nbsp;
+                  <button class="btn btn-primary">Cancel</button>
+
+                </div> -->
+
+          </form>
+        </card>
+      </div>
+      <div class="col-4 col-md-4">
+        <card cardTitle="Pension Plan Administrator">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 control-label">Address Line 1 : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.addressLine1}}</label>
+              </div>
+              <!-- <div class="col-sm-7">
+                    <span>{{employerProfileAddressRecordData.addressLine1}}</span>
+                    <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.addressLine1"
+                      [ngModelOptions]="{standalone: true}" placeholder="Address Line 1" disabled>
+                  </div> -->
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Address Line 2 : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.addressLine2}}</label>
+              </div>
+              <!-- <div class="col-sm-7">
+                    <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.addressLine2"
+                      [ngModelOptions]="{standalone: true}" placeholder="Address Line 2">
+                  </div> -->
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Address Line 3 : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.addressLine3}}</label>
+              </div>
+              <!-- <div class="col-sm-7">
+                    <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.addressLine3"
+                      [ngModelOptions]="{standalone: true}" placeholder="Address Line 3">
+                  </div> -->
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">City : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.city}}</label>
+
+              </div>
+              <!-- <div class="col-sm-7">
+                    <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.city"
+                      [ngModelOptions]="{standalone: true}" placeholder="City">
+                  </div> -->
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">State : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.state}}</label>
+                <!-- <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.state"
+                      [ngModelOptions]="{standalone: true}" placeholder="State"> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Zip : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.zip}}</label>
+                <!-- <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.zip"
+                      [ngModelOptions]="{standalone: true}" placeholder="Zip"> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">County : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.county}}</label>
+                <!-- <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.county"
+                      [ngModelOptions]="{standalone: true}" placeholder="County"> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label">Country : </label>
+              <div class="col-sm-7">
+                <label for="inputEmail3" class="control-label">{{employerProfileAddressRecordData.country}}</label>
+                <!-- <input type="text" class="form-control" [(ngModel)]="employerProfileAddressRecordData.country"
+                      [ngModelOptions]="{standalone: true}" placeholder="Country"> -->
+              </div>
+            </div>
+            <!-- <div class="form-group" style="margin-top: 2%;margin-left: 35%">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                  &nbsp;
+                  <button class="btn btn-primary">Cancel</button>
+
+                </div> -->
+
+          </form>
+        </card>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row" style="margin-top: 3%;">
+    <!-- Validation -->
+    <div class="form-group col-lg-4">
+
+    </div>
+
+    <!-- Input Group -->
+    <div class="col-lg-4">
+
+      <div class="search-group">
+        <input type="text" id="empTextBox" class="search-input" [(ngModel)]="employersearchInData.othp_id" placeholder="Search"
+          (input)="onEmployerSearch()">
+        <button class="search-btn">
+          <i class="fa fa-search fa-fw"></i>
+        </button>
+      </div>
+      <!-- <input type="text" id="empTextBox" class="search-input" [(ngModel)]="employersearchInData.othp_id"
+            placeholder="Search" (input)="onEmployerSearch()">
+          <span class="input-group-addon searchcursor">
+            <i class="fa fa-search" (click)="onEmployerSearch()"></i>
+          </span> -->
+
+
+    </div>
+
+    <!-- Unstyled Input Group -->
+    <div class="col-lg-4">
+
+    </div>
+  </div>
+</div>
+<div class="row" style="margin-top:3%">
+
+  <div class="col-md-12">
+
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th *ngFor="let col of columnDefs">{{col.headerName}}</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let col of employersearchRecordData  | paginate: { itemsPerPage: pageSize, currentPage: pageNumber }; let i = index">
+          <td> {{col.id_member}} </td>
+          <td style="text-align:left;"> {{col.member_name}} </td>
+          <td> {{col.mem_ssn}} </td>
+          <td> {{col.id_docket}} </td>
+          <td style="text-align:left;"> {{col.cd_county}} </td>
+          <td> {{col.ivd_id_case}} </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pull-right mt-0">
+      <pagination-controls class="my-pagination" (pageChange)="pageNumber = $event"></pagination-controls>
+    </div>
+
+    <!-- <form class="pagination-wrapper">
+      <div class="form-group pages">
+        <pagination-controls class="my-pagination" id="pager" (pageChange)="p = $event" maxSize="9" directionLinks="true"
+          responsive="true" autoHide="false" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination"
+          screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page">
+        </pagination-controls>
+      </div>
+      <div class="form-group options pages">
+        <div class="input-group input-group-sm">
+          <select class="form-control" name="pageChangedName" [(ngModel)]="pageSize" (ngModelChange)="onEmployerSearch()">
+            <option>1</option>
+            <option>5</option>
+            <option>10</option>
+            <option>20</option>
+            <option>50</option>
+            <option>100</option>
+            <option>200</option>
+          </select>
+          <span class="input-group-addon addon-right">Per Page</span>
+        </div>
+      </div>
+    </form> -->
+
+  </div>
+</div>
