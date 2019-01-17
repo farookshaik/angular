@@ -1,0 +1,20 @@
+﻿[
+  {
+    "description": "Parole Domestic",
+    "currentyear": 835,
+    "previousyear": 810
+
+  },
+  {
+    "description": "Parole of CO",
+    "currentyear": 456,
+    "previousyear": 356
+
+  },
+  {
+    "description": "Parole - Absconders",
+    "currentyear": 398,
+    "previousyear": 389
+
+  }
+]

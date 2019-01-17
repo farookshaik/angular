@@ -1,0 +1,861 @@
+﻿{
+  "serviceList": [
+    {
+      "name": "TMC - Enforcement - AlertChart",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEnforcementAlertsChart",
+      "id": "GetEnforcementAlertsChart",
+      "recordSet": "\n      {\n\"MTH_REPORT\": \"FEB\"\n\"NO_PENDING_ALERT\": \"11\"\n\"PENDING_CASE_COUNT\": \"11\"\n\"NO_OVERDUE_ALERT\": \"3\"\n\"OVERDUE_CASE_COUNT\": \"3\"\n\"ID_ROW_KEY\": \"ENBR201602\"\n      }\n    ",
+      "notes": "Analyze Enforcement vs Alert Information",
+      "visualize": "Bar Graph"
+    },
+    {
+      "name": "TMC - Filter - Get All Region",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAllRegion",
+      "id": "GetAllRegion",
+      "recordSet": "\n      {\n\"ID_ROW_KEY\": \"NAME_REGION:040\"\n \"REGION_CODE\": \"040\"\n \"REGION_NAME\": \"FAYETTEVILLE\"\n      }\n    ",
+      "notes": "Get All Region and apply filter",
+      "visualize": "It\"s a filter So Combo Box"
+    },
+    {
+      "name": "TMC - Filter - All Area",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAllArea",
+      "id": "GetAllArea",
+      "recordSet": "\n      {\n\"AREA_CODE\": \"A1\"\n\" AREA_NAME\": \"NORTHEAST\"\n \"ID_ROW_KEY\": \"CD_AREA\":\"A1\"\n      }\n    ",
+      "notes": "Get All Area and apply filter",
+      "visualize": "It\"s a filter So Combo Box"
+    },
+    {
+      "name": "TMC - Filter - All Office",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAllOffice",
+      "id": "GetAllOffice",
+      "recordSet": "\n      {\n\"OFFICE_CODE\": \"011\"\n \"OFFICE_NAME\": \"STUTTGART OCSE\"\n \"ID_ROW_KEY\": \"CD_OFFICE_COUNTY\":\"011\"\n      }\n    ",
+      "notes": "Get All Office and apply filter",
+      "visualize": "It\"s a filter So Combo Box"
+    },
+    {
+      "name": "TMC - Filter- State Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetStateDtls",
+      "id": "GetStateDtls",
+      "recordSet": "Record Set",
+      "notes": "Get All State to Apply filter",
+      "visualize": "It\"s a filter So Combo Box"
+    },
+    {
+      "name": "TMC - Filter- All County ",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAllCounty",
+      "id": "GetAllCounty",
+      "recordSet": "\n      {\n\"COUNTY_CODE\": \"01\"\n \"COUNTY_NAME\": \"ARKANSAS\"\n \"ID_ROW_KEY\": \"CD_COUNTY_ACTS\":\"01\"\n      }\n    ",
+      "notes": "Get All County and Apply Filter",
+      "visualize": "It\"s a filter So Combo Box"
+    },
+    {
+      "name": "TMC - Month Filter - Case With Order Month Range",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCwoMonthRange",
+      "id": "GetCwoMonthRange",
+      "recordSet": "\n      {\n\"MonthRange\":\"1\"\n\"MonthRangeDesc\":\"1 MONTH\"\n      }\n    ",
+      "notes": "Inline Filter to Find Month Wise Case With Order Details",
+      "visualize": "It\"s a filter So Combo Box"
+    },
+    {
+      "name": "TMC - Month Filter -Locate - Month Range",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetLocateMonthRange",
+      "id": "GetLocateMonthRange",
+      "recordSet": "\n      {\n\"IndAgeing\": \"1\"\n \"IndAgeingDesc\": \"1 MONTH\"\n      }\n    ",
+      "notes": "Inline Filter to find Month Wise Locate Details",
+      "visualize": "It\"s a filter So Combo Box"
+    },
+    {
+      "name": "TMC - Establishment - Wait Activity Chart",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEstWaitActivityChart",
+      "id": "GetEstWaitActivityChart",
+      "recordSet": "\n      {\n\"RoleGroup\": \"CP\"\n\"CaseCnt1\": 201,\n      \"CaseCnt2\": 0,\n      \"CaseCnt3\": 0,\n      \"CaseCnt4\": 0,\n      \"CaseCnt5\": 0,\n      \"RemedyCnt1\": 201,\n      \"RemedyCnt2\": 0,\n      \"RemedyCnt3\": 0,\n      \"RemedyCnt4\": 0,\n      \"RemedyCnt5\": 0,\n      \"Percent\": 0.0,\n      \"ID_ROW_KEY\": \"ESBRWTRCP\"\n      }\n    ",
+      "notes": "Establishment -  Wait Activity By Role NCP,CP,Worker and etc.",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Enforcement - Wait Activity Chart",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEnfWaitActivityChart",
+      "id": "GetEnfWaitActivityChart",
+      "recordSet": "\n      {\n\"RoleGroup\": \"CP\"\n\"CaseCnt1\": 418,\n      \"CaseCnt2\": 0,\n      \"CaseCnt3\": 1,\n      \"CaseCnt4\": 0,\n      \"CaseCnt5\": 0,\n      \"RemedyCnt1\": 418,\n      \"RemedyCnt2\": 0,\n      \"RemedyCnt3\": 1,\n      \"RemedyCnt4\": 0,\n      \"RemedyCnt5\": 0,\n      \"Percent\": 0.0,\n      \"ID_ROW_KEY\": \"ENBRWTRCP\"\n      }\n    ",
+      "notes": "Enforcement Wait Activity Charts",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Alerts - Alerts Assigned to Worker",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetMyAlertSummary",
+      "id": "GetMyAlertSummary",
+      "recordSet": "\n      {\n\"ALERT_CNT\":21,\n      \"COUNT_CASE\":21,\n      \"COUNT_TOPRIGHT\":220,\n      \"DESC_NODE\":\"Pending Alerts\"\n\"ID_NODE\":\"MYPEN\"\n\"ID_PARENT\":\"\"\n\"ID_ROW_KEY\":\"MYALSMPENXX\"\n\"PERCENT_CASE\":9.55\n      }\n    ",
+      "notes": "Alerts Assigned to the Worker",
+      "visualize": "Tabular Data so use Grid Widget."
+    },
+    {
+      "name": "TMC - Alerts Aging- Alerts Assigned to Worker",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetMyAlertSummaryAging",
+      "id": "GetMyAlertSummaryAging",
+      "recordSet": "\n      {\n\"ID_NODE\": \"MYOVDEN\"\n\"ID_ROW_KEY\": \"MYALSMOVDEN1\"\n\"ID_PARENT\": \"MYOVD\"\n\"CD_CATEGORY\": \"\"\n\"DESC_NODE\": \"Enforcement\"\n\"NO_CASE\": 25,\n      \"NO_PERCENT\": 12.56,\n      \"COUNT_TOPRIGHT\": 0,\n      \"ALERT_CNT\": 0,\n      \"IND\": \"AGING\"\n\"DESC_CATEGORY\": \"Less than 10 days\"\n\"desc_node\": \"Less than 10 days\"\n\"NO_CASE_CNT\": 0.0,\n      \"NO_CASE_CATEGORY\": 0.0,\n      \"NO_CAT_COUNT\": 0.0,\n      \"COUNT_CATEGORY\": 0.0,\n      \"CAT_COUNT\": 0.0,\n      \"NO_CATEGORY\": 0.0,\n      \"CATEGORY_CNT\": 0.0,\n      \"NODE_ID\": \"MYOVDEN\"\n\"NO_CAT_CNT\": 0.0\n      }\n    ",
+      "notes": "Aging Details of Alerts Assigned to Worker",
+      "visualize": "Hierarchal data So Use tree Widget or Pivot Control "
+    },
+    {
+      "name": "TMC - Alerts - Subordinates Pending Alerts Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetPendingMyCaseAlertsDtls",
+      "id": "GetPendingMyCaseAlertsDtls",
+      "recordSet": "\n      {\n\"DESC_NODE\": \"Enforcement\"\n\"DUE_TODAY\": 3,\n      \"DUE_TODAY_ALERT_CNT\": 3,\n      \"FIRST_WEEK\": 97,\n      \"FIRST_WEEK_ALERT_CNT\": 101,\n      \"FOURTH_WEEK\": 14,\n      \"FOURTH_WEEK_ALERT_CNT\": 14,\n      \"ID_NODE\": \"EN\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ALQUPENREGUEN\"\n\"MORE_THAN_A_MONTHS\": 15,\n      \"SECOND_WEEK\": 85,\n      \"SECOND_WEEK_ALERT_CNT\": 85,\n      \"THIRD_WEEK\": 12,\n      \"THIRD_WEEK_ALERT_CNT\": 12\n      }\n    ",
+      "notes": "Alerts Assigned to the SubOrdinate Workers",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Alerts - My Pending Alerts Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetPendingMyAlertsDtls",
+      "id": "GetPendingMyAlertsDtls",
+      "recordSet": "\n      {\n\"DESC_NODE\": \"Enforcement\"\n\"DUE_TODAY\": 0,\n      \"DUE_TODAY_ALERT_CNT\": 0,\n      \"FIRST_WEEK\": 14,\n      \"FIRST_WEEK_ALERT_CNT\": 14,\n      \"FOURTH_WEEK\": 0,\n      \"FOURTH_WEEK_ALERT_CNT\": 0,\n      \"ID_NODE\": \"EN\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"MYALQUPENREGUEN\"\n\"MORE_THAN_A_MONTHS\": 0,\n      \"SECOND_WEEK\": 1,\n      \"SECOND_WEEK_ALERT_CNT\": 1,\n      \"THIRD_WEEK\": 0,\n      \"THIRD_WEEK_ALERT_CNT\": 0\n      }\n    ",
+      "notes": "Pending Alerts to the Worker",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Alerts My Case - Overdue Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAlertsMyCaseOverdueDtls",
+      "id": "GetAlertsMyCaseOverdueDtls",
+      "recordSet": "\n      {\n\"DESC_NODE\": \"Enforcement\"\n\"FIRST_WEEK\": 70,\n      \"FIRST_WEEK_ALERT_CNT\": 72,\n      \"FOURTH_WEEK\": 13,\n      \"FOURTH_WEEK_ALERT_CNT\": 13,\n      \"GTSIX_MONTH\": 250,\n      \"GTSIX_MONTH_ALERT_CNT\": 270,\n      \"ID_NODE\": \"EN\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ALQUOVDREGUEN\"\n\"ONETOTHREE_MONTH\": 70,\n      \"ONETOTHREE_MONTH_ALERT_CNT\": 72,\n      \"SECOND_WEEK\": 26,\n      \"SECOND_WEEK_ALERT_CNT\": 26,\n      \"THIRD_WEEK\": 14,\n      \"THIRD_WEEK_ALERT_CNT\": 14,\n      \"THREETOSIX_MONTH\": 0,\n      \"THREETOSIX_MONTH_ALERT_CNT\": 0\n      }\n    ",
+      "notes": "Overdue Alerts to the Workers pertaining to Cases",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - My Alerts - Overdue Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetMyAlertsOverdueDtls",
+      "id": "GetMyAlertsOverdueDtls",
+      "recordSet": "\n      {\n\"DESC_NODE\": \"Enforcement\"\n\"FIRST_WEEK\": 21,\n      \"FIRST_WEEK_ALERT_CNT\": 21,\n      \"FOURTH_WEEK\": 11,\n      \"FOURTH_WEEK_ALERT_CNT\": 11,\n      \"GTSIX_MONTH\": 64,\n      \"GTSIX_MONTH_ALERT_CNT\": 65,\n      \"ID_NODE\": \"EN\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"MYALQUOVDREGUEN\"\n\"ONETOTHREE_MONTH\": 29,\n      \"ONETOTHREE_MONTH_ALERT_CNT\": 29,\n      \"SECOND_WEEK\": 10,\n      \"SECOND_WEEK_ALERT_CNT\": 10,\n      \"THIRD_WEEK\": 13,\n      \"THIRD_WEEK_ALERT_CNT\": 13,\n      \"THREETOSIX_MONTH\": 0,\n      \"THREETOSIX_MONTH_ALERT_CNT\": 0\n      }\n    ",
+      "notes": "Overdue Alerts to the Subordinate Workers pertaining to Cases",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Alerts My Case - Overdue Supervisor Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAlertsMyCaseOverdueSupervisorDtls",
+      "id": "GetAlertsMyCaseOverdueSupervisorDtls",
+      "recordSet": "\n      {\n\"DESC_NODE\": \"Enforcement\"\n\"FIRST_WEEK\": 21,\n      \"FIRST_WEEK_ALERT_CNT\": 21,\n      \"FOURTH_WEEK\": 11,\n      \"FOURTH_WEEK_ALERT_CNT\": 11,\n      \"GTSIX_MONTH\": 64,\n      \"GTSIX_MONTH_ALERT_CNT\": 65,\n      \"ID_NODE\": \"EN\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ALQUSUPREGUEN\"\n\"ONETOTHREE_MONTH\": 29,\n      \"ONETOTHREE_MONTH_ALERT_CNT\": 29,\n      \"SECOND_WEEK\": 10,\n      \"SECOND_WEEK_ALERT_CNT\": 10,\n      \"THIRD_WEEK\": 13,\n      \"THIRD_WEEK_ALERT_CNT\": 13,\n      \"THREETOSIX_MONTH\": 0,\n      \"THREETOSIX_MONTH_ALERT_CNT\": 0\n      }\n    ",
+      "notes": "MyCase Overdue to Supervisor",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - My Alerts - Overdue Supervisor Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetMyAlertsOverdueSupervisorDtls",
+      "id": "GetMyAlertsOverdueSupervisorDtls",
+      "recordSet": "\n      {\n\"DESC_NODE\": \"INLGM - Case In Legal For Modification\"\n\"FIRST_WEEK\": 5,\n      \"FIRST_WEEK_ALERT_CNT\": 5,\n      \"FOURTH_WEEK\": 2,\n      \"FOURTH_WEEK_ALERT_CNT\": 2,\n      \"GTSIX_MONTH\": 7,\n      \"GTSIX_MONTH_ALERT_CNT\": 7,\n      \"ID_NODE\": \"INLGM\"\n\"ID_PARENT\": \"EN\"\n\"ID_ROW_KEY\": \"MYALQUSUPSUBREGUENINLGM\"\n\"ONETOTHREE_MONTH\": 6,\n      \"ONETOTHREE_MONTH_ALERT_CNT\": 6,\n      \"SECOND_WEEK\": 3,\n      \"SECOND_WEEK_ALERT_CNT\": 3,\n      \"THIRD_WEEK\": 1,\n      \"THIRD_WEEK_ALERT_CNT\": 1,\n      \"THREETOSIX_MONTH\": 0,\n      \"THREETOSIX_MONTH_ALERT_CNT\": 0\n      }\n    ",
+      "notes": "MyCase Overdur to me",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Filter - Available Cases for Worker",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCaseIdList",
+      "id": "GetCaseIdList",
+      "recordSet": "Record Set",
+      "notes": "Filter to get Available Cases for Worker and Apply Filter \n Best Viewd in Auto Complete TextBox.",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Filter - Available Member for Worker",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetMemberIdList",
+      "id": "GetMemberIdList",
+      "recordSet": "Record Set",
+      "notes": "Filter to get Available MemberID for Worker and Apply Filter \n Best Viewd in Auto Complete TextBox.",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Action Item- Aging",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCactAging",
+      "id": "GetCactAging",
+      "recordSet": "\n      {\n\"ID_NODE\": \"AAVEF\"\n\"ID_PARENT\": \"CPACT\"\n\"NODE_DESC\": \"\"\n\"ID_ROW_KEY\": \"DQCSUMAAVEF\"\n\"ID_PARENT_DESC\": \"\"\n\"CD_CATEGORY\": \"\"\n\"NO_CASE\": 28,\n      \"NO_PERCENT\": 6.7,\n      \"COUNT_TOPRIGHT\": 6216,\n      \"IND\": \"SUMM\"\n\"DESC_NODE\": \"Awaiting ADDR Verification\"\n\"DESC_CATEGORY\": \"Awaiting ADDR Verification\"\n\"desc_node\": \"Awaiting ADDR Verification\"\n\"NO_CASE_CNT\": 0.0,\n      \"NO_CASE_CATEGORY\": 0.0,\n      \"NO_CAT_COUNT\": 0.0,\n      \"COUNT_CATEGORY\": 0.0,\n      \"CAT_COUNT\": 0.0,\n      \"NO_CATEGORY\": 0.0,\n      \"CATEGORY_CNT\": 0.0,\n      \"NODE_ID\": \"AAVEF\"\n\"NO_CAT_CNT\": 0.0\n      }\n    ",
+      "notes": "Action Items Aging Detail for the Worker",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Case Details List",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/SelectCaseDetailsList",
+      "id": "SelectCaseDetailsList",
+      "recordSet": "\n      {\n\"ID_CASE\": \"00074768C\"\n\"NAME_COUNTY\": null,\n      \"ID_MEMBER\": \"3584498M\"\n\"NAME_NCP\": \"\"\n\"ID_MEMBER_CP\": null,\n      \"NAME_CP\": null,\n      \"ID_WORKER\": \"TDAILEY\"\n\"NAME_WORKER\": null,\n      \"CD_STATUS_CASE\": null,\n      \"DESC_STATUS_CASE\": null,\n      \"CD_TYPE_CASE\": \"MEDICAID\"\n\"CD_TYPE_ESTABLISH\": \"O\"\n\"DESC_CD_TYPE_ESTABLISH\": \"SUPPORT ORDER ESTABLISHED\"\n\"ID_DOCKET\": \"622P980082601\"\n\"AMT_ARREAR\": 0.0,\n      \"TOT_BALANCE\": 0.0,\n      \"AMT_PAYBACK\": 0.0,\n      \"AMT_COLL_ARREARS\": 0.0,\n      \"MAIL_ADDRESS\": null,\n      \"DESC_MAIL_STATUS\": null,\n      \"RESI_ADDRESS\": null,\n      \"DESC_RESI_STATUS\": null,\n      \"EMP_STATUS\": null,\n      \"DESC_STATUS\": null,\n      \"AMT_MSO\": 0.0,\n      \"AMT_COLL_MSO\": 0.0,\n      \"CD_ASSISTANCE\": null,\n      \"DESC_ASSISTANCE\": null,\n      \"CD_RESPOND_INIT\": null,\n      \"DESC_RESPOND_INIT\": null,\n      \"CD_COUNTY\": null,\n      \"ROW_COUNT\": 3354,\n      \"IND_WAGE_ASSIGN\": \"N\"\n\"CD_BANKRUPTCY\": \"N\"\n\"ARR_PAYMENT_OWED\": 0.0,\n      \"AMT_THRO_WAGE\": null,\n      \"SHOW_FEES\": \"0\"\n\"IND_FOLDER\": \"N\"\n\"IND_RECOVERY\": \"Y\"\n\"CD_SEX_MBR_CP\": null,\n      \"CD_SEX_MBR_NCP\": null,\n      \"IND_FLAG_REVIEW\": \"Y\"\n\"ID_LAST_REVIEW\": \"KGARNER\"\n\"IND_WRKR_RVW\": null,\n      \"IND_SORD\": \"Y\"\n\"IND_UNKNOWN_NCP\": null,\n      \"IND_NCP_LOCATE\": \"\"\n\"IND_NCP_NOT_LOCATE\": null,\n      \"IND_EST_ACTION\": null,\n      \"IND_PAT_SUPP_ADJ\": null,\n      \"IND_PAT_SUPP_INTER_PROCESS\": null,\n      \"IND_REF_LEGAL_EST_OPINION\": null,\n      \"IND_AGREED_ORDER\": null,\n      \"CD_INTERSTATE\": \"N\"\n\"ID_WORKER_FOLDER\": null,\n      \"IND_DT_OPEN_LESS_1\": \"N\"\n\"IND_DT_OPEN_1_3\": \"N\"\n\"IND_DT_OPEN_3_6\": \"N\"\n\"IND_DT_OPEN_GREATER_6\": \"Y\"\n\"IND_NCP_LOC_LESS_1\": \"\"\n\"IND_NCP_LOC_1_3\": \"\"\n\"IND_NCP_LOC_3_6\": \"\"\n\"IND_NCP_LOC_GREATER_6\": \"\"\n\"IND_EST_ACTION_LESS_1\": null,\n      \"IND_EST_ACTION_1_3\": null,\n      \"IND_EST_ACTION_3_6\": null,\n      \"IND_EST_ACTION_GREATER_6\": null,\n      \"ARREARS_PAID_PREV\": 65.0,\n      \"MSO_PAID_PREV\": 0.0,\n      \"DT_OPENED_DAYS\": 2090,\n      \"DT_OPENED\": \"10/22/2010\"\n\"DT_LAST_REVIEW\": \"10/17/2017\"\n\"DT_REMAINDER\": \"\"\n\"IND_REVIEW_WORKER\": \"N\"\n\"MIN_ARREARS_OWED\": -5710.0,\n      \"MIN_MSO_OWED\": 0.0,\n      \"MAX_ARR_PAYMENT_OWED\": 480.0,\n      \"MIN_ARR_PAYMENT_OWED\": 0.0,\n      \"NO_PHONE_NCP\": null,\n      \"NO_PHONE_CP\": null,\n      \"CD_TYPE_PAY_STATUS\": \"P\"\n\"AMT_DIST_HOLD\": 0.0,\n      \"AMT_DISB_HOLD\": 0.0,\n      \"CD_AGING_CATEGORY\": \"MSPS\"\n\"CPSSN\": null,\n      \"CPDOB\": \"\"\n\"CPADDRESS\": null,\n      \"CPDTBEGEMPLOYMENT\": \"\"\n\"CPEMPLOYERNAME\": null,\n      \"NCPSSN\": null,\n      \"NCPDOB\": \"\"\n\"NCPADDRESS\": null,\n      \"NCPDTBEGEMPLOYMENT\": \"\"\n\"NCPEMPLOYERNAME\": null,\n      \"IND_URGENT\": null,\n      \"IND_NEW_INFO\": \"0\"\n\"MSO_OWED\": 0.0,\n      \"MAX_MSO_OWED\": 3702.93,\n      \"ARREARS_OWED\": 322.9,\n      \"MAX_ARREARS_OWED\": 168155.49,\n      \"MSO_PAID\": 0.0,\n      \"ARREARS_PAID\": 65.0,\n      \"OPEN_ALERT_DUENOW\": 0.0,\n      \"OPEN_ALERT_OVERDUE_W\": 0.0,\n      \"OPEN_ALERT_OVERDUE_S\": 0.0,\n      \"ALERT_DETAILS\": null,\n      \"UniqueID\": \"124119\"\n\"IND_CASE_RVM\": null,\n      \"PreservedServiceXML\": null,\n      \"CaseWorkerList\": null,\n      \"LoginIDScreen\": \"JGARRETT\"\n      }\n    ",
+      "notes": "To View Case Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Member Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCaseListMemberDetails",
+      "id": "GetCaseListMemberDetails",
+      "recordSet": "\n      {\n\"ID_MEMBER\": \"0814459M\"\n\"NAME_NCP\": \"\"\n\"ID_MEMBER_CP\": \"5150349M\"\n\"NAME_CP\": \"\"\n\"CPSSN\": \"\"\n\"CPDOB\": \"\"\n\"CPADDRESS\": \"\"\n\"LoginIDScreen\": \"JGARRETT\"\n\"NO_PHONE_CP\": \"\"\n\"NO_PHONE_NCP\": \"\"\n\"NCPSSN\": \"\"\n\"NCPDOB\": \"\"\n\"NCPADDRESS\": \"\"\n\"NCPEMPLOYERNAME\": \"\"\n\"NCPDTBEGEMPLOYMENT\": \"\"\n\"CD_SEX_MBR_CP\": \"M\"\n\"CD_SEX_MBR_NCP\": \"F\"\n\"ID_CASE\": \"\"\n\"DESC_CATEGORY\": \"\"\n\"desc_node\": \"\"\n\"NO_CASE_CNT\": 0.0,\n      \"NO_CASE_CATEGORY\": 0.0,\n      \"NO_CAT_COUNT\": 0.0,\n      \"COUNT_CATEGORY\": 0.0,\n      \"CAT_COUNT\": 0.0,\n      \"NO_CATEGORY\": 0.0,\n      \"ID_NODE\": \"\"\n\"CATEGORY_CNT\": 0.0,\n      \"NODE_ID\": \"\"\n\"NO_CAT_CNT\": 0.0\n      }\n    ",
+      "notes": "To View Member Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Dependant Information Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetDependantInfoDetails",
+      "id": "GetDependantInfoDetails",
+      "recordSet": "Record Set",
+      "notes": "To View Dependent Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Alerts for the Cases ",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/SelectCaseDetailsAlert",
+      "id": "SelectCaseDetailsAlert",
+      "recordSet": "\n      {\n\"ID_CASE\": \"97153603C\"\n\"ID_MEMBER\": \"6840125M\"\n\"ID_WORKER\": \"HBATTLE\"\n\"MAIL_CD_ACTIVITY_MINOR\": null,\n      \"DESC_ACTIVITY\": \"RFLGM - REFER TO LGL MODIFICATION\"\n\"DT_DUE\": \"11/8/2015 12:00:00 AM\"\n\"CD_TYPE_ALERT\": \"ACTION\"\n\"CD_TYPE_ALERT_DESC\": \"OVERDUE TO WORKER\"\n\"DESC_SUBSYSTEM\": \"ESTABLISHMENT\"\n\"ROW_NUM\": 284,\n      \"NAVIGATE_TO\": \"ESTP\"\n\"CD_SOURCE\": \"\"\n\"ID_OTHP_SOURCE\": \"\"\n\"DT_REQUEST\": \"10/29/2015 1:17:09 PM\"\n\"SEQ_RESPONSE\": \"0\"\n\"PR_ALERT\": \"1\"\n\"SEQ_NO\": \"162\"\n\"DT_CREATE\": \"2015-12-22 00:00:00.0000000\"\n\"CD_ACTIVITY_MINOR\": \"RFLGM\"\n\"CD_TYPE_ALERTS\": \"O\"\n\"CD_COUNTY_ACTS\": \"62\"},{\"ID_CASE\": \"02381483C\"\n\"ID_MEMBER\": \"8535922M\"\n\"ID_WORKER\": \"hbattle\"\n\"MAIL_CD_ACTIVITY_MINOR\": null,\n      \"DESC_ACTIVITY\": \"INLGM - CASE IN LEGAL FOR MODIFICATION\"\n\"DT_DUE\": \"11/9/2015 12:00:00 AM\"\n\"CD_TYPE_ALERT\": \"ACTION\"\n\"CD_TYPE_ALERT_DESC\": \"OVERDUE TO WORKER\"\n\"DESC_SUBSYSTEM\": \"ESTABLISHMENT\"\n\"ROW_NUM\": 284,\n      \"NAVIGATE_TO\": \"ESTP\"\n\"CD_SOURCE\": \"\"\n\"ID_OTHP_SOURCE\": \"\"\n\"DT_REQUEST\": \"11/4/2015 4:56:37 PM\"\n\"SEQ_RESPONSE\": \"0\"\n\"PR_ALERT\": \"1\"\n\"SEQ_NO\": \"1\"\n\"DT_CREATE\": \"2015-12-22 00:00:00.0000000\"\n\"CD_ACTIVITY_MINOR\": \"INLGM\"\n\"CD_TYPE_ALERTS\": \"O\"\n\"CD_COUNTY_ACTS\": \"62\"\n      }\n    ",
+      "notes": "Use to find Alert Details for the Particular Cases",
+      "visualize": "Grid",
+      "reportAvailable": "Xls"
+    },
+    {
+      "name": "TMC - Wait Activity Chart CaseList Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetWaitActChartCaseListDetails",
+      "id": "GetWaitActChartCaseListDetails",
+      "recordSet": "\n      {\n\"ROLE_GROUP\": \"Legal\"\n\"CASE_COUNT\": \"1\"\n\"PERCENT\": \"0.38000000000000\"\n\"IND_QUARTILE\": \"1\"\n\"REMEDY_CNT\": 1,\n      \"NO_DAYS_OVERDUE\": \"-676\"\n\"CD_ACTIVITY_MAJOR\": \"CRIM\"\n\"MAJOR_DESC_ACTIVITY\": \"Criminal Complaint\"\n\"CD_ACTIVITY_MINOR\": \"WAROA\"\n\"MINOR_DESC_ACTIVITY\": \"Arrest Warrant ISS OCSE Atty\"\n\"ID_ROW_KEY\": \"ENBRWTRLEGAL\"\n\"CD_SUBSYSTEM\": \"EN\"\n      }\n    ",
+      "notes": "Wait Activity Chart for Particular Cases",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Changes Data Quality More Caselist",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetChangsDataQualityMoreCaselist",
+      "id": "GetChangsDataQualityMoreCaselist",
+      "recordSet": "\n      {\n\"ID_NODE\": \"DEMAN\"\n\"CHNG_DATA_QUAL\": \"Case Action - All Dependants Emancipated\"\n\"LESS_THN_MONTH\": 2,\n      \"ONE_THREE_MONTH\": 5,\n      \"THREE_SIX_MONTH\": 7,\n      \"MORE_THN_SIX_MONTH\": 282,\n      \"TOTAL\": 296,\n      \"ID_ROW_KEY\": \"DQCSUMDEMAN\"\n\"PARENT_ID\": \"CASEA\"\n\"CASE_COUNT\": 0 \n      }\n    ",
+      "notes": "Data Quality Issue for Particular Cases",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Case Worker(s) of the Cases",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCaseWorker",
+      "id": "GetCaseWorker",
+      "recordSet": "\n      {\n\"ID_WORKER\": \"CMCHISM\"\n\"FUNC_AREA\": \"IIP - INTERSTATE INITIATING - PATERNITY EST\"\n      }\n    ",
+      "notes": "Get Workers who are Worked on this Cases",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Summary - Case Without Order",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCWOOSummary",
+      "id": "GetCWOOSummary",
+      "recordSet": "\n      {\n\"COUNT_TOPRIGHT\":231,\n      \"DESC_NODE\":\"Skeletal Cases\"\n\"ID_NODE\":\"COSTC\"\n\"ID_PARENT\":\"\"\n\"ID_ROW_KEY\":\"CWOSUMCOSTC\"\n\"NO_CASE\":0,\n      \"NO_PERCENT\":0\n      }\n    ",
+      "notes": "Case Wiothout Summary Information",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Data Quality-Summary",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetDataQualitySummary",
+      "id": "GetDataQualitySummary",
+      "recordSet": "\n      {\n\"COUNT_CASE\":482,\n      \"COUNT_TOPRIGHT\":2315,\n      \"DESC_NODE\":\"Address\"\n\"ID_NODE\":\"DQADR\"\n\"ID_PARENT\":\"\"\n\"ID_ROW_KEY\":\"DQADRSM\"\n\"PERCENT_CASE\":20.82\n      }\n    ",
+      "notes": "Data Quality Informaton Summary Information ",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Data Quality-Summary Aging",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetDataQualitySummaryAging",
+      "id": "GetDataQualitySummaryAging",
+      "recordSet": "\n      {\n\"ID_NODE\": \"DQADR\"\n\"ID_ROW_KEY\":\"DQADRSMNA\"\n\"ID_PARENT\": \"\"\n\"ID_PARENT_DESC\": null,\n      \"CD_CATEGORY\": null,\n      \"DESC_NODE\": \"Address\"\n\"NO_CASE\": 10,\n      \"NO_PERCENT\": 0.43,\n      \"COUNT_TOPRIGHT\": 0,\n      \"IND\": \"AGING\"\n\"DESC_CATEGORY\": \"No Address\"\n\"desc_node\": \"No Address\"\n\"NO_CASE_CNT\": 0.0,\n      \"NO_CASE_CATEGORY\": 0.0,\n      \"NO_CATEGORY\": 0.0,\n      \"CATEGORY_CNT\": 0.0,\n      \"NODE_ID\": \"DQADR\"\n\"NO_CAT_CNT\": 0.0\n      }\n    ",
+      "notes": "Data Quality Informaton Aging Information ",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Data Quality Employer Grid Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetDQEmpGridDetails",
+      "id": "GetDQEmpGridDetails",
+      "recordSet": "\n      {\n\"ID_ROW_KEY\": \"DQEMPG2YOG\"\n\"DESC_TYPE_EMPLOYER\": \"Primary\"\n\"DESC_EMP_CATEGORY\": \"Current\"\n\"NO_SUM_LTN_A_MTH\": 187,\n      \"NO_SUM_BTW_1_3_MTH\": 233,\n      \"NO_SUM_BTW_3_6_MTH\": 216,\n      \"NO_SUM_GTN_6_MTH\": 1175\n      }\n    ",
+      "notes": "Data Quality Issues By Employer Level",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Data Quality Participant Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/SelectDQPartiGrid",
+      "id": "SelectDQPartiGrid",
+      "recordSet": "\n      {\n\"ID_ROW_KEY\": \"DQPRTG1UN\"\n\"DESC_PRT_CATEGORY\": \"Unknown PF\"\n\"NO_SUM_LTN_A_MTH\": 0,\n      \"NO_SUM_BTW_1_3_MTH\": 0,\n      \"NO_SUM_BTW_3_6_MTH\": 0,\n      \"NO_SUM_GTN_6_MTH\": 0\n      }\n    ",
+      "notes": "Data Quality Issues Participant Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Case Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/SelectCaseDetailsPopup",
+      "id": "SelectCaseDetailsPopup",
+      "recordSet": "\n      {\n\"ID_CASE\": \"00074768C\"\n\"NAME_COUNTY\": null,\n      \"ID_MEMBER\": \"3584498M\"\n\"NAME_NCP\": \"\"\n\"ID_MEMBER_CP\": \"4089949M\"\n\"NAME_CP\": \"\"\n\"ID_WORKER\": \"TDAILEY\"\n\"NAME_WORKER\": null,\n      \"CD_STATUS_CASE\": \"O\"\n\"DESC_STATUS_CASE\": null,\n      \"CD_TYPE_CASE\": \"M\"\n\"CD_TYPE_ESTABLISH\": \"O\"\n\"DESC_CD_TYPE_ESTABLISH\": null,\n      \"ID_DOCKET\": \"622P9800826\"\n\"AMT_ARREAR\": 9726.15,\n      \"TOT_BALANCE\": 322.9,\n      \"AMT_PAYBACK\": 64.96,\n      \"AMT_COLL_ARREARS\": 9403.25,\n      \"MAIL_ADDRESS\": \"Y\"\n\"DESC_MAIL_STATUS\": null,\n      \"RESI_ADDRESS\": \"Y\"\n\"DESC_RESI_STATUS\": null,\n      \"EMP_STATUS\": \"X\"\n\"DESC_STATUS\": null,\n      \"AMT_MSO\": 0.0,\n      \"AMT_COLL_MSO\": 0.0,\n      \"CD_ASSISTANCE\": \"F\"\n\"DESC_ASSISTANCE\": null,\n      \"CD_RESPOND_INIT\": \"N\"\n\"DESC_RESPOND_INIT\": null,\n      \"CD_COUNTY\": \"62\"\n\"ROW_COUNT\": 2251,\n      \"IND_WAGE_ASSIGN\": null,\n      \"CD_BANKRUPTCY\": null,\n      \"ARR_PAYMENT_OWED\": 0.0,\n      \"AMT_THRO_WAGE\": null,\n      \"SHOW_FEES\": null,\n      \"IND_FOLDER\": \"N\"\n\"IND_RECOVERY\": null,\n      \"CD_SEX_MBR_CP\": null,\n      \"CD_SEX_MBR_NCP\": null,\n      \"IND_FLAG_REVIEW\": \"Y\"\n\"ID_LAST_REVIEW\": \"KGARNER\"\n\"IND_WRKR_RVW\": null,\n      \"IND_SORD\": null,\n      \"IND_UNKNOWN_NCP\": null,\n      \"IND_NCP_LOcATE\": null,\n      \"IND_NCP_NOT_LOCATE\": null,\n      \"IND_EST_ACTION\": null,\n      \"IND_PAT_SUPP_ADJ\": null,\n      \"IND_PAT_SUPP_INTER_PROCESS\": null,\n      \"IND_REF_LEGAL_EST_OPINION\": null,\n      \"IND_AGREED_ORDER\": null,\n      \"CD_INTERSTATE\": null,\n      \"ID_WORKER_FOLDER\": null,\n      \"IND_DT_OPEN_LESS_1\": null,\n      \"IND_DT_OPEN_1_3\": null,\n      \"IND_DT_OPEN_3_6\": null,\n      \"IND_DT_OPEN_GREATER_6\": null,\n      \"IND_NCP_LOC_LESS_1\": null,\n      \"IND_NCP_LOC_1_3\": null,\n      \"IND_NCP_LOC_3_6\": null,\n      \"IND_NCP_LOC_GREATER_6\": null,\n      \"IND_EST_ACTION_LESS_1\": null,\n      \"IND_EST_ACTION_1_3\": null,\n      \"IND_EST_ACTION_3_6\": null,\n      \"IND_EST_ACTION_GREATER_6\": null,\n      \"ARREARS_PAID_PREV\": 0.0,\n      \"MSO_PAID_PREV\": 0.0,\n      \"DT_OPENED_DAYS\": 0,\n      \"DT_OPENED\": \"\"\n\"DT_LAST_REVIEW\": \"10/17/2017\"\n\"DT_REMAINDER\": \"\"\n\"IND_REVIEW_WORKER\": \"N\"\n\"MIN_ARREARS_OWED\": 0.0,\n      \"MIN_MSO_OWED\": 0.0,\n      \"MAX_ARR_PAYMENT_OWED\": 0.0,\n      \"MIN_ARR_PAYMENT_OWED\": 0.0,\n      \"NO_PHONE_NCP\": null,\n      \"NO_PHONE_CP\": null,\n      \"CD_TYPE_PAY_STATUS\": null,\n      \"AMT_DIST_HOLD\": 0.0,\n      \"AMT_DISB_HOLD\": 0.0,\n      \"CD_AGING_CATEGORY\": null,\n      \"CPSSN\": null,\n      \"CPDOB\": \"\"\n\"CPADDRESS\": null,\n      \"CPDTBEGEMPLOYMENT\": \"\"\n\"CPEMPLOYERNAME\": null,\n      \"NCPSSN\": null,\n      \"NCPDOB\": \"\"\n\"NCPADDRESS\": null,\n      \"NCPDTBEGEMPLOYMENT\": \"\"\n\"NCPEMPLOYERNAME\": null,\n      \"IND_URGENT\": null,\n      \"IND_NEW_INFO\": null,\n      \"MSO_OWED\": 0.0,\n      \"MAX_MSO_OWED\": 0.0,\n      \"ARREARS_OWED\": 387.9,\n      \"MAX_ARREARS_OWED\": 0.0,\n      \"MSO_PAID\": 0.0,\n      \"ARREARS_PAID\": 65.0,\n      \"OPEN_ALERT_DUENOW\": 0.0,\n      \"OPEN_ALERT_OVERDUE_W\": 0.0,\n      \"OPEN_ALERT_OVERDUE_S\": 0.0,\n      \"ALERT_DETAILS\": null,\n      \"UniqueID\": \"123729\"\n\"IND_CASE_RVM\": null,\n      \"PreservedServiceXML\": null,\n      \"CaseWorkerList\": null,\n      \"LoginIDScreen\": \"JGARRETT\"\n      }\n    ",
+      "notes": "View Case Details",
+      "visualize": "Grid",
+      "reportAvailable": "Pdf,Xls"
+
+    },
+    {
+      "name": "TMC - Enforcement Wait Activities",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEnfWaitActivities",
+      "id": "GetEnfWaitActivities",
+      "recordSet": "\n      {\n\"REMDY_NAME\": null,\n      \"NO_ELIG_CASES\": 0,\n      \"NO_ELIG_RMDY\": 0,\n      \"DESC_ACTIVITY_MAJOR\": \"Immediate Wage Withholding\"\n \"DESC_ACTIVITY_MINOR\": \"Monitor Wage Withholding\"\n \"MAJOR_CNT\": 1523,\n      \"MINOR_CNT\": 1293,\n      \"NO_OF_CASES_USERS_IN_QUARTILE\": 1293,\n      \"NO_OF_CASES_MAJOR\": 1502,\n      \"IND_QUARTILE\": 1,\n      \"PERCENTAGE\": 100.0,\n      \"CD_ACTIVITY_MAJOR\": \"WAGI\"\n\"CD_ACTIVITY_MINOR\": \"MONWW\"\n\"ID_ROW_KEY\": \"ENAWG1WAGIMONWW1X\"\n      }\n    ",
+      "notes": "Enforcement Wait Activites",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Establishment Wait Activities",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/getEstWaitActivities",
+      "id": "getEstWaitActivities",
+      "recordSet": "\n      {\n\"DESC_ACTIVITY_MAJOR\": \"Paternity/Support Adjudication\"\n\"DESC_ACTIVITY_MINOR\": \"Expedited Time Frame Tracking\"\n\"MAJOR_CNT\": 5728,\n      \"MINOR_CNT\": 2720,\n      \"NO_OF_CASES_USERS_IN_QUARTILE\": 2720,\n      \"NO_OF_CASES_MAJOR\": 3008,\n      \"IND_QUARTILE\": 1,\n      \"PERCENTAGE\": 100.0,\n      \"CD_ACTIVITY_MAJOR\": \"PSAD\"\n\"CD_ACTIVITY_MINOR\": \"EX270\"\n\"ID_ROW_KEY\": \"ESAWG1PSADEX2701X\"\n      }\n    ",
+      "notes": "Establishment Wait Activites",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Changes To Data Quality Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/ChangeDataQltyPopup",
+      "id": "ChangeDataQltyPopup",
+      "recordSet": "\n      {\n\"ID_CASE\": \"89435911C\"\n\"ID_MEMBER\": \"7040992M\"\n\"CD_TYPE_ADDRESS\": \"MAIL\"\n\"DT_TRANSACTION\": \"02/10/2016\"\n\"ADDR_LINE1\": \"\"\n\"ADDR_LINE2\": \"\"\n\"ADDR_LINE3\": \"\"\n\"ADDR_CITY\": \"MALVERN\"\n\"ADDR_STATE\": \"AR\"\n\"ADDR_ZIP\": \"72104-4772\"\n\"ADDR_COUNTRY\": \"US\"\n\"INDC_GROUP\": 9,\n      \"END_DATE\": \"\"\n\"CD_STATUS\": \"\"\n\"SOURCE_NAME\": \"\"\n\"MEMBER_NAME\": \"\"\n\"NOTICE_CNT\": 0,\n      \"ROW_COUNT\": 9\n      }\n    ",
+      "notes": "Changes in Data Quality",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC -  Analyze Case By - Case Status Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAdvCaseStatusDetails",
+      "id": "GetAdvCaseStatusDetails",
+      "recordSet": "\n      {\n\"CASE_CNT\": 2251,\n      \"DESC_NODE\": \"Open\"\n\"ID_NODE\": \"CSTATO\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVCSTATO\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 100\n      }\n    ",
+      "notes": "Analyze Cases by Case Status",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Analyze Case By - Case Type Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAdvCaseTypeDetails",
+      "id": "GetAdvCaseTypeDetails",
+      "recordSet": "\n      {\n\"CASE_CNT\": 2,\n      \"DESC_NODE\": \"Foster Care\"\n\"ID_NODE\": \"CTYPEF\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVCTYPEF\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 0\n      }\n    ",
+      "notes": "Analyze Cases by Case Type",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Analyze Case By - Case Age Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAdvCaseAgeDetails",
+      "id": "GetAdvCaseAgeDetails",
+      "recordSet": "\n      {\n\"CASE_CNT\": 633,\n      \"DESC_NODE\": \"Less than 3 Years\"\n\"ID_NODE\": \"LTH3Y\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVCAGELTH3\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 28\n      }\n    ",
+      "notes": "Analyze Case By - Case Age Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Analyze Case By - Case Recovery Ind Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAdvCaseRecoveryIndDetails",
+      "id": "GetAdvCaseRecoveryIndDetails",
+      "recordSet": "\n      {\n\"CASE_CNT\": 288,\n      \"DESC_NODE\": \"Recovery\"\n\"ID_NODE\": \"RCINY\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVRCINDY\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 13\n      }\n    ",
+      "notes": "Analyze Case By - Case Recovery Ind Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Analyze Case By - Case Interstate Indictor",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAdvCaseInterstateIndDetails",
+      "id": "GetAdvCaseInterstateIndDetails",
+      "recordSet": "\n      {\n\"CASE_CNT\": 23,\n      \"DESC_NODE\": \"Initiating\"\n\"ID_NODE\": \"INIT\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVINTSTI\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 1\n      }\n    ",
+      "notes": "TMC - Analyze Case By - Case Interstate Indictor",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Establishment Remedy Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEstRemedyStrtDtls",
+      "id": "GetEstRemedyStrtDtls",
+      "recordSet": "\n      {\n\"CASE_CNT\": 0,\n      \"DESC_NODE\": \"AGRO - Agreed Order Process\"\n\"ID_NODE\": \"ESTRMDYSTRT-AGRO\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVESTRMDYSTRT-AGRO\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 0\n      }\n    ",
+      "notes": "View Establishment Remedy Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Establishment Remedy Suspend Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEstRemedySuspendDtls",
+      "id": "GetEstRemedySuspendDtls",
+      "recordSet": "\n      {\n\"CASE_CNT\": 0,\n      \"DESC_NODE\": \"AGRO - Agreed Order Process\"\n\"ID_NODE\": \"ESTRMDYSUSP-AGRO\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVESTRMDYSUSP-AGRO\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 0\n      }\n    ",
+      "notes": "Establishment Remedy Suspend Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Enforcement Remedy Suspend Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEnfRemedySuspendDtls",
+      "id": "GetEnfRemedySuspendDtls",
+      "recordSet": "\n      {\n\"CASE_CNT\": 0,\n      \"DESC_NODE\": \"BSOF - Surety Bond Offset\"\n\"ID_NODE\": \"ENFRMDYSUSP-BSOF\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVENFRMDYSUSP-BSOF\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 0\n      }\n    ",
+      "notes": "Enforcement Remedy Suspend Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Enforcement Remedy Started Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEnfRemedyStartDtls",
+      "id": "GetEnfRemedyStartDtls",
+      "recordSet": "\n      {\n\"CASE_CNT\": 0,\n      \"DESC_NODE\": \"BSOF - Surety Bond Offset\"\n\"ID_NODE\": \"ENFRMDYSTRT-BSOF\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVENFRMDYSTRT-BSOF\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 0\n      }\n    ",
+      "notes": "Enforcement Remedy Started Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Analyze Cases - Medical Ins Providing Member Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetMedicalInsProvidingMembDtls",
+      "id": "GetMedicalInsProvidingMembDtls",
+      "recordSet": "\n      {\n\"CASE_CNT\": 153,\n      \"DESC_NODE\": \"CP\"\n\"ID_NODE\": \"INSPROVMEMCP\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVINSPROVMEMCP\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 7\n      }\n    ",
+      "notes": "Analyze Cases- Medical Ins Providing Member Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Analyze Cases - Medical InsDependant Coverage Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetMedicalInsDepCoverageDtls",
+      "id": "GetMedicalInsDepCoverageDtls",
+      "recordSet": "\n      {\n\"CASE_CNT\": 502,\n      \"DESC_NODE\": \"Full Coverage\"\n\"ID_NODE\": \"INSDEPCOVFC\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVINSDEPCOVFC\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 22\n      }\n    ",
+      "notes": "Medical InsDependant Coverage Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Analyze Cases - Medicaid Ordered Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetMedOrderedDtls",
+      "id": "GetMedOrderedDtls",
+      "recordSet": "\n      {\n\"CASE_CNT\": 1235,\n      \"DESC_NODE\": \"Medical In Order\"\n\"ID_NODE\": \"INSMEDORDY\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVINSMEDORDY\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 55\n      }\n    ",
+      "notes": "Analyze Cases - Medicaid Ordered Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Analyze Cases - Obligation Dependant Type Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetObligationDeptTypeDtls",
+      "id": "GetObligationDeptTypeDtls",
+      "recordSet": "\n      {\n\"CASE_CNT\": 2237,\n      \"DESC_NODE\": \"Child Support\"\n\"ID_NODE\": \"CSUPP\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVOBDBTYPECSUPP\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 99\n      }\n    ",
+      "notes": "Analyze Cases - Obligation Dependant Type Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Analyze Cases - Obligation Arrear Amount Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetObligationArrAmountDtls",
+      "id": "GetObligationArrAmountDtls",
+      "recordSet": "\n      {\n\"CASE_CNT\": 583,\n      \"DESC_NODE\": \"No Arrears\"\n\"ID_NODE\": \"NOARR\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVOBARAMTNOARR\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 26}t",
+      "notes": "Analyze Cases - Obligation Arrear Amount Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Analyze Cases - Obligation Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetObligationCatDeptDtls",
+      "id": "GetObligationCatDeptDtls",
+      "recordSet": "\n      {\n\"CASE_CNT\": 1954,\n      \"DESC_NODE\": \"Support\"\n\"ID_NODE\": \"SUPP\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVOBSUPP\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 66\n      }\n    ",
+      "notes": "Analyze Cases - Obligation Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Establishment Eligibility Remedy Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEstEligRemedyCondMet",
+      "id": "GetEstEligRemedyCondMet",
+      "recordSet": "\n      {\n\"CD_ACTIVITY_MAJOR\": \"AGRO\"\n\"DESC_ACTIVITY\": \"Agreed Order Process\"\n\"CNT_STRT_ELIG\": 8,\n      \"CNT_STRT_NOT_ELIG\": 4,\n      \"CNT_NOT_STRT_ELIG\": 5107,\n      \"CNT_NOT_STRT_NOT_ELIG\": 96412,\n      \"ID_ROW_KEY\": \"ESEWAAGRO\"\n\"IND_DISPOSITION\": 0\n      }\n    ",
+      "notes": "Establishment Eligibility Remedy Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Filter - Worker List",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetWorkerList",
+      "id": "GetWorkerList",
+      "recordSet": "Record Set",
+      "notes": "Filter to Worker",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Establishment - Eligibility Remedy Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEstEligRemedyByCatg",
+      "id": "GetEstEligRemedyByCatg",
+      "recordSet": "\n      {\n      \"ID_CASE\": \"04758236C\"\n\n      \"NAME_COUNTY\": null,\n      \n      \"ID_MEMBER\": \"3079254M\"\n\n      \"NAME_NCP\": \"\"\n\n      \"ID_MEMBER_CP\": \"8099993M\"\n\n      \"NAME_CP\": \"\"\n\n      \"ID_WORKER\": \"KSMITH\"\n\n      \"NAME_WORKER\": null,\n      \n      \"CD_STATUS_CASE\": \"O\"\n\n      \"DESC_STATUS_CASE\": null,\n      \n      \"CD_TYPE_CASE\": \"N\"\n\n      \"CD_TYPE_ESTABLISH\": \"S\"\n\n      \"DESC_CD_TYPE_ESTABLISH\": null,\n      \n      \"ID_DOCKET\": \"\"\n\n      \"AMT_ARREAR\": 0.0,\n      \n      \"TOT_BALANCE\": 0.0,\n      \n      \"AMT_PAYBACK\": 0.0,\n      \n      \"AMT_COLL_ARREARS\": 0.0,\n      \n      \"MAIL_ADDRESS\": \"Y\"\n\n      \"DESC_MAIL_STATUS\": null,\n      \n      \"RESI_ADDRESS\": \"X\"\n\n      \"DESC_RESI_STATUS\": null,\n      \n      \"EMP_STATUS\": \"X\"\n\n      \"DESC_STATUS\": null,\n      \n      \"AMT_MSO\": 0.0,\n      \n      \"AMT_COLL_MSO\": 0.0,\n      \n      \"CD_ASSISTANCE\": \"F\"\n\n      \"DESC_ASSISTANCE\": null,\n      \n      \"CD_RESPOND_INIT\": \"N\"\n\n      \"DESC_RESPOND_INIT\": null,\n      \n      \"CD_COUNTY\": \"62\"\n\n      \"ROW_COUNT\": 23,\n      \n      \"IND_WAGE_ASSIGN\": null,\n      \n      \"CD_BANKRUPTCY\": null,\n      \n      \"ARR_PAYMENT_OWED\": 0.0,\n      \n      \"AMT_THRO_WAGE\": null,\n      \n      \"SHOW_FEES\": null,\n      \n      \"IND_FOLDER\": \"N\"\n\n      \"IND_RECOVERY\": null,\n      \n      \"CD_SEX_MBR_CP\": null,\n      \n      \"CD_SEX_MBR_NCP\": null,\n      \n      \"IND_FLAG_REVIEW\": \"N\"\n\n      \"ID_LAST_REVIEW\": \"\"\n\n      \"IND_WRKR_RVW\": null,\n      \n      \"IND_SORD\": null,\n      \n      \"IND_UNKNOWN_NCP\": null,\n      \n      \"IND_NCP_LOCATE\": null,\n      \n      \"IND_NCP_NOT_LOCATE\": null,\n      \n      \"IND_EST_ACTION\": null,\n      \n      \"IND_PAT_SUPP_ADJ\": null,\n      \n      \"IND_PAT_SUPP_INTER_PROCESS\": null,\n      \n      \"IND_REF_LEGAL_EST_OPINION\": null,\n      \n      \"IND_AGREED_ORDER\": null,\n      \n      \"CD_INTERSTATE\": null,\n      \n      \"ID_WORKER_FOLDER\": null,\n      \n      \"IND_DT_OPEN_LESS_1\": null,\n      \n      \"IND_DT_OPEN_1_3\": null,\n      \n      \"IND_DT_OPEN_3_6\": null,\n      \n      \"IND_DT_OPEN_GREATER_6\": null,\n      \n      \"IND_NCP_LOC_LESS_1\": null,\n      \n      \"IND_NCP_LOC_1_3\": null,\n      \n      \"IND_NCP_LOC_3_6\": null,\n      \n      \"IND_NCP_LOC_GREATER_6\": null,\n      \n      \"IND_EST_ACTION_LESS_1\": null,\n      \n      \"IND_EST_ACTION_1_3\": null,\n      \n      \"IND_EST_ACTION_3_6\": null,\n      \n      \"IND_EST_ACTION_GREATER_6\": null,\n      \n      \"ARREARS_PAID_PREV\": 0.0,\n      \n      \"MSO_PAID_PREV\": 0.0,\n      \n      \"DT_OPENED_DAYS\": 0,\n      \n      \"DT_OPENED\": \"\"\n\n      \"DT_LAST_REVIEW\": \"\"\n\n      \"DT_REMAINDER\": \"\"\n\n      \"IND_REVIEW_WORKER\": \"N\"\n\n      \"MIN_ARREARS_OWED\": 0.0,\n      \n      \"MIN_MSO_OWED\": 0.0,\n      \n      \"MAX_ARR_PAYMENT_OWED\": 0.0,\n      \n      \"MIN_ARR_PAYMENT_OWED\": 0.0,\n      \n      \"NO_PHONE_NCP\": null,\n      \n      \"NO_PHONE_CP\": null,\n      \n      \"CD_TYPE_PAY_STATUS\": null,\n      \n      \"AMT_DIST_HOLD\": 0.0,\n      \n      \"AMT_DISB_HOLD\": 0.0,\n      \n      \"CD_AGING_CATEGORY\": null,\n      \n      \"CPSSN\": null,\n      \n      \"CPDOB\": \"\"\n\n      \"CPADDRESS\": null,\n      \n      \"CPDTBEGEMPLOYMENT\": \"\"\n\n      \"CPEMPLOYERNAME\": null,\n      \n      \"NCPSSN\": null,\n      \n      \"NCPDOB\": \"\"\n\n      \"NCPADDRESS\": null,\n      \n      \"NCPDTBEGEMPLOYMENT\": \"\"\n\n      \"NCPEMPLOYERNAME\": null,\n      \n      \"IND_URGENT\": null,\n      \n      \"IND_NEW_INFO\": null,\n      \n      \"MSO_OWED\": 0.0,\n      \n      \"MAX_MSO_OWED\": 0.0,\n      \n      \"ARREARS_OWED\": 0.0,\n      \n      \"MAX_ARREARS_OWED\": 0.0,\n      \n      \"MSO_PAID\": 0.0,\n      \n      \"ARREARS_PAID\": 0.0,\n      \n      \"OPEN_ALERT_DUENOW\": 0.0,\n      \n      \"OPEN_ALERT_OVERDUE_W\": 0.0,\n      \n      \"OPEN_ALERT_OVERDUE_S\": 0.0,\n      \n      \"ALERT_DETAILS\": null,\n      \n      \"UniqueID\": \"72417\"\n\n      \"IND_CASE_RVM\": null,\n      \n      \"PreservedServiceXML\": null,\n      \n      \"CaseWorkerList\": null,\n      \n      \"LoginIDScreen\": \"JGARRETT\"\n      },\n      \n    ",
+      "notes": "Establishment - Eligibility Remedy Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Eligibility Remedy Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEligRemedyCondMet",
+      "id": "GetEligRemedyCondMet",
+      "recordSet": "\n      {\n\"CD_ACTIVITY_MAJOR\": \"BSOF\"\n\"DESC_ACTIVITY\": \"Surety Bond Offset\"\n\"CNT_STRT_ELIG\": 0,\n      \"CNT_STRT_NOT_ELIG\": 0,\n      \"CNT_NOT_STRT_ELIG\": 0,\n      \"CNT_NOT_STRT_NOT_ELIG\": 3351,\n      \"ID_ROW_KEY\": \"PAHEWABSOF\" \n      }\n    ",
+      "notes": "Eligibility Remedy Details",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - EligRemedyByCatg",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEligRemedyByCatg",
+      "id": "GetEligRemedyByCatg",
+      "recordSet": "\n      {\n      CD_SUBSYSTEM:\"Case Initiation\"\n\n      CD_TYPE:\"Regular Alerts\"\n\n      FIRST_WEEK:143,\n      \n      FIRST_WEEK_ALERT_CNT:149,\n      \n      FOURTH_WEEK:10,\n      \n      FOURTH_WEEK_ALERT_CNT:10,\n      \n      GTSIX_MONTH:400,\n      \n      GTSIX_MONTH_ALERT_CNT:472,\n      \n      ID_ROW_KEY:\"ALQUOVDREGUIN\"\n\n      ONETOTHREE_MONTH:627,\n      \n      ONETOTHREE_MONTH_ALERT_CNT:690,\n      \n      SECOND_WEEK:177,\n      \n      SECOND_WEEK_ALERT_CNT:181,\n      \n      THIRD_WEEK:19,\n      \n      THIRD_WEEK_ALERT_CNT:19,\n      \n      THREETOSIX_MONTH:3,\n      \n      THREETOSIX_MONTH_ALERT_CNT:3\n      }\n    ",
+      "notes": "Notes"
+    },
+    {
+      "name": "TMC - My Case Alerts Chart",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetMyCSAlertsChart",
+      "id": "GetMyCSAlertsChart",
+      "recordSet": "\n      {\n\"MTH_REPORT\": \"FEB\"\n\"NO_PENDING_ALERT\": \"12\"\n\"PENDING_CASE_COUNT\": \"12\"\n\"NO_OVERDUE_ALERT\": \"5\"\n\"OVERDUE_CASE_COUNT\": \"5\"\n\"ID_ROW_KEY\": \"CSBR201602\"\n      }\n    ",
+      "notes": "Alerts Graphics for Worker"
+    },
+    {
+      "name": "TMC - My Alerts Chart",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetMyAlertsChart",
+      "id": "GetMyAlertsChart",
+      "recordSet": "\n      {\n\"MTH_REPORT\": \"FEB\"\n\"NO_PENDING_ALERT\": \"0\"\n\"PENDING_CASE_COUNT\": \"0\"\n\"NO_OVERDUE_ALERT\": \"1\"\n\"OVERDUE_CASE_COUNT\": \"1\"\n\"ID_ROW_KEY\": \"MYBR201602\"\n      }\n    ",
+      "notes": "MyAlert Chart",
+      "visualize": "It\"s a filter So Combo Box"
+    },
+    {
+      "name": "TMC - Establishment Alerts Chart",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEstablishmentAlertsChart",
+      "id": "GetEstablishmentAlertsChart",
+      "recordSet": "\n      {\n\"MTH_REPORT\": \"FEB\"\n\"NO_PENDING_ALERT\": \"0\"\n\"PENDING_CASE_COUNT\": \"0\"\n\"NO_OVERDUE_ALERT\": \"0\"\n\"OVERDUE_CASE_COUNT\": \"0\"\n\"ID_ROW_KEY\": \"ESBR201602\"\n      }\n    ",
+      "notes": "Establishment Alerts Chart",
+      "visualize": "It\"s a filter So Combo Box"
+    },
+    {
+      "name": "TMC - ActionItem-Summary",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCactSummary",
+      "id": "GetCactSummary",
+      "recordSet": "\n      {\n\"ID_ROW_KEY\":\"DQCSUMCASEA\"\n\"NODE_DESC\":\"Case Action\"\n\"NODE_ID\":\"CASEA\"\n\"NO_ACTION_CNT\":397,\n      \"NO_ACTION_PCN\":6.39,\n      \"PARENT_ID\":\"\"\n      }\n    ",
+      "notes": "Action Items for Worker",
+      "visualize": "It\"s a filter So Combo Box"
+    },
+    {
+      "name": "TMC - KPI-Current Support",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCurrentSupportChartDetails",
+      "id": "GetCurrentSupportChartDetails",
+      "recordSet": "\n      {\n\"BAR_CNT\":42304,\n      \"BAR_PER\":29,\n      \"IND_TAB\":\"CS\"\n\"MTH_REPORT\":\"Jan\"\n\"MTH_YEAR\":201601,\n      \"TREND_CNT\":3438,\n      \"TREND_PER\":61.0761\n      }\n    ",
+      "notes": "Federal Measures KPI Current Support",
+      "visualize": "Time Series and Comparision Data so Bar + Trend Chart is better Option"
+    },
+    {
+      "name": "TMC - KPI-Collection On Arrear",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCollectionsArrearsChartDetails",
+      "id": "GetCollectionsArrearsChartDetails",
+      "recordSet": "\n      {\n\"BAR_CNT\":42304,\n      \"BAR_PER\":29,\n      \"IND_TAB\":\"CA\"\n\"MTH_REPORT\":\"Jan\"\n\"MTH_YEAR\":201601,\n      \"TREND_CNT\":2862,\n      \"TREND_PER\":30.35820304} ",
+      "notes": "Federal Measures KPI - Collection on Arrear",
+      "visualize": "Time Series and Comparision Data so Bar + Trend Chart is better Option"
+    },
+    {
+      "name": "TMC - KPI-Paternity Established",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetPaternityEstablishmentChartDetails",
+      "id": "GetPaternityEstablishmentChartDetails",
+      "recordSet": "\n      {\n\"BAR_CNT\":94566,\n      \"BAR_PER\":94,\n      \"IND_TAB\":\"PE\"\n\"MTH_REPORT\":\"Jul\"\n\"MTH_YEAR\":201607,\n      \"TREND_CNT\":6573,\n      \"TREND_PER\":95.66293115\n      }\n    ",
+      "notes": "Federal Measures KPI - Paternity Establshsed",
+      "visualize": "Time Series and Comparision Data so Bar + Trend Chart is better Option"
+    },
+    {
+      "name": "TMC - KPI-Support Establishment",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetSupportEstablishmentChartDetails",
+      "id": "GetSupportEstablishmentChartDetails",
+      "recordSet": "\n      {\n\"BAR_CNT\":92397,\n      \"BAR_PER\":92,\n      \"IND_TAB\":\"SE\"\n\"MTH_REPORT\":\"Jul\"\n\"MTH_YEAR\":201607,\n      \"TREND_CNT\":6415,\n      \"TREND_PER\":93.36341143\n      }\n    ",
+      "notes": "Federal Measures KPI - Support Order Established",
+      "visualize": "Time Series and Comparision Data so Bar + Trend Chart is better Option"
+    },
+    {
+      "name": "TMC - Enforcement-Evaluate ELligiblity",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEnfEvaluateElig",
+      "id": "GetEnfEvaluateElig",
+      "recordSet": "\n      {\n \"CD_ACTIVITY_MAJOR\": \"CRIM\"\n\"REMDY_NAME\": \"Criminal Complaint\"\n\"ELIGIBLE_CNT\": 461,\n      \"STARTED_CNT\": 70,\n      \"FORCE_CLOSED_CNT\": 3,\n      \"POSTIVE_OUTCOME_CNT\": 0,\n      \"NEGATIVE_OUTCOME_CNT\": 4,\n      \"ID_ROW_KEY\": \"ENOVG1CRIM\"\n      }\n    ",
+      "notes": "Enformcent Evaluate Eligiblity",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Enforcement-ELligiblity Cases",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEnfEligCases",
+      "id": "GetEnfEligCases",
+      "recordSet": "\n      {\n\"ID_CASE\": \"00074768C\"\n\"NCP_NAME\": \"3584498M\"\n\"CP_NAME\": \"4089949M\"\n\"CNT_ELIG_REMDEIES\": 0,\n      \"CNT_ACTIVE_REMEDIES\": 1,\n      \"CNT_FORCE_CLOSED\": 0,\n      \"CNT_POS_OUTCOMES\": 0,\n      \"CNT_NEG_OUTCOMES\": 0,\n      \"ROW_COUNT\": 2735\n      }\n    ",
+      "notes": "Enformcent Evaluate Eligiblity Cases",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Enforcement- Pending Alerts",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEnfPendingAlerts",
+      "id": "GetEnfPendingAlerts",
+      "recordSet": "\n      {\n\"DESC_ACTIVITY_MAJOR\": \"Civil Contempt\"\n\"DUE_TODAY\": 0,\n      \"FIRST_WEEK\": 20,\n      \"SECOND_WEEK\": 3,\n      \"THIRD_WEEK\": 0,\n      \"FOURTH_WEEK\": 0,\n      \"MORE_THAN_A_MONTHS\": 0,\n         \"CD_ACTIVITY_MAJOR\": \"CVIL\"\n\"ID_ROW_KEY\": \"ENPAG3CVIL\"\n\"DUE_TODAY_ALERT_CNT\": 0,\n      \"FIRST_WEEK_ALERT_CNT\": 20,\n         \"SECOND_WEEK_ALERT_CNT\": 3,\n      \"THIRD_WEEK_ALERT_CNT\": 0,\n      \"FOURTH_WEEK_ALERT_CNT\": 0,\n         \"MORE_THAN_A_MONTHS_ALERT_CNT\": 0,\n      \"QuartileUniqueId\": \"122067\"\n      }\n    ",
+      "notes": "Enformcent Pending Alerts",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Enforcement- Overdue Alerts",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEnfOverdueAlerts",
+      "id": "GetEnfOverdueAlerts",
+      "recordSet": "\n      {\n\"DESC_ACTIVITY_MAJOR\": \"Criminal Complaint\"\n\"FIRST_WEEK\": 2,\n      \"SECOND_WEEK\": 10,\n      \"THIRD_WEEK\": 0,\n      \"WITH_IN_A_MONTH\": 1,\n      \"ONETOTHREE_MONTH\": 9,\n      \"THREETOSIX_MONTH\": 0,\n      \"GTSIX_MONTH\": 18,\n      \"ID_ROW_KEY\": \"ENOAG4CRIM\"\n\"CD_ACTIVITY_MAJOR\": \"CRIM\"\n\"FIRST_WEEK_ALERT_CNT\": 4,\n      \"SECOND_WEEK_ALERT_CNT\": 18,\n      \"THIRD_WEEK_ALERT_CNT\": 0,\n      \"WITH_IN_A_MONTH_ALERT_CNT\": 2,\n      \"ONETOTHREE_MONTH_ALERT_CNT\": 16,\n      \"THREETOSIX_MONTH_ALERT_CNT\": 0,\n      \"GTSIX_MONTH_ALERT_CNT\": 31,\n      \"QuartileUniqueId\": \"122068\"\n      }\n    ",
+      "notes": "Enforcement- Overdue Alerts",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Alert- Alerts Charts",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAlertChart",
+      "id": "GetAlertChart",
+      "recordSet": "\n      {\n      \"BAR_CNT\": 42304,\n      \n      \"BAR_PER\": 29.0,\n      \n      \"IND_TAB\": \"CS\"\n\n      \"MTH_REPORT\": \"Jan\"\n\n      \"MTH_YEAR\": 201601,\n      \n      \"TREND_CNT\": 3438,\n      \n      \"TREND_PER\": 61.0761\n      }\n    ",
+      "notes": "Worker Alert Vis. Graph",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Enforcement- Wait Activity",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetWaitActChart",
+      "id": "GetWaitActChart",
+      "recordSet": "\n      {\n      \"BAR_CNT\": 42304,\n      \n      \"BAR_PER\": 29.0,\n      \n      \"IND_TAB\": \"CS\"\n\n      \"MTH_REPORT\": \"Jan\"\n\n      \"MTH_YEAR\": 201601,\n      \n      \"TREND_CNT\": 3438,\n      \n      \"TREND_PER\": 61.0761\n      }\n    ",
+      "notes": "Enformcent Wait Activity",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Enforcement- Summary Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEnfSummarydetails",
+      "id": "GetEnfSummarydetails",
+      "recordSet": "\n      {\n\"CASE_CNT\":2251,\n      \"ID_ROW_KEY\":\"ENSMENPRO\"\n\"NODE_DESC\":\"Cases with Enforcement Activities\"\n\"NODE_ID\":\"ENPRO\"\nPARENT_ID:\"\"\n\"PERCENTAGE\":66.7,\n      \"TOTAL_CNT\":3375\n      }\n    ",
+      "notes": "Enformcement Summary Information",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Enforcement- Summary Aging",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEnfSummarydetailsAging",
+      "id": "GetEnfSummarydetailsAging",
+      "recordSet": "\n      {\n\"ID_NODE\": \"ENCOM\"\n \"PARENT_ID\": \"\"\n \"CD_CATEGORY\": \"\"\n \"ID_ROW_KEY\": \"ENSMENCOM\"\n\"CAT_AGING\": \"\"\n\"ID_PARENT_DESC\": \"\"\n\"ID_PARENT\": \"\"\n\"DESC_NODE\": \"Completed\"\n\"NO_CASE\": 284,\n      \"NO_PERCENT\": 8.41,\n      \"COUNT_TOPRIGHT\": 3375,\n      \"IND\": \"SUMM\"\n\"DESC_CATEGORY\": \"\"\n\"desc_node\": \"\"\n\"NO_CASE_CNT\": 0.0,\n      \"NO_CASE_CATEGORY\": 0.0,\n      \"NO_CAT_COUNT\": 0.0,\n      \"COUNT_CATEGORY\": 0.0,\n      \"CAT_COUNT\": 0.0,\n      \"NO_CATEGORY\": 0.0,\n      \"CATEGORY_CNT\": 0.0,\n      \"NODE_ID\": \"ENCOM\"\n\"NO_CAT_CNT\": 0.0\n      }\n    ",
+      "notes": "Enforcement Aging Information",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Establishment Pending Alerts",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEstPendingAlerts",
+      "id": "GetEstPendingAlerts",
+      "recordSet": "\n      {\n\"DESC_ACTIVITY_MAJOR\": \"Agreed Order Process\"\nDUE_TODAY\": 0,\n      \"FIRST_WEEK\": 1,\n      \"SECOND_WEEK\": 0,\n      \"THIRD_WEEK\": 0,\n      \"FOURTH_WEEK\": 0,\n      \"MORE_THAN_A_MONTHS\": 0,\n      \"CD_ACTIVITY_MAJOR\": \"AGRO\"\n\"ID_ROW_KEY\": \"ESPAG3AGRO\"\n\"DUE_TODAY_ALERT_CNT\": 0,\n      \"FIRST_WEEK_ALERT_CNT\": 1,\n      \"SECOND_WEEK_ALERT_CNT\": 0,\n      \"THIRD_WEEK_ALERT_CNT\": 0,\n      \"FOURTH_WEEK_ALERT_CNT\": 0,\n      \"MORE_THAN_A_MONTHS_ALERT_CNT\": 0,\n      \"QuartileUniqueId\": \"121947\"\n      }\n    ",
+      "notes": "Established Pending Alerts",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Establishment-Eligible Cases",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEstEligCases",
+      "id": "GetEstEligCases",
+      "recordSet": "\n      {\n\"ID_CASE\": \"01482929C\"\n\"NCP_NAME\": \"8505763M\"\n\"CP_NAME\": \"8491757M\"\n\"CNT_ELIG_REMDEIES\": 0,\n      \"CNT_ACTIVE_REMEDIES\": 0,\n      \"CNT_FORCE_CLOSED\": 1,\n      \"CNT_POS_OUTCOMES\": 0,\n      \"CNT_NEG_OUTCOMES\": 0,\n      \"ROW_COUNT\": 138\n      }\n    ",
+      "notes": "Establishment-Eligible Cases",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Establishment Overdue Alerts",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEstOverdueAlerts",
+      "id": "GetEstOverdueAlerts",
+      "recordSet": "\n      {\n\"DESC_ACTIVITY_MAJOR\": \"Agreed Order Process\"\n\"FIRST_WEEK\": 2,\n      \"SECOND_WEEK\": 0,\n      \"THIRD_WEEK\": 0,\n      \"WITH_IN_A_MONTH\": 1,\n      \"ONETOTHREE_MONTH\": 0,\n      \"THREETOSIX_MONTH\": 0,\n      \"GTSIX_MONTH\": 1,\n      \"CD_ACTIVITY_MAJOR\": \"AGRO\"\n\"ID_ROW_KEY\": \"ESOAG4AGRO\"\n\"FIRST_WEEK_ALERT_CNT\": 2,\n      \"SECOND_WEEK_ALERT_CNT\": 0,\n      \"THIRD_WEEK_ALERT_CNT\": 0,\n      \"WITH_IN_A_MONTH_ALERT_CNT\": 1,\n      \"ONETOTHREE_MONTH_ALERT_CNT\": 0,\n      \"THREETOSIX_MONTH_ALERT_CNT\": 0,\n      \"GTSIX_MONTH_ALERT_CNT\": 1,\n      \"QuartileUniqueId\": \"121948\"\n      }\n    ",
+      "notes": "Establishment Overdue Alerts",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Establihsment - Evaluate Eligiblity",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEstEvaluateElig",
+      "id": "GetEstEvaluateElig",
+      "recordSet": "\n      {\n\"CD_ACTIVITY_MAJOR\": \"AGRO\"\n\"REMDY_NAME\": \"Agreed Order Process\"\n\"ELIGIBLE_CNT\": 98,\n      \"STARTED_CNT\": 4,\n      \"FORCE_CLOSED_CNT\": 1,\n      \"POSTIVE_OUTCOME_CNT\": 5,\n      \"NEGATIVE_OUTCOME_CNT\": 0,\n      \"ID_ROW_KEY\": \"ESOVG1AGRO\"\n      }\n    ",
+      "notes": "Establihsment - Evaluate Eligiblity",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Establishment- Summary Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEstSummarydetails",
+      "id": "GetEstSummarydetails",
+      "recordSet": "\n      {\nCASE_CNT:83,ID_ROW_KEY:\"ESSMESPRO\"\nNODE_DESC:\"Cases with Establishment Activities\"\nNODE_ID:\"ESPRO\"\nPARENT_ID:\"\"\nPERCENTAGE:77.57,TOTAL_CNT:107\n      }\n    ",
+      "notes": "Establishment- Summary Details",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Establishment- Summary Details Aging",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEstSummarydetailsAging",
+      "id": "GetEstSummarydetailsAging",
+      "recordSet": "\n      {\n\"ID_NODE\": \"ESCOM\"\n\"PARENT_ID\": \"\"\n\"CD_CATEGORY\": \"\"\n\"ID_ROW_KEY\": \"ESSMESCOM\"\n\"CAT_AGING\": \"\"\n\"ID_PARENT_DESC\": \"\"\n\"ID_PARENT\": \"\"\n\"DESC_NODE\": \"Completed\"\n\"NO_CASE\": 24,\n      \"NO_PERCENT\": 22.43,\n      \"COUNT_TOPRIGHT\": 107,\n      \"IND\": \"SUMM\"\n\"DESC_CATEGORY\": \"\"\n\"desc_node\": \"\"\n\"NO_CASE_CNT\": 0.0,\n      \"NO_CASE_CATEGORY\": 0.0,\n      \"NO_CAT_COUNT\": 0.0,\n      \"COUNT_CATEGORY\": 0.0,\n      \"CAT_COUNT\": 0.0,\n      \"NO_CATEGORY\": 0.0,\n      \"CATEGORY_CNT\": 0.0,\n      \"NODE_ID\": \"ESCOM\"\n\"NO_CAT_CNT\": 0.0\n      }\n    ",
+      "notes": "Establishment- Summary Details Aging",
+      "visualize": "Chart"
+    },
+    {
+      "name": "TMC - Case With Order Collection Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCWOColDetails",
+      "id": "GetCWOColDetails",
+      "recordSet": "\n      {\n\"CURRENT_MONTH\":1426,\n      \"DESC_NODE\":\"Paying Cases\"\n\"EXP_TO_IMP_BUT_NOC_CNT\":0,\n      \"EXP_TO_IMP_BUT_WOR_CNT\":0,\n      \"EXP_TO_NOC_BUT_IMP_CNT\":0,\n      \"EXP_TO_NOC_BUT_WOR_CNT\":0,\n      \"EXP_TO_WOR_BUT_IMP_CNT\":0,\n      \"EXP_TO_WOR_BUT_NOC_CNT\":0,\n      \"FIRST_MONTH\":2009,\n      \"FOURTH_MONTH\":2173,\n      \"FRCT_CNT\":0,\n      \"ID_NODE\":\"PCASE\"\n\"ID_PARENT\":\"\"\n\"ID_ROW_KEY\":\"PAHCOLPCASE\"\n\"IMPROVE_CNT\":0,\n      \"NO_FRCT_NOT_PAID_CNT\":0,\n      \"NO_FRCT_PAID_CNT\":0,\n      \"SECOND_MONTH\":2113,\n      \"STAY_SAME_CNT\":2009,\n      \"THIRD_MONTH\":2109,\n      \"WORSEN_CNT\":0\n      }\n    ",
+      "notes": "Case With Order Collection Details",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Case With Order Demographic Profile",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCWODemoProfile",
+      "id": "GetCWODemoProfile",
+      "recordSet": "\n      {\n\"CP_CASE_CNT\":2649,\n      \"CP_MEMBER_CNT\":2493,\n      \"DESC_DEMO_PROFILE\":\"Demographics\"\n\"DP_CASE_CNT\":2893,\n      \"DP_MEMBER_CNT\":4004,\n      \"ID_NODE\":\"DE\"\n\"ID_PARENT\":\"\"\n\"ID_ROW_KEY\":\"PAHDPRDE\"\n\"NCP_CASE_CNT\":2655,\n      \"NCP_MEMBER_CNT\":2551\n      }\n    ",
+      "notes": "Case With Order Demographic Profile",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Locate Employer Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetLocateEmployerGraphDetails",
+      "id": "GetLocateEmployerGraphDetails",
+      "recordSet": "\n      {\n\"DESC_MTH\": \"<1\"\n \"NO_NCP\": 17,\n      \"ID_ROW_KEY\": \"LOCGRPEMP1\"\n      }\n    ",
+      "notes": "Employer Locate Details",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Locate NCP Employer Information Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetLocateNCPEmployerGridDetails",
+      "id": "GetLocateNCPEmployerGridDetails",
+      "recordSet": "\n      {\n\"ID_NODE\":\"FEDRL\"\n\"ID_PARENT\":\"\"\n\"ID_ROW_KEY\":\"PAHNNLE1FEDRL\"\n\"NO_BAD\":3,\n      \"NO_DUPLICATE\":0,\n      \"NO_ENDDATED\":0,\n      \"NO_GOOD:0\"\n\"NO_OTHER_ERROR\":0,\n      \"NO_PENDING\":0,\n      \"NO_RECIEVED\":3,\n      \"NO_REQUESTED\":0,\n      \"SOURCE_CODE\":\"FEDRL\"\n\"SOURCE_NAME\":\"Federal\"\n      }\n    ",
+      "notes": "Locate NCP Information Details",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Locate NCP Address Information Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetLocateNCPAddressGridDetails",
+      "id": "GetLocateNCPAddressGridDetails",
+      "recordSet": "\n      {\n\"ID_NODE\":\"FEDRL\"\n\"ID_PARENT\":\"\"\n\"ID_ROW_KEY\":\"PAHNNLA1FEDRL\"\n\"NO_BAD\":0,\n      \"NO_DUPLICATE\":0,\n      \"NO_ENDDATED\":0,\n      \"NO_GOOD\":1,\n      \"NO_OTHER_ERROR\":0,\n      \"NO_PENDING\":0,\n      \"NO_RECIEVED\":3,\n      \"NO_REQUESTED\":0,\n      \"SOURCE_CODE\":\"FEDRL\"\n\"SOURCE_NAME\":\"Federal\"\n      }\n    ",
+      "notes": "Locate NCP Information Details",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Case With Order- Receipt Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCWORectDetailsTMC",
+      "id": "GetCWORectDetailsTMC",
+      "recordSet": "\n      {\n\"CD_RECEIPT_SOURCE\":\"C\"\n\"COV_MSO_AMT\":0,\n      \"COV_MSO_CNT\":0,\n      \"COV_MSO_PB_AMT\":0,\n      \"COV_MSO_PB_CNT\":0,\n      \"DESC_RECEIPT_SOURCE\":\"Child Support LIEN Network\"\n\"DOESNT_COV_MSO_AMT\":0,\n      \"DOESNT_COV_MSO_CNT\":0,\n      \"DOESNT_COV_PB_AMT\":0,\n      \"DOESNT_COV_PB_CNT\":0,\n      \"HOLD_AMT\":170,\n      \"HOLD_CNT\":1,\n      \"ID_ROW_KEY\":\"PAHSREC1\"\n      }\n    ",
+      "notes": "Case With Order- Receipt Details",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC -  Changes to Data Qulaity",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetChngsDataQuality",
+      "id": "GetChngsDataQuality",
+      "recordSet": "\n      {\n\"CHNG_DATA_QUAL\":\"NCP Lost Employment\"\n\"D_NODE\":\"NLOE\"\n\"ID_ROW_KEY\":\"PAHCDQNLOE\"\n\"LESS_THN_MONTH\":137,\n      \"MORE_THN_SIX_MONTH\":1824,\n      \"ONE_THREE_MONTH\":283,\n      \"THREE_SIX_MONTH\":287,\n      \"TOTAL\":2531\n      }\n    ",
+      "notes": "Changes to Data Qulaity",
+      "visualize": "Tabular Data so Grid Widget is better option"
+    },
+    {
+      "name": "TMC - Case With Order Payments Trends ",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCWOTrendline",
+      "id": "GetCWOTrendline",
+      "recordSet": "\n      {\n\"DISB_HOLD_CASE_CNT\":6,\n      \"ID_ROW_KEY\":\"CWOGRP201602\"\n\"MTH_SUPPORT\":\"Feb\"\n\"NEVER_PAY_CASE_CNT\":151,\n      \"PAYING_CASE_CNT\":2060,\n      \"RECPT_HOLD_CASE_CNT\":41,\n      \"STOPPED_PAY_CASE_CNT\":846\n      }\n    ",
+      "notes": " Case With Order Payments Trends",
+      "visualize": "Time Series Data for Trend Widget is better Option"
+    },
+    {
+      "name": "TMC - Case With Order Summary",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCaseWithOrderSummary",
+      "id": "GetCaseWithOrderSummary",
+      "recordSet": "\n      {\n\"AMT_TOT_COLL\":272569.86,\n      \"CASE_CNT\":1426,\n      \"COUNT_TOPRIGHT\":3120,\n      \"DESC_NODE\":\"Paying Cases\"\n\"ID_NODE\":\"CWPAC\"\n\"ID_PARENT\":\"\"\n\"ID_ROW_KEY\":\"PAHSUMCWPAC\"\n\"PERCENT\":45.71\n      }\n    ",
+      "notes": "Case With Order Summary",
+      "visualize": "Hierarchal Data so Tree Widger is Better Option"
+    },
+    {
+      "name": "TMC - Case With Order Summary Aging",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCaseWithOrderSummaryAging",
+      "id": "GetCaseWithOrderSummaryAging",
+      "recordSet": "\n      {\n\"CATEGORY_CNT\":-4.4942328371557893e+307,\n      \"CAT_COUNT\":-4.4942328371557893e+307,\n      \"CD_CATEGORY\":\"\"\n\"COUNT_CATEGORY\":-4.4942328371557893e+307,\n      \"COUNT_TOPRIGHT\":3119,\n      \"DESC_CATEGORY\":\"Arrears Only\"\n\"DESC_NODE\":\"Arrears Only\"\n\"ID_NODE\":\"CWCPA\"\n\"ID_PARENT\":\"CWPAC\"\n\"ID_PARENT_DESC\":\"\"\n\"ID_ROW_KEY\":\"PAHSUMCWCPA\"\n\"IND\":\"SUMM\"\n\"NODE_ID\":\"CWCPA\"\n\"NO_CASE\":241,\n      \"NO_CASE_CATEGORY\":-4.4942328371557893e+307,\n      \"NO_CASE_CNT\":-4.4942328371557893e+307,\n      \"NO_CATEGORY\":-4.4942328371557893e+307,\n      \"NO_CAT_CNT\":-4.4942328371557893e+307,\n      \"NO_CAT_COUNT\":-4.4942328371557893e+307,\n      \"NO_PERCENT\":12,\n      \"desc_node\":\"Arrears Only\"\n      }\n    ",
+      "notes": "Case With Order Summary Aging",
+      "visualize": "Hierarchal Data so Tree Widger is Better Option"
+    },
+    {
+      "name": "TMC - Changes to Data Quality Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetChangsDataQualityMore",
+      "id": "GetChangsDataQualityMore",
+      "recordSet": "\n      {\n\"ID_NODE\": \"CASEA\"\n\"CHNG_DATA_QUAL\": \"Case Action\"\n\"LESS_THN_MONTH\": 48,\n      \"ONE_THREE_MONTH\": 53,\n      \"THREE_SIX_MONTH\": 11,\n      \"MORE_THN_SIX_MONTH\": 302,\n      \"TOTAL\": 397,\n      \"ID_ROW_KEY\": \"DQCSUMCASEA\"\n\"PARENT_ID\": \"\"\n\"CASE_COUNT\": 6216\n      }\n    ",
+      "notes": "Changes to Data Quality Details",
+      "visualize": "Tabular Data so Grid Widget is Better Option"
+    },
+    {
+      "name": "TMC - Alerts- Overdue Alerts Tabular Data",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAlertsOverDueGrid",
+      "id": "GetAlertsOverDueGrid",
+      "recordSet": "\n      {\n      \"BAR_CNT\": 42304,\n      \n      \"BAR_PER\": 29.0,\n      \n      \"IND_TAB\": \"CS\"\n\n      \"MTH_REPORT\": \"Jan\"\n\n      \"MTH_YEAR\": 201601,\n      \n      \"TREND_CNT\": 3438,\n      \n      \"TREND_PER\": 61.0761\n      }\n    ",
+      "notes": "Alerts- Overdue Alerts Tabular Data",
+      "visualize": "Tabular Data so Grid Widget is Better Option"
+    },
+    {
+      "name": "TMC - Alerts-Alert Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAlertsGrid",
+      "id": "GetAlertsGrid",
+      "recordSet": "\n      {\n      \"BAR_CNT\": 42304,\n      \n      \"BAR_PER\": 29.0,\n      \n      \"IND_TAB\": \"CS\"\n\n      \"MTH_REPORT\": \"Jan\"\n\n      \"MTH_YEAR\": 201601,\n      \n      \"TREND_CNT\": 3438,\n      \n      \"TREND_PER\": 61.0761\n      }\n    ",
+      "notes": "Alerts-Alert Details",
+      "visualize": "Tabular Data Grid Control is better option"
+    },
+    {
+      "name": "TMC - Alerts- Summary",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAlertSummary",
+      "id": "GetAlertSummary",
+      "recordSet": "\n      {\n\"ID_ROW_KEY\": \"CSALSMPENXX\"\n\"ID_NODE\": \"CSPEN\"\n\"ID_PARENT\": \"\"\n\"DESC_NODE\": \"Pending Alerts\"\n\"COUNT_CASE\": 584,\n      \"PERCENT_CASE\": 26.64,\n      \"COUNT_TOPRIGHT\": 2192,\n      \"ALERT_CNT\": 652\n      }\n    ",
+      "notes": "Alerts- Summary",
+      "visualize": "Hierarchal Data so Tree Widger is Better Option"
+    },
+    {
+      "name": "TMC - Alerts- Aging Details",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAlertSummaryAging",
+      "id": "GetAlertSummaryAging",
+      "recordSet": "\n      {\n \"ID_NODE\": \"CSOVDEN\"\n\"ID_ROW_KEY\": \"CSALSMOVDEN1\"\n\"ID_PARENT\": \"CSOVD\"\n\"CD_CATEGORY\": \"\"\n\"DESC_NODE\": \"Enforcement\"\n\"NO_CASE\": 81,\n      \"NO_PERCENT\": 8.57,\n      \"COUNT_TOPRIGHT\": 0,\n      \"IND\": \"AGING\"\n\"ALERT_CNT\": 0,\n      \"DESC_CATEGORY\": \"Less than 10 days\"\n\"desc_node\": \"Less than 10 days\"\n\"NO_CASE_CNT\": 0.0,\n      \"NO_CASE_CATEGORY\": 0.0,\n      \"NO_CAT_COUNT\": 0.0,\n      \"COUNT_CATEGORY\": 0.0,\n      \"CAT_COUNT\": 0.0,\n      \"NO_CATEGORY\": 0.0,\n      \"CATEGORY_CNT\": 0.0,\n      \"NODE_ID\": \"CSOVDEN\"\n\"NO_CAT_CNT\": 0.0\n      }\n    ",
+      "notes": "Alerts- Aging Details",
+      "visualize": "hierarchal Data so Tree Widger is Better Option"
+    },
+    {
+      "name": "TMC - Locate Address Details Chart",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetLocateAddressGraphDetails",
+      "id": "GetLocateAddressGraphDetails",
+      "recordSet": "\n      {\n\"DESC_MTH\": \"<1\"\n \"NO_NCP\": 49,\n      \"ID_ROW_KEY\": \"LOCGRPADD1\"\n      }\n    ",
+      "notes": "Locate Details Chart",
+      "visualize": "BarChart is Better"
+    },
+    {
+      "name": "TMC - Locate NCP Summary",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetLocateNCPSummary",
+      "id": "GetLocateNCPSummary",
+      "recordSet": "\n      {\n\"COUNT_TOPRIGHT\":304,\n      \"DESC_NODE\":\"Employer Only\"\n\"ID_NODE\":\"LOELY\"\nID_PARENT:\"LONCP\"\n\"ID_ROW_KEY\":\"LOCSUMLOELY\"\n\"NO_CASE\":175,\n      \"NO_PERCENT\":5.75\n      }\n    ",
+      "notes": "Locate NCP Summary",
+      "visualize": "hierarchal Data so Tree Widger is Better Option"
+    },
+    {
+      "name": "TMC - Locate NCP Summary Aging",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetLocateNCPSummaryAging",
+      "id": "GetLocateNCPSummaryAging",
+      "recordSet": "\n      {\n\"CATEGORY_CNT\":0,\n      \"CAT_COUNT\":0,\n      \"CD_CATEGORY\":\"\"\n\"COUNT_CATEGORY\":0,\n      \"COUNT_TOPRIGHT\":304,\n      \"DESC_CATEGORY\":\"Address & Employer\"\n\"DESC_NODE\":\"Address & Employer\"\n\"ID_NODE\":\"LOAEM\"\n\"ID_PARENT\":\"LONCP\"\n\"ID_PARENT_DESC\":\"\"\n\"ID_ROW_KEY\":\"LOCSUMLOAEM\"\n\"IND\":\"SUMM\"\n\"NODE_ID\":\"LOAEM\"\n\"NO_CASE\":1666,\n      \"NO_CASE_CATEGORY\":0,\n      \"NO_CASE_CNT\":0,\n      \"NO_CATEGORY\":0,\n      \"NO_CAT_CNT\":0,\n      \"NO_CAT_COUNT\":0,\n      \"NO_MEMBER_CATEGORY\":-2147483648,\n      \"NO_PERCENT\":54.75,\n      \"desc_node\":\"Address & Employer\"\n      }\n    ",
+      "notes": "Locate NCP Summary Aging",
+      "visualize": "hierarchal Data so Tree Widger is Better Option"
+    },
+    {
+      "name": "TMC - Data Quality Summary Trend",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/SelectDQSummaryTrend",
+      "id": "SelectDQSummaryTrend",
+      "recordSet": "\n      {\n      \"BAR_CNT\": 42304,\n      \n      \"BAR_PER\": 29.0,\n      \n      \"IND_TAB\": \"CS\"\n\n      \"MTH_REPORT\": \"Jan\"\n\n      \"MTH_YEAR\": 201601,\n      \n      \"TREND_CNT\": 3438,\n      \n      \"TREND_PER\": 61.0761\n      }\n    ",
+      "notes": "Data Quality Summary Trend",
+      "visualize": "Time Series Data so Trend is Better Option"
+    },
+    {
+      "name": "TMC -  Analyze Case By - Case Action",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAdvCaseActionDetails",
+      "id": "GetAdvCaseActionDetails",
+      "recordSet": "\n      {\n\"CASE_CNT\": 0,\n      \"DESC_NODE\": \"Monitor/Med Enforcement Program Arrears\"\n\"ID_NODE\": \"CACTB\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVCACTNB\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 0\n      }\n    ",
+      "notes": "Analyze Case By - Case Action",
+      "visualize": "Tabular Data so Grid is Better Option"
+    },
+    {
+      "name": "TMC -  Analyze Case By - Case Status By Aging",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAdvCaseStatusAgeDetails",
+      "id": "GetAdvCaseStatusAgeDetails",
+      "recordSet": "\n      {\n\"CASE_CNT\": 633,\n      \"DESC_NODE\": \"Less than 3 Years\"\n\"ID_NODE\": \"CSLTH3Y\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVCSAGELTH3\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 28\n      }\n    ",
+      "notes": "Analyze Case By - Case Status By Aging",
+      "visualize": "Tabular Data so Grid is Better Option"
+    },
+    {
+      "name": "TMC -  Analyze Case By - Member Dependent Paternity Status",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetMemberDepPatStatus",
+      "id": "GetMemberDepPatStatus",
+      "recordSet": "\n      {\n\"CASE_CNT\": 2,\n      \"DESC_NODE\": \"EST\"D by ACK at IVD Office\"\n\"ID_NODE\": \"EAIVD\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVMDDPTSEAIVD\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 0\n      }\n    ",
+      "notes": "Analyze Case By - Member Dependent Paternity Status",
+      "visualize": "Tabular Data so Grid is Better Option"
+    },
+    {
+      "name": "TMC -  Analyze Case By - Locate Mail Address",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetLocateMaillAddrStatus",
+      "id": "GetLocateMaillAddrStatus",
+      "recordSet": "\n      {\n\"CASE_CNT\": 1927,\n      \"DESC_NODE\": \"Confirmed\"\n\"ID_NODE\": \"MCONF\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVLONCPMACONF\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 86\n      }\n    ",
+      "notes": "Analyze Case By - Locate Mail Address",
+      "visualize": "Tabular Data so Grid is Better Option"
+    },
+    {
+      "name": "TMC -  Analyze Case By - Locate Residential Address",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetLocateResidentialAddr",
+      "id": "GetLocateResidentialAddr",
+      "recordSet": "\n      {\n\"CASE_CNT\": 1329,\n      \"DESC_NODE\": \"Confirmed\"\n\"ID_NODE\": \"RCONF\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVLONCPMRCONF\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 59\n      }\n    ",
+      "notes": "Analyze Case By - Locate Residential Address",
+      "visualize": "Tabular Data so Grid is Better Option"
+    },
+    {
+      "name": "TMC -  Analyze Case By - Locate Employment Details",
+      "endpoint": " http://192.168.0.27/DashboardServices/api/TMCGeneric/GetLocateEmploymentDtls",
+      "id": "GetLocateEmploymentDtls",
+      "recordSet": "\n      {\n\"CASE_CNT\": 1596,\n      \"DESC_NODE\": \"Confirmed\"\n\"ID_NODE\": \"ECONF\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVLONCPERCONF\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 71\n      }\n    ",
+      "notes": "Analyze Case By - Locate Employment Details",
+      "visualize": "Tabular Data so Grid is Better Option"
+    },
+    {
+      "name": "TMC -  Analyze Case By - Establishment Type",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEstablishmentTypeDtls",
+      "id": "GetEstablishmentTypeDtls",
+      "recordSet": "\n      {\n\"CASE_CNT\": 0,\n      \"DESC_NODE\": \"Paternity\"\n\"ID_NODE\": \"ESTPAT\"\n\"ID_PARENT\": \"\"\n\"ID_ROW_KEY\": \"ADVESTPAT\"\n\"NO_DISP_ORDER\": \"1\"\n\"PERCENTAGE\": 0\n      }\n    ",
+      "notes": "Analyze Case By - Establishment Type",
+      "visualize": "Tabular Data so Grid is Better Option"
+    },
+    {
+      "name": "TMC- Report Generation",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/GenerateReport",
+      "id": "Reports",
+      "recordSet": "",
+      "notes": "To Generate Excel and PDF Reports. It is a Internal Service. Dont Bind this with any Widgets",
+      "visualize": "Report Download PDF or Excel"
+    },
+    {
+      "name": "TMC- Error Handler Generation",
+      "endpoint": "http://192.168.0.27/DashboardServices/api/TMCGeneric/LogClientError",
+      "id": "ErrorHandler",
+      "recordSet": "",
+      "notes": "Used to Log Error(s) Occured in Clientside.It is a Internal Service. Dont Bind this with any Widgets ",
+      "visualize": "Error Log. No Visual"
+    }
+  ]
+}

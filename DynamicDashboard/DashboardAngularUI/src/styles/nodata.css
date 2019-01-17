@@ -1,0 +1,55 @@
+.black-overlay {
+    position: fixed !important;
+}
+
+
+.notfound {
+
+    width: 100%;
+    line-height: 1.2;
+    padding: 74px 15px;
+    text-align: center;
+    background: #fff;
+}
+
+.notfound  {
+    position: relative;
+
+}
+
+
+
+
+
+.notfound h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #d12e2e;
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+/*
+@media only screen and (max-width: 767px) {
+    .notfound h2 {
+        font-size: 16px;
+        position: relative;
+
+    }
+
+    .notfound  {
+        position: relative;
+        height: 160px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .notfound h2 {
+        font-size: 16px;
+        position: relative;
+
+    }
+}
+
+ */

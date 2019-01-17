@@ -1,0 +1,33 @@
+DROP VIEW IF EXISTS ACT_HI_TASKINST;
+CREATE VIEW `ACT_HI_TASKINST`
+AS
+   SELECT `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`ID_` AS `ID_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`TASK_DEF_KEY_` AS `TASK_DEF_KEY_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`PROC_DEF_KEY_` AS `PROC_DEF_KEY_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`PROC_DEF_ID_` AS `PROC_DEF_ID_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`PROC_INST_ID_` AS `PROC_INST_ID_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`EXECUTION_ID_` AS `EXECUTION_ID_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`CASE_DEF_KEY_` AS `CASE_DEF_KEY_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`CASE_DEF_ID_` AS `CASE_DEF_ID_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`CASE_INST_ID_` AS `CASE_INST_ID_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`CASE_EXECUTION_ID_`
+             AS `CASE_EXECUTION_ID_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`ACT_INST_ID_` AS `ACT_INST_ID_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`NAME_` AS `NAME_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`PARENT_TASK_ID_`
+             AS `PARENT_TASK_ID_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`DESCRIPTION_` AS `DESCRIPTION_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`OWNER_` AS `OWNER_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`ASSIGNEE_` AS `ASSIGNEE_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`START_TIME_` AS `START_TIME_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`END_TIME_` AS `END_TIME_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`DURATION_` AS `DURATION_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`DELETE_REASON_`
+             AS `DELETE_REASON_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`PRIORITY_` AS `PRIORITY_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`DUE_DATE_` AS `DUE_DATE_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`FOLLOW_UP_DATE_`
+             AS `FOLLOW_UP_DATE_`,
+          `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`.`TENANT_ID_` AS `TENANT_ID_`
+     FROM `camundaflowboot_tst_v2`.`ACT_HI_TASKINST`;
+      

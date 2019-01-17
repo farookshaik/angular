@@ -1,0 +1,32 @@
+﻿[
+  {
+    "value": "A-ANNUALY",
+    "key": "A"
+  },
+  {
+    "value": "B-BIWEEKLY",
+    "key": "B"
+  },
+  {
+    "value": "M-MONTHLY",
+    "key": "M"
+  },
+  {
+    "value": "O-ONE TIME ONLY",
+    
+    "key": "Q"
+  },
+  {
+    "value": "Q-QUARTERLY",
+    "key": "Q"
+  },
+  {
+    "value": "S-SEMI MONTHLY",
+
+    "key": "S"
+  },
+  {
+    "value": "W-WEEKLY",
+    "key": "W"
+  }
+]

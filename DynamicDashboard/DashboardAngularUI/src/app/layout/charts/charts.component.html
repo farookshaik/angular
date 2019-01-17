@@ -1,0 +1,308 @@
+<div [@routerTransition]>
+    <!--
+        (onFDateChange)='onFromDateChangeEvent($event)' (onTDateChange)='onToDateChangeEvent($event)' -->
+    <app-page-header (onRangeDateChange)='onRangeDateChangeEvent($event)' [heading]="'Charts'" [icon]="'fa-bar-chart-o'"></app-page-header>
+
+    <div class="row">
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Total Applications By Unit
+                </div>
+                <ng-template [ngIf]="istotalApplicationsByUnitData" [ngIfElse]="elseBlock">
+                    <div class="card-body" *ngIf="totalApplicationsByUnitbarChartData.length">
+                        <canvas height="160px" baseChart [datasets]="totalApplicationsByUnitbarChartData" [labels]="totalApplicationsByUnitbarChartLabels"
+                            [options]="totalApplicationsbarChartOptions" [legend]="totalApplicationsByUnitbarChartLegend"
+                            [chartType]="totalApplicationsByUnitbarChartType" [colors]="totalApplicationsByUnitbarchartColors"
+                            (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </ng-template>
+                <ng-template #elseBlock>
+                    <div class="card-body">
+                        <div class="notfound">
+                            <h2>the chart you searched could not found</h2>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Total Applications By House
+                </div>
+                <ng-template [ngIf]="istotalApplicationsByHouseData" [ngIfElse]="elsetotalApplicationsByHouse">
+                    <div class="card-body" *ngIf="totalApplicationsByHousebarChartData.length">
+                        <canvas height="160px" baseChart [datasets]="totalApplicationsByHousebarChartData" [labels]="totalApplicationsByHousebarChartLabels"
+                            [options]="totalApplicationsByHousebarChartOptions" [legend]="totalApplicationsByHousebarChartLegend"
+                            [chartType]="totalApplicationsByHousebarChartType" [colors]="totalApplicationsByHousebarchartColors"
+                            (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </ng-template>
+                <ng-template #elsetotalApplicationsByHouse>
+                    <div class="card-body">
+                        <div class="notfound">
+                            <h2>the chart you searched could not found</h2>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Application Response By House
+                </div>
+                <div class="card-body">
+                    <ng-template [ngIf]="isResponseApplicationsByHouseData" [ngIfElse]="elseresponseApplicationsByHouse">
+                        <div class="card-body" *ngIf="applicationResponseByHousebarChartData.length">
+                            <canvas height="160px" baseChart [datasets]="applicationResponseByHousebarChartData"
+                                [labels]="applicationResponseByHousebarChartLabels" [options]="applicationResponseByHouseOptions"
+                                [legend]="applicationResponseByHousebarChartLegend" [chartType]="applicationResponseByHousebarChartType"
+                                [colors]="applicationResponseByHousebarchartColors" (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)">
+                            </canvas>
+                        </div>
+                    </ng-template>
+                    <ng-template #elseresponseApplicationsByHouse>
+                        <div class="card-body">
+                            <div class="notfound">
+                                <h2>the chart you searched could not found</h2>
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Average Response Time
+                </div>
+                <div class="card-body">
+                    <ng-template [ngIf]="istotalResponseTimeByHouseData" [ngIfElse]="elsetotalResponseTimeByHouse">
+                        <div class="card-body" *ngIf="totalResponseTimeByHousebarChartData.length">
+                            <canvas baseChart height="160px" #ApplicationsByHouse="base-chart" [datasets]="totalResponseTimeByHousebarChartData"
+                                [labels]="totalResponseTimeByHousebarChartLabels" [options]="totalResponseTimeByHouseOptions"
+                                [legend]="totalResponseTimeByHousebarChartLegend" [chartType]="totalResponseTimeByHousebarChartType"
+                                [colors]="totalResponseTimeByHousebarchartColors" (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)">
+                            </canvas>
+                        </div>
+                    </ng-template>
+                    <ng-template #elsetotalResponseTimeByHouse>
+                        <div class="card-body">
+                            <div class="notfound">
+                                <h2>the chart you searched could not found</h2>
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Beds Marked Available
+                </div>
+                <div class="card-body">
+                    <ng-template [ngIf]="isbedsMarkedAvailabilityByHouseData" [ngIfElse]="elsebedsMarkedAvailabilityBlock">
+                        <div class="card-body" *ngIf="bedsMarkedAvailabilityByHousebarChartData.length">
+                            <canvas height="160px" baseChart [datasets]="bedsMarkedAvailabilityByHousebarChartData"
+                                [labels]="bedsMarkedAvailabilityByHousebarChartLabels" [options]="bedsMarkedAvailabilityByHousebarChartOptions"
+                                [legend]="bedsMarkedAvailabilityByHousebarChartLegend" [chartType]="bedsMarkedAvailabilityByHousebarChartType"
+                                [colors]="bedsMarkedAvailabilityByHousebarchartColors" (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)">
+                            </canvas>
+                        </div>
+                    </ng-template>
+                    <ng-template #elsebedsMarkedAvailabilityBlock>
+                        <div class="card-body">
+                            <div class="notfound">
+                                <h2>the chart you searched could not found</h2>
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-3">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Butterfly House
+                </div>
+                <ng-template [ngIf]="isbutterflyHousepieChartData" [ngIfElse]="elsebutterflyHouse">
+                    <div class="card-body" *ngIf="butterflyHousepieChartData.length">
+                        <canvas baseChart height="160px" [data]="butterflyHousepieChartData" [labels]="housePieChartLabels"
+                            [options]="pieHouseOptions" [chartType]="pieChartType" [colors]="pieHouseColors"
+                            (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </ng-template>
+                <ng-template #elsebutterflyHouse>
+                    <div class="card-body">
+                        <div class="notfound">
+                            <h2>the chart you searched could not found</h2>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        <div class="col col-sm-3">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Cornerstone Transition Home
+                </div>
+                <ng-template [ngIf]="iscornerstoneHousepieChartData" [ngIfElse]="elsecornerstoneHouse">
+                    <div class="card-body" *ngIf="cornerstoneHousepieChartData.length">
+                        <canvas baseChart height="160px" [data]="cornerstoneHousepieChartData" [labels]="housePieChartLabels"
+                            [options]="pieHouseOptions" [chartType]="pieChartType" [colors]="pieHouseColors"
+                            (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </ng-template>
+                <ng-template #elsecornerstoneHouse>
+                    <div class="card-body">
+                        <div class="notfound">
+                            <h2>the chart you searched could not found</h2>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        <div class="col col-sm-3">
+            <div class="card mb-3">
+                <div class="card-header">
+                    CASA Womens Shelter
+                </div>
+                <ng-template [ngIf]="iscaseWomenShelterHousepieChartData" [ngIfElse]="elsecaseWomenShelterHouse">
+                    <div class="card-body" *ngIf="caseWomenShelterHousepieChartData.length">
+                        <canvas baseChart height="160px" [data]="caseWomenShelterHousepieChartData" [labels]="housePieChartLabels"
+                            [options]="pieHouseOptions" [chartType]="pieChartType" [colors]="pieHouseColors"
+                            (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </ng-template>
+                <ng-template #elsecaseWomenShelterHouse>
+                    <div class="card-body">
+                        <div class="notfound">
+                            <h2>the chart you searched could not found</h2>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        <div class="col col-sm-3">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Phoenix Recovery for Women
+                </div>
+                <ng-template [ngIf]="isphoenixRecoveryHousepieChartData" [ngIfElse]="elsephoenixRecoveryHouse">
+                    <div class="card-body" *ngIf="phoenxiRecoveryHousepieChartData.length">
+                        <canvas baseChart height="160px" [data]="phoenxiRecoveryHousepieChartData" [labels]="housePieChartLabels"
+                            [options]="pieHouseOptions" [chartType]="pieChartType" [colors]="pieHouseColors"
+                            (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </ng-template>
+                <ng-template #elsephoenixRecoveryHouse>
+                    <div class="card-body">
+                        <div class="notfound">
+                            <h2>the chart you searched could not found</h2>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <!-- start -->
+    <div class="row">
+        <div class="col col-sm-3">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Freshly Renewed - Women
+                </div>
+                <ng-template [ngIf]="isfreshlyRenewedWomenHousepieChartData" [ngIfElse]="elsefreshlyRenewedWomenHouse">
+                    <div class="card-body" *ngIf="freshlyRenewedWomenHousepieChartData.length">
+                        <canvas baseChart height="160px" [data]="freshlyRenewedWomenHousepieChartData" [labels]="housePieChartLabels"
+                            [options]="pieHouseOptions" [chartType]="pieChartType" [colors]="pieHouseColors"
+                            (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </ng-template>
+                <ng-template #elsefreshlyRenewedWomenHouse>
+                    <div class="card-body">
+                        <div class="notfound">
+                            <h2>the chart you searched could not found</h2>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        <div class="col col-sm-3">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Quality Living Center 2
+                </div>
+                <ng-template [ngIf]="isqualityLivingCenterHousepieChartData" [ngIfElse]="elsequalityLivingCenter">
+                    <div class="card-body" *ngIf="qualityLivingCenterHousepieChartData.length">
+                        <canvas baseChart height="160px" [data]="qualityLivingCenterHousepieChartData" [labels]="housePieChartLabels"
+                            [options]="pieHouseOptions" [chartType]="pieChartType" [colors]="pieHouseColors"
+                            (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </ng-template>
+                <ng-template #elsequalityLivingCenter>
+                    <div class="card-body">
+                        <div class="notfound">
+                            <h2>the chart you searched could not found</h2>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        <div class="col col-sm-3">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Shalom Recovery Centers
+                </div>
+                <ng-template [ngIf]="isshalomRecoveryCenterHousepieChartData" [ngIfElse]="elseshalomRecoveryCenter">
+                    <div class="card-body" *ngIf="shalomRecoveryCentersHousepieChartData.length">
+                        <canvas baseChart height="160px" [data]="shalomRecoveryCentersHousepieChartData" [labels]="housePieChartLabels"
+                            [options]="pieHouseOptions" [chartType]="pieChartType" [colors]="pieHouseColors"
+                            (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </ng-template>
+                <ng-template #elseshalomRecoveryCenter>
+                    <div class="card-body">
+                        <div class="notfound">
+                            <h2>the chart you searched could not found</h2>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="my-container">
+    <ng-template #customLoadingTemplate>
+        <div class="custom-class">
+            <h3>
+                Loading...
+            </h3>
+            <button (click)="showAlert()">
+                Click me!
+            </button>
+        </div>
+    </ng-template>
+</div>

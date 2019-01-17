@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+ <head> 
+  <title>ParoleDashbord</title> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="../theme/theme.css"> 
+  <link rel="stylesheet" href="widgets/customChartWidget/assets/css/CustomChart.css?hash=4c0f06b10ebc2a8d6c45e9d98815f566ea4083bd"> 
+  <link rel="stylesheet" href="widgets/customGrid/assets/css/ui-grid.woff?hash=6e31bc33cc223b56d1f08252549a0dfd321c6535"> 
+  <link rel="stylesheet" href="widgets/customGrid/assets/css/ui-grid.css?hash=1214cecee91de98ad8d8b985438e363de1d35a02"> 
+  <link rel="stylesheet" href="widgets/customGrid/assets/css/customGridStyle.css?hash=ca22fc3c149ca1c8aa31d595e9173be9c05d0040"> 
+  <link rel="stylesheet" href="assets/css/style.css?hash=63795e6e42f6869ed32efdee9379e266966d8fdf"> 
+  <script src="js/vendor.min.js"></script> 
+  <script src="js/runtime.min.js"></script> 
+  <!-- assets attached to the page --> 
+  <script src="widgets/customChartWidget/assets/js/jquery-2.0.3.min.js?hash=468bcedf13211031c3faccb10d2f62c497336d46"></script> 
+  <script src="widgets/customChartWidget/assets/js/plotly-latest.min.js?hash=f6607ea645b6d6d303f7924587ec94d7dee7173d"></script> 
+  <script src="widgets/customChartWidget/assets/js/CustomChart.js?hash=2333e306b894d0dbd58ad1280afd75625d7edce3"></script> 
+  <script src="widgets/customGrid/assets/js/jquery-2.0.3.min.js?hash=468bcedf13211031c3faccb10d2f62c497336d46"></script> 
+  <script src="widgets/customGrid/assets/js/d3.v3.js?hash=1d45086cf3e224b8343e59995b8d7ce4abeda45a"></script> 
+  <script src="widgets/customGrid/assets/js/ui-grid.js?hash=9602b92a4ddc2583c784b161918f2122908c4e74"></script> 
+  <script src="widgets/customGrid/assets/js/app.js?hash=e07b8e8e22f5f2b5b12744bfc2796275003d9f70"></script> 
+  <script src="widgets/customGrid/assets/js/BaseWidget.js?hash=62a9f5c92d57d9871b31f8e7e29c4af29b0d629b"></script> 
+  <script src="widgets/customGrid/assets/js/ServiceWidget.js?hash=16256f8465b1bd0da6c489f64e349908a8ac85b6"></script> 
+  <script src="widgets/pbTabsContainer/assets/js/ui-bootstrap-tpls-0.13.0.min.js?hash=807e07892272882c60811518b5d4f27bc7f30c85"></script> 
+  <script>
+            angular.module('bonitasoft.ui').requires.push('ui.grid.cellNav', 'ui.grid.edit', 'ui.grid.treeView', 'bonitasoft.ui.widgets', 'ui.grid.pagination', 'ui.grid.expandable', 'ui.bootstrap.tabs', 'ui.grid.selection', 'ui.grid', 'ui.bootstrap.tpls');
+        </script> 
+  <!-- widgets directives minified --> 
+  <script src="js/widgets-3bc6937428106c4b65978a9176bf1a5624fe9e6b.min.js"></script> 
+ </head> 
+ <body ng-app="bonitasoft.ui" pb-model="ad990e1c-81b8-439a-8994-4c58494035d0"> 
+  <div class="container-fluid"> 
+   <div class="row"> 
+    <div pb-property-values="9feeaeae-9c79-4a0e-9635-e782ae21a2b7"> 
+     <div class="" ng-class="properties.cssClasses" ng-if="!properties.hidden"> 
+      <tabset> 
+       <tab> 
+        <tab-heading ui-translate="">
+         TH Program Reports
+        </tab-heading> 
+        <div pb-property-values="71244cbe-01ba-401b-a775-e1eabbde256c"> 
+         <div class="col-xs-12" ng-class="properties.cssClasses" ng-if="!properties.hidden"> 
+          <div class="row"> 
+           <div pb-property-values="59f0a21a-129c-4c36-a062-1e83557e237c"> 
+            <div ng-if="!properties.hidden" class="component col-xs-6" ng-class="properties.cssClasses"> 
+             <custom-chart-widget></custom-chart-widget> 
+            </div> 
+           </div>
+           <div pb-property-values="46bada12-fa9e-48d9-a575-13379b857893"> 
+            <div ng-if="!properties.hidden" class="component col-xs-6" ng-class="properties.cssClasses"> 
+             <custom-chart-widget></custom-chart-widget> 
+            </div> 
+           </div>
+           <div pb-property-values="7104d9bc-eb23-49a5-8c44-81c1479e4edc"> 
+            <div ng-if="!properties.hidden" class="component col-xs-6" ng-class="properties.cssClasses"> 
+             <custom-chart-widget></custom-chart-widget> 
+            </div> 
+           </div>
+           <div pb-property-values="32f9d6a0-4c6a-4da0-9f76-6da71bab8ddb"> 
+            <div ng-if="!properties.hidden" class="component col-xs-6" ng-class="properties.cssClasses"> 
+             <custom-chart-widget></custom-chart-widget> 
+            </div> 
+           </div>
+           <div pb-property-values="3fc7338b-a4b4-45d3-8e6d-5209f9e5dcdd"> 
+            <div ng-if="!properties.hidden" class="component col-xs-7" ng-class="properties.cssClasses"> 
+             <custom-grid></custom-grid> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </tab> 
+       <tab> 
+        <tab-heading ui-translate="">
+         Client Demographics
+        </tab-heading> 
+        <div pb-property-values="ab21e154-60db-4903-b092-2bce6a3422cd"> 
+         <div class="col-xs-12" ng-class="properties.cssClasses" ng-if="!properties.hidden"> 
+          <div class="row"> 
+           <div pb-property-values="38d02ce9-2d49-47a3-99e9-0e3b8fee4fdd"> 
+            <div class="col-xs-12" ng-class="properties.cssClasses" ng-if="!properties.hidden"> 
+             <div class="row"> 
+              <div pb-property-values="6eee52f5-f28c-4e78-901d-a27bd685f73b"> 
+               <div ng-if="!properties.hidden" class="component col-xs-6" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div>
+              <div pb-property-values="44089c3d-5ff9-45fe-a70e-55b93a3bb92a"> 
+               <div ng-if="!properties.hidden" class="component col-xs-6" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div>
+              <div pb-property-values="a03d5074-cfdc-4675-bb33-6d50c047b87a"> 
+               <div ng-if="!properties.hidden" class="component col-xs-6" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </tab> 
+       <tab> 
+        <tab-heading ui-translate="">
+         ACC Admin Reports - Monthly
+        </tab-heading> 
+        <div pb-property-values="3eee105c-8600-4ff2-b881-70ee91256eb4"> 
+         <div class="col-xs-12" ng-class="properties.cssClasses" ng-if="!properties.hidden"> 
+          <div class="row"> 
+           <div pb-property-values="642d56b2-904f-4594-a80a-2401bb47c4bd"> 
+            <div class="col-xs-12" ng-class="properties.cssClasses" ng-if="!properties.hidden"> 
+             <div class="row"> 
+              <div pb-property-values="ed4f845c-389e-4239-b38f-b565e09cf3d7"> 
+               <div ng-if="!properties.hidden" class="component col-xs-12" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div>
+              <div pb-property-values="86a504bd-6802-4a65-92cb-d97c55a2f7b6"> 
+               <div ng-if="!properties.hidden" class="component col-xs-12" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div>
+              <div pb-property-values="896efddf-b7d3-4443-bc1c-9c730b68c3f1"> 
+               <div ng-if="!properties.hidden" class="component col-xs-12" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div>
+              <div pb-property-values="10ab522e-87e5-4b7d-a8f0-23721ab37e4b"> 
+               <div ng-if="!properties.hidden" class="component col-xs-6" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div>
+              <div pb-property-values="21b1ad91-f464-4599-83b2-8137d9ff70fb"> 
+               <div ng-if="!properties.hidden" class="component col-xs-6" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div>
+              <div pb-property-values="30542452-c274-4229-93e0-80fada3bc274"> 
+               <div ng-if="!properties.hidden" class="component col-xs-6" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div>
+              <div pb-property-values="86d7679d-c4e7-49ab-9e23-115c49ba5209"> 
+               <div ng-if="!properties.hidden" class="component col-xs-6" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div>
+              <div pb-property-values="d27f5d37-7b89-4ec5-9242-ae3337a8a869"> 
+               <div ng-if="!properties.hidden" class="component col-xs-6" ng-class="properties.cssClasses"> 
+                <custom-grid></custom-grid> 
+               </div> 
+              </div>
+              <div pb-property-values="3acab0aa-3319-45df-a070-fc71bf9caafb"> 
+               <div ng-if="!properties.hidden" class="component col-xs-6" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div>
+              <div pb-property-values="6d1678b4-b5d4-4a29-b2c9-3afc90b921f1"> 
+               <div ng-if="!properties.hidden" class="component col-xs-12" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </tab> 
+       <tab> 
+        <tab-heading ui-translate="">
+         ACC Admin Reports - Trends
+        </tab-heading> 
+        <div pb-property-values="20529c77-e18d-4e07-8c67-699e619e3338"> 
+         <div class="col-xs-12" ng-class="properties.cssClasses" ng-if="!properties.hidden"> 
+          <div class="row"> 
+           <div pb-property-values="399295d9-64d4-49cc-adda-9f3e540c89de"> 
+            <div class="col-xs-12" ng-class="properties.cssClasses" ng-if="!properties.hidden"> 
+             <div class="row"> 
+              <div pb-property-values="8556b73f-f30b-4b35-ba81-b1961f22e072"> 
+               <div ng-if="!properties.hidden" class="component col-xs-12" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div>
+              <div pb-property-values="88bafd5f-5708-4feb-8997-56961ae48002"> 
+               <div ng-if="!properties.hidden" class="component col-xs-12" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div>
+              <div pb-property-values="2b0b5ffd-24b5-490a-9a81-f14bbfc6d2ba"> 
+               <div ng-if="!properties.hidden" class="component col-xs-12" ng-class="properties.cssClasses"> 
+                <custom-chart-widget></custom-chart-widget> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </tab> 
+      </tabset> 
+     </div> 
+    </div> 
+   </div> 
+   <script>angular.module('bonitasoft.ui.services').factory('dataModelFactory', function() {
+  var resources = {};
+  resources['ad990e1c-81b8-439a-8994-4c58494035d0'] =  {"getApplicationData":{"type":"expression","value":"debugger;\nvar data = {};\nif(sessionStorage.configData){\n    data = JSON.parse(sessionStorage.configData);\n    \n}\nelse{\n                data.OffendersByTypeUrl = \"\";\n\t\t\t\tdata.InmateSummaryUrl = \"\";\n\t\t\t\tdata.ParoleSummaryUrl = \"\";\n\t\t\t\tdata.SentenceByTypeUrl = \"\";\n\t\t\t\tdata.OffendersByResidenceUrl = \"\";\n\t\t\t\tdata.CriminalStatsSummaryUrl = \"\";\n}\nconsole.log(data);\nreturn data;","exposed":false}};
+  return {
+    get: function(uuid) {
+      return resources[uuid];
+    }
+  };
+});
+</script> 
+   <script>angular.module('bonitasoft.ui.services').factory('modelPropertiesFactory', function() {
+  var resources = {};
+  return {
+    get: function(uuid) {
+      return resources[uuid];
+    }
+  };
+});
+</script> 
+   <script>angular.module('bonitasoft.ui.services').factory('propertyValuesFactory', function() {
+  var resources = {};
+  resources['71244cbe-01ba-401b-a775-e1eabbde256c'] =  {};
+  resources['88bafd5f-5708-4feb-8997-56961ae48002'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Total Applicaitons by House over 3 Months"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Line"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/THReports/GetTotalApplicationsOver3MonthsByHouse"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"MONTH"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"Butterfly_House_CNT,CASA_Womens_Shelter_CNT,Cornerstone_Transition_Home_CNT,Hope_House_of_Recovery_CNT,Phoenix_Recovery_CNT,Quality_Living_Center_2_CNT,Shalom_Recovery_Centers_CNT,Sober_Living_CNT"},"visibleYaxis":{"type":"constant","value":true},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":true},"legendNames":{"type":"constant","value":"Butterfly House,CASA,Cornerstone,Hope House,Phoenix Women,Quality Living Center 2,Shalom,Sober Living"},"legendOrientation":{"type":"constant","value":"Horizontal"},"legendPostionLeft":{"type":"constant","value":0},"legendPostionTop":{"type":"constant","value":-20},"toolTipFormats":{"type":"constant","value":null},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":"Butterfly House,CASA,Cornerstone,Hope House,Phoenix Women,Quality Living Center 2,Shalom,Sober Living"},"textposition":{"type":"constant","value":null},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":null},"LabelColor":{"type":"constant","value":null}};
+  resources['38d02ce9-2d49-47a3-99e9-0e3b8fee4fdd'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"repeatedCollection":{"type":"variable","value":""}};
+  resources['8556b73f-f30b-4b35-ba81-b1961f22e072'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Total Applications over 3 Months"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Line"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/THReports/GetTotalApplicationsOver3MonthsByInmate"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"MONTH"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"East_Central_AR_CCC_CNT,McPherson_Unit_CNT,NW_AR_CCC_CNT,SW_AR_CCC_Females_CNT,Wrightsville_Hawkins_Center_CNT"},"visibleYaxis":{"type":"constant","value":true},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":true},"legendNames":{"type":"constant","value":"East Central AR CCC,McPherson Unit,NW AR CCC,SW AR CCC Females,Wrightsville Hawkins Center"},"legendOrientation":{"type":"constant","value":"Horizontal"},"legendPostionLeft":{"type":"constant","value":0},"legendPostionTop":{"type":"constant","value":-20},"toolTipFormats":{"type":"constant","value":null},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":"East Central AR CCC,McPherson Unit,NW AR CCC,SW AR CCC Females,Wrightsville Hawkins Center"},"textposition":{"type":"constant","value":null},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":null},"LabelColor":{"type":"constant","value":null}};
+  resources['44089c3d-5ff9-45fe-a70e-55b93a3bb92a'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Age of Clients"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Pie"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/Demographics/GetAgeRangeByGender"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"Age_Group"},"visibleXaxis":{"type":"constant","value":false},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"Total_Count"},"visibleYaxis":{"type":"constant","value":false},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":true},"legendNames":{"type":"constant","value":null},"legendOrientation":{"type":"constant","value":"Vertical"},"legendPostionLeft":{"type":"constant","value":100},"legendPostionTop":{"type":"constant","value":null},"toolTipFormats":{"type":"constant","value":[]},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":"Age_Group"},"textposition":{"type":"constant","value":"none"},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":null},"LabelColor":{"type":"constant","value":null}};
+  resources['3acab0aa-3319-45df-a070-fc71bf9caafb'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Beds Marked available by August"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Bar"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Horizontal"},"barSpacing":{"type":"constant","value":10},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/THReports/GetTotalResponseTimeByHouse"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"House_Count"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"HouseName"},"visibleYaxis":{"type":"constant","value":false},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":false},"legendNames":{"type":"constant","value":null},"legendOrientation":{"type":"constant","value":"Horizontal"},"legendPostionLeft":{"type":"constant","value":100},"legendPostionTop":{"type":"constant","value":1},"toolTipFormats":{"type":"constant","value":["{Y}"]},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":null},"textposition":{"type":"constant","value":"inside"},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":"#FF976A"},"LabelColor":{"type":"constant","value":"#000"}};
+  resources['32f9d6a0-4c6a-4da0-9f76-6da71bab8ddb'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Offenders By Residence"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Area"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/CommunityCorrection/GetOffendersByResidence"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"houseName"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"count"},"visibleYaxis":{"type":"constant","value":true},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":""},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":true},"legendNames":{"type":"constant","value":"Count"},"legendOrientation":{"type":"constant","value":"Horizontal"},"legendPostionLeft":{"type":"constant","value":30},"legendPostionTop":{"type":"constant","value":-20},"toolTipFormats":{"type":"constant","value":null},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":null},"textposition":{"type":"constant","value":null},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":null},"LabelColor":{"type":"constant","value":null}};
+  resources['30542452-c274-4229-93e0-80fada3bc274'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"CASA Womens Shelter"},"height":{"type":"constant","value":300},"type":{"type":"constant","value":"Pie"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/THReports/GetTotalCasaWomenShelterByHouse"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"houseName"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"count"},"visibleYaxis":{"type":"constant","value":true},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":true},"legendNames":{"type":"constant","value":"Approved,Rejected"},"legendOrientation":{"type":"constant","value":"Vertical"},"legendPostionLeft":{"type":"constant","value":80},"legendPostionTop":{"type":"constant","value":1},"toolTipFormats":{"type":"constant","value":null},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":null},"textposition":{"type":"constant","value":null},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":null},"LabelColor":{"type":"constant","value":null}};
+  resources['86a504bd-6802-4a65-92cb-d97c55a2f7b6'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Total Applications By House"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Bar"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Horizontal"},"barSpacing":{"type":"constant","value":10},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/THReports/GetTotalApplicationsByHouse"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"House_Count"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"HouseName"},"visibleYaxis":{"type":"constant","value":false},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":false},"legendNames":{"type":"constant","value":null},"legendOrientation":{"type":"constant","value":"Horizontal"},"legendPostionLeft":{"type":"constant","value":100},"legendPostionTop":{"type":"constant","value":1},"toolTipFormats":{"type":"constant","value":["{Y}"]},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":null},"textposition":{"type":"constant","value":"inside"},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":"#11C987"},"LabelColor":{"type":"constant","value":"#000"}};
+  resources['3fc7338b-a4b4-45d3-8e6d-5209f9e5dcdd'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"height":{"type":"constant","value":210},"isTreeGrid":{"type":"constant","value":"DataGrid"},"parentMember":{"type":"constant","value":null},"nodeMember":{"type":"constant","value":null},"headers":{"type":"constant","value":["HouseName","Count"]},"member":{"type":"constant","value":["houseName","count"]},"ColumnClass":{"type":"constant","value":["centerAlign","rightAlign","rightAlign","rightAlign","rightAlign","rightAlign"]},"columnFormat":{"type":"constant","value":null},"sorting":{"type":"constant","value":true},"columnFooter":{"type":"constant","value":false},"gridFooter":{"type":"constant","value":false},"serviceInput":{"type":"constant","value":null},"dataSource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/CommunityCorrection/GetCriminalStatsSummary"]},"pagination":{"type":"constant","value":true},"pageSize":{"type":"constant","value":5},"enableRowSelection":{"type":"constant","value":true},"isPinningTemplate":{"type":"constant","value":false},"reportUrl":{"type":"constant","value":null}};
+  resources['a03d5074-cfdc-4675-bb33-6d50c047b87a'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Total Cliens Added by Month"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Bar"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/Demographics/GetTotalClientsAddedByMonth"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"Month_Name"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":"Months"},"yAxisMember":{"type":"constant","value":"Total_Count"},"visibleYaxis":{"type":"constant","value":true},"yAxisTitle":{"type":"constant","value":"Count of Month Joined"},"chartTypes":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":true},"legendNames":{"type":"constant","value":"Month Joined"},"legendOrientation":{"type":"constant","value":"Vertical"},"legendPostionLeft":{"type":"constant","value":100},"legendPostionTop":{"type":"constant","value":1},"toolTipFormats":{"type":"constant","value":null},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":"Month"},"textposition":{"type":"constant","value":null},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":"#00A5A8"},"LabelColor":{"type":"constant","value":null}};
+  resources['20529c77-e18d-4e07-8c67-699e619e3338'] =  {};
+  resources['86d7679d-c4e7-49ab-9e23-115c49ba5209'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Phoenix Recovery for Women"},"height":{"type":"constant","value":300},"type":{"type":"constant","value":"Pie"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/THReports/GetTotalPhoenixRecoveryWomenByHouse"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"houseName"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"count"},"visibleYaxis":{"type":"constant","value":true},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":true},"legendNames":{"type":"constant","value":"Approved,Rejected"},"legendOrientation":{"type":"constant","value":"Vertical"},"legendPostionLeft":{"type":"constant","value":80},"legendPostionTop":{"type":"constant","value":1},"toolTipFormats":{"type":"constant","value":null},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":null},"textposition":{"type":"constant","value":null},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":null},"LabelColor":{"type":"constant","value":null}};
+  resources['642d56b2-904f-4594-a80a-2401bb47c4bd'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"repeatedCollection":{"type":"variable","value":""}};
+  resources['10ab522e-87e5-4b7d-a8f0-23721ab37e4b'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Butterfly House"},"height":{"type":"constant","value":300},"type":{"type":"constant","value":"Pie"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/THReports/GetTotalButterFlyResponseByHouse"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"houseName"},"visibleXaxis":{"type":"constant","value":false},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"count"},"visibleYaxis":{"type":"constant","value":false},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":true},"legendNames":{"type":"constant","value":"Approved,Rejected"},"legendOrientation":{"type":"constant","value":"Vertical"},"legendPostionLeft":{"type":"constant","value":80},"legendPostionTop":{"type":"constant","value":1},"toolTipFormats":{"type":"constant","value":[]},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":"Approved,Rejected"},"textposition":{"type":"constant","value":null},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":null},"LabelColor":{"type":"constant","value":null}};
+  resources['6eee52f5-f28c-4e78-901d-a27bd685f73b'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Age Range By Gender"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Bar"},"groupBarType":{"type":"constant","value":"Group"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":10},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/Demographics/GetAgeRangeByGender"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"Age_Group"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":"Age Range"},"yAxisMember":{"type":"constant","value":"Male_Count,Female_Count"},"visibleYaxis":{"type":"constant","value":true},"yAxisTitle":{"type":"constant","value":"Count"},"chartTypes":{"type":"constant","value":"Bar,Bar"},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":true},"legendNames":{"type":"constant","value":"Male, Female"},"legendOrientation":{"type":"constant","value":"Vertical"},"legendPostionLeft":{"type":"constant","value":100},"legendPostionTop":{"type":"constant","value":1},"toolTipFormats":{"type":"constant","value":["{Y}"]},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":null},"textposition":{"type":"constant","value":null},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":"#00A5A8,#FF976A"},"LabelColor":{"type":"constant","value":null}};
+  resources['9feeaeae-9c79-4a0e-9635-e782ae21a2b7'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false}};
+  resources['896efddf-b7d3-4443-bc1c-9c730b68c3f1'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Application Response by House"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Bar"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Horizontal"},"barSpacing":{"type":"constant","value":50},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/THReports/GetTotalApplicationsResponseByHouse"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"TotalAPPROVED,TotalREJECTED"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"houseName"},"visibleYaxis":{"type":"constant","value":true},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":"Bar,Bar"},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":true},"legendNames":{"type":"constant","value":"Approved,Rejected"},"legendOrientation":{"type":"constant","value":"Horizontal"},"legendPostionLeft":{"type":"constant","value":100},"legendPostionTop":{"type":"constant","value":1},"toolTipFormats":{"type":"constant","value":["{Y}"]},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":null},"textposition":{"type":"constant","value":"auto"},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":"#11C987,#FF976A"},"LabelColor":{"type":"constant","value":"#000"}};
+  resources['21b1ad91-f464-4599-83b2-8137d9ff70fb'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Cornerstone Transition Home"},"height":{"type":"constant","value":300},"type":{"type":"constant","value":"Pie"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/THReports/GetTotalCornerstoneTransitionHomeByHouse"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"houseName"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"count"},"visibleYaxis":{"type":"constant","value":true},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":true},"legendNames":{"type":"constant","value":"Approved,Rejected"},"legendOrientation":{"type":"constant","value":"Vertical"},"legendPostionLeft":{"type":"constant","value":100},"legendPostionTop":{"type":"constant","value":1},"toolTipFormats":{"type":"constant","value":null},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":"Approved,Rejected"},"textposition":{"type":"constant","value":null},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":null},"LabelColor":{"type":"constant","value":null}};
+  resources['d27f5d37-7b89-4ec5-9242-ae3337a8a869'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"height":{"type":"constant","value":300},"isTreeGrid":{"type":"constant","value":"DataGrid"},"parentMember":{"type":"constant","value":null},"nodeMember":{"type":"constant","value":null},"headers":{"type":"constant","value":["HouseName","Count"]},"member":{"type":"constant","value":["houseName","count"]},"ColumnClass":{"type":"constant","value":["centerAlign","rightAlign","rightAlign","rightAlign","rightAlign","rightAlign"]},"columnFormat":{"type":"constant","value":[]},"sorting":{"type":"constant","value":false},"columnFooter":{"type":"constant","value":false},"gridFooter":{"type":"constant","value":false},"serviceInput":{"type":"constant","value":null},"dataSource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/CommunityCorrection/GetCriminalStatsSummary"]},"pagination":{"type":"constant","value":true},"pageSize":{"type":"constant","value":5},"enableRowSelection":{"type":"constant","value":true},"isPinningTemplate":{"type":"constant","value":false},"reportUrl":{"type":"constant","value":null}};
+  resources['399295d9-64d4-49cc-adda-9f3e540c89de'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"repeatedCollection":{"type":"variable","value":""}};
+  resources['2b0b5ffd-24b5-490a-9a81-f14bbfc6d2ba'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Average Response by House Over 3 Months"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Line"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/THReports/GetTotalApplicationsAverageResponseOver3MonthsByHouse"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"MONTH"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"Butterfly_House_CNT,CASA_Womens_Shelter_CNT,Cornerstone_Transition_Home_CNT,Hope_House_of_Recovery_CNT,Phoenix_Recovery_CNT,Quality_Living_Center_2_CNT,Shalom_Recovery_Centers_CNT,Sober_Living_CNT"},"visibleYaxis":{"type":"constant","value":true},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":true},"legendNames":{"type":"constant","value":"Butterfly House,CASA,Cornerstone,Hope House,Phoenix Women,Quality Living Center 2,Shalom,Sober Living"},"legendOrientation":{"type":"constant","value":"Horizontal"},"legendPostionLeft":{"type":"constant","value":0},"legendPostionTop":{"type":"constant","value":-20},"toolTipFormats":{"type":"constant","value":null},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":"Butterfly House,CASA,Cornerstone,Hope House,Phoenix Women,Quality Living Center 2,Shalom,Sober Living"},"textposition":{"type":"constant","value":null},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":null},"LabelColor":{"type":"constant","value":null}};
+  resources['3eee105c-8600-4ff2-b881-70ee91256eb4'] =  {};
+  resources['ab21e154-60db-4903-b092-2bce6a3422cd'] =  {};
+  resources['46bada12-fa9e-48d9-a575-13379b857893'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Total Applications by House"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Bar"},"groupBarType":{"type":"constant","value":"Group"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/CommunityCorrection/GetOffendersByType"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"houseName"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"count"},"visibleYaxis":{"type":"constant","value":true},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":"Bar"},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":false},"legendNames":{"type":"constant","value":""},"legendOrientation":{"type":"constant","value":"Vertical"},"legendPostionLeft":{"type":"constant","value":null},"legendPostionTop":{"type":"constant","value":null},"toolTipFormats":{"type":"constant","value":null},"serviceInput":{"type":"constant","value":""},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":null},"textposition":{"type":"constant","value":"none"},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":"#11C987"},"LabelColor":{"type":"constant","value":null}};
+  resources['7104d9bc-eb23-49a5-8c44-81c1479e4edc'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Sentence By Type"},"height":{"type":"constant","value":450},"type":{"type":"constant","value":"Pie"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/CommunityCorrection/GetSentenceByType"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"houseName"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"count"},"visibleYaxis":{"type":"constant","value":true},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":""},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":true},"legendNames":{"type":"constant","value":""},"legendOrientation":{"type":"constant","value":"Horizontal"},"legendPostionLeft":{"type":"constant","value":30},"legendPostionTop":{"type":"constant","value":-20},"toolTipFormats":{"type":"constant","value":null},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":null},"textposition":{"type":"constant","value":null},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":null},"LabelColor":{"type":"constant","value":null}};
+  resources['6d1678b4-b5d4-4a29-b2c9-3afc90b921f1'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"August Response Time"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Bar"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Vertical"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/THReports/GetTotalResponseTimeByHouse"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"HouseName"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"House_Count"},"visibleYaxis":{"type":"constant","value":true},"yAxisTitle":{"type":"constant","value":"in Days"},"chartTypes":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":false},"legendNames":{"type":"constant","value":null},"legendOrientation":{"type":"constant","value":"Horizontal"},"legendPostionLeft":{"type":"constant","value":80},"legendPostionTop":{"type":"constant","value":1},"toolTipFormats":{"type":"constant","value":null},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":null},"textposition":{"type":"constant","value":null},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":"#11C987"},"LabelColor":{"type":"constant","value":"#0000"}};
+  resources['59f0a21a-129c-4c36-a062-1e83557e237c'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Total Applications by Unit"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Bar"},"groupBarType":{"type":"constant","value":"Group"},"orientation":{"type":"constant","value":"Horizontal"},"barSpacing":{"type":"constant","value":0},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/CommunityCorrection/GetInmateSummary"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"count"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":""},"yAxisMember":{"type":"constant","value":"houseName"},"visibleYaxis":{"type":"constant","value":false},"yAxisTitle":{"type":"constant","value":""},"chartTypes":{"type":"constant","value":"Bar"},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":false},"legendNames":{"type":"constant","value":"Count"},"legendOrientation":{"type":"constant","value":"Horizontal"},"legendPostionLeft":{"type":"constant","value":30},"legendPostionTop":{"type":"constant","value":-30},"toolTipFormats":{"type":"constant","value":["{Y}"]},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":null},"textposition":{"type":"constant","value":"inside"},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":"#FF976A"},"LabelColor":{"type":"constant","value":"#000"}};
+  resources['ed4f845c-389e-4239-b38f-b565e09cf3d7'] =  {"cssClasses":{"type":"constant","value":""},"hidden":{"type":"constant","value":false},"id":{"type":"constant","value":null},"toRespond":{"type":"constant","value":null},"chartTitle":{"type":"constant","value":"Total Applications by Unit"},"height":{"type":"constant","value":350},"type":{"type":"constant","value":"Bar"},"groupBarType":{"type":"constant","value":"Stack"},"orientation":{"type":"constant","value":"Horizontal"},"barSpacing":{"type":"constant","value":10},"datasource":{"type":"constant","value":["http://192.168.180.63/DashboardServices/api/THReports/GetTotalApplicationsByUnit"]},"serviceMethod":{"type":"constant","value":"Post"},"xAxisMember":{"type":"constant","value":"count"},"visibleXaxis":{"type":"constant","value":true},"xAxisTitle":{"type":"constant","value":null},"yAxisMember":{"type":"constant","value":"houseName"},"visibleYaxis":{"type":"constant","value":false},"yAxisTitle":{"type":"constant","value":null},"chartTypes":{"type":"constant","value":null},"mute":{"type":"constant","value":"None"},"showLegend":{"type":"constant","value":false},"legendNames":{"type":"constant","value":null},"legendOrientation":{"type":"constant","value":"Horizontal"},"legendPostionLeft":{"type":"constant","value":100},"legendPostionTop":{"type":"constant","value":1},"toolTipFormats":{"type":"constant","value":["{Y}"]},"serviceInput":{"type":"constant","value":null},"reportUrl":{"type":"constant","value":null},"labelMember":{"type":"constant","value":null},"textposition":{"type":"constant","value":"inside"},"sort":{"type":"constant","value":null},"BarColor":{"type":"constant","value":"#FF976A"},"LabelColor":{"type":"constant","value":"#000"}};
+  return {
+    get: function(uuid) {
+      return resources[uuid];
+    }
+  };
+});
+</script> 
+  </div>   
+ </body>
+</html>

@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceList>
+  <Service>
+    <name>1.OCSE-Federal Measure - Collection on Current Support</name>
+    <id>1</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCurrentSupportChartDetails</endpoint>
+    <id>CollectionOnCurrentSupport</id>
+    <recordSet>
+      {
+      "BAR_CNT": 42304,
+      "BAR_PER": 29.0,
+      "IND_TAB": "CS",
+      "MTH_REPORT": "Jan",
+      "MTH_YEAR": 201601,
+      "TREND_CNT": 3438,
+      "TREND_PER": 61.0761
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <id>2</id>
+    <name>2.OCSE-Federal Measure - Collection on Arrears</name>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCollectionsArrearsChartDetails</endpoint>
+    <id>CollectionOnArrears</id>
+    <recordSet>
+      {
+      "BAR_CNT": 46471,
+      "BAR_PER": 45.0,
+      "IND_TAB": "CS",
+      "MTH_REPORT": "Feb",
+      "MTH_YEAR": 201602,
+      "TREND_CNT": 3546,
+      "TREND_PER": 68.0025
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>3.OCSE-Federal Measure - Paternity Established</name>
+    <id>3</id>
+    <id>PaternityEstablished</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetPaternityEstablishmentChartDetails</endpoint>
+    <recordSet>
+      {
+      "BAR_CNT": 94343,
+      "BAR_PER": 94.0,
+      "IND_TAB": "PE",
+      "MTH_REPORT": "Jun",
+      "MTH_YEAR": 201606,
+      "TREND_CNT": 6562,
+      "TREND_PER": 95.80960724
+      }
+    </recordSet>
+  </Service>
+  <Service>
+    <name>4.OCSE-Federal Measure - Support Established</name>
+    <id>4</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetSupportEstablishmentChartDetails</endpoint>
+    <id>SupportEstablished</id>
+    <recordSet>
+      {
+      "BAR_CNT": 92397,
+      "BAR_PER": 92.0,
+      "IND_TAB": "SE",
+      "MTH_REPORT": "Jul",
+      "MTH_YEAR": 201607,
+      "TREND_CNT": 6415,
+      "TREND_PER": 93.36341143
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <id>5</id>
+    <name>5.OCSE-Federal Measure -  Cost Effectiveness</name>
+    <endpoint>e2</endpoint>
+    <id></id>
+    <recordSet>Record Set</recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>6.OCSE-Case With Order - Summary</name>
+    <id>6</id>
+    <endpoint>http://192.168.0.161/TrackMyCaseForBonita/api/HomeApi/GetCaseWithOrderSummary.api</endpoint>
+    <id>GetCaseWithOrderSummary</id>
+    <recordSet>
+      {
+      "ID_NODE": "CWCSO",
+      "ID_PARENT": "CWPAC",
+      "DESC_NODE": "MSO Only",
+      "CASE_CNT": 1006,
+      "PERCENT": 25.29,
+      "AMT_TOT_COLL": 397623.14,
+      "ID_ROW_KEY": "PAHSUMCWCSO",
+      "COUNT_TOPRIGHT": 6389
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>7.OCSE-Case With Order Payments By Collection Level</name>
+    <id>7</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCWOColDetails.api</endpoint>
+    <id>GetCWOColDetails</id>
+    <recordSet>
+      {
+      "ID_NODE": "PCASE",
+      "ID_PARENT": "",
+      "DESC_NODE": "Paying Cases",
+      "CURRENT_MONTH": 3978,
+      "FIRST_MONTH": 3644,
+      "SECOND_MONTH": 3517,
+      "THIRD_MONTH": 3501,
+      "FOURTH_MONTH": 3372,
+      "WORSEN_CNT": 0,
+      "STAY_SAME_CNT": 3644,
+      "IMPROVE_CNT": 0,
+      "ID_ROW_KEY": "PAHCOLPCASE",
+      "FRCT_CNT": 0,
+      "EXP_TO_IMP_BUT_WOR_CNT": 0,
+      "EXP_TO_IMP_BUT_NOC_CNT": 0,
+      "EXP_TO_NOC_BUT_WOR_CNT": 0,
+      "EXP_TO_NOC_BUT_IMP_CNT": 0,
+      "EXP_TO_WOR_BUT_NOC_CNT": 0,
+      "EXP_TO_WOR_BUT_IMP_CNT": 0,
+      "NO_FRCT_PAID_CNT": 0,
+      "NO_FRCT_NOT_PAID_CNT": 0
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>8.OCSE-Case With Order Payments By Receipt Source</name>
+    <id>8</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetCWORectDetailsTMC.api</endpoint>
+    <id>GetCWORectDetailsTMC</id>
+    <recordSet>
+      {
+      "CD_RECEIPT_SOURCE": "C",
+      "DESC_RECEIPT_SOURCE": "Child Support LIEN Network",
+      "DOESNT_COV_MSO_AMT": 0.0,
+      "DOESNT_COV_MSO_CNT": 0,
+      "COV_MSO_AMT": 0.0,
+      "COV_MSO_CNT": 0,
+      "DOESNT_COV_PB_AMT": 0.0,
+      "DOESNT_COV_PB_CNT": 0,
+      "COV_MSO_PB_AMT": 0.0,
+      "COV_MSO_PB_CNT": 0,
+      "HOLD_AMT": 170.0,
+      "HOLD_CNT": 1,
+      "ID_ROW_KEY": "PAHSREC1"
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>9.OCSE-Paid Cases turn to Non Paying Cases -Why  Atributes?</name>
+    <endpoint>e2</endpoint>
+    <id>9</id>
+    <recordSet>Record Set</recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>10.OCSE-Enforcement - Summary</name>
+    <id>10</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetEnfSummarydetails</endpoint>
+    <id>GetEnfSummarydetails</id>
+    <recordSet>
+      {
+      "NODE_ID": "ENPRO",
+      "PARENT_ID": "",
+      "NODE_DESC": "Cases with Enforcement Activities",
+      "CASE_CNT": 4601,
+      "TOTAL_CNT": 7160,
+      "PERCENTAGE": 64.26,
+      "ID_ROW_KEY": "ENSMENPRO"
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>11.OCSE-Data Quality Issues in My Case - Summary</name>
+    <id>11</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetDataQualitySummary</endpoint>
+    <id>GetDataQualitySummary</id>
+    <recordSet>
+      {
+      "ID_ROW_KEY": "DQADRSM",
+      "ID_NODE": "DQADR",
+      "ID_PARENT": "",
+      "DESC_NODE": "Address",
+      "COUNT_CASE": 1066,
+      "PERCENT_CASE": 21.5,
+      "COUNT_TOPRIGHT": 4959
+      },
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>12.OCSE-Case Summary - Show Summary of my Cases</name>
+    <id>12</id>
+    <endpoint>e2</endpoint>
+    <id></id>
+    <recordSet>Record Set</recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>13.OCSE-Cases Details - Show Case Details</name>
+    <id>13</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/SelectCaseDetailsPopup.api</endpoint>
+    <id>SelectCaseDetailsPopup</id>
+    <recordSet>
+      {
+      "ID_CASE": "04758236C",
+      "NAME_COUNTY": null,
+      "ID_MEMBER": "3079254M",
+      "NAME_NCP": "",
+      "ID_MEMBER_CP": "8099993M",
+      "NAME_CP": "",
+      "ID_WORKER": "KSMITH",
+      "NAME_WORKER": null,
+      "CD_STATUS_CASE": "O",
+      "DESC_STATUS_CASE": null,
+      "CD_TYPE_CASE": "N",
+      "CD_TYPE_ESTABLISH": "S",
+      "DESC_CD_TYPE_ESTABLISH": null,
+      "ID_DOCKET": "",
+      "AMT_ARREAR": 0.0,
+      "TOT_BALANCE": 0.0,
+      "AMT_PAYBACK": 0.0,
+      "AMT_COLL_ARREARS": 0.0,
+      "MAIL_ADDRESS": "Y",
+      "DESC_MAIL_STATUS": null,
+      "RESI_ADDRESS": "X",
+      "DESC_RESI_STATUS": null,
+      "EMP_STATUS": "X",
+      "DESC_STATUS": null,
+      "AMT_MSO": 0.0,
+      "AMT_COLL_MSO": 0.0,
+      "CD_ASSISTANCE": "F",
+      "DESC_ASSISTANCE": null,
+      "CD_RESPOND_INIT": "N",
+      "DESC_RESPOND_INIT": null,
+      "CD_COUNTY": "62",
+      "ROW_COUNT": 23,
+      "IND_WAGE_ASSIGN": null,
+      "CD_BANKRUPTCY": null,
+      "ARR_PAYMENT_OWED": 0.0,
+      "AMT_THRO_WAGE": null,
+      "SHOW_FEES": null,
+      "IND_FOLDER": "N",
+      "IND_RECOVERY": null,
+      "CD_SEX_MBR_CP": null,
+      "CD_SEX_MBR_NCP": null,
+      "IND_FLAG_REVIEW": "N",
+      "ID_LAST_REVIEW": "",
+      "IND_WRKR_RVW": null,
+      "IND_SORD": null,
+      "IND_UNKNOWN_NCP": null,
+      "IND_NCP_LOCATE": null,
+      "IND_NCP_NOT_LOCATE": null,
+      "IND_EST_ACTION": null,
+      "IND_PAT_SUPP_ADJ": null,
+      "IND_PAT_SUPP_INTER_PROCESS": null,
+      "IND_REF_LEGAL_EST_OPINION": null,
+      "IND_AGREED_ORDER": null,
+      "CD_INTERSTATE": null,
+      "ID_WORKER_FOLDER": null,
+      "IND_DT_OPEN_LESS_1": null,
+      "IND_DT_OPEN_1_3": null,
+      "IND_DT_OPEN_3_6": null,
+      "IND_DT_OPEN_GREATER_6": null,
+      "IND_NCP_LOC_LESS_1": null,
+      "IND_NCP_LOC_1_3": null,
+      "IND_NCP_LOC_3_6": null,
+      "IND_NCP_LOC_GREATER_6": null,
+      "IND_EST_ACTION_LESS_1": null,
+      "IND_EST_ACTION_1_3": null,
+      "IND_EST_ACTION_3_6": null,
+      "IND_EST_ACTION_GREATER_6": null,
+      "ARREARS_PAID_PREV": 0.0,
+      "MSO_PAID_PREV": 0.0,
+      "DT_OPENED_DAYS": 0,
+      "DT_OPENED": "",
+      "DT_LAST_REVIEW": "",
+      "DT_REMAINDER": "",
+      "IND_REVIEW_WORKER": "N",
+      "MIN_ARREARS_OWED": 0.0,
+      "MIN_MSO_OWED": 0.0,
+      "MAX_ARR_PAYMENT_OWED": 0.0,
+      "MIN_ARR_PAYMENT_OWED": 0.0,
+      "NO_PHONE_NCP": null,
+      "NO_PHONE_CP": null,
+      "CD_TYPE_PAY_STATUS": null,
+      "AMT_DIST_HOLD": 0.0,
+      "AMT_DISB_HOLD": 0.0,
+      "CD_AGING_CATEGORY": null,
+      "CPSSN": null,
+      "CPDOB": "",
+      "CPADDRESS": null,
+      "CPDTBEGEMPLOYMENT": "",
+      "CPEMPLOYERNAME": null,
+      "NCPSSN": null,
+      "NCPDOB": "",
+      "NCPADDRESS": null,
+      "NCPDTBEGEMPLOYMENT": "",
+      "NCPEMPLOYERNAME": null,
+      "IND_URGENT": null,
+      "IND_NEW_INFO": null,
+      "MSO_OWED": 0.0,
+      "MAX_MSO_OWED": 0.0,
+      "ARREARS_OWED": 0.0,
+      "MAX_ARREARS_OWED": 0.0,
+      "MSO_PAID": 0.0,
+      "ARREARS_PAID": 0.0,
+      "OPEN_ALERT_DUENOW": 0.0,
+      "OPEN_ALERT_OVERDUE_W": 0.0,
+      "OPEN_ALERT_OVERDUE_S": 0.0,
+      "ALERT_DETAILS": null,
+      "UniqueID": "72417",
+      "IND_CASE_RVM": null,
+      "PreservedServiceXML": null,
+      "CaseWorkerList": null,
+      "LoginIDScreen": "JGARRETT"
+      },
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>14.OCSE-Alerts - Pending</name>
+    <id>14</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAlertsGrid.api</endpoint>
+    <id>GetAlertsGrid</id>
+    <recordSet>
+      {
+      "ID_ROW_KEY": "ALQUPENREGUIN",
+      "CD_TYPE": "Regular Alerts",
+      "CD_SUBSYSTEM": "Case Initiation",
+      "DUE_TODAY": 23, "FIRST_WEEK": 123,
+      "SECOND_WEEK": 46,
+      "THIRD_WEEK": 783,
+      "FOURTH_WEEK": 3,
+      "AFTER_MONTH": 0,
+      "MORE_THAN_A_MONTHS": 0,
+      "DUE_TODAY_ALERT_CNT": 23,
+      "FIRST_WEEK_ALERT_CNT": 133,
+      "SECOND_WEEK_ALERT_CNT": 47,
+      "THIRD_WEEK_ALERT_CNT": 783,
+      "FOURTH_WEEK_ALERT_CNT": 3,
+      "MORE_THAN_A_MONTHS_ALERT_CNT": 0
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>15.OCSE-Alerts - Overdue</name>
+    <id>15</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetAlertsOverDueGrid.api</endpoint>
+    <id>GetAlertsOverDueGrid</id>
+    <recordSet>
+      {
+      CD_SUBSYSTEM:"Case Initiation",
+      CD_TYPE:"Regular Alerts",
+      FIRST_WEEK:143,
+      FIRST_WEEK_ALERT_CNT:149,
+      FOURTH_WEEK:10,
+      FOURTH_WEEK_ALERT_CNT:10,
+      GTSIX_MONTH:400,
+      GTSIX_MONTH_ALERT_CNT:472,
+      ID_ROW_KEY:"ALQUOVDREGUIN",
+      ONETOTHREE_MONTH:627,
+      ONETOTHREE_MONTH_ALERT_CNT:690,
+      SECOND_WEEK:177,
+      SECOND_WEEK_ALERT_CNT:181,
+      THIRD_WEEK:19,
+      THIRD_WEEK_ALERT_CNT:19,
+      THREETOSIX_MONTH:3,
+      THREETOSIX_MONTH_ALERT_CNT:3
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>16.OCSE-Data Quality Issues - Address</name>
+    <id>16</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetDQAddrGridDetails.api</endpoint>
+    <id>GetDQAddrGridDetails</id>
+    <recordSet>
+      {
+      DESC_ADDR_CATEGORY:"Current",
+      DESC_TYPE_ADDRESS:"Mailing",
+      ID_ROW_KEY:"DQADRG2MOG",
+      NO_SUM_BTW_1_3_MTH:767,
+      NO_SUM_BTW_3_6_MTH:853,
+      NO_SUM_GTN_6_MTH:3578,
+      NO_SUM_LTN_A_MTH:496
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>17.OCSE-Data Quality Issues - Employment</name>
+    <id>17</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetDQEmpGridDetails.api</endpoint>
+    <id>GetDQEmpGridDetails</id>
+    <recordSet>
+      {
+      DESC_EMP_CATEGORY:"Current",
+      DESC_TYPE_EMPLOYER:"Primary",
+      ID_ROW_KEY:"DQEMPG2YOG",
+      NO_SUM_BTW_1_3_MTH:438,
+      NO_SUM_BTW_3_6_MTH:455,
+      NO_SUM_GTN_6_MTH:2290,
+      NO_SUM_LTN_A_MTH:410,
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>18.OCSE-Data Quality Issues - NCP / Putative Father</name>
+    <id>18</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/SelectDQPartiGrid.api</endpoint>
+    <id>SelectDQPartiGrid</id>
+    <recordSet>
+      {
+      DESC_PRT_CATEGORY:"Unknown PF",
+      ID_ROW_KEY:"DQPRTG1UN",
+      NO_SUM_BTW_1_3_MTH:0,
+      NO_SUM_BTW_3_6_MTH:0,
+      NO_SUM_GTN_6_MTH:0,
+      NO_SUM_LTN_A_MTH:1
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>19.OCSE-Locate - NCP Located By Address</name>
+    <id>19</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetLocateNCPGridDetails.api</endpoint>
+    <id>GetLocateNCPGridDetails</id>
+    <recordSet>
+      {
+      "SOURCE_CODE": "FEDRL",
+      "SOURCE_NAME": "Federal",
+      "NO_RECIEVED": 11,
+      "NO_REQUESTED": 0,
+      "NO_DUPLICATE": 0,
+      "NO_OTHER_ERROR": 0,
+      "NO_PENDING": 0,
+      "NO_GOOD": 4,
+      "NO_ENDDATED": 0,
+      "NO_BAD": 0,
+      "ID_ROW_KEY": "PAHNNLA1FEDRL",
+      "ID_NODE": "FEDRL",
+      "ID_PARENT": ""
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>20.OCSE-Locate - NCP Located By Employer</name>
+    <id>20</id>
+    <endpoint>http://192.168.0.27/DashboardServices/api/TMCGeneric/GetLocateNCPGridDetails.api</endpoint>
+    <id>GetLocateNCPGridDetails</id>
+    <recordSet>
+      {
+      "SOURCE_CODE": "FEDRL",
+      "SOURCE_NAME": "Federal",
+      "NO_RECIEVED": 11,
+      "NO_REQUESTED": 0,
+      "NO_DUPLICATE": 0,
+      "NO_OTHER_ERROR": 0,
+      "NO_PENDING": 0,
+      "NO_GOOD": 4,
+      "NO_ENDDATED": 0,
+      "NO_BAD": 0,
+      "ID_ROW_KEY": "PAHNNLA1FEDRL",
+      "ID_NODE": "FEDRL",
+      "ID_PARENT": ""
+      }
+    </recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>21. DOC - Prison Admission By Type</name>
+    <id>21</id>
+    <endpoint>e2</endpoint>
+    <id></id>
+    <recordSet>Record Set</recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>22. DOC- Prison Release By Type</name>
+    <id>22</id>
+    <endpoint>e2</endpoint>
+    <id></id>
+    <recordSet>Record Set</recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>23. DOC- Total Inmate Popluation</name>
+    <id>23</id>
+    <endpoint>e2</endpoint>
+    <id></id>
+    <recordSet>Record Set</recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>24. DOC - Inmates By Offense type</name>
+    <id>24</id>
+    <endpoint>e2</endpoint>
+    <id></id>
+    <recordSet>Record Set</recordSet>
+    <notes>Notes</notes>
+  </Service>
+  <Service>
+    <name>25. DOC - Inmates By Demographic</name>
+    <id>25</id>
+    <endpoint>e2</endpoint>
+    <id></id>
+    <recordSet>Record Set</recordSet>
+    <notes>Notes</notes>
+  </Service>
+</ServiceList>

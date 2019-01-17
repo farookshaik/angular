@@ -1,0 +1,14 @@
+DROP PROCEDURE IF EXISTS SP_Appln_Inmates_SubByUnit;
+
+CREATE PROCEDURE `SP_Appln_Inmates_SubByUnit`(IN FromDate   date,
+                                              IN ToDate     date)
+   BEGIN
+      SELECT Inmate_Loacation AS Inmate_Location, COUNT(DISTINCT PID) AS Total
+   FROM th_report_details
+   WHERE     HouseID NOT IN (8, 16)
+         AND ApplicaitonCompleted_DTTM IS NOT NULL
+         AND DATE_FORMAT(ApplicaitonCompleted_DTTM, '%Y-%m-%d') BETWEEN FromDate
+                                                                    AND ToDate
+   GROUP BY Inmate_Loacation
+   ORDER BY Inmate_Loacation DESC;
+   END;

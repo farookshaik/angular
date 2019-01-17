@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "7e87fe5e-c9e5-4b3f-90cb-00fc8e80ca5b",
+		"name": "Dashboard Charts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://devfindgood.goodgrid.com/DashboardServices/api/THReportsAngular/GetTotalApplicationsByUnit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devfindgood.goodgrid.com/DashboardServices/api/THReportsAngular/GetTotalApplicationsByUnit",
+					"protocol": "https",
+					"host": [
+						"devfindgood",
+						"goodgrid",
+						"com"
+					],
+					"path": [
+						"DashboardServices",
+						"api",
+						"THReportsAngular",
+						"GetTotalApplicationsByUnit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalApplicationsByHouse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalApplicationsByHouse",
+					"protocol": "https",
+					"host": [
+						"devfindgood",
+						"goodgrid",
+						"com"
+					],
+					"path": [
+						"DashboardServices",
+						"api",
+						"THReports",
+						"GetTotalApplicationsByHouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalApplicationsResponseByHouse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalApplicationsResponseByHouse",
+					"protocol": "https",
+					"host": [
+						"devfindgood",
+						"goodgrid",
+						"com"
+					],
+					"path": [
+						"DashboardServices",
+						"api",
+						"THReports",
+						"GetTotalApplicationsResponseByHouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalResponseTimeByHouse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalResponseTimeByHouse",
+					"protocol": "https",
+					"host": [
+						"devfindgood",
+						"goodgrid",
+						"com"
+					],
+					"path": [
+						"DashboardServices",
+						"api",
+						"THReports",
+						"GetTotalResponseTimeByHouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalButterFlyResponseByHouse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalButterFlyResponseByHouse",
+					"protocol": "https",
+					"host": [
+						"devfindgood",
+						"goodgrid",
+						"com"
+					],
+					"path": [
+						"DashboardServices",
+						"api",
+						"THReports",
+						"GetTotalButterFlyResponseByHouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalCornerstoneTransitionHomeByHouse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalCornerstoneTransitionHomeByHouse",
+					"protocol": "https",
+					"host": [
+						"devfindgood",
+						"goodgrid",
+						"com"
+					],
+					"path": [
+						"DashboardServices",
+						"api",
+						"THReports",
+						"GetTotalCornerstoneTransitionHomeByHouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalCornerstoneTransitionHomeByHouse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalCasaWomenShelterByHouse",
+					"protocol": "https",
+					"host": [
+						"devfindgood",
+						"goodgrid",
+						"com"
+					],
+					"path": [
+						"DashboardServices",
+						"api",
+						"THReports",
+						"GetTotalCasaWomenShelterByHouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalCasaWomenShelterByHouse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalCasaWomenShelterByHouse",
+					"protocol": "https",
+					"host": [
+						"devfindgood",
+						"goodgrid",
+						"com"
+					],
+					"path": [
+						"DashboardServices",
+						"api",
+						"THReports",
+						"GetTotalCasaWomenShelterByHouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalPhoenixRecoveryWomenByHouse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalPhoenixRecoveryWomenByHouse",
+					"protocol": "https",
+					"host": [
+						"devfindgood",
+						"goodgrid",
+						"com"
+					],
+					"path": [
+						"DashboardServices",
+						"api",
+						"THReports",
+						"GetTotalPhoenixRecoveryWomenByHouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalApplicationsOver3MonthsByInmate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalApplicationsOver3MonthsByInmate",
+					"protocol": "https",
+					"host": [
+						"devfindgood",
+						"goodgrid",
+						"com"
+					],
+					"path": [
+						"DashboardServices",
+						"api",
+						"THReports",
+						"GetTotalApplicationsOver3MonthsByInmate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalApplicationsOver3MonthsByHouse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalApplicationsOver3MonthsByHouse",
+					"protocol": "https",
+					"host": [
+						"devfindgood",
+						"goodgrid",
+						"com"
+					],
+					"path": [
+						"DashboardServices",
+						"api",
+						"THReports",
+						"GetTotalApplicationsOver3MonthsByHouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalApplicationsAverageResponseOver3MonthsByHouse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devfindgood.goodgrid.com/DashboardServices/api/THReports/GetTotalApplicationsAverageResponseOver3MonthsByHouse",
+					"protocol": "https",
+					"host": [
+						"devfindgood",
+						"goodgrid",
+						"com"
+					],
+					"path": [
+						"DashboardServices",
+						"api",
+						"THReports",
+						"GetTotalApplicationsAverageResponseOver3MonthsByHouse"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

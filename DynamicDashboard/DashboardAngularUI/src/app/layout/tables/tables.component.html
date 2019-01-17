@@ -1,0 +1,95 @@
+<!-- <div [@routerTransition]> -->
+<!-- <app-page-header [heading]="'Tables'" (onFDateChange)='onFromDateChangeEvent($event)' (onTDateChange)='onToDateChangeEvent($event)'
+        [icon]="'fa-table'"></app-page-header> -->
+<!-- <div></div> -->
+<!-- <div class="row">
+        <div class="col col-xl-6 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">Overdue Applications by House</div>
+                <ng-template [ngIf]="isData" [ngIfElse]="elseoverdueapplications">
+                    <table class="card-body table table-hover" *ngIf="houses.length">
+                        <thead>
+                            <tr>
+                                <th>House Name</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr *ngFor="let house of houses">
+                                <td>{{ house.HouseName }}</td>
+                                <td>{{ house.Total }}</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </ng-template>
+                <ng-template #elseoverdueapplications>
+                    <div id="notfound">
+                        <div class="notfound">
+                            <h2>the table you searched could not found</h2>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div [@routerTransition]>
+    <div class="row">
+        <div class="col col-xl-6 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">Overdue Applications by House</div>
+                <ngx-datatable #myTable class='material expandable  bootstrap' [columnMode]="'force'" [headerHeight]="50"
+                    [rowHeight]="'auto'" [rows]='rows' [rowHeight]='"getRowHeight"'>
+                    <!-- Row Detail Template -->
+                    <ngx-datatable-row-detail [rowHeight]="getRowDetailsHeight" #myDetailRow (toggle)="onDetailToggle($event)">
+                        <ng-template let-row="row" let-rowIndex="rowIndex" let-value="value" let-expanded="expanded"
+                            ngx-datatable-row-detail-template>
+                            <div class="card-body" style="padding-right:60px;">
+                                <table class="table table-bordered table-striped text-center">
+                                    <thead>
+                                        <tr>
+                                            <th>PID</th>
+                                            <th>Inmate Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of row.getOverdueApplicationsByInmates | paginate: { itemsPerPage: 10, currentPage: p[row.HouseName], id: row.HouseName , totalItems: row.getOverdueApplicationsByInmates.length }; index as i ">
+                                            <td>{{ item.PID }}</td>
+                                            <td style="text-align: left; vertical-align: middle">{{ item.InmateName }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div>
+                                    <!-- <pagination-controls (pageChange)="p = $event" style="text-align: right; word-break: break-all;"></pagination-controls> -->
+                                    <pagination-controls maxSize="10" directionLinks="true" autoHide="true" responsive="true"
+                                        previousLabel="Previous" nextLabel="Next" screenReaderPaginationLabel="Pagination"
+                                        screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page"
+                                        (pageChange)="p[row.HouseName] = $event" [id]="row.HouseName" style="text-align: right; word-break: break-all;">
+                                    </pagination-controls>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-row-detail>
+
+                    <!-- Column Templates -->
+
+                    <ngx-datatable-column name="HouseName" [width]="350" [resizeable]="false" [sortable]="false"
+                        [draggable]="false" [canAutoResize]="false">
+                        <ng-template let-rowIndex="rowIndex" let-row="row" ngx-datatable-cell-template>
+                            <div>{{row.HouseName}}</div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="Total" [resizeable]="false" [sortable]="false" [draggable]="false"
+                        [canAutoResize]="false">
+                        <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                            <a href="javascript:void(0)" title="Expand/Collapse Row" (click)="toggleExpandRow(row)">{{row.Total}}</a>
+                        </ng-template>
+                    </ngx-datatable-column>
+                </ngx-datatable>
+            </div>
+        </div>
+    </div>
+</div>

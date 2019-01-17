@@ -1,0 +1,19 @@
+DROP PROCEDURE IF EXISTS SP_House_ResponseTime;
+
+CREATE PROCEDURE `SP_House_ResponseTime`(IN FromDate date, IN ToDate date)
+   BEGIN
+     SELECT HouseName, Total
+   FROM (SELECT House_Name
+                   AS HouseName,
+                AVG(DATEDIFF(HouseResponse_DTTM, ApplicaitonCompleted_DTTM))
+                   AS Total
+         FROM th_report_details
+         WHERE     HouseID NOT IN (8, 16)
+               AND ApplicaitonCompleted_DTTM IS NOT NULL
+               AND DATE_FORMAT(ApplicaitonCompleted_DTTM, '%Y-%m-%d') BETWEEN FromDate
+                                                                          AND ToDate
+               AND HouseResponse_DTTM IS NOT NULL
+         GROUP BY HouseName) AS A
+   WHERE A.Total > 0
+   ORDER BY A.HouseName DESC;
+   END;

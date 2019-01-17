@@ -1,0 +1,11 @@
+DROP PROCEDURE IF EXISTS SP_House_OverdueApplications;
+CREATE PROCEDURE `SP_House_OverdueApplications`()
+BEGIN
+SELECT House_Name AS HouseName, count(DISTINCT PID) AS Total
+   FROM th_report_details
+   WHERE     HouseID NOT IN (8, 16)
+         AND ApplicaitonCompleted_DTTM IS NOT NULL
+         AND HouseResponse_DTTM IS NULL
+         AND DATEDIFF(CURDATE(), ApplicaitonCompleted_DTTM) >= 7
+   GROUP BY HouseName;
+END;

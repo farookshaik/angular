@@ -1,0 +1,23 @@
+DROP PROCEDURE IF EXISTS SP_House_Shalom_Recovery_Center_Count;
+
+CREATE PROCEDURE `SP_House_Shalom_Recovery_Center_Count`(IN FromDate   date,
+                                                         IN ToDate     date)
+   BEGIN
+      SELECT F.HouseResponse_INDC AS HouseStatus, COUNT(1) AS Total
+        FROM (SELECT House_Name AS HouseName,
+                     CASE
+                        WHEN HouseResponse_INDC = 'Accept' THEN 'Approved'
+                        WHEN HouseResponse_INDC = 'Deny' THEN 'Rejected'
+                        ELSE NULL
+                     END
+                        HouseResponse_INDC
+                FROM th_report_details
+               WHERE     HouseID = 13
+                     AND HouseResponse_DTTM IS NOT NULL
+                     AND ApplicaitonCompleted_DTTM IS NOT NULL
+                     AND HouseResponse_INDC IS NOT NULL
+                     AND DATE_FORMAT(HouseResponse_DTTM, '%Y-%m-%d') BETWEEN FromDate
+                                                                         AND ToDate)
+             F
+      GROUP BY HouseStatus;
+   END;

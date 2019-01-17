@@ -1,0 +1,228 @@
+{
+  "designerVersion" : "1.6-SNAPSHOT",
+  "id" : "customGrid",
+  "name" : "Grid",
+  "lastUpdate" : 1538112926198,
+  "template" : "<!-- The custom widget template is defined here\n   - You can use standard HTML tags and AngularJS built-in directives, scope and interpolation system\n   - Custom widget properties defined on the right can be used as variables in a templates with properties.newProperty\n   - Functions exposed in the controller can be used with ctrl.newFunction()\n   - You can use the 'environment' property injected in the scope when inside the Editor whiteboard. It allows to define a mockup\n     of the Custom Widget to be displayed in the whiteboard only. By default the widget is represented by an auto-generated icon\n     and its name (See the <span> below).\n-->\n \n \n<span ng-if=\"environment\" style=\"font-weight:bold;\"><img ng-src=\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2050%2020'%3E%3Cg%3E%3Cpath%20fill%3D'%23CBD5E1'%20d%3D'M36%2C15v2h11v-2H36z%20M40%2C10v2h7v-2H40z%20M11%2C10v2h14v-2H11z%20M3%2C10v2h3v-2H3z%20M11%2C15v2h17v-2H11z%20M3%2C15v2h3%20v-2H3z'%2F%3E%3Cpath%20fill%3D'%23fff'%20d%3D'M1%2C19V1h48v18H1z%20M0%2C0v20h50V0H0z'%2F%3E%3Cpath%20fill%3D'%23CBD5E1'%20d%3D'M1%2C7v1h7v11h1V8h22v11h1V8h17V7H32V1h-1v6H9V1H8v6H1z'%2F%3E%3Cpath%20fill%3D'%23fff'%20d%3D'M35%2C3h12v2H35V3z%20M11%2C3h13v2H11V3z%20M3%2C3h3v2H3V3z'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E\" height=\"20\" width=\"50\" src=\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2050%2020'%3E%3Cg%3E%3Cpath%20fill%3D'%23CBD5E1'%20d%3D'M36%2C15v2h11v-2H36z%20M40%2C10v2h7v-2H40z%20M11%2C10v2h14v-2H11z%20M3%2C10v2h3v-2H3z%20M11%2C15v2h17v-2H11z%20M3%2C15v2h3%20v-2H3z'%2F%3E%3Cpath%20fill%3D'%23fff'%20d%3D'M1%2C19V1h48v18H1z%20M0%2C0v20h50V0H0z'%2F%3E%3Cpath%20fill%3D'%23CBD5E1'%20d%3D'M1%2C7v1h7v11h1V8h22v11h1V8h17V7H32V1h-1v6H9V1H8v6H1z'%2F%3E%3Cpath%20fill%3D'%23fff'%20d%3D'M35%2C3h12v2H35V3z%20M11%2C3h13v2H11V3z%20M3%2C3h3v2H3V3z'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E\"> {{environment.component.name}}</span>\n\n<div style=\"min-height:100px;\" ng-if=\"isDataGrid\" >\n        <div ui-grid=\"gridOptions\" ui-grid-pagination ui-grid-selection class=\"grid dataViewGrid\" style=\"{{height}}\"></div>\n        <div ng-show=\"showPlsWaitloader\" class=\"plsWaitStyle\"></div>\n</div>\n\n<div style=\"min-height:100px;\" ng-if=\"isTreeGrid\">\n        <div ui-grid=\"gridOptions\" ui-grid-selection ui-grid-tree-view class=\"grid treeViewGrid\" style=\"{{height}}\"></div>\n        <div ng-show=\"showPlsWaitloader\" class=\"plsWaitStyle verticalHorzCenter\"><i class=\"glyphicon glyphicon-list\"></i></div>\n</div> \n<div class=\"error\">{{failureResponse}}</div>",
+  "icon" : "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 20'><g><path fill='#CBD5E1' d='M36,15v2h11v-2H36z M40,10v2h7v-2H40z M11,10v2h14v-2H11z M3,10v2h3v-2H3z M11,15v2h17v-2H11z M3,15v2h3 v-2H3z'/><path fill='#fff' d='M1,19V1h48v18H1z M0,0v20h50V0H0z'/><path fill='#CBD5E1' d='M1,7v1h7v11h1V8h22v11h1V8h17V7H32V1h-1v6H9V1H8v6H1z'/><path fill='#fff' d='M35,3h12v2H35V3z M11,3h13v2H11V3z M3,3h3v2H3V3z'/></g></svg>",
+  "controller" : "/**\n * The controller is a JavaScript function that augments the AngularJS scope and exposes functions that can be used in the custom widget template\n * \n * Custom widget properties defined on the right can be used as variables in a controller with $scope.properties\n * To use AngularJS standard services, you must declare them in the main function arguments.\n *  \n * You can leave the controller empty if you do not need it.\n */\n \nfunction ($scope, $rootScope, $http, $controller, $window, $timeout) {\n\n    $controller('ServiceWidget', { $scope: $scope, $rootScope: $rootScope, $http: $http, $controller: $controller });\n  \n    $scope.isDataGrid = false;\n    $scope.isTreeGrid = false;\n\n    var paginationOptions = {\n        pageNumber: 1,\n        pageSize: 10,\n    };\n     $scope.ServiceUrl = \"\";\n    $scope.ServiceInData = {};\n    $scope.ServiceInData[\"RowFrom\"]=paginationOptions.pageNumber;\n    $scope.ServiceInData[\"RowTo\"]=paginationOptions.pageSize;\n    $scope.showPlsWaitloader = false;\n    $scope.failureResponse =\"\";\n\n\n    switch ($scope.properties.isTreeGrid.toUpperCase()) {\n        case \"DATAGRID\":\n            $scope.isDataGrid = true;\n            break;\n        case \"TREEGRID\":\n            $scope.isTreeGrid = true;\n             $scope.isTreeGrid;\n            break;\n    }\n\n    $scope.properties.isPagination = $scope.properties.pagination;\n    var verticalScrollStatus = 0;\n\n    if($scope.properties.height){\n        $scope.height = \"height:\" + $scope.properties.height + \"px;\";\n    }\n    else{\n        $scope.height = \"height:auto;\";\n    }\n    if ($scope.isTreeGrid) {\n        verticalScrollStatus = 1;\n        if ($scope.properties.isPagination) {\n            $scope.properties.isPagination = false;\n        }\n    }\n\n    $scope.gridOptions = {\n        enableSorting: $scope.properties.sorting,\n        enableRowSelection: $scope.properties.enableRowSelection,\n        enableRowHeaderSelection: false,\n        multiSelect: false,\n        modifierKeysToMultiSelect: false,\n        showColumnFooter: $scope.properties.columnFooter,\n        showGridFooter: $scope.properties.gridFooter,\n        enableSelectAll: true,\n        enableGridMenu: false,\n        enableColumnMenus: false,\n        noUnselect: true,\n        enablePaginationControls: $scope.properties.isPagination,\n        showTreeExpandNoChildren: false,\n        paginationPageSizes: [5, 10, 25],\n        paginationPageSize: 10,\n        useExternalPagination: true,\n        enableHorizontalScrollbar: 0,\n        enableVerticalScrollbar: verticalScrollStatus,\n        enableExpandAll:false\n    };\n\n    $scope.gridOptions['isGroupHeader'] = false;\n    \n    $scope.gridOptions['isTreeGrid']  =$scope.isTreeGrid;\n\n    var pinningTemplate = '<div ng-if=\"COL_FIELD > 0\">' +\n                              '<div id=\"{{row.uid}}\" class=\"crossHairStyle highlightNumber ui-grid-cell-contents\" ng-click=\"grid.appScope.pinClickCallBack(row,col,$event)\">' +\n                                 \"<div class='PinIconContainer'><span class='PinIconStyle pinImage' ng-show=\" + \"row.entity[col.field+'_PIN']\" + \"></span></div>\" +\n                                    '<div ng-click=\"grid.appScope.countClick(row,col,$event)\" class=\"TemplateDisplayContainer\">{{COL_FIELD}}</div>' +\n                               '</div>' +\n                          '</div>' +\n                          '<div ng-if=\"COL_FIELD <= 0\">' +\n                             '<div class=\"ui-grid-cell-contents\">{{COL_FIELD}}</div>' +\n                          '</div>';\n\n    var groupHeaderTpl = \"<div role='rowgroup' class='ui-grid-header'>\" +\n                              \"<div class='ui-grid-top-panel'>\" +\n                                \"<div class='ui-grid-header-viewport'>\" +\n                                    \"<div class='ui-grid-header-canvas'>\" +\n                                        \"<div class='ui-grid-header-cell-wrapper' ng-style='colContainer.headerCellWrapperStyle()'>\" +\n                                            \"<div ng-if ='colContainer.grid.api.grid.options.isGroupHeader' class='ui-grid-header-cell-row' style='display: table-caption;'>\" +\n                                                \"<div group-header='colContainer'></div>\" +\n                                            \"</div>\" +\n                                            \"<div role='row' class='ui-grid-header-cell-row defaultColumn'>\" +\n                                                '<div class=\"ui-grid-header-cell ui-grid-clearfix\" ng-repeat=\"col in colContainer.renderedColumns track by col.uid\" ui-grid-header-cell col=\"col\" render-index=\"$index\">' +\n                                                '</div>' +\n                                            '</div>' +\n                                        '</div>' +\n                                    '</div>' +\n                                '</div>' +\n                              '</div>' +\n                        '</div>';\n\n\n    var fnInitilize = function () {\n\n        var columns = [];\n        var colmnLen = $scope.properties.headers;\n        var columnClass = $scope.properties.ColumnClass;\n        var columnFormat = $scope.properties.columnFormat;\n\n        $scope.gridOptions['headerTemplate'] = groupHeaderTpl;\n        for (var i = 0; i < colmnLen.length; i++) {\n            var columnObj = {};\n\n            if (angular.isObject($scope.properties.headers[i])) {\n                $scope.gridOptions['isGroupHeader'] = true;\n                angular.extend(columnObj, $scope.properties.headers[i]);\n            }\n            else {\n                columnObj['name'] = $scope.properties.headers[i];\n                columnObj['displayName'] = $scope.properties.headers[i];\n            }\n            columnObj['cellTooltip'] = true,\n            columnObj['headerTooltip'] = true,\n            columnObj['field'] = $scope.properties.member[i];\n            columnObj['cellClass'] = (columnClass && columnClass[i]) ? columnClass[i] : '';\n\n            if ((columnFormat && columnFormat[i])) {\n                switch (angular.uppercase(columnFormat[i])) {\n                    case 'DATE':\n                        columnObj['cellFilter'] = \"customDate\";\n                        break;\n                    case 'AMOUNT':\n                        columnObj['cellFilter'] = 'currency';\n                        break;\n                    case 'SSN':\n                        columnObj['cellFilter'] = 'ssn';\n                        break;\n                    case 'PHONE':\n                        columnObj['cellFilter'] = 'phone';\n                        break;\n                    case 'ZIP':\n                        columnObj['cellFilter'] = 'zip';\n                        break;\n                }\n            }\n\n            if ($scope.properties.isPinningTemplate && i != 0) {\n                columnObj['cellTemplate'] = pinningTemplate;\n                columnObj['cellClass'] += ' rightAlign';\n            }\n\n            \n            columns.push(columnObj);\n        }\n        $scope.gridOptions['columnDefs'] = columns;\n\n        if ($scope.properties.isPagination) {\n            $scope.gridOptions['paginationPageSize'] = $scope.properties.pageSize;\n        }else{\n             //$scope.gridOptions['enableVerticalScrollbar'] = false;\n        }\n    }\n\n    var fnRefreshGrid = function () {\n\n        if (angular.isString($scope.properties.dataSource[0])) {\n            $scope.ServiceUrl = $scope.properties.dataSource[0];\n            $scope.Refresh();\n        }\n        else {\n              $scope.SuccessCallback($scope.properties.dataSource);\n        }\n    }\n\n    $scope.gridOptions.onRegisterApi = function (gridApi) {\n        $scope.gridApi = gridApi;\n\n        if( $scope.isTreeGrid && $scope.properties.headers[$scope.properties.headers.length-1].width){\n            var lastColumn = $scope.properties.headers[$scope.properties.headers.length-1];\n            var availableWidth = $scope.gridApi.grid.getViewportWidth() - $scope.gridApi.grid.scrollbarWidth;\n            var percentageIntegerValue = parseInt(lastColumn.width.replace(/%/g, ''), 10);\n            var width = parseInt(percentageIntegerValue / 100 * availableWidth);\n        \n            $scope.gridOptions['columnDefs'][$scope.properties.headers.length-1].width =   Math.round((width-40)/availableWidth*100)+\"%\";\n        }\n\n        if ($scope.properties.enableRowSelection) {\n            gridApi.selection.on.rowSelectionChanged($scope, function (row) {\n                //$scope.broadcast(this, row.entity);\n            });\n        }\n\n        if ($scope.properties.isPagination) {\n            gridApi.pagination.on.paginationChanged($scope, function (newPage, pageSize) {\n                console.log(\"pagination changed\")\n                paginationOptions.pageNumber = newPage;\n                paginationOptions.pageSize = pageSize;\n                $scope.SetCurrentPage(newPage, pageSize)\n                fnRefreshGrid();\n            });\n        }\n        if ($scope.gridOptions['isGroupHeader']) {\n            \n            $($window).off().on('resize', function (e) {\n                 $scope.gridApi.redrawColumn();\n            });\n        }\n    };\n    \n   \n    $scope.SuccessCallback = function (records) {\n\n        var data = [], count = 10;\n        if (records && records.length > 0) {\n            data = records;\n            count = data[0].ROW_COUNT||data[0].ROW_NUM;\n        }\n        $scope.gridOptions.totalItems = count;\n        if ($scope.isTreeGrid) {\n            $scope.gridOptions['data'] = modifiedTreeDataStructure(data);\n\n            //$scope.gridOptions['treeIndent'] = [10, 15];\n            $timeout(function (e) {\n                $scope.gridApi.treeBase.expandAllRows();\n            }, 800);\n        }\n        else {\n            $scope.gridOptions['data'] = data;\n        }\n        if ($scope.properties.isPinningTemplate) {\n            $scope.showPin(data);\n        }\n    }\n\n    $scope.FailureCallback = function (error) {\n        $scope.failureResponse = error;\n    }\n\n    $scope.showPin = function (records) {\n\n        for (var i = 0; i < records.length; i++) {\n            var record = records[i];\n            angular.forEach(record, function (value, key) {\n                var idRowKey = records[i].ID_ROW_KEY + \"_\" + key;\n                if ($scope.IsPinned(idRowKey)) {\n                    records[i][key + \"_PIN\"] = true;\n                }\n            });\n\n        }\n    }\n\n    $scope.SetCurrentPage = function (currentPageNo, pageSize) {\n        $scope.ServiceInData[\"RowFrom\"] = ((currentPageNo - 1) * pageSize) + 1;\n        $scope.ServiceInData[\"RowTo\"] = currentPageNo * pageSize;\n    }\n\n    $scope.onLoad = function () {\n\n        //if ($scope.properties.serviceInput && $scope.properties.serviceInput.length > 0)\n          //  $scope.ServiceInData = JSON.parse($scope.properties.serviceInput);\n\n        fnInitilize();\n        $scope.LoadPinFilter();\n        fnRefreshGrid();\n\n    }\n     \n    $rootScope.$on('filterChanged', function (evt, data) {\n         \n        if(data.sender.properties.isLocal){\n            if(!$scope.properties.toRespond && $scope.properties.toRespond.split(',').indexOf(data.sender.properties.id)==-1){\n                return;\n            }\n            $.extend($scope.ServiceInData,data.data);\n            fnRefreshGrid();\n            return;\n        }\n        if($scope.properties.toRespond && $scope.properties.toRespond.length>0 && $scope.properties.toRespond.split(',').indexOf(data.sender.properties.id)!=-1){\n               fnRefreshGrid();\n                return;\n        }\n        if($scope.properties.mute=='Incoming' || $scope.properties.mute=='Both'){\n            return;\n        }\n        fnRefreshGrid();\n    });\n\n    $rootScope.$on('facadeChanged', function (evt, data) {\n       \n        if($scope.$id == data.sender.$id) return;\n         if($scope.properties.mute=='Incoming' || $scope.properties.mute=='Both'){\n            return;\n        }\n   \n        /*\n       if(data.sender.properties.isLocal){\n            if($scope.properties.toRespond.length==0 || $scope.properties.toRespond.split(',').indexOf(data.sender.properties.id)==-1){\n                return;\n            }\n        } else{\n             if($scope.properties.toRespond.length>0 && $scope.properties.toRespond.split(',').indexOf(data.sender.properties.id)==-1){\n                return;\n            }\n        }\n        */\n        $scope.LoadPinFilter();\n        fnRefreshGrid();\n    });\n    $scope.countClick = function (row, col, event){\n        \n        \n         if (row.entity[col.field] > 0){\n              var cellRecord = row.entity;\n                if(event.ctrlKey){\n                     var header = (angular.isObject($scope.properties.headers[0]))?$scope.properties.headers[0].displayName : $scope.properties.headers[0];\n                    $scope.ShowReport(\n                        {\n                            HEADER:header + \" > \" + cellRecord[$scope.properties.member[0]] + \" : \" + col.displayName + \" (\" + cellRecord[col.field] + \")\",\n                            ID_ROW_KEY: cellRecord.ID_ROW_KEY,\n                            ID_COLUMN:col.field,\n                            ID_NODE:\"\"\n                        }\n                    );\n                event.stopPropagation();\n                return;\n                }\n            \n         }\n    }\n    \n\n    $scope.pinClickCallBack = function (row, col, event) {\n\n        if (row.entity[col.field] > 0) {\n            row.entity[col.field + \"_PIN\"] = !row.entity[col.field + \"_PIN\"];\n            var cellRecord = row.entity;\n          \n            var pinID = cellRecord.ID_ROW_KEY + \"_\" + col.field;\n            if (row.entity[col.field + \"_PIN\"]) {\n                var header = (angular.isObject($scope.properties.headers[0]))?$scope.properties.headers[0].displayName : $scope.properties.headers[0];\n                var filterData = {\n                    \"ID_ROW_KEY\": pinID,\n                    \"ID_ROW_DATA\": cellRecord.ID_ROW_KEY,\n                    \"ID_COLUMN_DATA\": col.field,\n                    \"Header\": header + \" > \" + cellRecord[$scope.properties.member[0]] + \" : \" + col.displayName + \" (\" + cellRecord[col.field] + \")\",\n                };\n                $scope.AddPinFilter(filterData);\n            } else {\n                $scope.DeletePinFilter(pinID);\n            }\n            \n            //$scope.LoadPinFilter();\n            fnRefreshGrid();\n            $scope.broadcastFacadeChanged(this, {sender:$scope,data:row.entity});\n        }\n    }\n\n    $scope.selectAll = function () {\n        $scope.gridApi.selection.selectAllRows();\n    };\n\n    $scope.clearAll = function () {\n        $scope.gridApi.selection.clearSelectedRows();\n    };\n\n    $scope.selectRow = function () {\n        if ($scope.gridApi.selection.selectRow) {\n            $scope.gridApi.selection.selectRow($scope.gridOptions.data[0]);\n        }\n    }\n\n    $scope.showPlsWait = function () {\n        $scope.showPlsWaitloader = true;\n    }\n\n    $scope.hidePlsWait = function () {\n        $scope.showPlsWaitloader = false;\n    }\n\n    $scope.onLoad();\n\n    function modifiedTreeDataStructure(data) {\n\n        var groupedRecords = d3.nest()\n        .key(function (d) { return d[$scope.properties.parentMember] })\n        .key(function (d) { return d[$scope.properties.nodeMember] })\n        .map(data);\n\n        var collectData = [];\n        getModifiedStructureData(\"\", 0, null, collectData);\n\n        function getModifiedStructureData(DataMember, level, parent, collectData) {\n\n            if (groupedRecords[DataMember] != undefined) {\n                angular.forEach(groupedRecords[DataMember], function (value, key) {\n                    var Obj = value[0];\n                    Obj[\"$$treeLevel\"] = level;\n                    Obj[\"isPined\"] = false;\n                    collectData.push(Obj);\n                    getModifiedStructureData(key, level + 1, Obj, collectData);\n\n                });\n            }\n        }\n\n        return collectData;\n    }\n\n}",
+  "custom" : true,
+  "properties" : [ {
+    "label" : "Widget Name",
+    "name" : "id",
+    "help" : "Should be unique",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Listen Change Of(Provide Widget name(s))",
+    "name" : "toRespond",
+    "caption" : "Comma Seperated Values",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Mute Interaction",
+    "name" : "mute",
+    "type" : "choice",
+    "defaultValue" : "None",
+    "choiceValues" : [ "None", "Incoming", "Outgoing", "Both" ],
+    "bond" : "expression"
+  }, {
+    "label" : "Height",
+    "name" : "height",
+    "help" : "Grid height in px ( Ex:200 means 200px)",
+    "type" : "integer",
+    "defaultValue" : 350,
+    "bond" : "expression"
+  }, {
+    "label" : "Grid Type",
+    "name" : "isTreeGrid",
+    "help" : "If tree grid select yes otherwise no",
+    "type" : "choice",
+    "defaultValue" : "DataGrid",
+    "choiceValues" : [ "DataGrid", "TreeGrid" ],
+    "bond" : "expression"
+  }, {
+    "label" : "Group By Primary",
+    "name" : "parentMember",
+    "showFor" : "properties.isTreeGrid.value === 'TreeGrid'",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Group By Secondary",
+    "name" : "nodeMember",
+    "showFor" : "properties.isTreeGrid.value === 'TreeGrid'",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Headers",
+    "name" : "headers",
+    "caption" : "Grid headers(Normal header: (Ex:ID, Name, Age, Department)Group Header: (Json with display name ,field,width in % and category(header name) need to be passed)",
+    "help" : "Normal header: (Ex:ID, Name, Age, Department)Group Header: (Json with display name ,field,width in % and category(header name) need to be passed",
+    "type" : "collection",
+    "bond" : "expression"
+  }, {
+    "label" : "Column Member",
+    "name" : "member",
+    "caption" : "Column data bind property(Ex: ID, NAME, AGE, DEP)",
+    "help" : "Column data bind property",
+    "type" : "collection",
+    "bond" : "expression"
+  }, {
+    "label" : "Column CSS Classes",
+    "name" : "ColumnClass",
+    "caption" : "Ex: columnClass1,columnClass2,columnClass3",
+    "help" : "Set style to columns (Ex: columnClass1,columnClass2,columnClass3 ....)",
+    "type" : "collection",
+    "bond" : "expression"
+  }, {
+    "label" : "Column Format",
+    "name" : "columnFormat",
+    "caption" : "Column format of grid (Ex: string,date,number)",
+    "help" : "Column format of grid(Ex: string,date,number)",
+    "type" : "collection",
+    "bond" : "expression"
+  }, {
+    "label" : "Enable Sorting",
+    "name" : "sorting",
+    "help" : "Sorting the Columns value",
+    "type" : "boolean",
+    "defaultValue" : false,
+    "bond" : "expression"
+  }, {
+    "label" : "Show Column Footer",
+    "name" : "columnFooter",
+    "help" : "Displaying column footer",
+    "type" : "boolean",
+    "defaultValue" : false,
+    "bond" : "expression"
+  }, {
+    "label" : "Show Grid Footer",
+    "name" : "gridFooter",
+    "help" : "show grid footer",
+    "type" : "boolean",
+    "defaultValue" : false,
+    "bond" : "expression"
+  }, {
+    "label" : "Service Input",
+    "name" : "serviceInput",
+    "help" : "Input to service api",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Data Source",
+    "name" : "dataSource",
+    "help" : "Binding Data for grid",
+    "type" : "collection",
+    "bond" : "expression"
+  }, {
+    "label" : "Enable Pagination",
+    "name" : "pagination",
+    "help" : "Grid pagination",
+    "type" : "boolean",
+    "defaultValue" : true,
+    "bond" : "expression"
+  }, {
+    "label" : "Page Size",
+    "name" : "pageSize",
+    "help" : "Records per page",
+    "showFor" : "properties.pagination.value === true",
+    "type" : "integer",
+    "defaultValue" : 10,
+    "bond" : "expression"
+  }, {
+    "label" : "Enable RowSelection",
+    "name" : "enableRowSelection",
+    "help" : "Enable RowSelection Event",
+    "type" : "boolean",
+    "defaultValue" : true,
+    "bond" : "expression"
+  }, {
+    "label" : "Is Pinning Template",
+    "name" : "isPinningTemplate",
+    "help" : "If select yes pinning collumn is created",
+    "type" : "boolean",
+    "defaultValue" : false,
+    "bond" : "expression"
+  }, {
+    "label" : "Report Url",
+    "name" : "reportUrl",
+    "type" : "text",
+    "bond" : "expression"
+  } ],
+  "assets" : [ {
+    "id" : "e5b4e69b-a22e-46af-833d-a17725036ab2",
+    "name" : "app.js",
+    "type" : "js",
+    "order" : 8,
+    "external" : false
+  }, {
+    "id" : "5ea5911e-3d84-4e05-a5a1-3102cf7ceed6",
+    "name" : "jquery-2.0.3.min.js",
+    "type" : "js",
+    "order" : 1,
+    "external" : false
+  }, {
+    "id" : "f8ce58af-c2bf-43ed-840e-c08c568e46bf",
+    "name" : "ui-grid.css",
+    "type" : "css",
+    "order" : 5,
+    "external" : false
+  }, {
+    "id" : "3248dc4a-31ea-4f5b-84ee-9e9783883323",
+    "name" : "ui-grid.js",
+    "type" : "js",
+    "order" : 4,
+    "external" : false
+  }, {
+    "id" : "f5a01850-62b6-45a9-a59b-ca2cd78218fe",
+    "name" : "icon.png",
+    "type" : "img",
+    "order" : 9,
+    "external" : false
+  }, {
+    "id" : "b845de58-43e5-41ee-9976-6f965f2bfc79",
+    "name" : "BaseWidget.js",
+    "type" : "js",
+    "order" : 13,
+    "external" : false
+  }, {
+    "id" : "0acb7893-a410-4e61-94e2-0c339329647e",
+    "name" : "29.gif",
+    "type" : "img",
+    "order" : 10,
+    "external" : false
+  }, {
+    "id" : "c45fd32e-24e4-45c4-b13e-214b18e18e83",
+    "name" : "d3.v3.js",
+    "type" : "js",
+    "order" : 2,
+    "external" : false
+  }, {
+    "id" : "22354a6f-0307-43f5-837e-c8b2abe6ac97",
+    "name" : "ServiceWidget.js",
+    "type" : "js",
+    "order" : 14,
+    "external" : false
+  }, {
+    "id" : "76cf74d2-51ca-44d3-bbc6-c47606f7a99c",
+    "name" : "OpenSans-Regular.ttf",
+    "type" : "img",
+    "order" : 12,
+    "external" : false
+  }, {
+    "id" : "58250217-0286-4d78-8b98-5ebdef797549",
+    "name" : "ui-grid.woff",
+    "type" : "css",
+    "order" : 3,
+    "external" : false
+  }, {
+    "id" : "54e1e610-3f8e-4784-8939-764fff69dfb1",
+    "name" : "customGridStyle.css",
+    "type" : "css",
+    "order" : 11,
+    "external" : false
+  } ],
+  "requiredModules" : [ "ui.grid.cellNav", "ui.grid.edit", "ui.grid.treeView", "bonitasoft.ui.widgets", "ui.grid.pagination", "ui.grid.expandable", "ui.grid.selection", "ui.grid" ],
+  "type" : "widget",
+  "hasHelp" : false
+}

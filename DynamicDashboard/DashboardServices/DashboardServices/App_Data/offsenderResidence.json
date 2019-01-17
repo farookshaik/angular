@@ -1,0 +1,26 @@
+﻿[
+  {
+    "county": "West Sacromento",
+    "mandatorysupervision": 20,
+    "PRCS": 40
+
+  },
+  {
+    "county": "Woodland",
+    "mandatorysupervision": 28,
+    "PRCS": 42
+
+  },
+  {
+    "county": "Winters",
+    "mandatorysupervision": 1,
+    "PRCS": 5
+
+  },
+  {
+    "county": "Davis",
+    "mandatorysupervision": 7,
+    "PRCS": 8
+
+  }
+]

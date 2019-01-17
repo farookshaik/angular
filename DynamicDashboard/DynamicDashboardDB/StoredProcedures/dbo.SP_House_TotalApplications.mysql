@@ -1,0 +1,15 @@
+DROP PROCEDURE IF EXISTS SP_House_TotalApplications;
+
+CREATE PROCEDURE `SP_House_TotalApplications`(IN FromDate   date,
+                                                         IN ToDate     date)
+   BEGIN
+      SELECT House_Name, COUNT(1) AS Total
+        FROM th_report_details
+       WHERE     HouseID NOT IN (8, 16)
+             AND HouseResponse_DTTM IS NOT NULL
+             AND HouseResponse_INDC IS NOT NULL
+             AND DATE_FORMAT(HouseResponse_DTTM, '%Y-%m-%d') BETWEEN FromDate
+                                                                 AND ToDate
+      GROUP BY House_Name
+      ORDER BY House_Name DESC;
+   END;

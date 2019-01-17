@@ -1,0 +1,14 @@
+DROP PROCEDURE IF EXISTS SP_INMATES_OVERDUEAPPLICATIONS;
+CREATE PROCEDURE SP_INMATES_OVERDUEAPPLICATIONS(HouseName varchar(64))
+BEGIN
+
+    SELECT DISTINCT PID, Inmate_Name AS InmateName 
+   FROM th_report_details
+   WHERE     HouseID NOT IN (8, 16)
+         AND ApplicaitonCompleted_DTTM IS NOT NULL
+         AND HouseResponse_DTTM IS NULL
+         AND DATEDIFF(CURDATE(), ApplicaitonCompleted_DTTM) >= 7
+         AND House_Name = HouseName;
+		 
+END;
+ 

@@ -1,0 +1,441 @@
+DROP PROCEDURE IF EXISTS SP_Inmate_TotalApplicationsOver3Months;
+
+CREATE PROCEDURE `SP_Inmate_TotalApplicationsOver3Months`(
+   IN FromDate   date,
+   IN ToDate     date)
+   BEGIN
+      SELECT MONTH,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(East_Central_AR_CCC_CNT)
+             ELSE
+                0
+          END
+             East_Central_AR_CCC_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(McPherson_Unit_CNT)
+             ELSE
+                0
+          END
+             McPherson_Unit_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(NW_AR_CCC_CNT)
+             ELSE
+                0
+          END
+             NW_AR_CCC_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(SW_AR_CCC_Females_CNT)
+             ELSE
+                0
+          END
+             SW_AR_CCC_Females_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(Wrightsville_Hawkins_Center_CNT)
+             ELSE
+                0
+          END
+             Wrightsville_Hawkins_Center_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(Tucker_ReEntry_Work_Release_CNT)
+             ELSE
+                0
+          END
+             Tucker_ReEntry_Work_Release_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(Tucker_ReEntry_Center_CNT)
+             ELSE
+                0
+          END
+             Tucker_ReEntry_Center_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(Tucker_ReEntry_CNT)
+             ELSE
+                0
+          END
+             Tucker_ReEntry_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(SW_AR_CCC_CNT)
+             ELSE
+                0
+          END
+             SW_AR_CCC_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(Omega_Supervision_Sanction_Center_CNT)
+             ELSE
+                0
+          END
+             Omega_Supervision_Sanction_Center_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(MH_Residential_CNT)
+             ELSE
+                0
+          END
+             MH_Residential_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(East_Central_AR_CCCFemales_DrugTreatment_CNT)
+             ELSE
+                0
+          END
+             East_Central_AR_CCCFemales_DrugTreatment_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(Sanction_Female_CNT)
+             ELSE
+                0
+          END
+             Sanction_Female_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(Short_Term_Drug_CNT)
+             ELSE
+                0
+          END
+             Short_Term_Drug_CNT,
+          CASE
+             WHEN MONTH IN ('January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December')
+             THEN
+                SUM(Central_AR_CCC_Males_CNT)
+             ELSE
+                0
+          END
+             Central_AR_CCC_Males_CNT
+   FROM (SELECT MONTHNAME(ApplicaitonCompleted_DTTM)
+                   AS MONTH,
+                COUNT(Inmate_Loacation),
+                CASE
+                   WHEN Inmate_Loacation = 'East Central AR CCC'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   East_Central_AR_CCC_CNT,
+                CASE
+                   WHEN Inmate_Loacation = 'McPherson Unit'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   McPherson_Unit_CNT,
+                CASE
+                   WHEN Inmate_Loacation = 'NW AR CCC'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   NW_AR_CCC_CNT,
+                CASE
+                   WHEN Inmate_Loacation = 'SW AR CCC Females'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   SW_AR_CCC_Females_CNT,
+                CASE
+                   WHEN Inmate_Loacation = 'Wrightsville Hawkins Center'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   Wrightsville_Hawkins_Center_CNT,
+                CASE
+                   WHEN Inmate_Loacation = 'Tucker Re-Entry Work Release'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   Tucker_ReEntry_Work_Release_CNT,
+                CASE
+                   WHEN Inmate_Loacation = 'Tucker Re-Entry Center'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   Tucker_ReEntry_Center_CNT,
+                CASE
+                   WHEN Inmate_Loacation = 'Tucker Re-Entry'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   Tucker_ReEntry_CNT,
+                CASE
+                   WHEN Inmate_Loacation = 'SW AR CCC'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   SW_AR_CCC_CNT,
+                CASE
+                   WHEN Inmate_Loacation =
+                        'Omega Supervision Sanction Center'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   Omega_Supervision_Sanction_Center_CNT,
+                CASE
+                   WHEN Inmate_Loacation =
+                        'McPherson MH Residential Prog Unit'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   MH_Residential_CNT,
+                CASE
+                   WHEN Inmate_Loacation =
+                        'East Central AR CCC-Females Drug Treatment'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   East_Central_AR_CCCFemales_DrugTreatment_CNT,
+                CASE
+                   WHEN Inmate_Loacation =
+                        'East Central AR CCC Supervision Sanction-Female'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   Sanction_Female_CNT,
+                CASE
+                   WHEN Inmate_Loacation =
+                        'Central AR CCC - Short Term Drug Court Treatment'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   Short_Term_Drug_CNT,
+                CASE
+                   WHEN Inmate_Loacation = 'Central AR CCC - Males'
+                   THEN
+                      COUNT(DISTINCT PID)
+                   ELSE
+                      0
+                END
+                   Central_AR_CCC_Males_CNT
+         FROM th_report_details
+         WHERE     HouseID NOT IN (8, 16)
+               AND ApplicaitonCompleted_DTTM IS NOT NULL
+               AND DATE_FORMAT(ApplicaitonCompleted_DTTM, '%Y-%m-%d') BETWEEN FromDate
+                                                                          AND ToDate
+         GROUP BY MONTH, Inmate_Loacation) AS A
+   GROUP BY A.MONTH
+   ORDER BY FIELD(MONTH,
+                  'January',
+                  'February',
+                  'March',
+                  'April',
+                  'May',
+                  'June',
+                  'July',
+                  'August',
+                  'September',
+                  'October',
+                  'November',
+                  'December');
+   END;

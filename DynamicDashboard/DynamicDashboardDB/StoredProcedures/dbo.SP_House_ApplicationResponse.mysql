@@ -1,0 +1,70 @@
+DROP PROCEDURE IF EXISTS SP_House_ApplicationResponse;
+
+CREATE PROCEDURE `SP_House_ApplicationResponse`(
+   IN FromDate   date,
+   IN ToDate     date)
+BEGIN
+   SET @prev_value = NULL;
+   SET @rank_count = 0;
+
+   DROP  TABLE IF EXISTS ApplicationResponse_tmp;
+   CREATE  TABLE ApplicationResponse_tmp
+   SELECT HouseName,
+          TotalAPPROVED,
+          TotalREJECTED,
+          TotalPENDING,
+          CASE
+             WHEN @prev_value = HouseName
+             THEN
+                @rank_count
+             WHEN @prev_value := HouseName
+             THEN
+                @rank_count := @rank_count + 1
+          END
+             AS rankROW
+   FROM (SELECT House_Name
+                   AS HouseName,
+                SUM(
+                   (CASE WHEN HouseResponse_INDC = 'Accept' THEN 1 ELSE 0 END))
+                   TotalAPPROVED,
+                SUM(
+                   (CASE WHEN HouseResponse_INDC = 'Deny' THEN 1 ELSE 0 END))
+                   TotalREJECTED,
+                0
+                   AS TotalPENDING
+         FROM th_report_details
+         WHERE     HouseID NOT IN (8, 16)
+               AND HouseResponse_DTTM IS NOT NULL
+               AND ApplicaitonCompleted_DTTM IS NOT NULL
+               AND DATE_FORMAT(HouseResponse_DTTM, '%Y-%m-%d') BETWEEN FromDate
+                                                                   AND ToDate
+         GROUP BY House_Name
+         UNION
+         SELECT House_Name AS HouseName,
+                0 AS TotalAPPROVED,
+                0 AS TotalREJECTED,
+                COUNT(*) AS TotalPENDING
+         FROM th_report_details
+         WHERE     HouseID NOT IN (8, 16)
+               AND HouseResponse_INDC IS NULL
+               AND ApplicaitonCompleted_DTTM IS NOT NULL
+               AND DATE_FORMAT(ApplicaitonCompleted_DTTM, '%Y-%m-%d') BETWEEN FromDate
+                                                                          AND ToDate
+         GROUP BY House_Name) AS MA
+   ORDER BY HouseName;
+
+
+   SET SQL_SAFE_UPDATES = 0;
+
+   UPDATE ApplicationResponse_tmp A JOIN ApplicationResponse_tmp B ON A.HouseName = B.HouseName
+   SET A.TotalPENDING = B.TotalPENDING
+   WHERE B.rankROW = 0 AND B.TotalPENDING > 0;
+
+   SELECT HouseName,
+          TotalAPPROVED,
+          TotalREJECTED,
+          TotalPENDING
+   FROM ApplicationResponse_tmp
+   WHERE rankROW IS NULL;
+
+END;

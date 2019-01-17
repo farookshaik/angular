@@ -1,0 +1,20 @@
+﻿[
+  {
+    "description": "Drug Offenders",
+    "currentyear": 14600,
+    "Previousyear": 14539
+
+  },
+  {
+    "description": "Sex Offenders",
+    "currentyear": 3737,
+    "previousyear": 3763
+
+  },
+  {
+    "description": "OWI Offenders",
+    "currentyear": 98,
+    "previousyear": 89
+
+  }
+]

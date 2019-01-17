@@ -1,0 +1,48 @@
+﻿[
+  {
+    "mthyear": "2018-Feb",
+    "jailonly": 50,
+    "splitsentence": 122
+  },
+  {
+    "mthyear": "2018-Jan",
+    "jailonly": 50,
+    "splitsentence": 222
+  },
+  {
+    "mthyear": "2017-Dec",
+    "jailonly": 150,
+    "splitsentence": 22
+  },
+  {
+    "mthyear": "2017-Nov",
+    "jailonly": 510,
+    "splitsentence": 322
+  },
+  {
+    "mthyear": "2017-Oct",
+    "jailonly": 750,
+    "splitsentence": 272
+  },
+  {
+    "mthyear": "2017-Sep",
+    "jailonly": 570,
+    "splitsentence": 322
+  },
+  {
+    "mthyear": "2017-Aug",
+    "jailonly": 750,
+    "splitsentence": 227
+  },
+  {
+    "mthyear": "2017-July",
+    "jailonly": 590,
+    "splitsentence": 212
+  },
+  {
+    "mthyear": "2017-June",
+    "jailonly": 50,
+    "splitsentence": 22
+  }
+
+]

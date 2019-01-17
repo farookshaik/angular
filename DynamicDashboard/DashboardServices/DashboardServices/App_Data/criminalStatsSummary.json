@@ -1,0 +1,57 @@
+﻿[
+  {
+    "year": "2012",
+    "caseclosed": 2555,
+    "satisficatorycases": 2166,
+    "revocationcases": 389,
+    "technicalcase": 178,
+    "newoffenses": 211
+
+
+  },
+  {
+    "year": "2013",
+    "caseclosed": 2644,
+    "satisficatorycases": 2544,
+    "revocationcases": 379,
+    "technicalcase": 163,
+    "newoffenses": 216
+
+  },
+  {
+    "year": "2014",
+    "caseclosed": 2974,
+    "satisficatorycases": 2744,
+    "revocationcases": 405,
+    "technicalcase": 167,
+    "newoffenses": 238
+
+  },
+  {
+    "year": "2015",
+    "caseclosed": 2837,
+    "satisficatorycases": 2777,
+    "revocationcases": 397,
+    "technicalcase": 215,
+    "newoffenses": 220
+
+  },
+  {
+    "year": "2013",
+    "caseclosed": 2344,
+    "satisficatorycases": 2344,
+    "revocationcases": 179,
+    "technicalcase": 63,
+    "newoffenses": 16
+
+  },
+  {
+    "year": "2017",
+    "caseclosed": 2888,
+    "satisficatorycases": 2650,
+    "revocationcases": 458,
+    "technicalcase": 105,
+    "newoffenses": 222
+
+  }
+]

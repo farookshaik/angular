@@ -1,0 +1,106 @@
+<div [@routerTransition]>
+    <!-- (onFDateChange)='onFromDateChangeEvent($event)' (onTDateChange)='onToDateChangeEvent($event)' -->
+    <app-page-header [heading]="'Trend'" (onRangeDateChange)='onRangeDateChangeEvent($event)' [icon]="'fa-edit'"></app-page-header>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Total Applications by Unit
+                </div>
+                <ng-template [ngIf]="isUnitData" [ngIfElse]="elseUnitDataBlock">
+                    <div class="card-body" *ngIf="totalApplicationlineChartData.length > 0">
+                        <canvas baseChart height="100px" [datasets]="totalApplicationlineChartData" [labels]="totalApplicationlineChartLabels"
+                            [options]="lineChartOptions" [colors]="totalUnitslineChartColors" [legend]="lineChartLegend"
+                            [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </ng-template>
+                <ng-template #elseUnitDataBlock>
+                    <div class="card-body">
+                        <div class="notfound" style="height: 155px;">
+                            <h2>the chart you searched could not found</h2>
+                        </div>
+                    </div>
+
+                </ng-template>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Total Applications by House
+                </div>
+                <ng-template [ngIf]="isHouseData" [ngIfElse]="elseHouseDataBlock">
+                    <div class="card-body" *ngIf="totalApplicationByHouseoverlineChartData.length > 0">
+                        <canvas baseChart height="100px" [datasets]="totalApplicationByHouseoverlineChartData" [labels]="totalApplicationByHouseoverlineChartLabels"
+                            [options]="lineChartOptions" [colors]="totalApplicationByHouseover3MonthslineChartColors"
+                            [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </ng-template>
+                <ng-template #elseHouseDataBlock>
+                    <div class="card-body">
+                        <div class="notfound" style="height: 155px;">
+                            <h2>the chart you searched could not found</h2>
+                        </div>
+                    </div>
+
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Average Response by House
+                </div>
+                <ng-template [ngIf]="isAvgHouseData" [ngIfElse]="elseAvgHouseDataBlock">
+                    <div class="card-body" *ngIf="averageResponseByHouselineChartData.length > 0">
+                        <canvas baseChart height="100px" [datasets]="averageResponseByHouselineChartData" [labels]="averageResponseByHouselineChartLabels"
+                            [options]="lineAvgChartOptions" [colors]="totalApplicationByHouseover3MonthslineChartColors"
+                            [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </ng-template>
+                <ng-template #elseAvgHouseDataBlock>
+                    <div class="card-body">
+                        <div class="notfound" style="height: 155px;">
+                            <h2>the chart you searched could not found</h2>
+                        </div>
+                    </div>
+
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Beds Marked Available by House
+                </div>
+                <ng-template [ngIf]="isBedMarkedHouseData" [ngIfElse]="elseBedMarkedHouseDataBlock">
+                    <div class="card-body" *ngIf="bedsMarkedAvailabilityByHouseData.length > 0">
+                        <canvas baseChart height="100px" [datasets]="bedsMarkedAvailabilityByHouseData" [labels]="bedsMarkedAvailabilityByHouseLabels"
+                            [options]="lineAvgChartOptions" [colors]="totalApplicationByHouseover3MonthslineChartColors"
+                            [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </ng-template>
+                <ng-template #elseBedMarkedHouseDataBlock>
+                    <div class="card-body">
+                        <div class="notfound" style="height: 155px;">
+                            <h2>the chart you searched could not found</h2>
+                        </div>
+                    </div>
+
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

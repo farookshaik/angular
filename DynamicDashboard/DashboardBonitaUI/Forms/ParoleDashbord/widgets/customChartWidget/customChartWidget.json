@@ -1,0 +1,241 @@
+{
+  "designerVersion" : "1.5.48",
+  "id" : "customChartWidget",
+  "name" : "ChartWidget",
+  "lastUpdate" : 1539339587946,
+  "template" : "<!-- The custom widget template is defined here\n   - You can use standard HTML tags and AngularJS built-in directives, scope and interpolation system\n   - Custom widget properties defined on the right can be used as variables in a templates with properties.newProperty\n   - Functions exposed in the controller can be used with ctrl.newFunction()\n   - You can use the 'environment' property injected in the scope when inside the Editor whiteboard. It allows to define a mockup\n     of the Custom Widget to be displayed in the whiteboard only. By default the widget is represented by an auto-generated icon\n     and its name (See the <span> below).\n-->\n \n<span ng-if=\"environment\" style=\"font-weight:bold;\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAITSURBVFhH7ZmxTsJQFIb7XAjE3cfQt3DXXXfddXFBRwcWF2vCwgALCwMsoHFhuX43bdpzT+FACYZq7skfUvv3nvu1tP+1IRkt3cWrO31qioABKWkUUyaQErWrIYpYdRSx6ihi1ZGF1e25k6lrLVx7vM6auNa3t9hea/GpLMTxNKRt1ZKysDyTy9UehBYTb7Daw9LisMAaCGsaWEoWFqdVdFEXrDUvLTWBtNiWlr9UhbUILCULS3bp9kNLXJLOW2B10tLiMGnRpLQqN4bUlluey854xZSJ6ZlVMWVip7dSvR/Riobqe69qC9axFLHq6A9i5cE40w8UOuu5h7FLZ+6uYiH/nDKqkrTofuhHPU98B2VJWVgyM9Vj9Th2Rd2qOBWZqVLgOs2HUC9h0ipZWCwg5QThVfmY590ptqVlxCkoRX2uAkvJwuJciwlUPhlYRpzKUZS0lLbcW/RlbalmpoGFPNl8TWYeBsuQjbVJESti5SLxSEvS7+pdWzYW+cSom1+65WXMXO4cEDIzyXRpHQbra5WPp1QoG1g7WpS0lCwsWfvNbViUtJQiVsTytZ9FSUspYv1zLBmn/fCNfj8smhRFc2kpWViyi/qHXa5LymLBKUqtDRxZlDpPJQuLpZrBo4V/oahaTJlZ6h2GP9mJxQHKQplF26olZWEdURGrjiJWHUWsOkrOm/fDHUj+Z85GkQEzWrofJZ1PALCnhf0AAAAASUVORK5CYII=\" /> {{environment.component.name}}</span>\n\n<div class=\"chartwidget\">\n    <div class=\"chartContainer\" style=\"height:{{properties.height+12}}px\">\n        <div ng-show=\"showPlsWaitloader\" class=\"plsWaitStyle verticalHorzCenter\"><i class=\"glyphicon glyphicon-stats\"></i></div>\n        <div custom-chart> </div>\n        <div class=\"error\">{{failureResponse}}</div>\n    </div>\n</div>",
+  "icon" : "<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 78 78'><g><path fill='#FFFFFF' d='M62.4,63.3h-2.1v-31c0-1.4-1.2-2.6-2.6-2.6h-4.8c-1.4,0-2.6,1.2-2.6,2.6v31h-5.4v-17c0-1.4-1.2-2.6-2.6-2.6 h-4.8c-1.4,0-2.6,1.2-2.6,2.6v17h-5.4v-8.8c0-1.4-1.2-2.6-2.6-2.6H22c-1.4,0-2.6,1.2-2.6,2.6v8.8h-2.2c-0.5,0-1,0.4-1,1s0.4,1,1,1 h45.2c0.5,0,1-0.4,1-1S63,63.3,62.4,63.3z M21.4,63.3v-8.8c0-0.4,0.3-0.7,0.7-0.7h4.8c0.4,0,0.7,0.3,0.7,0.7v8.8H21.4z M36.8,63.3 v-17c0-0.4,0.3-0.7,0.7-0.7h4.8c0.4,0,0.7,0.3,0.7,0.7v17H36.8z M52.2,63.3v-31c0-0.4,0.3-0.7,0.7-0.7h4.8c0.4,0,0.7,0.3,0.7,0.7 v31H52.2z'/><path fill='#FFFFFF' d='M25.5,42.5c0.2,0,0.5-0.1,0.7-0.3L43,25.4l3.6,3.6c0.4,0.4,1,0.4,1.4,0l10.3-10.3V22c0,0.5,0.4,1,1,1 s1-0.4,1-1v-5.5c0-0.3-0.1-0.5-0.3-0.7s-0.5-0.3-0.7-0.3h-5.9c-0.5,0-1,0.4-1,1c0,0.5,0.4,1,1,1H57l-9.6,9.6l-3.6-3.6 c-0.2-0.2-0.4-0.3-0.7-0.3s-0.5,0.1-0.7,0.3L24.9,41c-0.4,0.4-0.4,1,0,1.4C25,42.4,25.3,42.5,25.5,42.5z'/><circle fill='#FFFFFF' cx='22.2' cy='44.9' r='1'/></g></svg>",
+  "controller" : "/**\n * The controller is a JavaScript function that augments the AngularJS scope and exposes functions that can be used in the custom widget template\n * \n * Custom widget properties defined on the right can be used as variables in a controller with $scope.properties\n * To use AngularJS standard services, you must declare them in the main function arguments.\n * \n * You can leave the controller empty if you do not need it.\n */\nfunction ( $scope, $rootScope, $http, $controller,$location )\n{\n\n    $controller( 'ServiceWidget', { $scope: $scope, $rootScope: $rootScope, $http: $http, $controller: $controller } );\n    $scope.IsMute = false;//$scope.properties.isMute;\n    $scope.ServiceInData = {};//$scope.properties.serviceInput;\n    $scope.IsPinAllowed = false;\n    \n    $scope.SuccessCallback = function ( responseData )\n    {\n        ConstructChartData(responseData);\n        $scope.DrawChart();\n    }\n    \n        \n    $rootScope.$on('filterChanged',function(evt,data){\n        \n        if(data.sender.properties.isLocal){\n            if(!$scope.properties.toRespond && $scope.properties.toRespond.split(',').indexOf(data.sender.properties.id)==-1){\n                return;\n            }\n            $.extend($scope.ServiceInData,data.data);\n            $scope.LoadPinFilter();\n            LoadData(); \n            return;\n        }\n        if($scope.properties.toRespond && $scope.properties.toRespond.length>0 && $scope.properties.toRespond.split(',').indexOf(data.sender.properties.id)!=-1){\n                $scope.LoadPinFilter();\n                LoadData(); \n                return;\n        }\n        \n        if($scope.properties.mute=='Incoming' || $scope.properties.mute=='Both'){\n            return;\n        }\n        \n        $scope.LoadPinFilter();\n        LoadData(); \n    });\n    \n    $scope.showPlsWait = function(){\n         $scope.showPlsWaitloader = true;\n     }\n     \n     $scope.hidePlsWait = function(){\n         $scope.showPlsWaitloader = false;\n     }\n    \n    $rootScope.$on( 'facadeChanged', function ( evt, data )\n    {    \n        debugger;\n        if(data.sender.$id==$scope.id) return;\n        \n        if($scope.properties.mute=='Incoming' || $scope.properties.mute=='Both'){\n            return;\n        }\n        \n        /*\n        if(data.sender.properties.isLocal){\n            if($scope.properties.toRespond.length==0 || $scope.properties.toRespond.split(',').indexOf(data.sender.properties.id)==-1){\n                return;\n            }\n        }\n        else{\n             if($scope.properties.toRespond.length>0 && $scope.properties.toRespond.split(',').indexOf(data.sender.properties.id)==-1){\n                return;\n            }\n        }\n        */\n        $scope.LoadPinFilter();\n        LoadData();    \n    } );\n\n    $scope.ChartClicked=function(data){\n        $scope.LoadPinFilter();\n        LoadData();\n        $scope.broadcastFacadeChanged(this, {sender:$scope,data:{\"X\":data.points[0].x,\"Y\":data.points[0].y}});\n        \n        \n    }\n\n\n    var chartType = {\n        \"Bar\": \"bar\",\n        \"Line\": \"scatter\",\n        \"Area\": \"area\",\n        \"Pie\": \"pie\"\n    }\n\n    var Orientation = {\n        Horizontal: \"h\",\n        Vertical: \"v\"\n    }\n    \n    var groupBarType={\n        'GROUP':'group',\n        'STACK':'stack'\n    }\n    \n\n    $scope.Layout = {\n        showlegend: $scope.properties.showLegend,\n        hovermode:'closest',\n        legend: {\n            \"orientation\": Orientation[$scope.properties.legendOrientation],\n            \"x\": $scope.properties.legendPostionLeft/100,\n            \"y\": $scope.properties.legendPostionTop/100,\n        },\n        title: $scope.properties.chartTitle,\n        xaxis: {\n            type:\"category\",\n            title: $scope.properties.xAxisTitle,\n            visible:$scope.properties.visibleXaxis\n        },\n        yaxis: {\n            title: $scope.properties.yAxisTitle,\n            visible:$scope.properties.visibleYaxis\n            \n        },\n        height: $scope.properties.height,\n    };\n    if($scope.properties.type==\"Bar\")\n        $scope.Layout.bargroupgap=($scope.properties.barSpacing/100);\n   \n    \n    if($scope.properties.groupBarType){\n        $scope.Layout.barmode=$scope.properties.groupBarType.trim().toLowerCase();\n    }\n    \n    $scope.Data = []\n    \n    function LoadData(){\n        if($scope.properties.datasource.length==1 && $scope.properties.datasource[0].indexOf('http')!=-1){\n            $scope.ServiceUrl=$scope.properties.datasource[0];\n            $scope.Refresh();\n            $scope.IsPinAllowed = true;\n        }\n        else{\n            $scope.IsPinAllowed = false;\n            ConstructChartData($scope.properties.datasource);\n            if($scope.DrawChart){            \n                $scope.DrawChart();\n            }\n        }\n    }\n    LoadData();\n    \n    \n    \n\n    function ConstructChartData(chartServiceData)\n    {\n        $scope.Data = []\n        var xAxis = ( $scope.properties.xAxisMember && $scope.properties.xAxisMember.trim().length > 0 ) ? $scope.properties.xAxisMember.split( ',' ) : [];\n        var yAxis = ( $scope.properties.yAxisMember && $scope.properties.yAxisMember.trim().length > 0 ) ? $scope.properties.yAxisMember.split( ',' ) : [];\n        var types = ( $scope.properties.chartTypes && $scope.properties.chartTypes.trim().length > 0 ) ? $scope.properties.chartTypes.split( ',' ) : [];\n        var legends = ( $scope.properties.legendNames && $scope.properties.legendNames.trim().length > 0 ) ? $scope.properties.legendNames.split( ',' ) : [];\n        var toolTipFormats = $scope.properties.toolTipFormats\n        var dataMembers = xAxis.concat( yAxis );\n        var memberLength = dataMembers.length\n        var dataSource = {};\n        var lines=[];\n        for ( dataIndex = 0, dataLength = chartServiceData.length; dataIndex < dataLength; dataIndex++ ) {\n            lines.push(0);\n            for ( memberIndex = 0; memberIndex < memberLength; memberIndex++ ) {\n                if ( dataSource[dataMembers[memberIndex]] ) {\n                    dataSource[dataMembers[memberIndex]].push( chartServiceData[dataIndex][dataMembers[memberIndex]] );\n                    \n                    if(chartServiceData[dataIndex][\"ID_ROW_KEY\"]){\n                        dataSource[dataMembers[memberIndex]+\"_DATA\"].push({ID_ROW_KEY:chartServiceData[dataIndex][\"ID_ROW_KEY\"],COLUMN:dataMembers[memberIndex]});    \n                        if($scope.IsPinned(chartServiceData[dataIndex][\"ID_ROW_KEY\"])){\n                            dataSource[dataMembers[memberIndex]+\"_LINES\"].push(2);\n                        }\n                        \n                        else{\n                            dataSource[dataMembers[memberIndex]+\"_LINES\"].push(0);\n                        }\n                    }\n                }\n                else {\n                    dataSource[dataMembers[memberIndex]] = [chartServiceData[dataIndex][dataMembers[memberIndex]]];\n                    if(chartServiceData[dataIndex][\"ID_ROW_KEY\"]){\n                        dataSource[dataMembers[memberIndex]+\"_DATA\"]=[{ID_ROW_KEY:chartServiceData[dataIndex][\"ID_ROW_KEY\"],COLUMN:dataMembers[memberIndex]}];    \n                        if($scope.IsPinned(chartServiceData[dataIndex][\"ID_ROW_KEY\"])){\n                            dataSource[dataMembers[memberIndex]+\"_LINES\"]=[2];\n                        }\n                        else{\n                            dataSource[dataMembers[memberIndex]+\"_LINES\"]=[0];\n                        }\n                    }\n                    \n                }\n            }\n        }\n        \n        var colors = []\n        if ($scope.properties.BarColor)\n            colors = $scope.properties.BarColor.split(\",\");\n            \n             var labelcolors = []\n        if ($scope.properties.LabelColor)\n            labelcolors = $scope.properties.LabelColor.split(\",\");\n\n        var chartDataSource = [];\n        for ( var index = 0, length = Math.max( xAxis.length, yAxis.length ) ; index < length; index++ ) {\n            var chartData = {\n                x: [],\n                y: [],\n                type: chartType[$scope.properties.type],\n                hoverinfo: \"text\",\n                textposition:$scope.properties.textposition,\n                textfont:{\n},\n\n                marker:{\n                    line:{\n                        width:[]\n                    }\n                }\n            }\n             if(colors.length>index){\n                chartData.marker[\"color\"]=colors[index]\n            }\n             if(labelcolors.length>index){\n                chartData.textfont[\"color\"]=labelcolors[index]\n            }\n            if ( $scope.properties.type == \"Pie\" ) {\n                chartData = {\n                    labels: dataSource[$scope.properties.xAxisMember],\n                    values: dataSource[$scope.properties.yAxisMember],\n                    type: 'pie'\n                }\n            }\n            else {\n                if ( xAxis.length > index ) {\n                    chartData.x = dataSource[xAxis[index].trim()];\n                }\n                else {\n                    chartData.x = dataSource[xAxis[xAxis.length - 1].trim()];\n                }\n\n                if ( yAxis.length > index ) {\n                    chartData.y = dataSource[yAxis[index].trim()];\n                    chartData.marker.line.width=dataSource[yAxis[index].trim()+\"_LINES\"];\n                    chartData[\"ServiceData\"]=dataSource[yAxis[index].trim()+\"_DATA\"];\n                }\n                else {\n                    chartData.y = dataSource[yAxis[yAxis.length - 1].trim()];\n                    chartData.marker.line.width=dataSource[yAxis[yAxis.length - 1].trim()+\"_LINES\"];\n                    chartData[\"ServiceData\"]=dataSource[yAxis[yAxis.length - 1].trim()+\"_DATA\"];\n                }\n\n            }\n            if ( legends.length > index ) {\n                chartData[\"name\"] = legends[index].trim();\n            }\n            else {\n                chartData[\"name\"] = \"\";\n            }\n\n            if ( types.length > index ) {\n                chartData.type = chartType[types[index].trim()];\n            }\n            if ( chartData.type == \"area\") {\n                chartData[\"fill\"] = \"tonexty\"\n            }\n            if ( toolTipFormats && toolTipFormats.length > index ) {\n                chartData[\"text\"] = getTooltipText( toolTipFormats[index], chartData )\n            }\n            chartData.orientation=Orientation[$scope.properties.orientation];\n            //chartData.textposition=\"outside\";  \n            $scope.Data.push( chartData );\n        }\n        \n        \n\n    }\n\n\n    function getTooltipText( toolTipFormat, chartData )\n    {\n        var text = [];\n        for ( toolTipIndex = 0, dataLength = chartData.x.length; toolTipIndex < dataLength; toolTipIndex++ ) {\n            var xregexp = new RegExp( '\\\\{x\\\\}', 'gi' );\n            var yregexp = new RegExp( '\\\\{y\\\\}', 'gi' );\n            var toolTipText = toolTipFormat.replace( xregexp, chartData.x[toolTipIndex] )\n            toolTipText = toolTipText.replace( yregexp, chartData.y[toolTipIndex] )\n            text.push( toolTipText )\n        }\n\n\n        return text;\n    }\n    \n\n}\n\n\n",
+  "custom" : true,
+  "properties" : [ {
+    "label" : "Widget Name",
+    "name" : "id",
+    "help" : "Should be unique",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Listen Change Of (Provide Widget Name(s))",
+    "name" : "toRespond",
+    "caption" : "Comma Seperated Values",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Chart Title",
+    "name" : "chartTitle",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Height",
+    "name" : "height",
+    "type" : "integer",
+    "defaultValue" : 200,
+    "bond" : "expression"
+  }, {
+    "label" : "Chart Type",
+    "name" : "type",
+    "type" : "choice",
+    "defaultValue" : "Bar",
+    "choiceValues" : [ "Bar", "Line", "Area", "Pie", "SparkLine" ],
+    "bond" : "constant"
+  }, {
+    "label" : "Group Type",
+    "name" : "groupBarType",
+    "showFor" : "properties.type.value == 'Bar'",
+    "type" : "choice",
+    "defaultValue" : "Stack",
+    "choiceValues" : [ "Group", "Stack" ],
+    "bond" : "expression"
+  }, {
+    "label" : "Orientation",
+    "name" : "orientation",
+    "showFor" : "properties.type.value == 'Bar'",
+    "type" : "choice",
+    "defaultValue" : "Vertical",
+    "choiceValues" : [ "Vertical", "Horizontal" ],
+    "bond" : "expression"
+  }, {
+    "label" : "Bar Spacing",
+    "name" : "barSpacing",
+    "caption" : "0 to 100",
+    "help" : "",
+    "showFor" : "properties.type.value == 'Bar'",
+    "type" : "integer",
+    "defaultValue" : 0,
+    "bond" : "expression"
+  }, {
+    "label" : "Chart Source",
+    "name" : "datasource",
+    "type" : "collection",
+    "bond" : "expression"
+  }, {
+    "label" : "Service Type",
+    "name" : "serviceMethod",
+    "type" : "choice",
+    "defaultValue" : "Post",
+    "choiceValues" : [ "Get", "Post" ],
+    "bond" : "expression"
+  }, {
+    "label" : "X Axis Member (s)",
+    "name" : "xAxisMember",
+    "caption" : "Comma seperated value for group chart",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Visible X Axis",
+    "name" : "visibleXaxis",
+    "type" : "boolean",
+    "defaultValue" : true,
+    "bond" : "expression"
+  }, {
+    "label" : "X Axis Text",
+    "name" : "xAxisTitle",
+    "showFor" : "properties.visibleXaxis.value == true",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Y Axis Member (s)",
+    "name" : "yAxisMember",
+    "caption" : "Comma seperated value for group chart",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Visible Y Axis",
+    "name" : "visibleYaxis",
+    "type" : "boolean",
+    "defaultValue" : true,
+    "bond" : "expression"
+  }, {
+    "label" : "Y Axis Text",
+    "name" : "yAxisTitle",
+    "showFor" : "properties.visibleYaxis.value == true",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Group Chart Types",
+    "name" : "chartTypes",
+    "caption" : "Comma seperated value ex:Bar,Line",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Mute Interaction",
+    "name" : "mute",
+    "type" : "choice",
+    "defaultValue" : "None",
+    "choiceValues" : [ "None", "Incoming", "Outgoing", "Both" ],
+    "bond" : "expression"
+  }, {
+    "label" : "Show Legend",
+    "name" : "showLegend",
+    "caption" : "",
+    "type" : "boolean",
+    "defaultValue" : true,
+    "bond" : "expression"
+  }, {
+    "label" : "Legend Name (s)",
+    "name" : "legendNames",
+    "caption" : "Comma seperated value for group chart",
+    "showFor" : "properties.showLegend.value == true",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Legend Orientation",
+    "name" : "legendOrientation",
+    "showFor" : "properties.showLegend.value == true",
+    "type" : "choice",
+    "defaultValue" : "Horizontal",
+    "choiceValues" : [ "Horizontal", "Vertical" ],
+    "bond" : "expression"
+  }, {
+    "label" : "Legend Postion Left",
+    "name" : "legendPostionLeft",
+    "showFor" : "properties.showLegend.value == true",
+    "type" : "integer",
+    "defaultValue" : 100,
+    "bond" : "expression"
+  }, {
+    "label" : "Legend Postion Top",
+    "name" : "legendPostionTop",
+    "showFor" : "properties.showLegend.value == true",
+    "type" : "integer",
+    "defaultValue" : 1,
+    "bond" : "expression"
+  }, {
+    "label" : "Tooltip Format",
+    "name" : "toolTipFormats",
+    "type" : "collection",
+    "bond" : "expression"
+  }, {
+    "label" : "Service Input",
+    "name" : "serviceInput",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Report Url",
+    "name" : "reportUrl",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Label Member",
+    "name" : "labelMember",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Label Position",
+    "name" : "textposition",
+    "type" : "choice",
+    "choiceValues" : [ "none", "inside", "outside", "auto" ],
+    "bond" : "expression"
+  }, {
+    "label" : "Bar Color",
+    "name" : "BarColor",
+    "caption" : "Comma Seperated by Color values",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Label Color",
+    "name" : "LabelColor",
+    "caption" : "Comma Seperated by Color values",
+    "type" : "text",
+    "bond" : "expression"
+  } ],
+  "assets" : [ {
+    "id" : "dd035aa7-69d7-44be-a655-a41acf57a001",
+    "name" : "jquery-2.0.3.min.js",
+    "type" : "js",
+    "order" : 6,
+    "external" : false
+  }, {
+    "id" : "e3fa311e-a0cd-40c0-9cbc-747f35784c51",
+    "name" : "CustomChart.css",
+    "type" : "css",
+    "order" : 9,
+    "external" : false
+  }, {
+    "id" : "df18db75-27f9-4261-b911-3be7d8db351b",
+    "name" : "CustomChart.js",
+    "type" : "js",
+    "order" : 8,
+    "external" : false
+  }, {
+    "id" : "c776e6a6-1e6b-42ed-b6a8-98c0002ea7ed",
+    "name" : "29.gif",
+    "type" : "img",
+    "order" : 11,
+    "external" : false
+  }, {
+    "id" : "3ed2894e-bdaf-4482-b9c1-fa6781ce565f",
+    "name" : "plotly-latest.min.js",
+    "type" : "js",
+    "order" : 6,
+    "external" : false
+  }, {
+    "id" : "c761919b-11d3-4c5f-b1d6-ab33c68a8c05",
+    "name" : "OpenSans-Regular.ttf",
+    "type" : "img",
+    "order" : 10,
+    "external" : false
+  } ],
+  "requiredModules" : [ ],
+  "type" : "widget",
+  "hasHelp" : false
+}

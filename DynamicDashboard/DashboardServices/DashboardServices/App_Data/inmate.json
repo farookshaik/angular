@@ -1,0 +1,38 @@
+﻿[
+  {
+    "description": "State Prison",
+    "currentyear": 14600,
+    "previousyear": 14539
+
+  },
+  {
+    "description": "Private Prison",
+    "currentyear": 3737,
+    "previousyear": 3763
+
+  },
+  {
+    "description": "Jail Backlog",
+    "currentyear": 98,
+    "previousyear": 89
+
+  },
+  {
+    "description": "Escapes / Walkaways",
+    "currentyear": 248,
+    "previousyear": 236
+
+  },
+  {
+    "description": "Community Off Grounds",
+    "currentyear": 2408,
+    "previousyear": 2396
+
+  },
+  {
+    "description": "Community On Grounds",
+    "currentyear": 228,
+    "previousyear": 233
+
+  }
+]

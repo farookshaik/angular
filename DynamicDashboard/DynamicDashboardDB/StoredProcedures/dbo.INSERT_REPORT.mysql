@@ -1,0 +1,207 @@
+DROP PROCEDURE IF EXISTS INSERT_REPORT;
+CREATE PROCEDURE `INSERT_REPORT`()
+BEGIN
+DECLARE HsResp_AppComp_Avg DECIMAL(10,4);
+  DECLARE PPCre_HsResp_Avg DECIMAL(10,4);
+  DECLARE PPApp_PPCre_Avg DECIMAL(10,4);
+
+
+TRUNCATE TABLE `th_report_details`;
+
+
+#Populate the records into the report table
+INSERT INTO th_report_details (Report_DTTM,
+PID,
+Inmate_Name,
+Inmate_Loacation,
+HouseID,
+House_Name,
+RANK,
+HouseResponse_INDC,
+ReadyForRelease_INDC,
+ReadyForRelease_DTTM)
+  SELECT
+    NOW(),
+    b.inmateID AS PID,
+    b.inmateName AS Inmate_Name,
+    b.inmateLocation AS Inmate_Loacation,
+    a.houseID AS HouseID,
+    c.houseName AS House_Name,
+    a.RANK AS RANK,
+    CASE WHEN a.isApproved = 'T' THEN 'Accept' WHEN a.isApproved = 'F' THEN 'Deny' ELSE NULL END HouseResponse_INDC,
+    CASE WHEN b.isAvailableForRelease = 1 THEN 'Yes' ELSE NULL END ReadyForRelease_INDC,
+    b.releaseStartDate AS ReadyForRelease_DTTM
+  FROM housesselection a,
+       inmate b,
+       housemaster c,
+       houseapplication d
+  WHERE a.inmateID = b.inmateID
+  AND c.id = a.houseID
+  AND d.id = a.houseapplication;
+
+
+
+#ApplicaitonCompleted_DTTM - IN date without special application
+UPDATE th_report_details a
+JOIN housesselection b
+  ON a.HouseID = b.houseID
+  AND a.PID = b.inmateID
+  AND b.specialApplicationFormExist = 0
+JOIN houseapplication c
+  ON b.houseApplication = c.id
+JOIN ACT_HI_TASKINST d
+  ON c.select_and_rank_houseTaskId = d.ID_
+SET a.ApplicaitonCompleted_DTTM = d.END_TIME_;
+
+
+#ApplicaitonCompleted_DTTM - IN date with special application
+UPDATE th_report_details a
+JOIN housesselection b
+  ON a.HouseID = b.houseID
+  AND a.PID = b.inmateID
+  AND b.specialApplicationFormExist = 1
+JOIN houseapplication c
+  ON b.houseApplication = c.id
+JOIN ACT_HI_TASKINST d
+  ON c.select_and_rank_houseTaskId = d.ID_
+SET a.ApplicaitonCompleted_DTTM = d.END_TIME_;
+
+
+#HouseResponse_DTTM - IN date
+UPDATE th_report_details a
+JOIN housesselection b
+  ON a.HouseID = b.houseID
+  AND a.PID = b.inmateID
+JOIN houseapplication c
+  ON b.houseApplication = c.id
+JOIN ACT_HI_TASKINST d
+  ON b.housing_review_Task_id = d.ID_
+SET a.HouseResponse_DTTM = d.END_TIME_;
+
+
+#ApplicaitonCompleted_DTTM with Start Time(ApplicaitonCompleted_DTTM > HouseResponse_DTTM)
+UPDATE th_report_details a
+JOIN housesselection b
+  ON a.HouseID = b.houseID
+  AND a.PID = b.inmateID
+JOIN houseapplication c
+  ON b.houseApplication = c.id
+JOIN ACT_HI_TASKINST d
+  ON b.housing_review_Task_id = d.ID_
+SET a.ApplicaitonCompleted_DTTM =
+ CASE WHEN a.ApplicaitonCompleted_DTTM > a.HouseResponse_DTTM
+ THEN d.START_TIME_ ELSE a.ApplicaitonCompleted_DTTM END;
+
+
+#ACCReviewRejection_DTTM - IN date
+UPDATE th_report_details a
+JOIN housesselection b
+  ON a.HouseID = b.houseID
+  AND a.PID = b.inmateID
+JOIN houseapplication c
+  ON b.houseApplication = c.id
+JOIN ACT_HI_TASKINST d
+  ON b.acc_admin_review_taskId = d.ID_
+SET a.ACCReviewRejection_DTTM = d.END_TIME_;
+
+
+#ParolePlanCreated_INDC - IN date
+UPDATE th_report_details a
+JOIN housesselection b
+  ON a.HouseID = b.houseID
+  AND a.PID = b.inmateID
+JOIN houseapplication c
+  ON b.id = c.highestrankId
+SET a.ParolePlanCreated_INDC =
+CASE WHEN c.iroCreatePlanCompleted = 1 THEN 'yes' ELSE NULL END;
+
+
+#ParolePlanCreated_DTTM - IN date
+UPDATE th_report_details a
+JOIN housesselection b
+  ON a.HouseID = b.houseID
+  AND a.PID = b.inmateID
+JOIN houseapplication c
+  ON b.id = c.highestrankId
+JOIN ACT_HI_TASKINST d
+  ON c.iroCreatePlanTaskId = d.ID_
+SET a.ParolePlanCreated_DTTM = d.END_TIME_;
+
+
+#PPVApproved_DTTM - IN date
+UPDATE th_report_details a
+JOIN housesselection b
+  ON a.HouseID = b.houseID
+  AND a.PID = b.inmateID
+JOIN houseapplication c
+  ON b.id = c.highestrankId
+JOIN inmate d
+  ON a.PID = d.inmateID
+  AND d.isPPV = 1
+JOIN inmatehousingstatus e
+  ON e.inmateID = d.inmateID
+SET a.PPVApproved_DTTM = e.statusDate;
+
+
+#WaitingList_NUMB - IN int(11)
+UPDATE th_report_details a
+JOIN (SELECT
+    b.houseID,
+    COUNT(*) idCount
+  FROM housesselection b,
+       houseapplication c,
+       inmate d
+  WHERE b.id = c.highestrankId
+  AND b.inmateID = d.inmateID
+  AND d.isAvailableForRelease = 1
+  AND d.isBedAssigned = 0
+  GROUP BY b.houseID) AS e
+  ON a.HouseID = e.houseID
+SET a.WaitingList_NUMB = e.idCount;
+
+
+
+#BedMark_DTTM - IN date table not contain time. so it displays 12:00:00 AM for all records.
+# After some days by default after 3 days for ppv and 4, 5 for approved and unapproved we are not able to track. since we update the list of beds ready for allocation.
+UPDATE th_report_details a
+JOIN housebedavailabilityactionstatus b
+  ON a.HouseID = b.houseID
+  AND a.PID = b.inmateID
+SET a.BedMark_DTTM = b.date;
+
+
+#Enroute_INDC - IN varchar(10).
+UPDATE th_report_details a
+JOIN housesselection b
+  ON a.HouseID = b.houseID
+  AND a.PID = b.inmateID
+JOIN houseapplication c
+  ON b.id = c.highestrankId
+JOIN inmate d
+  ON a.PID = d.inmateID
+  AND d.isBedAssigned = 1
+JOIN confirmoccupancy e
+  ON e.inmateID = d.inmateID
+SET a.Enroute_INDC =
+CASE WHEN e.confirmBedOccupancy !=
+    'Room is Occupied by the Applicant' THEN 'Yes' ELSE 'No' END;
+
+
+UPDATE th_report_details a
+JOIN housesselection b
+  ON a.HouseID = b.houseID
+  AND a.PID = b.inmateID
+JOIN houseapplication c
+  ON b.id = c.highestrankId
+JOIN inmate d
+  ON a.PID = d.inmateID
+  AND d.isBedAssigned = 1
+JOIN confirmoccupancy e
+  ON e.inmateID = d.inmateID
+  AND e.confirmBedOccupancy = 'Room is Occupied by the Applicant'
+JOIN ACT_HI_TASKINST f
+  ON e.taskId = f.ID_
+SET a.Resident_INDC =
+    CASE WHEN d.isBedAssigned = 1 THEN 'yes' ELSE NULL END,
+    a.Resident_DTTM = f.END_TIME_;
+END;

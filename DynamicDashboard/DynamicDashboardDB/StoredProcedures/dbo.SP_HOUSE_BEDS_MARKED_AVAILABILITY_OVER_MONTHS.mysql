@@ -1,0 +1,69 @@
+DROP PROCEDURE IF EXISTS SP_HOUSE_BEDS_MARKED_AVAILABILITY_OVER_MONTHS;
+
+CREATE PROCEDURE `SP_HOUSE_BEDS_MARKED_AVAILABILITY_OVER_MONTHS`(
+   IN FromDate   date,
+   IN ToDate     date)
+   BEGIN
+      SELECT MONTHNAME(BedMark_DTTM) AS MONTH,
+             SUM(
+                (CASE WHEN House_Name = 'Butterfly House' THEN 1 ELSE 0 END))
+                Butterfly_House_CNT,
+             SUM(
+                (CASE
+                    WHEN House_Name = 'CASA Womens Shelter' THEN 1
+                    ELSE 0
+                 END))
+                CASA_Womens_Shelter_CNT,
+             SUM(
+                (CASE
+                    WHEN House_Name = 'Cornerstone Transition Home' THEN 1
+                    ELSE 0
+                 END))
+                Cornerstone_Transition_Home_CNT,
+             SUM(
+                (CASE
+                    WHEN House_Name = 'Freshly Renewed - Women' THEN 1
+                    ELSE 0
+                 END))
+                Freshly_Renewed_Women_CNT,
+             SUM(
+                (CASE
+                    WHEN House_Name = 'Phoenix Recovery, Inc., for Women'
+                    THEN
+                       1
+                    ELSE
+                       0
+                 END))
+                Phoenix_Recovery_CNT,
+             SUM(
+                (CASE
+                    WHEN House_Name = 'Quality Living Center 2' THEN 1
+                    ELSE 0
+                 END))
+                Quality_Living_Center_2_CNT,
+             SUM(
+                (CASE
+                    WHEN House_Name = 'Shalom Recovery Centers' THEN 1
+                    ELSE 0
+                 END))
+                Shalom_Recovery_Centers_CNT
+        FROM th_report_details
+       WHERE     HouseID NOT IN (8, 16)
+             AND BedMark_DTTM IS NOT NULL
+             AND DATE_FORMAT(BedMark_DTTM, '%Y-%m-%d') BETWEEN FromDate
+                                                           AND ToDate
+      GROUP BY MONTHNAME(BedMark_DTTM)
+      ORDER BY FIELD(MONTH,
+                     'January',
+                     'February',
+                     'March',
+                     'April',
+                     'May',
+                     'June',
+                     'July',
+                     'August',
+                     'September',
+                     'October',
+                     'November',
+                     'December');
+   END;
