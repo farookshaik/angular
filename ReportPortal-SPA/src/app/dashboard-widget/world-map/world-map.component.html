@@ -1,0 +1,31 @@
+<div fxLayout="column" fxLayout.xs="column" style="background-color: white;padding: 10px;">
+
+  <div class="mat-headline" style="margin: 20px; border-bottom: 1px solid #dddddd;">
+    COUNTY COLLECTION SUPPORT REPORT
+  </div>
+
+  <div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex.gt-xs="35" style="padding-top: 10px;">
+
+      <table class="table">
+        <tr *ngFor="let detail of tableData">
+          <td class="mat-subheading-1">{{ detail?.country }}</td>
+          <td class="text-right mat-subheading-1">{{ detail?.sales }}</td>
+          <td class="text-right mat-subheading-1">{{ detail?.percentage }}</td>
+        </tr>
+      </table>
+
+    </div>
+
+    <div fxFlex.gt-xs="25"></div>
+
+    <img src="assets/svg/nj_countymap.svg">
+
+    <!-- <div fxFlex.gt-xs="">
+
+      <div id="chartdiv">
+        <img src="assets/svg/nj_countymap.svg">
+      </div>
+    </div> -->
+  </div>
+</div>
