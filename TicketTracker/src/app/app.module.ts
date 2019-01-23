@@ -47,7 +47,12 @@ import { EditTaskDialogComponent } from './dashboard/task/dialogs/edit/edittask.
 import { DeleteTaskDialogComponent } from './dashboard/task/dialogs/delete/deletetask.dialog.component';
 import { TaskComponent } from './dashboard/task/task.component';
 import { DataTaskService } from './dashboard/task/services/datatask.service';
-
+import { ViewTicketComponent } from './dashboard/vticket/vticket.component';
+import { VTicketService } from './dashboard/vticket/services/viewticket-service';
+import { SatDatepickerModule, SatNativeDateModule } from 'saturn-datepicker';
+import { GReportComponent } from './dashboard/greport/greport.component';
+import { GReportService } from './dashboard/greport/services/greport-service';
+import { ExcelService } from './dashboard/greport/services/excel.service';
 
 
 
@@ -62,6 +67,8 @@ import { DataTaskService } from './dashboard/task/services/datatask.service';
     ImagecardComponent,
     TableComponent,
     TaskComponent,
+    ViewTicketComponent,
+    GReportComponent,
     NotificationComponent,
     MsgIconBtnComponent,
     SweetAlertComponent,
@@ -107,7 +114,7 @@ import { DataTaskService } from './dashboard/task/services/datatask.service';
     MatNativeDateModule,
     MatSortModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule, SatDatepickerModule, SatNativeDateModule
   ],
   entryComponents: [
     AddDialogComponent,
@@ -118,7 +125,7 @@ import { DataTaskService } from './dashboard/task/services/datatask.service';
     DeleteTaskDialogComponent,
     AlertDialogComponent
   ],
-  providers: [AlertDialogComponent, DataService, DataTaskService, AuthGuard, {
+  providers: [AlertDialogComponent, DataService, DataTaskService, VTicketService,ExcelService, GReportService, AuthGuard, {
     provide: HTTP_INTERCEPTORS,
     useClass: HttpRequestInterceptor,
     multi: true

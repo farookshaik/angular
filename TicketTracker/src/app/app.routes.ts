@@ -17,6 +17,9 @@ import { RegisterComponent } from './page/register/register.component';
 import { AuthGuard } from './shared/guard';
 import { NgModule } from '@angular/core';
 import { TaskComponent } from './dashboard/task/task.component';
+import { ViewState } from '@angular/core/src/view';
+import { ViewTicketComponent } from './dashboard/vticket/vticket.component';
+import { GReportComponent } from './dashboard/greport/greport.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -28,6 +31,8 @@ const routes: Routes = [
       // { path: 'profile', component: ProfileComponent },
       { path: 'table', component: TableComponent },
       { path: 'task', component: TaskComponent },
+      { path: 'vticket', component: ViewTicketComponent },
+      { path: 'greport', component: GReportComponent },
       // { path: 'notification', component: NotificationComponent },
       // { path: 'alert', component: SweetAlertComponent },
       // { path: 'settings', component: SettingsComponent },

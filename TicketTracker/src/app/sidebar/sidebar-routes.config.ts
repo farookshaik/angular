@@ -3,6 +3,8 @@ export const ROUTES = [
   // { path: 'profile', title: 'User Profile', icon: 'person', children: null },
   { path: 'table', title: 'Add New Ticket', icon: 'content_paste', children: null },
   { path: 'task', title: 'Add New UI Task', icon: 'apps', children: null },
+  { path: 'vticket', title: 'View Tickets', icon: 'settings', children: null },
+  { path: 'greport', title: 'Generate Report', icon: 'notifications', children: null },
   // { path: '#component', id: 'component', title: 'Component', icon: 'apps', children: [
   //     {path: 'components/price-table', title: 'Price Table', icon: 'PT'},
   //     {path: 'components/panels', title: 'Panels', icon: 'P'},

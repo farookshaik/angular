@@ -1,0 +1,113 @@
+<div class="container">
+  <app-navbar title="Generate Report"></app-navbar>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="material-icons">assignment</i>
+        </div>
+
+        <div class="card-content">
+
+          <h4 (click)="refresh()" class="card-title">Generate Report</h4>
+          <div class="table-responsive">
+            <div class="container mat-elevation-z8">
+              <div class="form">
+                <mat-form-field floatPlaceholder="never" color="accent">
+                  <mat-select placeholder="Select Ticket Type" [(value)]="selectedTicketTypeValue" (selectionChange)="onChangeStatus($event.value)"
+                    ngModel name="tickettype">
+                    <mat-option *ngFor="let element of statusData" [value]="element.value">
+                      {{element.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                &nbsp; &nbsp;
+                <mat-form-field>
+                  <input matInput placeholder="Choose Date Range" [satDatepicker]="picker2" (dateInput)="OnSelectDateRangeReport($event.value)"
+                    autocomplete="off">
+                  <sat-datepicker #picker2 [rangeMode]="true">
+                  </sat-datepicker>
+                  <sat-datepicker-toggle matSuffix [for]="picker2"></sat-datepicker-toggle>
+                </mat-form-field>
+
+                <div style="float: right;">
+                  <button mat-button class="btn btn-warning btn-round tab-link" (click)="ExportTOExcel()">Export as
+                    Excel
+                  </button>
+                  <!-- <button mat-button color="accent" (click)="print()">
+                    <mat-icon class="mat-24" aria-label="Example icon-button with a heart icon">print</mat-icon>
+                    Print
+                  </button> -->
+                    &nbsp;
+                    <button mat-button class="btn btn-warning btn-round tab-link" (click)="refresh()"> Refresh
+                    </button>
+                </div>
+                <div #TABLE>
+                  <mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
+                    <ng-container matColumnDef="ticketno">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header>Ticket No</mat-header-cell>
+                      <mat-cell *matCellDef="let row">{{row.ticketno}}</mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ticketdesc">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header>Ticket Description</mat-header-cell>
+                      <mat-cell *matCellDef="let row"> {{row.ticketdesc}}</mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="tickettype">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header>Ticket Type</mat-header-cell>
+                      <mat-cell *matCellDef="let row"> {{row.tickettype}}</mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="assignee">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header>Assigned</mat-header-cell>
+                      <mat-cell *matCellDef="let row"> {{row.assignee}}</mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="cdstatus">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
+                      <mat-cell *matCellDef="let row"> {{getStatus(row.cdstatus)}}</mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="dtassigned">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header>Date Assigned</mat-header-cell>
+                      <mat-cell *matCellDef="let row"> {{row.dtassign}}</mat-cell>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="dtrecived">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header>Date Received</mat-header-cell>
+
+                      <mat-cell *matCellDef="let row"> {{row.dtrecive}}</mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="spenthrs">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header>Hrs Spent</mat-header-cell>
+                      <mat-cell *matCellDef="let row"> {{row.hrsspent}}</mat-cell>
+                    </ng-container>
+
+
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                  </mat-table>
+
+
+                </div>
+
+                <div class="no-results" [style.display]="dataSource.renderedData.length == 0 ? '' : 'none'">
+                  No results
+                </div>
+
+
+                <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="10"
+                  [pageSizeOptions]="[5, 10, 25, 100]">
+                </mat-paginator>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

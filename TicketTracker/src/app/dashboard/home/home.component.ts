@@ -15,6 +15,10 @@ export class HomeComponent implements OnInit {
   compcount: any;
   totcount: any;
   id_user: any;
+  uicompcount: any;
+  uiopencount: any;
+  uitotcount: any;
+  uiwipcount: any;
 
   constructor(private httpClient: HttpClient) {
   }
@@ -35,6 +39,11 @@ export class HomeComponent implements OnInit {
       this.wipcount = data['result'].wipcount;
       this.compcount = data['result'].compcount;
       this.totcount = data['result'].totcount;
+      this.uicompcount = data['result'].uicompcount;
+      this.uiopencount = data['result'].uiopencount;
+      this.uitotcount = data['result'].uitotcount;
+      this.uiwipcount = data['result'].uiwipcount;
+
     },
       (error: HttpErrorResponse) => {
         console.log(error.name + ' ' + error.message);
