@@ -86,9 +86,10 @@ export class BarGraphSupportComponent implements OnInit {
         },
         title: {
           display: true,
-          text: 'TOTAL SUPPORT PAID'
+          text: 'Total Support Paid'
         }
       }
+
     });
   }
 }

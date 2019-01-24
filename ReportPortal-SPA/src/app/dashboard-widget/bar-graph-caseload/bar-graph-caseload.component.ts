@@ -23,52 +23,52 @@ export class BarGraphCaseLoadComponent implements OnInit {
     new Chart('dash-bar-graph-caseload', {
       type: 'bar',
       data: {
-        labels: ["2016", "2017", "2018", "2019"],
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [
-          {
-            backgroundColor: 'rgba(66, 165, 245, .7)',
-            borderColor: 'rgba(66, 165, 245, .7)',
-            data: [99.7, 35.9, 65.7, 46.0],
 
+          {
+            backgroundColor: '#42A5F5',
+            borderColor: '#A7C1FF',
+            data: [11976, 11981, 11979, 11976, 11961, 11935, 11860, 11848, 11839, 12023, 12002, 11839],
+            label: '2017',
+            fill: 'false'
           },
-          // {
-          //   backgroundColor: 'rgba(66, 165, 245, .7)',
-          //   borderColor: 'rgba(69, 39, 160, .7)',
-          //   data: [66.8],
-          //   label: '2017'
-          // },
-          // {
-          //   backgroundColor: 'rgba(38, 166, 154, .7)',
-          //   borderColor: 'rgba(69, 39, 160, .7)',
-          //   data: [67.7],
-          //   label: '2018'
-          // },
-          // {
-          //   backgroundColor: 'rgba(102, 187, 106, .7)',
-          //   borderColor: 'rgba(255, 99, 132)',
-          //   data: [70.3],
-          //   label: '2019'
-          // }
+          {
+            backgroundColor: '#26A69A',
+            borderColor: '#A7F0FF',
+            data: [11563, 11575, 11591, 11594, 11544, 11530, 11508, 11443, 11401, 11370, 11628, 11703],
+            label: '2018',
+            fill: 'false'
+          },
+          {
+            backgroundColor: '#26C6DA',
+            borderColor: '#A7DEFF',
+            data: [11346, 11288],
+            label: '2019',
+            fill: 'false'
+          }
         ]
       },
       options: {
         scales: {
           yAxes: [{
             ticks: {
-              display: false //this will remove only the label
+
+              fontStyle: "bold",
+              beginAtZero: true,
+
             },
             gridLines: {
-              display: false
+              zeroLineColor: "transparent",
+              drawTicks: true,
+              display: true
             }
-          }],
-          xAxes: [{
-            gridLines: {
-              display: false
-            }
-          }],
+          }]
+
+
         },
         legend: {
-          display: false
+          display: true
         },
         elements: {
           line: {
@@ -83,7 +83,7 @@ export class BarGraphCaseLoadComponent implements OnInit {
         },
         title: {
           display: true,
-          text: 'TOTAL CASELOAD'
+          text: 'Total Caseload'
         }
       }
     });

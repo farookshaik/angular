@@ -1,26 +1,29 @@
 <div fxLayout="row" class="dashcard mat-elevation-z4 ">
-  <!-- <div fxFlex="40" fxLayout="row"  fxLayoutAlign="center center" [style.background]="dashData?.colorLight">
-        <mat-icon  class="cardIcon">{{dashData?.icon}}</mat-icon>
-    </div> -->
-  <div fxFlex="25" fxLayout="column">
-    <cdk-doughnut-graph fxFlex.lt-sm="100" fxFlex.sm="50"></cdk-doughnut-graph>
-    <!--
-    <cdk-line-graph fxFlex="50" fxFlex.lt-sm="100" fxFlex.sm="50"></cdk-line-graph> -->
+  <div fxFlex="50" fxLayout="row" fxLayoutAlign="center center" [style.background]="dashData?.colorLight">
+    <!-- <mat-icon class="cardIcon">{{dashData?.icon}}</mat-icon> -->
+    <mat-icon class="material-icons">arrow_upward</mat-icon>
+    <!-- <i class="material-icons">
+      arrow_upward
+    </i> -->
+    <cdk-round-progressbar [title]="'FFY Collections - 2019'" [current]="dashData?.Snumber" [max]="'100'" [background]="'#FFCF68'"
+      [color]="'#A7DEFF'" [boxcolor]="'#26C6DA'"></cdk-round-progressbar>
+
+  </div>
+
+
+
+  <div fxFlex="50" fxLayout="row" fxLayoutAlign="center center" [style.background]="dashData?.colorDark">
+    <mat-icon class="material-icons">arrow_downward</mat-icon>
+    <cdk-round-progressbar [title]="'FFY Current Collections - 2019'" [current]="dashData?.Cnumber" [max]="'100'"
+      [background]="'#FFCF68'" [color]="'#A7DEFF'" [boxcolor]="'#26C6DA'"></cdk-round-progressbar>
+
     <!-- <div style="color: white;font-size: 40px">
-            <ng2-odometer [number]="dashData?.number" [config]="{ }"></ng2-odometer>
+      <ng2-odometer [number]="dashData?.number" [config]="{ }"></ng2-odometer>
 
-        </div> -->
-    <!-- <p class="mat-body-1 border-top">
-            {{dashData?.title}}
-        </p> -->
+    </div>
+    <p class="mat-body-1 border-top">
+      {{dashData?.title}}
+    </p> -->
   </div>
-  <div fxFlex="25" fxLayout="column" fxLayoutAlign="center center">
 
-  </div>
-  <div fxFlex="25" fxLayout="column" fxLayoutAlign="center center">
-
-  </div>
-  <div fxFlex="25" fxLayout="column" fxLayoutAlign="center center">
-
-  </div>
 </div>

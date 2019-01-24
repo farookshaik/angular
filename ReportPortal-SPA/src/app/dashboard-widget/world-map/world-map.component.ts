@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import am4geodata_region_usa_njLow from "@amcharts/amcharts4-geodata/region/usa/njLow";
 declare const AmCharts;
 @Component({
   selector: 'cdk-world-map',
@@ -26,6 +27,9 @@ export class WorldMapComponent implements OnInit {
     //     "autoZoom": true,
     //     "selectedColor": "#CC0000"
     //   },
+    //   "smallMap": {}
     // });
+    // map.geodata = am4geodata_region_usa_njLow;
+
   }
 }

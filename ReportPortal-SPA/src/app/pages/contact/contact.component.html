@@ -3,11 +3,11 @@
 	<div fxLayout="row" fxLayoutAlign="space-between stretch" fxFlexFil fxFill fxLayoutGap="20px">
 
 		<div fxFlex="65" fxLayout="column" class="mat-elevation-z2 contact-list-container" >
-
+			
 			<div fxFlex="10" fxLayoutAlign="start center"  fxLayout="row">
-
-				<h3 class="mat-headline">Contacts</h3>
-				<h3 class="mat-headline">|</h3>
+				
+				<h3 class="mat-headline">Contacts</h3> 
+				<h3 class="mat-headline">|</h3> 
 				<h6 class="mat-title"> 1335 contacts</h6>
 
 			</div>
@@ -15,7 +15,7 @@
 			<mat-divider></mat-divider>
 
 			<div fxFlex="10" fxLayout="row" fxLayoutAlign="space-between stretch" >
-
+					
 					<div fxflex="70" class="full">
 						<mat-form-field class="full">
 						    <input matInput placeholder="search" >
@@ -43,9 +43,9 @@
 				<div fxFlex="10">
 					<button mat-icon-button> <mat-icon>delete</mat-icon> </button>
 				</div>
-
+				
 				<div fxFlex="80" fxLayoutAlign="end center" >
-
+					
 					<button mat-raised-button >ADD TAGS</button>
 
 				</div>
@@ -55,7 +55,7 @@
 
 				<div class="contact-list">
 					<div fxLayout="row" *ngFor="let employee of employees" fxLayoutAlign="space-around none" class="mat-ripple"  >
-
+					
 						<div fxFlex="10" >
 							<mat-checkbox  class="checkbox"></mat-checkbox>
 						</div>
@@ -65,7 +65,7 @@
 						<div fxFlex="50">
 							<h3 class="mat-subheading-1" > {{employee?.select}} </h3>
 							    <p class="mat-body-1" >
-							      {{employee?.position}}
+							      {{employee?.position}} 
 							    </p>
 						</div>
 						<div fxFlex="20" >
@@ -83,7 +83,7 @@
 
 				<mat-divider></mat-divider>
 
-
+			
     		</div>
 
 
@@ -92,8 +92,8 @@
 		<div fxFlex="35" fxLayout="column" class="mat-elevation-z2 contact-add" >
 
 			<div fxFlex="10" fxLayout="row" fxLayoutAlign="space-between center" >
-
-				<h3  class="mat-headline" fxFlex="80">New Contact</h3>
+					
+				<h3  class="mat-headline" fxFlex="80">New Contact</h3> 
 				<div fxLayout="row" fxLayoutAlign="end center" fxFlex="10">
 					<button mat-icon-button> <mat-icon>close</mat-icon> </button>
 
@@ -103,9 +103,9 @@
 							<mat-divider></mat-divider>
 
 			<div fxFlex="25"  fxLayout="row" fxLayoutAlign="space-between center" >
-
+				
 				<div fxFlex="40">
-										<!-- <img class="avatar" src="assets/user-image.jpg"/> -->
+										<img class="avatar" src="assets/user-image.jpg"/>
 
 				</div>
 				<div fxFlex="60" fxLayout="column" fxLayoutAlign="center start" >
@@ -127,7 +127,7 @@
 					<input  matInput placeholder="Office">
 				</mat-form-field>
 				</div>
-
+				
 			</div>
 
 			<div fxFlex="10" fxLayoutGap="10px" fxLayout="row" fxLayout.lt-lg="column"  fxLayoutAlign="center start"  >

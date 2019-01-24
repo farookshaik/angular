@@ -1,57 +1,51 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 
-
 @Component({
-  selector: 'cdk-bar-graph',
-  templateUrl: './bar-graph.component.html',
-  styleUrls: ['./bar-graph.component.scss']
+  // tslint:disable-next-line:component-selector
+  selector: 'cdk-line-casecollect-graph',
+  templateUrl: './line-graph-casecollect.component.html',
+  styleUrls: ['./line-graph-casecollect.component.scss']
 })
-export class BarGraphComponent implements OnInit {
+export class LineCaseCollectGraphComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
     setTimeout(() => {
-      this.createBarGraph();
+      this.createLineChart();
     }, 500);
   }
 
-  createBarGraph() {
+  createLineChart() {
     // tslint:disable-next-line:no-unused-expression
-    new Chart('dash-bar-graph', {
-      type: 'bar',
+    new Chart('line-casecollect-graph', {
+      type: 'line',
       data: {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [
           {
-            backgroundColor: '#7986CB',
-            borderColor: '#B1A7FF',
-            data: [63.7, 66.7, 65.4, 65.5, 66.8, 67.0, 65.4, 67.2, 65.5, 65.7, 66.7, 66.4],
-            label: '2016',
-            fill: 'false'
-          },
-          {
             backgroundColor: '#42A5F5',
             borderColor: '#A7C1FF',
-            data: [66.8, 67.8, 66.2, 68.6, 68.4, 66.5, 68.4, 66.8, 66.7, 67.6, 66.9, 64.9],
+            data: [331, 430, 351, 411, 365, 361, 367, 343, 351, 364, 357, 361],
             label: '2017',
             fill: 'false'
           },
           {
             backgroundColor: '#26A69A',
             borderColor: '#A7F0FF',
-            data: [67.7, 69.3, 65.9, 69.7, 68.6, 68.1, 69.5, 68.7, 68.4, 67.8, 67.2, 67.0],
+            data: [342, 404, 405, 397, 404, 377, 394, 336, 363, 348, 352, 376],
             label: '2018',
             fill: 'false'
           },
           {
-            backgroundColor: '#26C6DA',
-            borderColor: '#A7DEFF',
-            data: [70.3, 67.8],
+            backgroundColor: '#7986CB',
+            borderColor: '#B1A7FF',
+            data: [401, 371],
             label: '2019',
             fill: 'false'
           }
+
         ]
       },
       options: {
@@ -72,13 +66,13 @@ export class BarGraphComponent implements OnInit {
 
 
         },
+        // elements: {
+        //   line: {
+        //     tension: 0.000001
+        //   }
+        // },
         legend: {
           display: true
-        },
-        elements: {
-          line: {
-            tension: 0.000001
-          }
         },
         maintainAspectRatio: false,
         plugins: {
@@ -88,9 +82,10 @@ export class BarGraphComponent implements OnInit {
         },
         title: {
           display: true,
-          text: '% Current Support Paid By FFY'
+          text: 'Per Case Collect. Monthly'
         }
       }
     });
   }
+
 }

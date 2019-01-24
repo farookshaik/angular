@@ -83,7 +83,7 @@ export class BarGraphArrearsComponent implements OnInit {
         },
         title: {
           display: true,
-          text: 'TOTAL ARREARS'
+          text: 'Total Arrears'
         }
       }
     });

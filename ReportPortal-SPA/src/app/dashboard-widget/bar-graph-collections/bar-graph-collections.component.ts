@@ -83,7 +83,7 @@ export class BarGraphCollectionsComponent implements OnInit {
         },
         title: {
           display: true,
-          text: 'TOTAL COLLECTIONS'
+          text: 'Total Collections'
         }
       }
     });

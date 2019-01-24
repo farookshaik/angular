@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BarGraphSupportComponent } from './bar-graph_support.component';
+import { BarGraphSupportComponent } from "./BarGraphSupportComponent";
 
 describe('BarGraphSupportComponent', () => {
   let component: BarGraphSupportComponent;

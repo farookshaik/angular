@@ -29,7 +29,7 @@ import { BarGraphSupportComponent } from './bar-graph-support/bar-graph-support.
 import { BarGraphCaseLoadComponent } from './bar-graph-caseload/bar-graph-caseload.component';
 import { BarGraphArrearsComponent } from './bar-graph-arrears/bar-graph-arrears.component';
 import { BarChartDuePaidComponent } from './bar-chart-duepaid/bar-chart-duepaid.component';
-
+import { LineCaseCollectGraphComponent } from './line-graph-casecollect/line-graph-casecollect.component';
 
 @NgModule({
   imports: [
@@ -57,6 +57,7 @@ import { BarChartDuePaidComponent } from './bar-chart-duepaid/bar-chart-duepaid.
     BarGraphCaseLoadComponent,
     BarGraphArrearsComponent,
     BarChartDuePaidComponent,
+    LineCaseCollectGraphComponent,
     DoughnutGraphComponent,
     ProfileCardComponent,
     PricingPlanComponent,
@@ -77,6 +78,7 @@ import { BarChartDuePaidComponent } from './bar-chart-duepaid/bar-chart-duepaid.
     BarGraphCaseLoadComponent,
     BarGraphArrearsComponent,
     BarChartDuePaidComponent,
+    LineCaseCollectGraphComponent,
     DoughnutGraphComponent,
     ProfileCardComponent,
     PricingPlanComponent,
