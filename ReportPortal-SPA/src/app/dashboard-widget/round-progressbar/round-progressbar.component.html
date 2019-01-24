@@ -8,7 +8,7 @@
     </div>
     <div fxFlex="80">
       <div class="progress-wrapper">
-        <div class="current mat-headline " [ngStyle]="getOverlayStyle()">{{ current }}</div>
+        <div class="current mat-headline " [ngStyle]="getOverlayStyle()">{{ current +'%' }}</div>
         <round-progress [current]="current" [max]="max" [color]="color" [background]="background" [radius]="40"
           [stroke]="10" [semicircle]="semicircle" [rounded]="rounded" [clockwise]="clockwise" [responsive]="responsive"
           [duration]="800" [animation]="animation" [animationDelay]="1"></round-progress>

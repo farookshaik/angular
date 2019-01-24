@@ -4,21 +4,19 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { Routes, RouterModule } from '@angular/router';
 import { ChartsRouterModule } from './charts.router';
+import { ChartComponent } from './chart.component';
+import { TrendOverAllGraphComponent } from './trend-overall/trend-overall.component';
+import { TrendGraphCollectionsComponent } from './trend-graph-collections/trend-graph-collections.component';
 
-import { ChartjsModule } from './chartjs/chartjs.module';
-import { NgxChartModule } from './ngx-charts/ngx-charts.module';
-import { Nvd3ChartsModule } from './nvd3-charts/nvd3-charts.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
     ChartsRouterModule,
-    NgxChartModule,
     FlexLayoutModule,
-    ChartjsModule,
-    Nvd3ChartsModule
   ],
-  declarations: []
+  declarations: [ChartComponent, TrendOverAllGraphComponent, TrendGraphCollectionsComponent],
+  exports: [TrendOverAllGraphComponent, TrendGraphCollectionsComponent]
 })
 export class ChartsModule { }

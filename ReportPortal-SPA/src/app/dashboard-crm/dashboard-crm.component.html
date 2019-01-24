@@ -1,5 +1,6 @@
-<div fxLayout="row" fxLayout="row wrap">
-  <!-- <div fxFlex.lt-sm="100" fxFlex.sm="50" fxFlex.md="25">
+<!-- <div fxLayout="row" fxLayout="row wrap">
+  <img src="assets/countywide.JPG"> -->
+<!-- <div fxFlex.lt-sm="100" fxFlex.sm="50" fxFlex.md="25">
     <cdk-round-progressbar [title]="'FFY Current Collections - 2016'" [current]="'66'" [max]="'100'" [background]="'#FFF968'"
       [color]="'#B1A7FF'" [boxcolor]="'#7986CB'"></cdk-round-progressbar>
   </div>
@@ -15,13 +16,14 @@
     <cdk-round-progressbar [title]="'FFY Current Collections - 2019'" [current]="'69.1'" [max]="'100'" [background]="'#FFCF68'"
       [color]="'#A7DEFF'" [boxcolor]="'#26C6DA'"></cdk-round-progressbar>
   </div> -->
-</div>
+<!-- </div> -->
 
 <div fxLayout="row" fxLayout="row wrap">
   <div *ngFor="let dash of dashCard" fxFlex.lt-sm="100" fxFlex.sm="50" fxFlex.md="25">
     <cdk-dashcard [dashData]="dash"></cdk-dashcard>
   </div>
 </div>
+
 <!-- <div fxLayout="row" fxLayout="row wrap">
   <div fxLayout="column" fxLayoutGap="20px" fxFlex=25 class="container">
     <bar-graph-support></bar-graph-support>

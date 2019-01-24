@@ -2,19 +2,20 @@ export const menus = [
   {
     'name': 'Dashboard',
     'icon': 'dashboard',
-    'link': false,
-    'open': false,
-    'chip': { 'value': 1, 'color': 'accent' },
-    'sub': [
-      {
-        'name': 'Dashboard',
-        'link': '/auth/dashboard',
-        'icon': 'dashboard',
-        'chip': false,
-        'open': true,
-      }
-    ]
+    'link': '/auth/dashboard',
+    'open': false
+    // 'chip': { 'value': 1, 'color': 'accent' },
+    // 'sub': [
+    //   {
+    //     'name': 'Dashboard',
+    //     'link': '/auth/dashboard',
+    //     'icon': 'dashboard',
+    //     'chip': false,
+    //     'open': true,
+    //   }
+    // ]
   },
+
   // {
   //     'name': 'Material Widget',
   //     'icon': 'widgets',
@@ -225,43 +226,44 @@ export const menus = [
   //         }
   //     ]
   // ,}
-  // {
-
-  //   'name': 'Charts',
-  //   'icon': 'pie_chart_outlined',
-  //   'open': false,
-  //   'link': false,
-  //   'sub': [
-  //     {
-  //       'name': 'chartjs',
-  //       'icon': 'view_list',
-  //       'link': 'charts/chartjs',
-  //       'open': false,
-
-  //     },
-  //     {
-  //       'name': 'ngx-chart',
-  //       'icon': 'show_chart',
-  //       'open': false,
-  //       'link': 'charts/ngx-charts',
-  //     },
-  //     {
-  //       'name': 'nvd3',
-  //       'icon': 'pie_chart',
-  //       'open': false,
-  //       'link': 'charts/nvd3-charts',
-  //     }
-  //   ]
-  // },
   {
+
     'name': 'Trends and Goals',
     'icon': 'list',
-    'link': true,
-    'open': true,
-    'chip': {  'color': 'accent' }
+    'open': false,
+    'link': '/auth/charts',
+    'chip': { 'color': 'accent' }
+    // 'sub': [
+    //   {
+    //     'name': 'chartjs',
+    //     'icon': 'view_list',
+    //     'link': 'charts/chartjs',
+    //     'open': false,
+
+    //   },
+    //   {
+    //     'name': 'ngx-chart',
+    //     'icon': 'show_chart',
+    //     'open': false,
+    //     'link': 'charts/ngx-charts',
+    //   },
+    //   {
+    //     'name': 'nvd3',
+    //     'icon': 'pie_chart',
+    //     'open': false,
+    //     'link': 'charts/nvd3-charts',
+    //   }
+    // ]
+  },
+  // {
+  //   'name': 'Trends and Goals',
+  //   'icon': 'list',
+  //   'link': true,
+  //   'open': true,
+  //   'chip': {  'color': 'accent' }
 
 
-  }
+  // }
   // , {
   //     'name': 'maps',
   //     'icon': 'map',

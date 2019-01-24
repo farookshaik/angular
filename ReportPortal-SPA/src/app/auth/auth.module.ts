@@ -16,33 +16,35 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { appRoutes } from './lazyloader.routes';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-    suppressScrollX: true
+  suppressScrollX: true
 };
 
 import { DashboardCrmModule } from '../dashboard-crm/dashboard-crm.module';
 
 import { CoreModule } from '../core/core.module';
+import { ChartsModule } from '../charts/charts.module';
 
 
 @NgModule({
-    imports: [
-        CommonModule,
-        RouterModule.forChild(appRoutes),
-        MatToolbarModule,
-        DashboardCrmModule,
-        MatButtonModule,
-        MatIconModule,
-        MatTabsModule,
-        CoreModule,
-        MatSidenavModule,
-        PerfectScrollbarModule,
-    ],
-    declarations: [AuthComponent],
-    providers: [
-        {
-            provide: PERFECT_SCROLLBAR_CONFIG,
-            useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-        }
-    ]
+  imports: [
+    CommonModule,
+    RouterModule.forChild(appRoutes),
+    MatToolbarModule,
+    DashboardCrmModule,
+    ChartsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTabsModule,
+    CoreModule,
+    MatSidenavModule,
+    PerfectScrollbarModule,
+  ],
+  declarations: [AuthComponent],
+  providers: [
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
+  ]
 })
 export class AuthModule { }
