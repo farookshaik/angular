@@ -2,7 +2,7 @@
     position: relative;
     top: 0;
     height: 100vh;
-    
+
 
     .content-header{
         font-weight: 500;
@@ -51,19 +51,19 @@
         }
 
         .navbar{
-            .navbar-header{                
+            .navbar-header{
                 padding-left: 50px;
             }
         }
         .main-panel{
-            .main-content{                
+            .main-content{
                 padding-left: 60px;
             }
         }
-        footer{            
+        footer{
             padding-left: 60px;
         }
-       
+
     }
 
     &.menu-collapsed{
@@ -181,7 +181,7 @@
                     background: rgba(200, 200, 200, 0.2);
                 }
             }
-            
+
             > a{
                 display: block;
                 overflow: hidden;
@@ -236,7 +236,7 @@
                     ul{
                         li{
                             a{
-                                padding: 8px 18px 8px 70px;           
+                                padding: 8px 18px 8px 70px;
                             }
                         }
                     }
@@ -274,7 +274,7 @@
             color: #a9afbb;
         }
 
-        
+
     }
 
     .sidebar-background{
@@ -318,7 +318,7 @@
             text-transform: uppercase;
             padding: 5px 0;
             display: block;
-            font-size: 1.6rem;
+            font-size: 0.8rem;
             letter-spacing: 2px;
             color: $black;
             text-align: left;
@@ -531,28 +531,28 @@
     }
 }
 
- .wrapper[dir="rtl"]{ 
+ .wrapper[dir="rtl"]{
 
         &.nav-collapsed{
-            
+
             .navbar{
-                .navbar-header{                
+                .navbar-header{
                     padding-right: 50px;
                     padding-left: auto;
                 }
             }
             .main-panel{
-                .main-content{                
+                .main-content{
                     padding-right: 60px;
                     padding-left: auto;
                 }
             }
-            footer{            
+            footer{
                 padding-right: 60px;
                 padding-left: auto;
             }
         }
-    
+
     }
 
 
@@ -565,87 +565,87 @@
             text-align: right;
         }
 
-    .wrapper{ 
+    .wrapper{
 
         &.nav-collapsed{
-            
+
             .navbar{
-                .navbar-header{                
+                .navbar-header{
                     padding-right: 50px;
                     padding-left: auto;
                 }
             }
             .main-panel{
-                .main-content{                
+                .main-content{
                     padding-right: 60px;
                     padding-left: auto;
                 }
             }
-            footer{            
+            footer{
                 padding-right: 60px;
                 padding-left: auto;
             }
         }
-    
+
     }
 
 
     .bootstrap-navbar {
-    
+
         right: 0;
         left: auto;
     }
     .app-sidebar,
-    .off-canvas-sidebar{   
+    .off-canvas-sidebar{
         right: 0;
         left: auto;
         //transform: translate3d(0,0,0);
-        
 
-        &.hide-sidebar{     
+
+        &.hide-sidebar{
             transform: translate3d(100%,0,0);
         }
-        
-        .logo-img{       
+
+        .logo-img{
             margin-left: 15px;
             margin-right: auto;
         }
 
-        .logo-tim{       
-            float: right;   
+        .logo-tim{
+            float: right;
         }
 
 
 
-        .navigation{      
+        .navigation{
             padding-right: 0;
             padding-left: auto;
-            
-            li{           
+
+            li{
                 &.has-sub{
-                    > a:after{                    
-                        left: 15px;    
-                        right : auto;                
-                    }                
-                }            
-                
-                > a{                
-                    padding: 10px 14px 10px 30px;       
-                    margin: 5px 0;    
-                    text-align: right;            
+                    > a:after{
+                        left: 15px;
+                        right : auto;
+                    }
+                }
+
+                > a{
+                    padding: 10px 14px 10px 30px;
+                    margin: 5px 0;
+                    text-align: right;
 
                     &:before{
-                        
+
                         right: -100%;
                     left: auto;
                         border-left: solid 5px theme-color("danger");
                         border-right: 0px;
-                    
+
                     }
                 }
-            
 
-            
+
+
 
                 &.active > a{
                     &:before{
@@ -654,15 +654,15 @@
                     }
                 }
 
-                ul{                
+                ul{
                     li{
-                        a{                       
+                        a{
                             padding: 8px 60px 8px 18px;
                         }
                         ul{
                             li{
                                 a{
-                                    padding: 8px 70px 8px 18px;           
+                                    padding: 8px 70px 8px 18px;
                                 }
                             }
                         }
@@ -670,68 +670,68 @@
                 }
             }
 
-        
 
-            .badge.badge-pill{           
-                left: 28px;  
-                right: auto;         
+
+            .badge.badge-pill{
+                left: 28px;
+                right: auto;
             }
 
             i{
-            
+
                 float: right;
-                margin-left: 10px;    
-                margin-right: auto;        
+                margin-left: 10px;
+                margin-right: auto;
             }
 
-            
+
         }
 
-        .sidebar-background{       
+        .sidebar-background{
             right: 0;
-            left: auto;  
+            left: auto;
         }
 
-        .logo{        
+        .logo{
             p{
-                float: right;            
+                float: right;
             }
 
-            .logo-text{           
-                text-align: right;            
+            .logo-text{
+                text-align: right;
 
             }
         }
 
-        .logo-tim{        
+        .logo-tim{
             float: right;
-        
+
         }
 
         &:after,
-        &:before{       
+        &:before{
             right: 0;
             left: auto;
-        
+
         }
 
-    
+
     }
 
     .sidebar-header{
-        a.nav-toggle{        
+        a.nav-toggle{
             left: 14px;
             right: auto;
         }
-        a.nav-close{        
+        a.nav-close{
             left: 14px;
-            right: auto;        
+            right: auto;
         }
     }
 
 
 
-    .main-panel{   
+    .main-panel{
         float: left;
     }
 

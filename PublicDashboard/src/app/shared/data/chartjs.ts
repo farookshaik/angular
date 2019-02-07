@@ -337,44 +337,7 @@ export var scatterChartLegend = true;
 export var scatterChartType = 'scatter';
 
 // barChart
-export var barChartOptions: any = {
-  scaleShowVerticalLines: false,
-  responsive: true,
-  maintainAspectRatio: false
 
-};
-export var barChartLabels: string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-export var barChartType = 'bar';
-export var barChartLegend = true;
-
-export var barChartData: any[] = [
-  { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-  { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
-];
-
-export var barChartColors: Array<any> = [
-
-
-  {
-
-    backgroundColor: 'rgba(255, 141, 96, 0.8)',
-    borderColor: 'rgba(148,159,177,1)',
-    pointBackgroundColor: 'rgba(148,159,177,1)',
-    pointBorderColor: '#fff',
-    pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-  },
-  {
-
-    backgroundColor: 'rgba(0, 157, 160, 0.8)',
-    borderColor: 'rgba(148,159,177,1)',
-    pointBackgroundColor: 'rgba(148,159,177,1)',
-    pointBorderColor: '#fff',
-    pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-  },
-
-];
 
 // Doughnut
 export var doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];

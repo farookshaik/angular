@@ -10,7 +10,7 @@
 }
 
 //widget Line Chart CSS Starts
- 
+
 :host /deep/ .WidgetlineChart .ct-point {
     stroke-width: 0px;
 }
@@ -29,12 +29,12 @@
     stroke-width: 0px;
 }
 :host /deep/ .WidgetlineChart1 .ct-line{
-    stroke: url($dashboard2-gradient-path +  #widgradient) !important; // #009DA0; 
+    stroke: url($dashboard2-gradient-path +  #widgradient) !important; // #009DA0;
 }
 
 :host /deep/ .WidgetlineChart1Shadow {
     -webkit-filter: drop-shadow( 0px 20px 5px rgba(0,0,0,0.3) );
-            filter: drop-shadow( 0px 20px 5px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow, except 
+            filter: drop-shadow( 0px 20px 5px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 //widget Line Chart 1 CSS Ends
@@ -48,12 +48,12 @@
     stroke:url($dashboard2-gradient-path +  #widgradient1) !important;
 }
 :host /deep/ .WidgetlineChart2 .ct-grid {
-    stroke-dasharray: 0px;    
+    stroke-dasharray: 0px;
      stroke: rgba(255, 255, 255, 0.2);
 }
 :host /deep/ .WidgetlineChart2Shadow {
     -webkit-filter: drop-shadow( 0px 20px 5px rgba(0,0,0,0.3) );
-            filter: drop-shadow( 0px 20px 5px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow, except 
+            filter: drop-shadow( 0px 20px 5px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 //widget Line Chart 2 CSS Ends
@@ -69,7 +69,7 @@
   }
 
   :host /deep/ .donut1 .ct-outstanding .ct-slice-donut {
-    stroke: #eee;    
+    stroke: #eee;
   }
 
   :host /deep/ .donut1 .ct-done .ct-slice-donut {
@@ -88,7 +88,7 @@
   }
 
   :host /deep/ .donut2 .ct-outstanding .ct-slice-donut {
-    stroke: #eee;    
+    stroke: #eee;
   }
 
   :host /deep/ .donut2 .ct-done .ct-slice-donut {
@@ -107,7 +107,7 @@
   }
 
   :host /deep/ .donut3 .ct-outstanding .ct-slice-donut {
-    stroke: #eee;    
+    stroke: #eee;
   }
 
   :host /deep/ .donut3 .ct-done .ct-slice-donut {
@@ -162,6 +162,10 @@
     stroke: #31afb2;
 }
 
+:host /deep/ .lineChart2 .ct-series-c .ct-point-circle {
+  stroke: #b2319c;
+}
+
 :host /deep/ .lineChart2 .ct-line {
     fill: none;
     stroke-width: 1px;
@@ -169,7 +173,7 @@
 
 :host /deep/ .lineChart2Shadow {
     -webkit-filter: drop-shadow( 0px 25px 8px rgba(0,0,0,0.3) );
-            filter: drop-shadow( 0px 25px 8px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow, except 
+            filter: drop-shadow( 0px 25px 8px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 //Line chart 2 CSS Ends
@@ -187,7 +191,7 @@
 
 :host /deep/ .lineChart1Shadow {
     -webkit-filter: drop-shadow( 0px 20px 6px rgba(0,0,0,0.3) );
-            filter: drop-shadow( 0px 20px 6px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow, except 
+            filter: drop-shadow( 0px 20px 6px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 //Line Chart 1 CSS Ends

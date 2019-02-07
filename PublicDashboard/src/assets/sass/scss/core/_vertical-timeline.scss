@@ -852,7 +852,7 @@
   .timeline-item:nth-child(even) {
     padding: 0px 35px 50px 0px; }
   .timeline-item:nth-child(odd) {
-    padding: 0 0px 50px 35px; } 
+    padding: 0 0px 50px 35px; }
   .timeline-item.block{
     padding-right: 0 !important;
   }
@@ -1046,14 +1046,14 @@
 
 [dir="rtl"]{
 
-    
+
   #cd-timeline {
 
-    &::before {		
+    &::before {
       right: 18px;
-          left: auto;		
+          left: auto;
     }
-    @include MQ(L) {		
+    @include MQ(L) {
       &::before {
         right: 50%;
         margin-right: -2px;
@@ -1063,64 +1063,64 @@
     }
   }
 
-  .cd-timeline-img {	
+  .cd-timeline-img {
     right: 0;
-      left: auto;	
-    img {		
-      right: 50%;		
+      left: auto;
+    img {
+      right: 50%;
       margin-right: -12px;
-          left: auto;		
+          left: auto;
       margin-left: auto;
     }
 
-    @include MQ(L) {		
+    @include MQ(L) {
       right: 50%;
       margin-right: -30px;
           left: auto;
-      margin-left: auto;		
+      margin-left: auto;
     }
   }
 
-  .cd-timeline-content {	
+  .cd-timeline-content {
     margin-right: 60px;
       margin-left: auto;
     .cd-read-more {
-      float: left;		
+      float: left;
     }
 
     .cd-date {
-      float: right;		
+      float: right;
     }
 
-    &::before {		
-      left: 100%;	
-          right: auto;	
+    &::before {
+      left: 100%;
+          right: auto;
     }
 
     @include MQ(L) {
       margin-right: 0;
-          margin-left: auto;		
-      &::before {			
+          margin-left: auto;
+      &::before {
         right: 100%;
-              left: auto;			
+              left: auto;
       }
       .cd-read-more {
         float: right;
       }
 
-      .cd-date {			
-        right: 122%;	
-              left: auto;		
+      .cd-date {
+        right: 122%;
+              left: auto;
       }
 
       .cd-timeline-block:nth-child(even) & {
         float: left;
 
         &::before {
-          
+
           right: auto;
           left: 100%;
-          
+
         }
 
         .cd-read-more {
@@ -1159,12 +1159,12 @@
       padding: 0px 0px 50px 35px; }
       #timeline.timeline-center .timeline-item:nth-child(even):after {
         left: 25px;
-        right: auto;   
-        border-left: 0px;  
+        right: auto;
+        border-left: 0px;
         border-right: 11px solid #fff; }
       #timeline.timeline-center .timeline-item:nth-child(even):before {
-        
-        left: 24px;     
+
+        left: 24px;
         right: auto;
         border-left: 0px;
         border-right: 12px solid #ccc;
@@ -1173,29 +1173,29 @@
         left: -20px; right: auto; }
     #timeline.timeline-center .timeline-item:nth-child(odd) {
       padding: 0px 35px 50px 0px; }
-      #timeline.timeline-center .timeline-item:nth-child(odd):after {      
-        right: 19px; 
-        left: auto;      
-        border-left: 12px solid #ccc; 
-        border-right: 0;     
-        right: 25px; 
-        left: auto;     
+      #timeline.timeline-center .timeline-item:nth-child(odd):after {
+        right: 19px;
+        left: auto;
+        border-left: 12px solid #ccc;
+        border-right: 0;
+        right: 25px;
+        left: auto;
         border-left: 11px solid #fff;
         border-right: 0; }
-      #timeline.timeline-center .timeline-item:nth-child(odd):before {      
-        right: 24px;      
+      #timeline.timeline-center .timeline-item:nth-child(odd):before {
+        right: 24px;
         border-left: 12px solid #ccc;
-        left: auto;      
+        left: auto;
         border-right: 0;
         }
       #timeline.timeline-center .timeline-item:nth-child(odd) > .timeline-badge {
         right: -20px; left: auto; }
-    #timeline.timeline-center .timeline-item > .timeline-badge {    
+    #timeline.timeline-center .timeline-item > .timeline-badge {
       right: 12px; left: auto;
       }
 
   #timeline.timeline-right .timeline-line {
-    
+
     left: 12px;
     right: auto;
     }
@@ -1204,17 +1204,17 @@
     text-align: left; }
 
   #timeline.timeline-right .timeline-item {
-  
+
     padding: 0px 0px 35px 43px; }
     #timeline.timeline-right .timeline-item:after {
-      left: 33px;    
+      left: 33px;
       border-right: 11px solid #fff;
-      right: auto;    
+      right: auto;
       border-left: 0px; }
     #timeline.timeline-right .timeline-item:before {
-      left: 32px;    
+      left: 32px;
       border-right: 12px solid #ccc;
-      right: auto;    
+      right: auto;
       border-left: 0px;
       }
     #timeline.timeline-right .timeline-item > .timeline-badge {
@@ -1232,7 +1232,7 @@
     left: 8px;
     right: auto; }
 
-  #timeline.timeline-left .timeline-line {  
+  #timeline.timeline-left .timeline-line {
     right: 12px;
     left: auto;
     }
@@ -1241,17 +1241,17 @@
     text-align: right; }
 
   #timeline.timeline-left .timeline-item {
-  
+
     padding: 0 43px 35px 0; }
-    #timeline.timeline-left .timeline-item:after {    
-      right: 33px;   
-      left: 0px;    
+    #timeline.timeline-left .timeline-item:after {
+      right: 33px;
+      left: 0px;
       border-right: 11px solid #fff;
       border-left: 0; }
     #timeline.timeline-left .timeline-item:before {
-      right: 32px;    
+      right: 32px;
       border-left: 12px solid #ccc;
-      left: auto;    
+      left: auto;
       border-right: 0;
       }
     #timeline.timeline-left .timeline-item > .timeline-badge {
@@ -1283,7 +1283,7 @@
       left: auto;
   }
 
-    .timeline-embed .embed-element {   
+    .timeline-embed .embed-element {
       right: 0;
       left: auto;
       }
@@ -1318,7 +1318,7 @@
     .timeline-item:nth-child(even) {
       padding: 0px 0px 50px 35px; }
     .timeline-item:nth-child(odd) {
-      padding: 0 35px 50px 0px; } 
+      padding: 0 35px 50px 0px; }
     .timeline-item.block{
       padding-left: 0 !important;
       padding-right: auto !important;
@@ -1330,46 +1330,46 @@
       padding-right: 15px; padding-left: 0px; }
     .timeline-line {
       right: 15px; left: 0px; }
-    .timeline-group {   
+    .timeline-group {
       margin-right: -22px; margin-left: 0px; }
     .timeline-item {
       padding-left: 10px; padding-right: 0px; }
       .timeline-item:nth-child(even):after {
-        right: 19px;     
+        right: 19px;
         left: 0px;
-        border-left: 12px solid #ccc;     
-        border-right: 0px;     
-        right: 40px;  
-        left: 0px;     
+        border-left: 12px solid #ccc;
+        border-right: 0px;
+        right: 40px;
+        left: 0px;
         border-left: 11px solid #fff;
         border-right: 0px; }
       .timeline-item:nth-child(even):before {
-        right: 39px;      
+        right: 39px;
         border-left: 12px solid #ccc;
-        left: 0px;      
+        left: 0px;
         border-right: 0px;
         }
-      .timeline-item:nth-child(even) > .timeline-badge {     
+      .timeline-item:nth-child(even) > .timeline-badge {
         right: -20px;
         left: auto;
       }
       .timeline-item:nth-child(odd):after {
-        right: 19px;     
-        border-left: 12px solid #ccc;      
-        right: 40px;     
+        right: 19px;
+        border-left: 12px solid #ccc;
+        right: 40px;
         border-left: 11px solid #fff;
-        left: 0px;     
-        border-right: 0px solid #ccc;      
-        left: 0px;     
+        left: 0px;
+        border-right: 0px solid #ccc;
+        left: 0px;
         border-right: 0px solid #fff; }
       .timeline-item:nth-child(odd):before {
-        right: 39px;     
+        right: 39px;
         border-left: 12px solid #ccc;
-        left: 0px;     
+        left: 0px;
         border-right: 0px solid #ccc;
   }
       .timeline-item:nth-child(odd) > .timeline-badge {
-        
+
         right: -20px;
         left: auto;
   }
@@ -1378,11 +1378,11 @@
       .timeline-item.block:nth-child(even):after {
         right: 19px;
         border-left: 12px solid #ccc;
-        right: 20px;     
+        right: 20px;
         border-left: 11px solid #fff;
         left: 0px;
         border-right: 0px solid #ccc;
-        left: 0px;     
+        left: 0px;
         border-right: 0px solid #fff; }
       .timeline-item.block:nth-child(even):before {
         right: 19px;
@@ -1390,25 +1390,25 @@
         left: 0px;
         border-right: 0px solid #ccc;
       }
-      .timeline-item.block:nth-child(even) > .timeline-badge {     
+      .timeline-item.block:nth-child(even) > .timeline-badge {
         right: -6px;
         left: auto;
       }
     .timeline-item.block:nth-child(odd) {
       padding-bottom: 0; }
       .timeline-item.block:nth-child(odd):after {
-        right: 19px;      
-        border-left: 12px solid #ccc;     
-        right: 20px;     
+        right: 19px;
+        border-left: 12px solid #ccc;
+        right: 20px;
         border-left: 11px solid #fff;
-        left: 0px;      
-        border-right: 0px solid #ccc;     
-        left: 0px;     
+        left: 0px;
+        border-right: 0px solid #ccc;
+        left: 0px;
         border-right: 0px solid #fff;  }
       .timeline-item.block:nth-child(odd):before {
-        right: 19px;      
+        right: 19px;
         border-left: 12px solid #ccc;
-        left: 0px;      
+        left: 0px;
         border-right: 0px solid #ccc;
       }
       .timeline-item.block:nth-child(odd) > .timeline-badge {

@@ -1,120 +1,347 @@
 [
-    {
-        "name": "Ethel Price",
-        "gender": "female",
-        "company": "Johnson, Johnson and Partners, LLC CMP DDC",
-        "age": 22
-    },
-    {
-        "name": "Claudine Neal",
-        "gender": "female",
-        "company": "Sealoud",
-        "age": 55
-    },
-    {
-        "name": "Beryl Rice",
-        "gender": "female",
-        "company": "Velity",
-        "age": 67
-    },
-    {
-        "name": "Wilder Gonzales",
-        "gender": "male",
-        "company": "Geekko"
-    },
-    {
-        "name": "Georgina Schultz",
-        "gender": "female",
-        "company": "Suretech"
-    },
-    {
-        "name": "Carroll Buchanan",
-        "gender": "male",
-        "company": "Ecosys"
-    },
-    {
-        "name": "Valarie Atkinson",
-        "gender": "female",
-        "company": "Hopeli"
-    },
-    {
-        "name": "Schroeder Mathews",
-        "gender": "male",
-        "company": "Polarium"
-    },
-    {
-        "name": "Lynda Mendoza",
-        "gender": "female",
-        "company": "Dogspa"
-    },
-    {
-        "name": "Sarah Massey",
-        "gender": "female",
-        "company": "Bisba"
-    },
-    {
-        "name": "Robles Boyle",
-        "gender": "male",
-        "company": "Comtract"
-    },
-    {
-        "name": "Evans Hickman",
-        "gender": "male",
-        "company": "Parleynet"
-    },
-    {
-        "name": "Dawson Barber",
-        "gender": "male",
-        "company": "Dymi"
-    },
-    {
-        "name": "Bruce Strong",
-        "gender": "male",
-        "company": "Xyqag"
-    },
-    {
-        "name": "Nellie Whitfield",
-        "gender": "female",
-        "company": "Exospace"
-    },
-    {
-        "name": "Jackson Macias",
-        "gender": "male",
-        "company": "Aquamate"
-    },
-    {
-        "name": "Pena Pena",
-        "gender": "male",
-        "company": "Quarx"
-    },
-    {
-        "name": "Lelia Gates",
-        "gender": "female",
-        "company": "Proxsoft"
-    },
-    {
-        "name": "Letitia Vasquez",
-        "gender": "female",
-        "company": "Slumberia"
-    },
-    {
-        "name": "Trevino Moreno",
-        "gender": "male",
-        "company": "Conjurica"
-    },
-    {
-        "name": "Barr Page",
-        "gender": "male",
-        "company": "Apex"
-    },
-    {
-        "name": "Kirkland Merrill",
-        "gender": "male",
-        "company": "Utara"
-    },
-    {
-        "name": "Blanche Conley",
-        "gender": "female",
-        "company": "Imkan"
-    }    
+  {
+    "county": "ATLANTIC",
+    "totalCaseCount": "12567",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "BERGEN",
+    "totalCaseCount": "12093",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "BURLINGTON",
+    "totalCaseCount": "11528",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "CAMDEN",
+    "totalCaseCount": "12004",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "CAPE MAY",
+    "totalCaseCount": "11976",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "CUMBERLAND",
+    "totalCaseCount": "11981",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "ESSEX",
+    "totalCaseCount": "11948",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "GLOUCESTER",
+    "totalCaseCount": "11858",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "HUDSON",
+    "totalCaseCount": "11380",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "HUNTERDON",
+    "totalCaseCount": "11895",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "MERCER",
+    "totalCaseCount": "11571",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "MIDDLESEX",
+    "totalCaseCount": "11346",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "MONMOUTH",
+    "totalCaseCount": "11259",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "MORRIS",
+    "totalCaseCount": "11401",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "OCEAN",
+    "totalCaseCount": "11443",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "PASSAIC",
+    "totalCaseCount": "11401",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "SALEM",
+    "totalCaseCount": "11697",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "SOMERSET",
+    "totalCaseCount": "11888",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "SUSSEX",
+    "totalCaseCount": "11375",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "UNION",
+    "totalCaseCount": "12222",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "WARREN",
+    "totalCaseCount": "11845",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "CENTRAL",
+    "totalCaseCount": "12058",
+    "percentageOfTotalCaseCount_IVD": "55",
+    "percentageOfTotalCaseCount_NONIVD": "45",
+    "percentageOfTotalCaseCount_IN": "15",
+    "percentageOfTotalCaseCount_RESP": "25",
+    "percentageOfTotalCaseCount_INIT": "60",
+    "percentageOfTotalCaseCount_NPA": "20",
+    "percentageOfTotalCaseCount_IVE": "45",
+    "percentageOfTotalCaseCount_IVA": "35",
+    "percentageOfTotalCaseCount_FM": "30",
+    "percentageOfTotalCaseCount_FV": "05",
+    "percentageOfTotalCaseCount_FD": "65"
+  },
+  {
+    "county": "STATE",
+    "totalCaseCount": "45,058,345",
+    "percentageOfTotalCaseCount_IVD": "100",
+    "percentageOfTotalCaseCount_NONIVD": "100",
+    "percentageOfTotalCaseCount_IN": "100",
+    "percentageOfTotalCaseCount_RESP": "100",
+    "percentageOfTotalCaseCount_INIT": "100",
+    "percentageOfTotalCaseCount_NPA": "100",
+    "percentageOfTotalCaseCount_IVE": "100",
+    "percentageOfTotalCaseCount_IVA": "100",
+    "percentageOfTotalCaseCount_FM": "100",
+    "percentageOfTotalCaseCount_FV": "100",
+    "percentageOfTotalCaseCount_FD": "100"
+  }
 ]

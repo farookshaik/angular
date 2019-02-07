@@ -35,12 +35,12 @@ export class ChartjsComponent {
   public scatterChartType = chartsData.scatterChartType;
 
   // barChart
-  public barChartOptions = chartsData.barChartOptions;
-  public barChartLabels = chartsData.barChartLabels;
-  public barChartType = chartsData.barChartType;
-  public barChartLegend = chartsData.barChartLegend;
-  public barChartData = chartsData.barChartData;
-  public barChartColors = chartsData.barChartColors;
+  // public barChartOptions = chartsData.barChartOptions;
+  // public barChartLabels = chartsData.barChartLabels;
+  // public barChartType = chartsData.barChartType;
+  // public barChartLegend = chartsData.barChartLegend;
+  // public barChartData = chartsData.barChartData;
+  // public barChartColors = chartsData.barChartColors;
 
   // Doughnut
   public doughnutChartLabels = chartsData.doughnutChartLabels;
@@ -82,6 +82,6 @@ export class ChartjsComponent {
     //your code here
   }
 
-  
+
 
 }

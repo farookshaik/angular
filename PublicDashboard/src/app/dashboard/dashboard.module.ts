@@ -6,23 +6,29 @@ import { ChartistModule } from 'ng-chartist';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatchHeightModule } from "../shared/directives/match-height.directive";
 
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { Dashboard1Component } from "./dashboard1/dashboard1.component";
 import { Dashboard2Component } from "./dashboard2/dashboard2.component";
 
+import { ChartsModule } from 'ng2-charts';
 
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 @NgModule({
-    imports: [
-        CommonModule,
-        DashboardRoutingModule,
-        ChartistModule,
-        NgbModule,
-        MatchHeightModule
-    ],
-    exports: [],
-    declarations: [
-        Dashboard1Component,
-        Dashboard2Component
-    ],
-    providers: [],
+  imports: [
+    CommonModule,
+    DashboardRoutingModule,
+    ChartistModule,
+    NgbModule,
+    NgxChartsModule,
+    ChartsModule,
+    MatchHeightModule,
+    NgxDatatableModule
+  ],
+  exports: [],
+  declarations: [
+    Dashboard1Component,
+    Dashboard2Component
+  ],
+  providers: [],
 })
 export class DashboardModule { }

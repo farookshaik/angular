@@ -9,12 +9,12 @@ export var barChartShowYAxis = true;
 export var barChartGradient = false;
 export var barChartShowLegend = false;
 export var barChartShowXAxisLabel = true;
-export var barChartXAxisLabel = 'Country';
+export var barChartXAxisLabel = '';
 export var barChartShowYAxisLabel = true;
-export var barChartYAxisLabel = 'Population';
+export var barChartYAxisLabel = '';
 
 export var barChartColorScheme = {
-    domain: ['#009DA0', '#FF8D60', '#FF586B', '#AAAAAA']
+  domain: ['#009DA0', '#FF8D60', '#FF586B', '#AAAAAA']
 };
 
 //Pie CHart
@@ -25,7 +25,7 @@ export var pieChartView: any[] = [550, 400];
 export var pieChartShowLegend = false;
 
 export var pieChartColorScheme = {
-    domain: ['#009DA0', '#FF8D60', '#FF586B', '#AAAAAA']
+  domain: ['#009DA0', '#FF8D60', '#FF586B', '#AAAAAA']
 };
 
 // pie
@@ -44,19 +44,19 @@ export var lineChartView: any[] = [550, 400];
 // options
 export var lineChartShowXAxis = true;
 export var lineChartShowYAxis = true;
-export var lineChartGradient = false;
+export var lineChartGradient = true;
 export var lineChartShowLegend = false;
 export var lineChartShowXAxisLabel = true;
-export var lineChartXAxisLabel = 'Country';
+export var lineChartXAxisLabel = '';
 export var lineChartShowYAxisLabel = true;
-export var lineChartYAxisLabel = 'Population';
+export var lineChartYAxisLabel = '';
 
 export var lineChartColorScheme = {
-    domain: ['#009DA0', '#FF8D60', '#FF586B', '#AAAAAA']
+  domain: ['#009DA0', '#FF8D60', '#FF586B', '#AAAAAA']
 };
 
 // line, area
-export var lineChartAutoScale = true;
+export var lineChartAutoScale = false;
 export var lineChartLineInterpolation = shape.curveBasis;
 
 //Area Charts
@@ -68,12 +68,12 @@ export var areaChartShowYAxis = true;
 export var areaChartGradient = false;
 export var areaChartShowLegend = false;
 export var areaChartShowXAxisLabel = true;
-export var areaChartXAxisLabel = 'Country';
+export var areaChartXAxisLabel = '';
 export var areaChartShowYAxisLabel = true;
-export var areaChartYAxisLabel = 'Population';
+export var areaChartYAxisLabel = '';
 
 export var areaChartColorScheme = {
-    domain: ['#FF8D60', '#FF586B', '#1CBCD8', '#AAAAAA']
+  domain: ['#FF8D60', '#FF586B', '#1CBCD8', '#795548']
 };
 
 // line, area

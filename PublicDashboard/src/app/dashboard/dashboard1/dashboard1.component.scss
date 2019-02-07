@@ -56,6 +56,10 @@
     fill: url($dashboard1-gradient-path +  #gradient3) !important;
 }
 
+:host /deep/ .lineArea2 .ct-series-c .ct-area {
+  fill: url($dashboard1-gradient-path +  #gradient4) !important;
+}
+
 :host /deep/ .lineArea2 .ct-point-circle {
     stroke-width: 2px;
     fill: white;
@@ -71,6 +75,10 @@
 
 :host /deep/ .lineArea2 .ct-series-a .ct-point-circle {
     stroke: #31afb2;
+}
+
+:host /deep/ .lineArea2 .ct-series-c .ct-point-circle {
+  stroke: rgba(56, 184, 242, 1);
 }
 
 :host /deep/ .lineArea2 .ct-line {
@@ -103,12 +111,12 @@
 
 :host /deep/ .lineChartShadow {
     -webkit-filter: drop-shadow( 0px 25px 8px rgba(0,0,0,0.3) );
-            filter: drop-shadow( 0px 25px 8px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow, except 
+            filter: drop-shadow( 0px 25px 8px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 
 // Line Chart  CSS Ends
- 
+
   // Donut Chart  CSS Ends
   :host /deep/ .donut .ct-done .ct-slice-donut {
     stroke: #0CC27E;
@@ -122,7 +130,7 @@
     stroke: #7E57C2;
     stroke-width: 8px !important;
   }
-  
+
   :host /deep/ .donut .ct-started .ct-slice-donut {
     stroke: #2196F3;
     stroke-width: 32px !important;
@@ -154,7 +162,7 @@
 
   :host /deep/ .BarChartShadow {
     -webkit-filter: drop-shadow( 0px 20px 8px rgba(0,0,0,0.3) );
-            filter: drop-shadow( 0px 20px 8px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow, except 
+            filter: drop-shadow( 0px 20px 8px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 
@@ -162,23 +170,70 @@
 
 // Widget line Chart CSS Starts
 
-:host /deep/ .WidgetlineChart .ct-point {
-    stroke-width: 0px;
+:host /deep/ .WidgetlineChart .ct-point-circle {
+    stroke-width: 2px;
+    fill: white;
 }
 :host /deep/ .WidgetlineChart .ct-line{
-    stroke: #fff;
+    stroke: white;
 }
 
 
 :host /deep/ .WidgetlineChart .ct-grid {
-    stroke-dasharray: 0px;    
-     stroke: rgba(255, 255, 255, 0.2);
+    stroke-dasharray: 0px;
+    stroke: white;
 }
 
+:host /deep/ .WidgetlineChart .ct-label {
+  color: #FFF;
+}
 :host /deep/ .WidgetlineChartshadow {
     -webkit-filter: drop-shadow( 0px 15px 5px rgba(0,0,0,0.8) );
-            filter: drop-shadow( 0px 15px 5px rgba(0,0,0,0.8) ); /* Same syntax as box-shadow, except 
+            filter: drop-shadow( 0px 15px 5px rgba(0,0,0,0.8) ); /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 
 // Widget line Chart CSS Ends
+
+
+//Line chart 2 CSS Starts
+
+:host /deep/ .lineChart2 .ct-point-circle {
+  stroke-width: 2px;
+  fill: white;
+}
+
+:host /deep/ .lineChart2 .ct-series-b .ct-point-circle {
+  stroke: #ff8d60;
+}
+
+:host /deep/ .lineChart2 .ct-series-a .ct-point-circle {
+  stroke: #31afb2;
+}
+
+:host /deep/ .lineChart2 .ct-series-c .ct-point-circle {
+stroke: #b2319c;
+}
+
+:host /deep/ .lineChart2 .ct-line {
+  fill: none;
+  stroke-width: 1px;
+}
+
+:host /deep/ .lineChart2Shadow {
+  -webkit-filter: drop-shadow( 0px 25px 8px rgba(0,0,0,0.1) );
+          filter: drop-shadow( 0px 25px 8px rgba(0,0,0,0.1) ); /* Same syntax as box-shadow, except
+                                                     for the spread property */
+}
+//Line chart 2 CSS Ends
+
+
+
+table tr:last-child
+{
+  background:#ff8d60;
+}
+
+
+tr:nth-child(even) {background: #E0E0E0}
+tr:nth-child(odd) {background: #FFF}
