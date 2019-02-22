@@ -13,6 +13,7 @@ import { Dashboard2Component } from "./dashboard2/dashboard2.component";
 import { ChartsModule } from 'ng2-charts';
 
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { TableCaseLoadComponent } from './tablecaseload/tablecaseload.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -27,7 +28,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
   exports: [],
   declarations: [
     Dashboard1Component,
-    Dashboard2Component
+    Dashboard2Component,
+    TableCaseLoadComponent
   ],
   providers: [],
 })

@@ -193,7 +193,11 @@ export var barChartCaseLoadOptions: any = {
 
       barPercentage: 0.5,
       ticks: {
-        beginAtZero: true
+        beginAtZero: true,
+        callback: function (label, index, labels) {
+          return label / 1000 + 'K';
+        }
+
       }, gridLines: {
         drawTicks: true,
         display: true,
@@ -291,8 +295,60 @@ export var barChartCaseLoadColors: Array<any> = [
 
 
 
+export var widgetlineChartData: Array<any> = [
+  { data: [65, 23, 45, 56, 55, 45, 22, 89, 58, 74, 55, 22], label: 'County' },
+  { data: [89, 55, 85, 23, 70, 65, 55, 65, 74, 59, 56, 33], label: 'State' }
+];
+
+export var widgetlineChartOptions: any = {
+  tooltips: {
+    mode: 'index',
+    intersect: true
+  },
+  animation: {
+    duration: 1000, // general animation time
+    easing: 'easeOutBack'
+  },
+  hover: {
+    animationDuration: 1000, // duration of animations when hovering an item
+    mode: 'index'
+  },
+  responsiveAnimationDuration: 1000, // animation duration after a resize
+  responsive: true,
+  maintainAspectRatio: false,
+
+  scales: {
+    xAxes: [{
+      gridLines: {
+        display: false,
+      },
+      scaleLabel: {
+        display: false
+
+      },
+      ticks: {
+        display: true,
+        fontColor: 'white'
+      },
+    }],
+    yAxes: [{
+      ticks: {
+        beginAtZero: false,
+        fontColor: 'white'
+      },
+      scaleLabel: {
+        display: false
+      },
+      gridLines: {
+        display: false,
+      }
+    }]
+  }
+};
+
+
+
 export var lineChartData: Array<any> = [
-  { data: [5156190, 5156190, 5156190, 5156190, 5156190, 5156190, 5156190, 5156190, 5156190, 5156190, 5156190, 5156190], label: 'State' },
   { data: [4282360, 4285052, 4546579, 4101487, 4474531, 4885548, 4429840, 4611256, 4467394, 4175881, 4736769, 4335721], label: '2016' },
   { data: [4223171, 4374696, 4292934, 4323582, 3960648, 5156190, 4204981, 4913913, 4357242, 4278333, 4352640, 4058404], label: '2017' },
   { data: [4246588, 4051318, 4078958, 4349486, 3963736, 4675520, 4577583, 4646932, 4141479, 4315150, 4487952, 3822682], label: '2018' },
@@ -333,7 +389,10 @@ export var lineChartOptions: any = {
     }],
     yAxes: [{
       ticks: {
-        beginAtZero: true
+        beginAtZero: true,
+        callback: function (label, index, labels) {
+          return label / 1000000 + 'M';
+        }
       },
       display: true,
       gridLines: {
@@ -348,19 +407,19 @@ export var lineChartOptions: any = {
   }
 };
 export var lineChartColors: Array<any> = [
-  {
-    fill: false,
-    borderDash: [5, 5],
-    borderColor: "#B71C1C",
-    pointBorderColor: "#B71C1C",
-    pointBackgroundColor: "#B71C1C",
-    pointBorderWidth: 2,
-    pointHoverBorderWidth: 2,
-    pointRadius: 0,
-    lineTension: 0,
-    backgroundColor: 'transparent',
-    pointStyle: 'rectRounded',
-  },
+  // {
+  //   fill: false,
+  //   borderDash: [5, 5],
+  //   borderColor: "#B71C1C",
+  //   pointBorderColor: "#B71C1C",
+  //   pointBackgroundColor: "#B71C1C",
+  //   pointBorderWidth: 2,
+  //   pointHoverBorderWidth: 2,
+  //   pointRadius: 0,
+  //   lineTension: 0,
+  //   backgroundColor: 'transparent',
+  //   pointStyle: 'rectRounded',
+  // },
   {
     fill: false,
     borderColor: "rgba(56, 184, 242, 1)",
@@ -413,7 +472,6 @@ export var lineChartType = 'line';
 
 
 export var lineChartAvgData: Array<any> = [
-  { data: [430, 430, 430, 430, 430, 430, 430, 430, 430, 430, 430, 430], label: 'State' },
   { data: [331, 430, 351, 411, 365, 361, 367, 343, 351, 364, 357, 361], label: '2016' },
   { data: [342, 404, 405, 397, 404, 377, 394, 336, 363, 348, 352, 376], label: '2017' },
   { data: [312, 401, 305, 397, 356, 377, 324, 310, 356, 328, 312, 319], label: '2018' },
@@ -454,6 +512,7 @@ export var lineChartAvgOptions: any = {
     }],
     yAxes: [{
       ticks: {
+
         beginAtZero: true
       },
       display: true,
@@ -470,19 +529,19 @@ export var lineChartAvgOptions: any = {
 
 };
 export var lineChartAvgColors: Array<any> = [
-  {
-    fill: false,
-    borderDash: [5, 5],
-    borderColor: "#B71C1C",
-    pointBorderColor: "#B71C1C",
-    pointBackgroundColor: "#B71C1C",
-    pointBorderWidth: 2,
-    pointHoverBorderWidth: 2,
-    pointRadius: 0,
-    lineTension: 0,
-    backgroundColor: 'transparent',
-    pointStyle: 'rectRounded',
-  },
+  // {
+  //   fill: false,
+  //   borderDash: [5, 5],
+  //   borderColor: "#B71C1C",
+  //   pointBorderColor: "#B71C1C",
+  //   pointBackgroundColor: "#B71C1C",
+  //   pointBorderWidth: 2,
+  //   pointHoverBorderWidth: 2,
+  //   pointRadius: 0,
+  //   lineTension: 0,
+  //   backgroundColor: 'transparent',
+  //   pointStyle: 'rectRounded',
+  // },
   {
     fill: false,
     borderColor: "rgba(56, 184, 242, 1)",
@@ -542,9 +601,27 @@ export var currentSupportPaidbarChartOptions: any = {
   scales: {
     yAxes: [{
       ticks: {
-        beginAtZero: true
+        beginAtZero: true,
       }
-    }]
+    }],
+    xAxes: [{
+      scaleLabel: {
+        display: false,
+        labelString: 'Month',
+      },
+
+      barPercentage: 0.9,
+      categoryPercentage: 0.6,
+      // ticks: {
+      //   callback: function (label) {
+      //     var month = label.split(";")[0];
+      //     var year = label.split(";")[1];
+      //     return year;
+      //   }
+      // }
+    }
+
+    ]
   },
   scaleShowVerticalLines: false,
   responsive: true,
@@ -552,29 +629,19 @@ export var currentSupportPaidbarChartOptions: any = {
 
 };
 export var currentSupportPaidbarChartLabels: string[] = [
-  "Oct",
-  "Nov",
-  "Dec",
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep"
+  'Previous FFY Quarter',
+  'Previous FFY Quarter',
+  'Previous FFY Quarter',
+  'Current FFY Quarter',
 ];
 export var currentSupportPaidbarChartType = 'bar';
 export var currentSupportPaidbarChartLegend = true;
 
 export var currentSupportPaidbarChartData: any[] = [
-  { data: [55.3, 55.3, 55.3, 55.3, 55.3, 55.3, 55.3, 55.3, 55.3, 55.3, 55.3, 55.3], label: 'State' },
-  { data: [63.7, 66.7, 65.4, 65.5, 66.8, 67.0, 65.4, 67.2, 65.5, 65.7, 66.7, 66.4], label: '2016' },
-  { data: [66.8, 67.8, 66.2, 68.6, 68.4, 66.5, 68.4, 66.8, 66.7, 67.6, 66.9, 64.9], label: '2017' },
-  { data: [67.7, 69.3, 65.9, 69.7, 68.6, 68.1, 69.5, 68.7, 68.4, 67.8, 67.2, 67.0], label: '2018' },
-  { data: [null, null, null, 70.3, 67.8], label: '2019' },
-  // tslint:disable-next-line:max-line-length
+  { data: [66.7, 66.7, 65.4, 55.8], label: 'Current Assistance (CA)' },
+  { data: [66.8, 67.8, 66.2, 52.8], label: 'Former  Assistance (FA)' },
+  { data: [67.7, 69.3, 65.9, 61.8], label: 'Never Assistance (NA)' }
+
 
 ];
 
@@ -635,17 +702,19 @@ export var collectionsDuebarChartOptions: any = {
     easing: 'easeInOutQuad',
     duration: 520
   },
-  elements: {
-    line: {
-      fill: false
-    }
-  },
+
   scales: {
     yAxes: [{
-      stacked: true,
+      display: true,
       ticks: {
-        beginAtZero: true
+        beginAtZero: false,
+        callback: function (label, index, labels) {
+          return label / 1000000 + 'M';
+        },
+        stepSize: 5000000
       },
+      stacked: true,
+
       gridLines: {
         color: "#f3f3f3",
         drawTicks: true,
@@ -653,11 +722,16 @@ export var collectionsDuebarChartOptions: any = {
     }],
     xAxes: [{
       stacked: true,
+      beginAtZero: false
     }]
   },
   tooltips: {
     mode: 'index',
     intersect: false
+  },
+  hover: {
+    mode: 'nearest',
+    intersect: true
   },
   scaleShowVerticalLines: false,
   responsive: true,
@@ -682,18 +756,14 @@ export var collectionsDuebarChartType = 'bar';
 export var collectionsDuebarChartLegend = true;
 
 export var collectionsDuebarChartData: any[] = [
-  {
-    data: [5121458, 5121458, 5121458, 5121458, 5121458, 5121458, 5121458, 5121458, 5121458, 5121458, 5121458, 5121458], type: "line",
-    fill: "false", label: 'State - Due'
-  },
+
   // tslint:disable-next-line:max-line-length
-  { data: [5621838, 5404960, 5798472, 5121458, 4404060, 3798472, 2621838, 3798472, 5790072, 5001838, 5104160, 2798472], label: '2016 - Due' },
+  { data: [5621838, 5404960, 5798472, 5121458, 4404060, 3798472, 2621838, 3798472, 5790072, 5001838, 5104160, 2798472], label: 'Current Assistance (CA)' },
   // tslint:disable-next-line:max-line-length
-  { data: [5461382, 3607111, 3791222, 3331458, 2444460, 1755572, 2666138, 1755572, 2222072, 1001838, 1504160, 1898472], label: '2017 - Due' },
+  { data: [5461382, 3607111, 3791222, 3331458, 2444460, 1755572, 2666138, 1755572, 2222072, 1001838, 1504160, 1898472], label: 'Former Assistance (FA)' },
   // tslint:disable-next-line:max-line-length
-  { data: [5337658, 5404960, 5798472, 5121458, 4404060, 3798472, 2621838, 7404960, 5790072, 5001838, 5104160, 2798472], label: '2018 - Due' },
-  // tslint:disable-next-line:max-line-length
-  { data: [0, 0, 0, 5121458, 4404060], label: '2019 - Due' }
+  { data: [5337658, 5404960, 5798472, 5121458, 4404060, 3798472, 2621838, 7404960, 5790072, 5001838, 5104160, 2798472], label: 'Never Assistance (NA)' },
+
 ];
 
 
@@ -761,7 +831,11 @@ export var collectionsPaidbarChartOptions: any = {
 
       stacked: true,
       ticks: {
-        beginAtZero: true
+        beginAtZero: false,
+        callback: function (label, index, labels) {
+          return label / 1000000 + 'M';
+        },
+        stepSize: 5000000
       },
       gridLines: {
         color: "#f3f3f3",
@@ -799,18 +873,14 @@ export var collectionsPaidbarChartType = 'bar';
 export var collectionsPaidbarChartLegend = true;
 
 export var collectionsPaidbarChartData: any[] = [
-  {
-    data: [3121658, 3121658, 3121658, 3121658, 3121658, 3121658, 3121658, 3121658, 3121658, 3121658, 3121658, 3121658], type: "line",
-    fill: "false", label: 'State - Paid'
-  },
+
   // tslint:disable-next-line:max-line-length
-  { data: [3579018, 3607481, 3791399, 3121458, 2403560, 1798472, 2000138, 7102960, 5192072, 3901838, 4504160, 1298472], label: '2016 - Paid' },
+  { data: [3579018, 3607481, 3791399, 3121458, 2403560, 5698472, 2000138, 3102960, 5192072, 3901838, 4504160, 1298472], label: 'Current Assistance (CA)' },
   // tslint:disable-next-line:max-line-length
-  { data: [3648905, 3607111, 3341222, 3121658, 2894460, 1565572, 2006138, 7744960, 2200072, 5001838, 1104160, 7898472], label: '2017 - Paid' },
+  { data: [3648905, 3607111, 3341222, 3121658, 2894460, 5565572, 2006138, 3744960, 2200072, 5001838, 1104160, 7898472], label: 'Former Assistance (FA)' },
   // tslint:disable-next-line:max-line-length
-  { data: [3612519, 3607111, 3791222, 3331458, 2444460, 1755572, 2666138, 7777960, 2222072, 1001838, 1504160, 1898472], label: '2018 - Paid' },
-  // tslint:disable-next-line:max-line-length
-  { data: [0, 0, 0, 3121358, 4104000], label: '2019 - Paid' }
+  { data: [3612519, 3607111, 3791222, 3331458, 2444460, 5565572, 2666138, 3777960, 2222072, 1001838, 1504160, 1898472], label: 'Never Assistance (NA)' },
+
 ];
 
 

@@ -5,7 +5,8 @@ import { ChartType, ChartEvent } from "ng-chartist";
 import * as jsonData from '../../shared/data/data';
 import { ColorStore } from '../dashboard1/color-store';
 declare var require: any;
-const tableData: any = require('../../shared/data/charttabledata.json');
+const tableData: any = require('../../shared/data/CHARTTABLEDATA.json');
+const tableGrantedData: any = require('../../shared/data/reliefgrantedtabledata.json');
 
 export interface Chart {
   type: ChartType;
@@ -25,6 +26,7 @@ export interface Chart {
 export class Dashboard2Component implements OnInit {
   @ViewChild('currentSupportPaidBarChart') currentSupportPaidBarChart: ElementRef;
   rows = [];
+  grantedRows = [];
 
   currentSupportPaidbarChartGradientColors: any[];
   // barChart
@@ -36,7 +38,7 @@ export class Dashboard2Component implements OnInit {
   public currentSupportPaidbarChartColors = jsonData.currentSupportPaidbarChartColors;
   constructor(private colorStore: ColorStore) {
     this.rows = tableData;
-
+    this.grantedRows = tableGrantedData;
 
 
   }
@@ -44,4 +46,6 @@ export class Dashboard2Component implements OnInit {
     this.currentSupportPaidbarChartGradientColors = this.colorStore.getGroupBarChartColors(this.currentSupportPaidBarChart);
 
   }
+  currentSupportPaidBarChartchartHovered(event) { }
+  currentSupportPaidBarChartchartClicked(event) { }
 }

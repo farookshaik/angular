@@ -1,0 +1,43 @@
+<div>
+  <ngx-datatable #myTable class='bootstrap' [rows]="rows" [groupRowsBy]="'county'" [headerHeight]="50" [footerHeight]="50"
+    [loadingIndicator]="loadingIndicator" [columnMode]="'force'" [rowHeight]="40" [limit]="5" [groupExpansionDefault]="true">
+    <!-- Group Header Template -->
+    <ngx-datatable-group-header [rowHeight]="50" #myGroupHeader (toggle)="onDetailToggle($event)">
+      <ng-template let-group="group" let-expanded="expanded" ngx-datatable-group-header-template>
+        <div style="padding:5px;">
+          <a href="javascript:void(0)" [class.datatable-icon-right]="!expanded" [class.datatable-icon-down]="expanded"
+            title="Expand/Collapse Group" (click)="toggleExpandGroup(group)">
+            <b>{{group.value[0].county}}</b>
+          </a>
+        </div>
+      </ng-template>
+    </ngx-datatable-group-header>
+    <!-- Row Column Template -->
+    <ngx-datatable-column name="COUNTY" editable="false" [resizeable]="false" [sortable]="false" [draggable]="false"
+      width="170" [canAutoResize]="false" prop="division"></ngx-datatable-column>
+    <ngx-datatable-column name="TOTAL CASE COUNT" [resizeable]="false" [sortable]="false" [draggable]="false" width="160"
+      [canAutoResize]="false" prop="totalCaseCount"></ngx-datatable-column>
+    <ngx-datatable-column name="IV-D" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false"
+      headerClass="group1" cellClass="cellgroup1" prop="percentageOfTotalCaseCount_IVD" width="100"></ngx-datatable-column>
+    <ngx-datatable-column name="NON IV-D" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false"
+      headerClass="group1" cellClass="cellgroup1" prop="percentageOfTotalCaseCount_NONIVD" width="100"></ngx-datatable-column>
+    <ngx-datatable-column name="IN" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false"
+      headerClass="group1" cellClass="cellgroup2" prop="percentageOfTotalCaseCount_IN" width="125"></ngx-datatable-column>
+    <ngx-datatable-column name="RESP" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false"
+      headerClass="group1" cellClass="cellgroup2" prop="percentageOfTotalCaseCount_RESP" width="125"></ngx-datatable-column>
+    <ngx-datatable-column name="INIT" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false"
+      headerClass="group1" cellClass="cellgroup2" prop="percentageOfTotalCaseCount_INIT" width="125"></ngx-datatable-column>
+    <ngx-datatable-column name="NPA" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false"
+      headerClass="group1" cellClass="cellgroup3" prop="percentageOfTotalCaseCount_NPA" width="125"></ngx-datatable-column>
+    <ngx-datatable-column name="IV-E" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false"
+      headerClass="group1" cellClass="cellgroup3" prop="percentageOfTotalCaseCount_IVE" width="125"></ngx-datatable-column>
+    <ngx-datatable-column name="IV-A" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false"
+      headerClass="group1" cellClass="cellgroup3" prop="percentageOfTotalCaseCount_IVA" width="125"></ngx-datatable-column>
+    <ngx-datatable-column name="FM" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false"
+      headerClass="group1" cellClass="cellgroup4" prop="percentageOfTotalCaseCount_FM" width="100"></ngx-datatable-column>
+    <ngx-datatable-column name="FV" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false"
+      headerClass="group1" cellClass="cellgroup4" prop="percentageOfTotalCaseCount_FV" width="100"></ngx-datatable-column>
+    <ngx-datatable-column name="FD" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false"
+      headerClass="group1" cellClass="cellgroup4" prop="percentageOfTotalCaseCount_FD" width="100"></ngx-datatable-column>
+  </ngx-datatable>
+</div>

@@ -49,3 +49,57 @@
     </div>
   </div>
 </div>
+
+<div class="row" matchHeight="card">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">% Reliefs Granted by FFY</h4>
+      </div>
+      <div class="card-body">
+        <div class="card-block">
+          <table id="table-example-1" class="table table-responsive-md text-center table-striped table-hover">
+            <thead class="thead-default">
+              <tr>
+                <th style="text-align:center" rowspan="4" class="reliefHeader">RELIEF</th>
+                <th style="text-align:center" colspan="10" class="reliefHeader" scope="colParentGroup">CASE TYPE AT
+                  FILING</th>
+              </tr>
+              <tr>
+                <th style="text-align:center" colspan="3" scope="colIVAGroup" class="reliefHeader1">IV-A</th>
+                <th style="text-align:center" colspan="3" scope="colIVEGroup" class="reliefHeader1">IV-E</th>
+                <th style="text-align:center" colspan="3" scope="colNPAGroup" class="reliefHeader1">NPA</th>
+              </tr>
+              <tr>
+                <th scope="colIVAGroup" class="reliefHeader2">2017</th>
+                <th scope="colIVAGroup" class="reliefHeader2">2018</th>
+                <th scope="colIVAGroup" class="reliefHeader2">2019</th>
+                <th scope="colIVEGroup" class="reliefHeader2">2017</th>
+                <th scope="colIVEGroup" class="reliefHeader2">2018</th>
+                <th scope="colIVEGroup" class="reliefHeader2">2019</th>
+                <th scope="colNPAGroup" class="reliefHeader2">2017</th>
+                <th scope="colNPAGroup" class="reliefHeader2">2018</th>
+                <th scope="colNPAGroup" class="reliefHeader2">2019</th>
+              </tr>
+
+            </thead>
+            <tbody>
+              <tr *ngFor="let gRow of grantedRows">
+                <td style="text-align:left">{{gRow.relief}}</td>
+                <td>{{gRow.IVA_2017}}</td>
+                <td>{{gRow.IVA_2018}}</td>
+                <td>{{gRow.IVA_2019}}</td>
+                <td>{{gRow.IVE_2017}}</td>
+                <td>{{gRow.IVE_2018}}</td>
+                <td>{{gRow.IVE_2019}}</td>
+                <td>{{gRow.NPA_2017}}</td>
+                <td>{{gRow.NPA_2018}}</td>
+                <td>{{gRow.NPA_2019}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,20 +1,17 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, ViewEncapsulation } from '@angular/core';
 import * as Chartist from 'chartist';
 import { ChartType, ChartEvent } from 'ng-chartist';
 
 import * as chartsData from '../../shared/data/chartjs';
 import * as jsonData from '../../shared/data/data';
 declare var require: any;
-
 const data: any = require('../../shared/data/chartist.json');
-
-
-const tableData: any = require('../../shared/data/company.json');
 
 // tslint:disable-next-line:max-line-length
 import { barChartmulti, barChartCaseLoadmulti, pieChartSingle, barChartStackedmulti, areaChartPaidMulti, lineChartMulti, lineChartCollectionsMulti, areaChartMulti } from '../../shared/data/ngxChart';
 import * as ngxChartsData from '../../shared/configs/ngx-charts.config';
 import { ColorStore } from './color-store';
+import * as ctPointLabels from 'chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js'
 
 export interface Chart {
   type: ChartType;
@@ -28,10 +25,17 @@ export interface Chart {
   selector: 'app-dashboard1',
   templateUrl: './dashboard1.component.html',
   styleUrls: ['./dashboard1.component.scss'],
-  providers: [ColorStore]
+  providers: [ColorStore],
+  encapsulation: ViewEncapsulation.None
 })
 
+
 export class Dashboard1Component implements OnInit {
+
+
+
+
+
   @ViewChild('currentSupportPaidBarChart') currentSupportPaidBarChart: ElementRef;
   @ViewChild('collectionsDuebaseChart') collectionsDuebaseChart: ElementRef;
   @ViewChild('collectionsPaidbaseChart') collectionsPaidbaseChart: ElementRef;
@@ -43,7 +47,7 @@ export class Dashboard1Component implements OnInit {
   collectionsPaidbarChartGradientColors: any[];
   totalCaseLoadBarChartGradientColors: any[];
   collectionsTotalLineChartGradientColors: any[];
-  rows = [];
+
 
   // lineChart
   public lineChartData = jsonData.lineChartData;
@@ -53,6 +57,9 @@ export class Dashboard1Component implements OnInit {
   public lineChartLegend = jsonData.lineChartLegend;
   public lineChartType = jsonData.lineChartType;
 
+  // lineChart
+  public widgetlineChartData = jsonData.widgetlineChartData;
+  public widgetlineChartOptions = jsonData.widgetlineChartOptions;
 
   // lineChart
   public lineChartAvgData = jsonData.lineChartAvgData;
@@ -84,7 +91,7 @@ export class Dashboard1Component implements OnInit {
   public currentSupportPaidbarChartType = jsonData.currentSupportPaidbarChartType;
   public currentSupportPaidbarChartLegend = jsonData.currentSupportPaidbarChartLegend;
   public currentSupportPaidbarChartData = jsonData.currentSupportPaidbarChartData;
-  public currentSupportPaidbarChartColors = jsonData.currentSupportPaidbarChartColors;
+  // public currentSupportPaidbarChartColors = jsonData.currentSupportPaidbarChartColors;
 
 
   // barChart
@@ -638,12 +645,40 @@ export class Dashboard1Component implements OnInit {
         showLabel: false,
         offset: 0,
       },
-      lineSmooth: Chartist.Interpolation.cardinal({
-        tension: 10
-      }),
+      plugins: [
+        ctPointLabels({
+          labelClass: 'ct-label',
+          labelOffset: {
+            x: 1,
+            y: -6
+          },
+          textAnchor: 'middle'
+        }),
+
+      ],
+      lineSmooth: false,
       fullWidth: true,
     },
+    responsiveOptions: [
+      ['screen and (min-width: 641px) and (max-width: 1024px)', {
+        axisX: {
+          seriesBarDistance: 10,
+          labelInterpolationFnc: function (value, index) {
+            return value;
+          }
+        }
+      }],
+      ['screen and (max-width: 640px)', {
+        axisX: {
+          seriesBarDistance: 5,
+          labelInterpolationFnc: function (value, index) {
+            return value[0];
+          }
+        }
+      }]
+    ],
     events: {
+      // tslint:disable-next-line:no-shadowed-variable
       draw(data: any): void {
         var circleRadius = 4;
         if (data.type === 'point') {
@@ -726,14 +761,20 @@ export class Dashboard1Component implements OnInit {
 
 
 
+
+
     // tslint:disable-next-line:max-line-length
     let domain = ['Label1', 'Label2'];
     // tslint:disable-next-line:max-line-length
     Object.assign(this, { lineChartMulti, lineChartCollectionsMulti, barChartmulti, barChartCaseLoadmulti, areaChartPaidMulti, barChartStackedmulti, pieChartSingle, areaChartMulti })
-    this.rows = tableData;
+
 
 
   }
+
+
+
+
   ngOnInit() {
     this.currentSupportPaidbarChartGradientColors = this.colorStore.getGroupBarChartColors(this.currentSupportPaidBarChart);
     this.collectionsDuebarChartGradientColors = this.colorStore.getStackedBarChartColors(this.collectionsDuebaseChart);
@@ -746,10 +787,14 @@ export class Dashboard1Component implements OnInit {
 
   currentSupportPaidBarChartchartHovered(event) { }
   currentSupportPaidBarChartchartClicked(event) { }
-
+  collectionsPaidbarChartHovered(event) { }
+  collectionsPaidbarChartClicked(event) { }
 
   collectionsDuebarChartHovered(event) { }
   collectionsDuebarChartClicked(event) { }
+
+  chartHovered(event) { }
+  chartClicked(event) { }
 
   percentTickFormatting(value) {
     return value.toLocaleString() + '%';

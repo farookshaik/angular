@@ -193,6 +193,30 @@
                                                        for the spread property */
 }
 
+
+:host /deep/ .WidgetlineChartState .ct-point-circle {
+  stroke-width: 2px;
+  fill: #FFFF00;
+}
+:host /deep/ .WidgetlineChartState .ct-line{
+  stroke: #FFFF00;
+}
+
+
+:host /deep/ .WidgetlineChartState .ct-grid {
+  stroke-dasharray: 0px;
+  stroke: #FFFF00;
+}
+
+:host /deep/ .WidgetlineChartState .ct-label {
+color: #FFF;
+}
+:host /deep/ .WidgetlineChartshadow {
+  -webkit-filter: drop-shadow( 0px 15px 5px rgba(0,0,0,0.8) );
+          filter: drop-shadow( 0px 15px 5px rgba(0,0,0,0.8) ); /* Same syntax as box-shadow, except
+                                                     for the spread property */
+}
+
 // Widget line Chart CSS Ends
 
 
@@ -229,11 +253,19 @@ stroke: #b2319c;
 
 
 
-table tr:last-child
-{
-  background:#ff8d60;
-}
+
+
+
 
 
 tr:nth-child(even) {background: #E0E0E0}
 tr:nth-child(odd) {background: #FFF}
+
+
+
+
+.ct-label{
+  font-size: 0.9rem !important;
+ color:white !important;
+
+}
